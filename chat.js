@@ -1,7 +1,6 @@
 /* Contre-Plan – assistant : orientation en 3 questions + FAQ préparée (dans le navigateur). Une question libre sans réponse préparée est envoyée au relais Cloudflare (route /question), qui répond avec Claude à partir de assistant-kb.txt. Rien n'est enregistré ; seuls des compteurs anonymes GoatCounter sont envoyés. */
 (function () {
   var COMEUP = "/commander.html";
-  var BOOK = "https://calendar.app.google/6LCc6yKVHnbvA3WN7";
   var PREDIAG = ["/contact.html?sujet=prediagnostic", "Demander le pré-diagnostic gratuit"];
   var KB = [
     { c: 1, q: "Combien ça coûte ?", k: ["prix", "tarif", "coût", "cout", "combien", "€", "euro", "payer combien", "ça coute", "ca coute"],
@@ -29,7 +28,7 @@
     { q: "Mon chantier est en cours", nocta: 1, k: ["litige", "en cours", "supplément", "supplement", "réclame", "reclame", "conflit", "dépasse", "depasse", "avocat", "malfaçon", "malfacon", "abandon", "facture plus", "mise en demeure", "porter plainte"],
       a: "Je n'interviens pas sur un chantier en cours ni dans un litige : l'analyse sert avant de signer. Si l'artisan vous réclame un supplément, le guide ci-dessous explique vos droits et les étapes à suivre (réclamation écrite, médiateur, conciliateur de justice), avec un modèle de message.", l: ["/guide-depassement-devis-travaux-supplementaires.html", "Le guide : l'artisan dépasse le devis"], l2: ["/modeles-messages-artisan.html", "Modèle : contester un supplément"] },
     { q: "Peut-on en parler par téléphone ?", k: ["appel", "téléphone", "telephone", "parler", "visio", "rendez-vous", "rdv", "joindre quelqu"],
-      a: "Oui : vous pouvez réserver un appel gratuit de 15 min pour présenter votre projet.", l: [BOOK, "Réserver l'appel gratuit de 15 min"] },
+      a: "Les échanges se font par écrit : c'est plus précis sur un devis, et vous gardez une trace. Écrivez-moi par le formulaire de contact (réponse sous 24 h), ou demandez le pré-diagnostic gratuit pour savoir, avant toute commande, ce que l'analyse couvrira.", l: ["/contact.html", "Formulaire de contact"], l2: PREDIAG },
     { q: "Quel acompte verser ?", k: ["acompte", "arrhes", "verser", "échéancier", "echeancier", "solde", "avance"],
       a: "L'usage est souvent autour de 30 % à la signature, parfois plus quand du matériel est commandé sur mesure, puis des paiements liés à l'avancement et le solde à la réception. Au-delà de 40 à 50 %, demandez pourquoi et proposez un échéancier.", l: ["/guide-acompte-paiement-devis-travaux.html", "Le guide acompte et paiement"] },
     { w: 2, q: "Quel taux de TVA ?", k: ["tva", "taux", "5,5", "10 %", "20 %", "taxe"],
@@ -61,7 +60,7 @@
     { w: 2, q: "Véranda, piscine ou poêle ?", k: ["véranda", "veranda", "piscine", "bassin", "poêle", "poele", "granulés", "granules", "insert", "conduit de fumée", "tubage"],
       a: "Oui, j'analyse ces devis. Chaque page explique ce que je vérifie : dalle et raccord au mur pour une véranda, terrassement et sécurité pour une piscine, conduit et sortie de toit pour un poêle.", l: ["/analyse-devis-veranda.html", "Véranda", "/analyse-devis-piscine.html", "Piscine", "/analyse-devis-poele.html", "Poêle"] },
     { c: 1, q: "Comment vous contacter ?", k: ["contact", "contacter", "écrire", "ecrire", "mail", "email", "message", "formulaire"],
-      a: "Par le formulaire de contact, réponse sous 24 h, ou en réservant un appel gratuit de 15 min. Le numéro de téléphone de l'entreprise figure aussi dans les mentions légales. Pour faire analyser un devis, commandez directement en ligne : vous m'envoyez ensuite le devis par e-mail.", l: ["/contact.html", "Formulaire de contact"], l2: [BOOK, "Réserver l'appel gratuit de 15 min"] }
+      a: "Par le formulaire de contact, réponse sous 24 h. Le numéro de téléphone de l'entreprise figure aussi dans les mentions légales. Pour faire analyser un devis, commandez directement en ligne : vous m'envoyez ensuite le devis par e-mail.", l: ["/contact.html", "Formulaire de contact"] }
   ];
 
   var css = "#cp-chat-btn{position:fixed;right:20px;bottom:20px;z-index:9999;display:flex;align-items:center;gap:10px;background:#bf4a17;color:#fff;border:0;border-radius:2px;padding:14px 20px;font:700 16px 'Source Sans 3',Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3);cursor:pointer}" +
@@ -104,7 +103,7 @@
     if (html) d.innerHTML = text; else d.textContent = text;
     log.appendChild(d); log.scrollTop = log.scrollHeight; return d;
   }
-  var FALLBACK = "Je n'ai pas de réponse toute prête à cette question. Je vous réponds personnellement sous 24 h par le formulaire de contact. Vous pouvez aussi demander le pré-diagnostic gratuit de votre devis, ou réserver un appel gratuit de 15 min.";
+  var FALLBACK = "Je n'ai pas de réponse toute prête à cette question. Je vous réponds personnellement sous 24 h par le formulaire de contact. Vous pouvez aussi demander le pré-diagnostic gratuit de votre devis.";
   var ctaShown = false;
   var AI_URL = "https://contre-plan-decodeur.bitter-heart-1579.workers.dev/question", SITEKEY = "0x4AAAAAAFuFDFliNKSy-7Rr";
   var hist = [], tsWid = null, tsLoad = null, tsBox = null;
@@ -177,11 +176,11 @@
     add(text, "user");
     var e = entry || find(text);
     gc(e ? "faq-" + e.q : "faq-sans-reponse");
-    if (!e && AI_URL) { aiAsk(text, function (m, ok) { m0 = m; if (!ok) { sub("/contact.html", "Formulaire de contact"); sub(PREDIAG[0], PREDIAG[1]); sub(BOOK, "Réserver l'appel gratuit de 15 min"); } if (!ctaShown) { ctaShown = true; m.appendChild(document.createElement("br")); m.appendChild(link(COMEUP, "Faire analyser mon devis", true, "clic-commander-chat")); } log.scrollTop = log.scrollHeight; input.focus({ preventScroll: true }); }); return; }
+    if (!e && AI_URL) { aiAsk(text, function (m, ok) { m0 = m; if (!ok) { sub("/contact.html", "Formulaire de contact"); sub(PREDIAG[0], PREDIAG[1]); } if (!ctaShown) { ctaShown = true; m.appendChild(document.createElement("br")); m.appendChild(link(COMEUP, "Faire analyser mon devis", true, "clic-commander-chat")); } log.scrollTop = log.scrollHeight; input.focus({ preventScroll: true }); }); return; }
     if (e) hist.push({ role: "user", texte: text });
     setTimeout(function () {
       var m = m0 = add(e ? e.a : FALLBACK, "bot");
-      if (!e) { sub("/contact.html", "Formulaire de contact"); sub(PREDIAG[0], PREDIAG[1]); sub(BOOK, "Réserver l'appel gratuit de 15 min"); }
+      if (!e) { sub("/contact.html", "Formulaire de contact"); sub(PREDIAG[0], PREDIAG[1]); }
       if (e && e.l) for (var li = 0; li < e.l.length; li += 2) sub(e.l[li], e.l[li + 1]);
       if (e && e.l2) sub(e.l2[0], e.l2[1]);
       if (!(e && e.nocta)) {
@@ -248,9 +247,9 @@
       m.appendChild(document.createElement("br")); m.appendChild(link(COMEUP, "Faire analyser mon devis en express", true, "clic-commander-orientation-urgent"));
     } else if (r.m === "plus-20k") {
       gc("resultat-gros-devis");
-      m = add("Sur un devis de plus de 20 000 €, chaque ligne compte. Jusqu'à 30 000 €, vous pouvez commander l'analyse directement. Au-delà, ou pour une rénovation tous corps d'état, demandez d'abord le pré-diagnostic gratuit : le prix vous est annoncé avant toute commande. Vous pouvez aussi en parler lors d'un appel gratuit de 15 minutes.", "bot");
+      m = add("Sur un devis de plus de 20 000 €, chaque ligne compte. Jusqu'à 30 000 €, vous pouvez commander l'analyse directement. Au-delà, ou pour une rénovation tous corps d'état, demandez d'abord le pré-diagnostic gratuit : le prix vous est annoncé avant toute commande.", "bot");
       m.appendChild(document.createElement("br")); m.appendChild(link(COMEUP, "Faire analyser mon devis", true, "clic-commander-orientation-gros"));
-      m.appendChild(link(PREDIAG[0], PREDIAG[1], false, "clic-prediagnostic-orientation-gros")); m.appendChild(link(BOOK, "Réserver l'appel gratuit de 15 min", false, "clic-appel-orientation"));
+      m.appendChild(link(PREDIAG[0], PREDIAG[1], false, "clic-prediagnostic-orientation-gros"));
     } else {
       gc("resultat-standard");
       m = add("Le bon moment pour faire relire votre devis, c'est avant de le signer. Vous recevez sous 48 h un rapport avec le verdict, les prix poste par poste, les oublis et les questions à poser à l'artisan.", "bot");
