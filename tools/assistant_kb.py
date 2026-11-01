@@ -42,7 +42,7 @@ def build(root):
         return
     lignes = ["# Contre-Plan : base de connaissances de l'assistant du site", "",
               "Service : un ingénieur BTP relit à distance les devis de travaux des particuliers en France avant signature et livre un rapport PDF sous 48 h. Commande et paiement par carte sur https://contre-plan.com/commander.html (aussi possible sur ComeUp). Pré-diagnostic gratuit : https://contre-plan.com/contact.html?sujet=prediagnostic . Contact : https://contre-plan.com/contact.html (réponse sous 24 h).",
-              "Outils gratuits : décodeur de ligne de devis https://contre-plan.com/decodeur-ligne-devis.html ; contrôle des mentions d'un devis https://contre-plan.com/verifier-mentions-devis.html .",
+              "Outils gratuits : décodeur de ligne de devis https://contre-plan.com/decodeur-ligne-devis.html ; contrôle des mentions d'un devis https://contre-plan.com/verifier-mentions-devis.html ; comparateur de deux devis https://contre-plan.com/comparer-deux-devis.html .",
               "", "## Questions fréquentes (réponses à reprendre fidèlement)"]
     for e in faq:
         liens = e["l"]
