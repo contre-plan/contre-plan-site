@@ -2,6 +2,7 @@ import json, html, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import nouveaux_guides as NG  # guides et pages ajoutés en octobre 2026
 import mentions as MEN  # contrôle des mentions obligatoires (même relais que le décodeur)
+import comparateur as CMP  # comparateur de deux devis (même relais que le décodeur)
 import assistant_kb as AKB  # base de connaissances de l'assistant Claude (assistant-kb.txt)
 import decodeur as DEC  # outil gratuit « Décodeur de ligne de devis » (publié seulement si DEC.DECODEUR_URL est rempli)
 OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # racine du site
@@ -116,7 +117,7 @@ CTA = f'''<aside class="cp-cta-box bp">
 <small>Paiement par carte en 1 minute, sans compte. Rapport PDF sous 48 h, aucun engagement envers l'artisan.</small>
 </aside>'''
 
-DEC_SIDE = '<a href="decodeur-ligne-devis.html">Décodeur de ligne de devis</a><a href="verifier-mentions-devis.html">Contrôle des mentions du devis</a>' if DEC.DECODEUR_URL else ""
+DEC_SIDE = '<a href="comparer-deux-devis.html">Comparateur de deux devis</a><a href="decodeur-ligne-devis.html">Décodeur de ligne de devis</a><a href="verifier-mentions-devis.html">Contrôle des mentions du devis</a>' if DEC.DECODEUR_URL else ""
 SIDE = f"""<div class="cp-sidecard"><p class="t">Votre devis relu par un ingénieur BTP</p><p>Rapport PDF sous 48 h, prix poste par poste, oublis et questions à poser. Dès {PRIX_TXT}.</p><a class="cp-btn" href="{CMD}" data-goatcounter-click="clic-commander-side">Faire analyser mon devis</a><a class="cp-sublink" href="exemple-rapport-contre-plan.pdf" target="_blank" rel="noopener" data-goatcounter-click="telechargement-exemple-rapport">Voir un exemple de rapport</a></div>
 <div class="cp-sidelinks"><p>Outils gratuits</p>{DEC_SIDE}<a href="index.html#test">Test : votre devis est-il complet ?</a><a href="comparer-ses-devis.html">Tableau comparatif de devis</a><a href="modeles-messages-artisan.html">Modèles de messages</a><a href="checklist-devis-travaux.pdf" download data-goatcounter-click="telechargement-checklist">Check-list à imprimer</a><a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par email</a></div>"""
 
@@ -579,7 +580,7 @@ article("guide-bien-demander-ses-devis",
 <h2>5. Ne signez rien le jour de la visite</h2>
 <p>Un devis se relit au calme. Méfiez-vous des remises valables « seulement aujourd'hui ». Si vous signez chez vous, vous disposez en principe d'un délai de rétractation de 14 jours, et aucun paiement ne peut être exigé pendant 7 jours, sauf exceptions.</p>
 <h2>6. Comparez poste par poste</h2>
-<p>Une fois les devis reçus, mettez-les côte à côte avec <a href="comparer-ses-devis.html">le tableau comparatif gratuit</a>. Pour les points à faire préciser, utilisez <a href="modeles-messages-artisan.html">les modèles de messages</a>, et vérifiez les mentions obligatoires avec <a href="guide-mentions-obligatoires-devis.html">ce guide</a>. Ensuite seulement, <a href="guide-negocier-devis-travaux.html">négociez</a> sur des bases claires.</p>''',
+<p>Une fois les devis reçus, mettez-les côte à côte avec <a href="comparer-ses-devis.html">le tableau comparatif gratuit</a> ou <a href="comparer-deux-devis.html">le comparateur automatique</a>. Pour les points à faire préciser, utilisez <a href="modeles-messages-artisan.html">les modèles de messages</a>, et vérifiez les mentions obligatoires avec <a href="guide-mentions-obligatoires-devis.html">ce guide</a>. Ensuite seulement, <a href="guide-negocier-devis-travaux.html">négociez</a> sur des bases claires.</p>''',
  6, date="2026-10-23")
 
 article("guide-reception-travaux-reserves",
@@ -1103,6 +1104,12 @@ if DEC.DECODEUR_URL:
      "Envoyez la photo ou le PDF de votre devis de travaux : vérification gratuite de ses mentions (SIRET, assurance, délai, TVA, déchets, paiement…) et des précisions utiles.",
      "Envoyez la photo ou le PDF de votre devis : en une trentaine de secondes, vous savez quelles mentions sont présentes, à préciser ou introuvables, et quoi demander à l'artisan.",
      MEN.body(), "Outil gratuit", toc=False)
+    page(CMP.SLUG,
+     "Comparateur gratuit de deux devis de travaux | Contre-Plan",
+     "Comparer deux devis de travaux",
+     "Envoyez vos deux devis de travaux en photo ou en PDF : comparaison gratuite poste par poste, totaux, TVA, acompte, et questions à poser à chaque entreprise.",
+     "Deux devis pour les mêmes travaux, des montants différents ? Envoyez-les : en moins d'une minute, vous voyez poste par poste ce qui diffère et quoi demander à chaque entreprise pour comparer à égalité.",
+     CMP.body(), "Outil gratuit", toc=False)
 
 TPL = [
  ("Demander l'attestation d'assurance décennale",
@@ -1143,6 +1150,7 @@ t_cards = "".join(rcard(h_, "Par travaux", t_, d_, "Ce que je vérifie") for h_,
  ("analyse-devis-toiture.html", "Toiture", "Surface, échafaudage, zinguerie, charpente, amiante.")] + [
  (j["slug"] + ".html", j["kicker"], j["card"]) for j in NG.JOB_PAGES])
 o_cards = "".join([
+ (rcard("comparer-deux-devis.html", "Outil gratuit", "Comparateur de deux devis", "Envoyez vos deux devis : les écarts poste par poste et les questions à poser.", "Comparer mes devis") if DEC.DECODEUR_URL else ""),
  (rcard("verifier-mentions-devis.html", "Outil gratuit", "Contrôle des mentions du devis", "Envoyez la photo de votre devis : les mentions présentes, incomplètes ou absentes.", "Contrôler mon devis") if DEC.DECODEUR_URL else ""),
  (rcard("decodeur-ligne-devis.html", "Outil gratuit", "Décodeur de ligne de devis", "Collez une ligne de votre devis : ce qu'elle veut dire et les questions à poser à l'artisan.", "Décoder une ligne") if DEC.DECODEUR_URL else ""),
  rcard("index.html#test", "Outil gratuit", "Test : votre devis est-il complet ?", "Six questions pour repérer en une minute ce qu'il faut faire préciser.", "Faire le test"),
