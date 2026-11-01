@@ -483,6 +483,7 @@ with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "fourchettes_
         if not _slug: continue
         FOURCH.setdefault(_slug, []).append((_r["Poste"], _r["Unité"], int(float(_r["Basse € HT"])), int(float(_r["Haute € HT"])), _srcs))
 for _s in [k for k in list(PAGE_UPDATED)] + ["analyse-devis-veranda", "analyse-devis-piscine", "analyse-devis-poele", "analyse-devis-electricite", "analyse-devis-pompe-a-chaleur", "analyse-devis-extension", "analyse-devis-ravalement-facade", "analyse-devis-cuisine", "votre-cas", "guide-tva-travaux-renovation"]: PAGE_UPDATED[_s] = "2026-10-29"
+for _s in ["analyse-devis-poele", "analyse-devis-pompe-a-chaleur"]: PAGE_UPDATED[_s] = "2026-11-01"
 def _fmt(n): return f"{n:,}".replace(",", " ")
 def fourch_html(slug):
     rows = FOURCH.get(slug)
@@ -813,6 +814,7 @@ page("analyse-devis-pompe-a-chaleur",
 <li>Pour une pompe à chaleur air-eau : le raccordement au circuit existant, le désembouage éventuel et la régulation.</li></ul>
 <h2>Les aides et la qualification RGE</h2>
 <p>Pour bénéficier des aides à la rénovation énergétique (MaPrimeRénov', primes CEE), l'entreprise doit être qualifiée RGE pour ces travaux : vérifiez-le sur france-renov.gouv.fr. Si une prime est déduite sur le devis, son montant et son origine doivent être indiqués clairement.</p>
+<p>Dans une maison, attention à la rénovation d'ampleur (MaPrimeRénov' Parcours accompagné) : depuis le 1<sup>er</sup> septembre 2026, l'aide n'est plus accordée si un chauffage au gaz est conservé après les travaux. Une pompe à chaleur ajoutée à côté d'une chaudière gaz maintenue, ou une pompe à chaleur hybride gaz, peut donc faire perdre l'aide de tout le projet. Vérifiez ce point avec votre conseiller France Rénov' avant de signer.</p>
 <h2>La TVA</h2>
 <p>Dans un logement achevé depuis plus de 2 ans, les pompes à chaleur éligibles à la rénovation énergétique relèvent du taux de 5,5 %. Depuis le 18 juillet 2026, c'est aussi possible pour une pompe à chaleur air/air réversible fixe qui atteint les performances exigées (classe énergétique, fluide frigorigène, pilotage à distance). La climatisation seule n'en bénéficie pas, et les chaudières fonctionnant au gaz ou au fioul sont au taux de 20 % depuis le 1er mars 2025. Vérifiez que le taux appliqué correspond bien à l'équipement.</p>
 <h2>Exemple de ligne à faire préciser</h2>
