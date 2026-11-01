@@ -37,8 +37,8 @@ Q : Mon chantier est en cours
 R : Je n'interviens pas sur un chantier en cours ni dans un litige : l'analyse sert avant de signer. Si l'artisan vous réclame un supplément, le guide ci-dessous explique vos droits et les étapes à suivre (réclamation écrite, médiateur, conciliateur de justice), avec un modèle de message.
 Liens : Le guide : l'artisan dépasse le devis : /guide-depassement-devis-travaux-supplementaires.html ; Modèle : contester un supplément : /modeles-messages-artisan.html
 Q : Peut-on en parler par téléphone ?
-R : Oui : vous pouvez réserver un appel gratuit de 15 min pour présenter votre projet.
-Liens : Réserver l'appel gratuit de 15 min : https://calendar.app.google/6LCc6yKVHnbvA3WN7
+R : Les échanges se font par écrit : c'est plus précis sur un devis, et vous gardez une trace. Écrivez-moi par le formulaire de contact (réponse sous 24 h), ou demandez le pré-diagnostic gratuit pour savoir, avant toute commande, ce que l'analyse couvrira.
+Liens : Formulaire de contact : /contact.html ; Demander le pré-diagnostic gratuit : /contact.html?sujet=prediagnostic
 Q : Quel acompte verser ?
 R : L'usage est souvent autour de 30 % à la signature, parfois plus quand du matériel est commandé sur mesure, puis des paiements liés à l'avancement et le solde à la réception. Au-delà de 40 à 50 %, demandez pourquoi et proposez un échéancier.
 Liens : Le guide acompte et paiement : /guide-acompte-paiement-devis-travaux.html
@@ -84,8 +84,8 @@ Q : Véranda, piscine ou poêle ?
 R : Oui, j'analyse ces devis. Chaque page explique ce que je vérifie : dalle et raccord au mur pour une véranda, terrassement et sécurité pour une piscine, conduit et sortie de toit pour un poêle.
 Liens : Véranda : /analyse-devis-veranda.html ; Piscine : /analyse-devis-piscine.html ; Poêle : /analyse-devis-poele.html
 Q : Comment vous contacter ?
-R : Par le formulaire de contact, réponse sous 24 h, ou en réservant un appel gratuit de 15 min. Le numéro de téléphone de l'entreprise figure aussi dans les mentions légales. Pour faire analyser un devis, commandez directement en ligne : vous m'envoyez ensuite le devis par e-mail.
-Liens : Formulaire de contact : /contact.html ; Réserver l'appel gratuit de 15 min : https://calendar.app.google/6LCc6yKVHnbvA3WN7
+R : Par le formulaire de contact, réponse sous 24 h. Le numéro de téléphone de l'entreprise figure aussi dans les mentions légales. Pour faire analyser un devis, commandez directement en ligne : vous m'envoyez ensuite le devis par e-mail.
+Liens : Formulaire de contact : /contact.html
 
 ## Pages du site (adresse, titre, description)
 https://contre-plan.com/achat-avec-travaux.html | Achat immobilier avec travaux : faire relire les devis avant de s'engager | Contre-Plan | Vous achetez un bien à rénover : faites relire les devis de travaux pendant le délai de rétractation, avant l'offre de prêt, pour ne pas sous-estimer le budget.

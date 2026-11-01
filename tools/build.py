@@ -11,7 +11,6 @@ PRIX_TXT = "16,50 €"
 PRIX_MENTION = ""
 COMEUP = "https://comeup.com/fr/service/549064/verifier-votre-devis-de-travaux-avant-signature-et-reperer-les-prix-abusifs-et-les-oublis"
 CMD = "commander.html"   # page de commande (paiement Stripe, ComeUp en second choix)
-BOOK = "https://calendar.app.google/6LCc6yKVHnbvA3WN7"
 NEWS = "https://docs.google.com/forms/d/e/1FAIpQLScS7zVctXEahK71wNv8hUGD-MjfyqH4h_l8EpJyYPLVM-ToAA/viewform"  # formulaire « Le conseil devis du mois »
 DATE = "2026-10-23"  # date de publication par défaut des guides existants
 MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"]
@@ -113,7 +112,7 @@ CTA = f'''<aside class="cp-cta-box bp">
 <span class="tag">Avant de signer</span>
 <p class="t">Un devis à signer ? Faites-le relire par un ingénieur BTP.</p>
 <p>Prix poste par poste, oublis, TVA, conditions de paiement : rapport PDF sous 48 h, {PRIX_TXT}.</p>
-<div class="row"><a class="btn" href="{CMD}" data-goatcounter-click="clic-commander">Faire analyser mon devis</a><a class="btn line" href="{BOOK}" data-goatcounter-click="clic-appel" target="_blank" rel="noopener">Appel gratuit de 15 min</a></div>
+<div class="row"><a class="btn" href="{CMD}" data-goatcounter-click="clic-commander">Faire analyser mon devis</a><a class="btn line" href="contact.html?sujet=prediagnostic" data-goatcounter-click="clic-prediagnostic">Pré-diagnostic gratuit</a></div>
 <small>Paiement par carte en 1 minute, sans compte. Rapport PDF sous 48 h, aucun engagement envers l'artisan.</small>
 </aside>'''
 
@@ -1203,7 +1202,7 @@ contact_body = f"""<p>Une question sur le service, sur un devis ou sur un guide 
 <button type="submit" data-goatcounter-click="envoi-formulaire-contact">Envoyer le message</button>
 <p class="cp-form-rgpd">Vos nom, e-mail et message servent uniquement à vous répondre. Ils sont enregistrés via Google Forms (Google) et conservés au plus 12 mois. Vous pouvez demander leur suppression à tout moment : voir la <a href="confidentialite.html">politique de confidentialité</a>.</p>
 </form>
-<p>Vous préférez en parler de vive voix ? <a href="https://calendar.app.google/6LCc6yKVHnbvA3WN7" target="_blank" rel="noopener" data-goatcounter-click="clic-rdv-contact">Réservez un appel gratuit de 15 min</a>.</p>"""
+<p>Pas encore sûr que votre devis soit concerné ? Demandez le <a href="contact.html?sujet=prediagnostic" data-goatcounter-click="clic-prediagnostic-contact">pré-diagnostic gratuit</a> : je vous dis par écrit, avant toute commande, ce que l'analyse couvrira et à quel prix.</p>"""
 page("contact", "Contact | Contre-Plan", "Me contacter",
  "Une question sur l'analyse de devis de travaux ? Écrivez à Contre-Plan via le formulaire de contact, réponse sous 24 h.",
  "Une question avant de commander, ou après avoir lu un guide ? Je vous réponds personnellement.", contact_body, "Contact", toc=False)
