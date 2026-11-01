@@ -636,7 +636,7 @@ JOB_PAGES.append(dict(
 <h2>Les performances et la TVA</h2>
 <p>Dans un logement achevé depuis plus de 2 ans, un poêle fourni et posé par l'entreprise relève de 5,5 % s'il respecte des critères de performance : efficacité énergétique saisonnière d'au moins 65 % pour un appareil à bûches, d'au moins 79 % pour un appareil à granulés, et des émissions plafonnées. Sinon, c'est 10 %. Le devis doit indiquer ces valeurs ou joindre la fiche du produit, et vous certifiez vous-même sur le devis ou la facture que les conditions sont remplies. Le conduit posé avec l'appareil suit en principe le même taux.</p>
 <h2>Aides et RGE</h2>
-<p>Les aides (MaPrimeRénov', primes CEE) exigent un installateur RGE, avec une qualification adaptée au bois, et leurs règles changent souvent. Vérifiez la qualification dans l'annuaire officiel des entreprises RGE et les montants en vigueur sur france-renov.gouv.fr avant de signer, et ne signez pas sur la seule promesse d'une prime.</p>
+<p>Depuis le 1<sup>er</sup> septembre 2026, <strong>MaPrimeRénov' « par geste » ne finance plus les poêles à bois ni à granulés</strong> pour les nouvelles demandes (décret n° 2026-822 et arrêtés du 25 août 2026). Une prime CEE (« prime énergie ») peut rester possible si l'appareil atteint les performances exigées, en général pour remplacer un appareil de chauffage moins performant. Elle se demande avant de signer le devis et exige un installateur RGE avec une qualification adaptée au bois. Vérifiez cette qualification dans l'annuaire officiel des entreprises RGE, et méfiez-vous d'un devis qui déduit une MaPrimeRénov' ou une prime sans préciser laquelle.</p>
 <h2>Exemple de ligne à faire préciser</h2>
 <p>« Poêle à granulés 8 kW posé, tubage compris : 5 900 € TTC. » Quel modèle, quelle efficacité saisonnière ? Tubage sur combien de mètres, quelle sortie de toit ? Amenée d'air prévue ? À demander : la fiche technique du poêle, le détail du conduit et le taux de TVA ligne par ligne.</p>
 """,
@@ -645,6 +645,8 @@ JOB_PAGES.append(dict(
    "Dans un logement de plus de 2 ans, 5,5 % si l'appareil fourni et posé par l'entreprise respecte les critères de performance (efficacité saisonnière d'au moins 65 % en bûches, 79 % en granulés, émissions plafonnées), sinon 10 %."),
   ("Que doit dire le devis sur le conduit de fumée ?",
    "S'il est tubé ou neuf, sa référence, les distances de sécurité aux matériaux combustibles, la sortie de toit et la reprise d'étanchéité, ainsi que l'amenée d'air du poêle."),
+  ("MaPrimeRénov' finance-t-elle encore un poêle ?",
+   "Plus en parcours par geste pour les demandes déposées depuis le 1er septembre 2026. Une prime CEE peut rester possible si l'appareil respecte les performances exigées et qu'il est posé par une entreprise RGE ; elle se demande avant de signer le devis."),
   ("Comment faire relire mon devis de poêle ?",
    "Envoyez-le en PDF ou en photo après avoir commandé l'analyse en ligne : vous recevez sous 48 h un rapport avec les postes manquants et les questions à poser."),
  ],
