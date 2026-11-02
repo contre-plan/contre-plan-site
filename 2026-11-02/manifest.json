@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-02",
+ "episode": 16,
+ "sujet": "Quantités en m² : 95 m² de peinture facturés pour 65 m² calculés",
+ "vente": true,
+ "titre": "Peinture : 95 m² écrits sur le devis, 65 m² calculés",
+ "tiktok_text": "Votre devis de peinture annonce 95 m² alors que le calcul en donne 65 : à 30 € le mètre carré, l'écart atteint 900 €.\n\nSur un devis de travaux, les quantités en m² ou en mètres linéaires sont la base du prix. Elles sont rarement vérifiées, alors qu'un mètre et une calculette suffisent. Exemple fictif : salon de 4 m sur 5 m, 2,50 m de haut. Les murs font 18 m de tour × 2,50 m, soit 45 m², le plafond 20 m², au total 65 m² avant de retirer portes et fenêtres.\n\nUne erreur de mesure arrive, même chez un artisan sérieux. Avant de signer, demandez le détail du calcul, les dimensions de la pièce et ce qui est retiré (portes, fenêtres). Valable pour la peinture, le carrelage ou l'isolation.\n\nCombien de m² figurent sur votre devis de peinture ou de carrelage ? Répondez juste avec le chiffre.\n\nProchain épisode : « La préparation des supports ». Faites relire votre devis par un ingénieur BTP avant de signer, lien en bio.\n#devistravaux #renovationmaison #travaux #peinture #conseilstravaux",
+ "instagram_text": "Peinture : 95 m² écrits sur le devis, 65 m² calculés\n\nVotre devis de peinture annonce 95 m² alors que le calcul en donne 65 : à 30 € le mètre carré, l'écart atteint 900 €.\n\nSur un devis de travaux, les quantités en m² ou en mètres linéaires sont la base du prix. Elles sont rarement vérifiées, alors qu'un mètre et une calculette suffisent. Exemple fictif : salon de 4 m sur 5 m, 2,50 m de haut. Les murs font 18 m de tour × 2,50 m, soit 45 m², le plafond 20 m², au total 65 m² avant de retirer portes et fenêtres.\n\nUne erreur de mesure arrive, même chez un artisan sérieux. Avant de signer, demandez le détail du calcul, les dimensions de la pièce et ce qui est retiré (portes, fenêtres). Valable pour la peinture, le carrelage ou l'isolation.\n\nCombien de m² figurent sur votre devis de peinture ou de carrelage ? Répondez juste avec le chiffre.\n\nProchain épisode : « La préparation des supports ». Faites relire votre devis par un ingénieur BTP avant de signer, lien en bio.\n#devistravaux #renovationmaison #travaux #peinture #conseilstravaux",
+ "tiktok_images": [
+  "tk1.jpg",
+  "tk2.jpg",
+  "tk3.jpg",
+  "tk4.jpg",
+  "tk5.jpg",
+  "tk6.jpg"
+ ],
+ "instagram_images": [
+  "igj1.jpg",
+  "igj2.jpg",
+  "igj3.jpg",
+  "igj4.jpg",
+  "igj5.jpg",
+  "igj6.jpg"
+ ],
+ "reel": "reel.mp4",
+ "cover": "cover.jpg",
+ "story": "story.jpg",
+ "note": 9,
+ "note_relecteur": 9,
+ "note_gemini": 9.25,
+ "exactitude": 2,
+ "conformite": 1,
+ "tiktok_format": "carrousel",
+ "note_detail": "accroche 2/2, une idée par slide 1,5/2, clarté 1,5/2, exactitude 2/2, conformité 1/1, envie d'enregistrer 1/1",
+ "accroche_type": "montant",
+ "point_faible": "Slide 6 un peu chargée (question, rassurance, enregistrement, ligne Contre-Plan) et le total de 65 m² est avant déduction des ouvertures.",
+ "slides_resume": [
+  "Peinture : 30 m² d'écart, soit 900 €",
+  "Le prix d'une ligne, c'est quantité × prix",
+  "900 € d'écart pour 30 m² en plus (65 m² contre 95 m²)",
+  "Salon 4 × 5 m : murs 45 m², plafond 20 m², total 65 m²",
+  "Trois choses à demander : détail du calcul, dimensions, ce qu'on retire",
+  "Combien de m² sur votre devis ? Juste le chiffre."
+ ],
+ "regle_verifiee": "aucune règle (conseil pratique de vérification des quantités par un calcul simple) – Gemini : 9,25/10, confirmé. Sujet précédent « marque et référence » abandonné après 3 versions (note retenue 6,75/10).",
+ "reprise": null,
+ "reponses": [
+  {
+   "cas": "répond à la question (un chiffre)",
+   "texte": "Ah avec ce chiffre je vérifierais le calcul, le tour de la pièce fois la hauteur. vous aviez la hauteur sous plafond notée sur le devis ?"
+  },
+  {
+   "cas": "raconte son cas",
+   "texte": "Si le devis ne détaille rien, demandez par mail le calcul des m² pièce par pièce. un artisan sérieux vous le sort en cinq minutes"
+  },
+  {
+   "cas": "défend les artisans",
+   "texte": "Vous avez raison, une erreur de mesure arrive chez tout le monde. c'est pour ça qu'un détail écrit protège les deux côtés"
+  }
+ ],
+ "voix_off": "Un devis de peinture affiche 95 mètres carrés, le calcul en donne 65. Soit 900 € d'écart. Une quantité se vérifie avec un mètre. À 30 € le mètre carré, 30 mètres carrés en plus, ça fait 900 €. Le tour de la pièce fois la hauteur, plus le plafond. Demandez le détail et ce qu'on retire. Combien de mètres carrés sur votre devis ? Juste le chiffre. Contre-plan.com, lien en bio.",
+ "pinterest": {
+  "board": "Devis travaux : les pièges à éviter",
+  "title": "Devis peinture : comment vérifier les m² facturés avant de signer",
+  "description": "Un devis de peinture annonce 95 m² alors que le calcul en donne 65 : 900 € d'écart à 30 € le m². Mesurez le tour de la pièce, la hauteur et le plafond, puis demandez le détail du calcul et ce qui est retiré (portes, fenêtres). Guide gratuit et check-list à télécharger sur contre-plan.com",
+  "link": "https://contre-plan.com/guide-bien-demander-ses-devis.html"
+ }
+}
