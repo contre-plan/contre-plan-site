@@ -66,7 +66,7 @@ Q : Qui analyse mon devis ?
 R : Un ingénieur BTP avec 10 ans d'expérience sur les chantiers et environ 1 000 devis lus et négociés, avant de créer Contre-Plan en octobre 2026. Indépendant : aucune commission d'artisan, aucune entreprise à vous revendre.
 Liens : Voir ma méthode : /methode.html
 Q : Est-ce fiable ?
-R : Contre-Plan est une entreprise immatriculée (SIRET 132 070 426 00011), rattachée au médiateur de la consommation CM2C. Le paiement par carte est sécurisé par Stripe (vos données de carte ne me sont jamais transmises), et vous pouvez masquer votre nom et votre adresse sur le devis. Pas sûr que l'analyse vous serve ? Le pré-diagnostic gratuit vous le dit avant toute commande.
+R : Contre-Plan est une entreprise immatriculée (SIRET 132 070 426 00029), rattachée au médiateur de la consommation CM2C. Le paiement par carte est sécurisé par Stripe (vos données de carte ne me sont jamais transmises), et vous pouvez masquer votre nom et votre adresse sur le devis. Pas sûr que l'analyse vous serve ? Le pré-diagnostic gratuit vous le dit avant toute commande.
 Liens : Voir les mentions légales : /mentions-legales.html
 Q : Mon devis me paraît trop cher
 R : C'est exactement ce que vérifie l'analyse : le prix de chaque poste comparé à des ordres de grandeur, les postes oubliés ou comptés deux fois, et les points à négocier. Pour savoir d'abord si l'analyse vaut le coup sur votre devis, demandez le pré-diagnostic gratuit (réponse sous 24 h).

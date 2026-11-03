@@ -934,7 +934,7 @@ page("professionnels",
 <li><b>Un échange de suivi</b> inclus pour éclaircir un point du rapport.</li></ul>
 <p>Voir un <a href="exemple-rapport-contre-plan.pdf" target="_blank" rel="noopener">exemple de rapport complet (PDF)</a>.</p>
 <h2>Qui relit les devis</h2>
-<p>Un ingénieur BTP, dix ans sur les chantiers et environ 1 000 devis lus et négociés, côté entreprise comme côté client. Contre-Plan est une entreprise individuelle immatriculée dans les Vosges (SIRET 132 070 426 00011), rattachée au médiateur de la consommation CM2C. La méthode de contrôle est décrite en détail sur la page <a href="methode.html">ma méthode</a>.</p>
+<p>Un ingénieur BTP, dix ans sur les chantiers et environ 1 000 devis lus et négociés, côté entreprise comme côté client. Contre-Plan est une entreprise individuelle immatriculée à Paris (SIRET 132 070 426 00029), rattachée au médiateur de la consommation CM2C. La méthode de contrôle est décrite en détail sur la page <a href="methode.html">ma méthode</a>.</p>
 <h2>Comment ça se passe pour votre client</h2>
 <ol><li><b>Il commande en ligne</b> sur contre-plan.com : paiement par carte en 1 minute, sans compte (ou sur la plateforme ComeUp s'il préfère).</li>
 <li><b>Il envoie son devis</b> par e-mail, en PDF ou en photo, nom et adresse masquables.</li>

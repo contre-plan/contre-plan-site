@@ -1,12 +1,12 @@
 # Pages légales générées par build.py : conditions générales de vente et politique de confidentialité.
 # Modèle d'information générale, à faire relire par un professionnel du droit.
-# SIRET et adresse renseignés le 28/10/2026. Médiateur CM2C : adhésion du 29/10/2026, valable jusqu'au 29/10/2029 (à renouveler).
+# SIRET et adresse renseignés le 28/10/2026, mis à jour le 03/11/2026 (transfert vers la domiciliation de Paris, formalité J00297544835). Médiateur CM2C : adhésion du 29/10/2026, valable jusqu'au 29/10/2029 (à renouveler).
 
 EDITEUR = "Contre-Plan, entreprise individuelle (EI) dont l'identité complète de l'exploitant figure dans les <a href=\"mentions-legales.html\">mentions légales</a>"
 # Le nom de l'exploitant n'apparaît que sur mentions-legales.html (choix d'anonymat commercial).
 NOM_EXPLOITANT = "Arthur Demange"
-ADRESSE = "10 rue du Point de Vue, 88000 Épinal"
-SIRET = "132 070 426 00011"
+ADRESSE = "47 rue Vivienne, 75002 Paris"
+SIRET = "132 070 426 00029"
 TEL = "06 75 83 65 61"
 MEDIATEUR = "CM2C (Centre de la Médiation de la Consommation de Conciliateurs de Justice), 49 rue de Ponthieu, 75008 Paris, tél. 01 89 47 00 14, litiges@cm2c.net. Saisine en ligne : <a href=\"https://www.cm2c.net/declarer-un-litige.php\" target=\"_blank\" rel=\"noopener\">www.cm2c.net/declarer-un-litige.php</a>"
 import decodeur as _DEC
