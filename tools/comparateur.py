@@ -117,10 +117,12 @@ f.addEventListener('submit', function(e){
     liste(box, 'Questions à poser à l\\u2019entreprise du devis B', d.questions_b);
     if (d.a_retenir) box.appendChild(el('p', null, d.a_retenir));
     box.appendChild(el('p', 'dec-note', "Comparaison automatique de ce qui est écrit sur les documents transmis. Elle ne dit pas quel devis choisir et ne juge pas les prix. Ce n'est pas une expertise."));
-    var cta = el('div', 'note'), p = el('p');
-    p.appendChild(el('b', null, 'Le moins cher n\\u2019est pas toujours le moins coûteux. ')); p.appendChild(document.createTextNode(ty('Pour savoir si les prix sont cohérents et ce qui manque techniquement, faites relire vos devis ligne par ligne par un ingénieur BTP, rapport sous 48 h. ')));
-    var a = el('a', null, 'Voir les formules'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'comparateur/clic-commander'); p.appendChild(a);
-    cta.appendChild(p); box.appendChild(cta);
+    var cta = el('div', 'cp-sidecard cp-upsell');
+    cta.appendChild(el('p', 't', ty('Le moins cher n\\u2019est pas toujours le moins coûteux')));
+    cta.appendChild(el('p', null, ty('Prix cohérents ou non, postes oubliés : un ingénieur BTP relit vos deux devis ligne par ligne. Rapport PDF sous 48 h, sans lien avec aucun artisan.')));
+    var a = el('a', 'cp-btn', 'Faire relire mes deux devis'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'comparateur/clic-commander'); cta.appendChild(a);
+    var ex = el('a', 'cp-sublink', 'Voir un exemple de rapport'); ex.href = 'exemple-rapport-contre-plan.pdf'; ex.target = '_blank'; ex.rel = 'noopener'; ex.setAttribute('data-goatcounter-click', 'comparateur/clic-exemple'); cta.appendChild(ex);
+    box.appendChild(cta);
     out.innerHTML = ''; out.appendChild(box); box.scrollIntoView({behavior: 'smooth', block: 'start'});
   }, function(m){ err(typeof m === 'string' ? m : 'Connexion impossible. Vérifiez votre connexion internet et réessayez.'); gc('erreur-lecture'); })
   .catch(function(){ err('Connexion impossible. Vérifiez votre connexion internet et réessayez.'); gc('erreur-reseau'); })

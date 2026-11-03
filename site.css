@@ -214,3 +214,8 @@ h1,h2,h3{text-wrap:balance}
 .cp-calc input::placeholder{color:#6b7891}
 .cp-opts button[aria-pressed="true"]{background:#14284b!important;color:#fff!important;border-color:#14284b!important}
 .cp-opts button{border-color:#8a96ab!important}
+
+/* Encart de commande après le résultat des outils gratuits */
+.cp-upsell{margin-top:22px}
+.cp-upsell p{color:#dde4f2!important;margin:0!important}
+.cp-upsell .t{color:#fff!important}

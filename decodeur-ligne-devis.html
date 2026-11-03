@@ -132,10 +132,13 @@ f.addEventListener('submit', function(e){
       box.appendChild(cp);
     }
     box.appendChild(el('p', 'dec-note', "Explication générale produite automatiquement, sans le reste du devis ni les prix de votre région : ce n'est pas une expertise. Vérifiez auprès de l'artisan avant de signer."));
-    var cta = el('div', 'note'); var p = el('p'); var b = el('b', null, 'Et le reste du devis ? ');
-    p.appendChild(b); p.appendChild(document.createTextNode(ty('Une ligne ne dit pas tout : les oublis se voient sur l\u2019ensemble. Faites relire le devis complet par un ingénieur BTP, rapport sous 48 h. ')));
-    var a = el('a', null, 'Voir les formules'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'decodeur/clic-commander'); p.appendChild(a);
-    cta.appendChild(p); box.appendChild(cta);
+    var cta = el('div', 'cp-sidecard cp-upsell');
+    cta.appendChild(el('p', 't', ty('Et le reste du devis ?')));
+    if (d.niveau === 'a_verifier') cta.appendChild(el('p', null, ty('Cette ligne est à vérifier avant de signer : d\u2019autres postes du même devis le sont peut-être aussi.')));
+    cta.appendChild(el('p', null, ty('Les oublis et les prix gonflés se voient sur l\u2019ensemble. Un ingénieur BTP relit tout votre devis : rapport PDF sous 48 h, dès 16,50 €.')));
+    var a = el('a', 'cp-btn', 'Faire relire tout mon devis'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'decodeur/clic-commander'); cta.appendChild(a);
+    var ex = el('a', 'cp-sublink', 'Voir un exemple de rapport'); ex.href = 'exemple-rapport-contre-plan.pdf'; ex.target = '_blank'; ex.rel = 'noopener'; ex.setAttribute('data-goatcounter-click', 'decodeur/clic-exemple'); cta.appendChild(ex);
+    box.appendChild(cta);
     out.innerHTML = ''; out.appendChild(box); box.scrollIntoView({behavior: 'smooth', block: 'start'});
   })
   .catch(function(){ err('Connexion impossible. Vérifiez votre connexion internet et réessayez.'); gc('erreur-reseau'); })
