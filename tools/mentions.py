@@ -100,10 +100,12 @@ f.addEventListener('submit', function(e){
       box.appendChild(cp);
     }
     box.appendChild(el('p', 'dec-note', "Contrôle automatique du document transmis : une mention peut figurer dans des conditions générales non envoyées. Ce n'est pas une expertise et les prix ne sont pas vérifiés."));
-    var cta = el('div', 'note'), p = el('p');
-    p.appendChild(el('b', null, 'Les mentions ne disent pas tout. ')); p.appendChild(document.createTextNode(ty('Un devis complet sur le papier peut cacher un prix gonflé ou un poste oublié. Faites-le relire ligne par ligne par un ingénieur BTP, rapport sous 48 h. ')));
-    var a = el('a', null, 'Voir les formules'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'mentions/clic-commander'); p.appendChild(a);
-    cta.appendChild(p); box.appendChild(cta);
+    var cta = el('div', 'cp-sidecard cp-upsell');
+    cta.appendChild(el('p', 't', ty('Les mentions ne disent pas tout')));
+    cta.appendChild(el('p', null, ty('Un devis en règle peut cacher un prix gonflé ou un poste oublié. Un ingénieur BTP le relit ligne par ligne : rapport PDF sous 48 h, dès __PRIX__.')));
+    var a = el('a', 'cp-btn', 'Faire relire mon devis'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'mentions/clic-commander'); cta.appendChild(a);
+    var ex = el('a', 'cp-sublink', 'Voir un exemple de rapport'); ex.href = 'exemple-rapport-contre-plan.pdf'; ex.target = '_blank'; ex.rel = 'noopener'; ex.setAttribute('data-goatcounter-click', 'mentions/clic-exemple'); cta.appendChild(ex);
+    box.appendChild(cta);
     out.innerHTML = ''; out.appendChild(box); box.scrollIntoView({behavior: 'smooth', block: 'start'});
   }, function(m){ err(typeof m === 'string' ? m : 'Connexion impossible. Vérifiez votre connexion internet et réessayez.'); gc('erreur-lecture'); })
   .catch(function(){ err('Connexion impossible. Vérifiez votre connexion internet et réessayez.'); gc('erreur-reseau'); })

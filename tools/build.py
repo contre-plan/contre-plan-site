@@ -1097,19 +1097,19 @@ if DEC.DECODEUR_URL:
      "Décodeur de ligne de devis",
      "Collez une ligne de votre devis de travaux : explication en langage simple, points à vérifier et questions à poser à l'artisan avant de signer. Gratuit.",
      "Une ligne de votre devis vous laisse perplexe ? Collez-la ici : vous saurez ce qu'elle veut dire, ce qu'il faut vérifier et quoi demander à l'artisan avant de signer.",
-     DEC.body(), "Outil gratuit", toc=False)
+     DEC.body().replace("__PRIX__", PRIX_TXT), "Outil gratuit", toc=False)
     page("verifier-mentions-devis",
      "Contrôle gratuit des mentions d'un devis de travaux | Contre-Plan",
      "Contrôle des mentions de votre devis",
      "Envoyez la photo ou le PDF de votre devis de travaux : vérification gratuite de ses mentions (SIRET, assurance, délai, TVA, déchets, paiement…) et des précisions utiles.",
      "Envoyez la photo ou le PDF de votre devis : en une trentaine de secondes, vous savez quelles mentions sont présentes, à préciser ou introuvables, et quoi demander à l'artisan.",
-     MEN.body(), "Outil gratuit", toc=False)
+     MEN.body().replace("__PRIX__", PRIX_TXT), "Outil gratuit", toc=False)
     page(CMP.SLUG,
      "Comparateur gratuit de deux devis de travaux | Contre-Plan",
      "Comparer deux devis de travaux",
      "Envoyez vos deux devis de travaux en photo ou en PDF : comparaison gratuite poste par poste, totaux, TVA, acompte, et questions à poser à chaque entreprise.",
      "Deux devis pour les mêmes travaux, des montants différents ? Envoyez-les : en moins d'une minute, vous voyez poste par poste ce qui diffère et quoi demander à chaque entreprise pour comparer à égalité.",
-     CMP.body(), "Outil gratuit", toc=False)
+     CMP.body().replace("__PRIX__", PRIX_TXT), "Outil gratuit", toc=False)
 
 TPL = [
  ("Demander l'attestation d'assurance décennale",
