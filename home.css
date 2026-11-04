@@ -191,12 +191,6 @@ section[id]{scroll-margin-top:70px}
 .cp-stake .t{margin:0 0 6px;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:17px;color:var(--ink)}
 .cp-stake p{margin:0 0 8px;font-size:16px;line-height:1.5;color:var(--ink2)}
 .cp-stake a{font-weight:700}
-.cp-protect{margin-top:18px;background:#fff;border:1px solid var(--line);padding:16px 20px}
-.cp-protect .t{margin:0 0 8px;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:17px;color:var(--ink)}
-.cp-protect ul{list-style:none;margin:0 0 10px;padding:0}
-.cp-protect li{position:relative;padding-left:22px;margin:6px 0;font-size:15px;line-height:1.45;color:var(--ink2)}
-.cp-protect li::before{content:"";position:absolute;left:2px;top:.45em;width:9px;height:5px;border-left:2px solid #2e7d4f;border-bottom:2px solid #2e7d4f;transform:rotate(-45deg)}
-.cp-protect li b{color:var(--ink)}
 .cp-msg{max-width:760px;margin:34px auto 0}
 .cp-msg .t{margin:0;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:19px;color:var(--ink)}
 .cp-msg .note-s{margin:0;font-size:14px;color:var(--ink2)}
@@ -371,3 +365,14 @@ section[id]{scroll-margin-top:70px}
 /* Panel 2 (04/11/2026) : bouton « Une question ? » masqué tant qu'on est en haut de l'accueil */
 #cp-chat-btn{transition:opacity .3s,bottom .35s}
 .cp-attente #cp-chat-btn{opacity:0;pointer-events:none}
+
+/* Ce qui vous protège (04/11/2026) */
+.cp-gar{margin:36px 0 8px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--ink);padding:24px 28px}
+.cp-gar h3{margin:0 0 16px;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:22px;color:var(--ink)}
+.cp-gar-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.cp-gar-g b{display:block;font-family:Archivo,Arial,sans-serif;font-size:17px;color:var(--ink);margin-bottom:6px}
+.cp-gar-g p{margin:0;font-size:15.5px;line-height:1.5;color:var(--ink2)}
+.cp-gar-plus{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink2)}
+.cp-gar a{color:var(--or-d,#c2410c);font-weight:600}
+@media (max-width:960px){.cp-gar-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.cp-gar{padding:20px 18px}.cp-gar-g{grid-template-columns:1fr;gap:16px}}
