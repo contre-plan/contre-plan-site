@@ -72,14 +72,26 @@ h1{font-size:clamp(32px,5.5vw,48px)!important}
 <label class="cp-opt"><input type="radio" name="formule" value="3" data-href="https://buy.stripe.com/14A00l1N22bE1QPdMAcMM04" data-prix="49 €"><span class="d"><b>3 devis comparés</b><small>Trois entreprises pour les mêmes travaux, avec le même comparatif.</small></span><span class="p">49 €</span></label>
 </div>
 <p class="cp-ord-plus">Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
-<a class="btn xl" id="cp-pay" href="https://buy.stripe.com/28EaEZ1N22bE7b95g4cMM00" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>
-<p class="cp-total">Total à payer : <b class="pt">16,50 €</b>, ou <b class="pte">22 €</b> avec l'express 24 h. Aucun autre frais.</p>
-<p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>
 </section>
 
 <section class="cp-ord-box" aria-labelledby="t-envoi">
-<h2 id="t-envoi"><span class="n">2</span>Envoyez votre devis par e-mail</h2>
-<p>Juste après le paiement, envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet.</p>
+<h2 id="t-envoi"><span class="n">2</span>Déposez votre devis, puis payez</h2>
+<form class="cp-form cp-depot" id="cp-depot" data-url="https://script.google.com/macros/s/AKfycbwUD6PIch2wcRBzXcPvxwAPp-DCui7ebi5LWBVc9HNg2SG8_UJ8CmmseerUxCMAn1q0/exec" novalidate>
+<label>Votre devis <small class="cp-hint">PDF ou photo nette. Trois fichiers et 10 Mo au maximum. Vous pouvez masquer votre nom et votre adresse.</small><input type="file" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required></label>
+<label>Votre adresse e-mail <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required></label>
+<div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
+<label>Ce qui vous inquiète (facultatif) <textarea name="message" rows="3" maxlength="2000"></textarea></label>
+<label class="cp-chk"><input type="checkbox" name="accord" required><span>Je veux que l'analyse commence dès réception de mon devis, sans attendre la fin du délai de rétractation de 14 jours. Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). <small class="cp-hint">Sans cet accord, la loi m'oblige à attendre 14 jours avant de commencer.</small></span></label>
+<input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
+<div class="cp-depot-st" role="status" aria-live="polite"></div>
+<p class="cp-form-rgpd">Votre devis est rangé dans l'espace Google de Contre-Plan, utilisé seulement pour l'analyse, jamais transmis à une entreprise, et supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+</form>
+<p class="cp-total">Total à payer : <b class="pt">16,50 €</b>, ou <b class="pte">22 €</b> avec l'express 24 h. Aucun autre frais.</p>
+<p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>
+<details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
+<p>Payez, puis envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet.</p>
+<a class="btn" id="cp-pay" href="https://buy.stripe.com/28EaEZ1N22bE7b95g4cMM00" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>
 <div class="cp-tpl cp-msg"><pre id="msg-devis">Bonjour,
 Voici mon devis en pièce jointe.
 Formule payée : …
@@ -90,6 +102,7 @@ Ce qui m&#x27;inquiète : …
 Je veux que l&#x27;analyse commence tout de suite, sans attendre la fin du délai de rétractation de 14 jours. Je sais qu&#x27;une fois le rapport livré, je ne pourrai plus me rétracter.</pre>
 <div class="cp-ord-act"><a class="btn dark" href="mailto:contact@contre-plan.com?subject=Mon%20devis%20%C3%A0%20analyser&body=Bonjour%2C%0AVoici%20mon%20devis%20en%20pi%C3%A8ce%20jointe.%0AFormule%20pay%C3%A9e%20%3A%20%E2%80%A6%0AE-mail%20utilis%C3%A9%20pour%20le%20paiement%20%3A%20%E2%80%A6%0ATravaux%20%3A%20%E2%80%A6%0AJe%20dois%20r%C3%A9pondre%20%C3%A0%20l%27artisan%20avant%20le%20%3A%20%E2%80%A6%0ACe%20qui%20m%27inqui%C3%A8te%20%3A%20%E2%80%A6%0AJe%20veux%20que%20l%27analyse%20commence%20tout%20de%20suite%2C%20sans%20attendre%20la%20fin%20du%20d%C3%A9lai%20de%20r%C3%A9tractation%20de%2014%20jours.%20Je%20sais%20qu%27une%20fois%20le%20rapport%20livr%C3%A9%2C%20je%20ne%20pourrai%20plus%20me%20r%C3%A9tracter." data-goatcounter-click="ouvrir-mail-devis">Ouvrir mon e-mail avec ce message</a><button type="button" class="cp-copy" data-copy="msg-devis" data-goatcounter-click="copie-message-devis">Copier le message</button></div>
 <p class="note-s">Envoyez-le à <b>contact@contre-plan.com</b>, devis en pièce jointe (PDF ou photo nette). Vous pouvez masquer votre nom et votre adresse. La dernière phrase est l'accord prévu à l'<a href="cgv.html#retractation">article 6 des conditions de vente</a> : sans lui, je dois vous le demander avant de commencer, ce qui retarde le rapport.</p></div>
+</details>
 </section>
 
 <section class="cp-ord-box" aria-labelledby="t-rapport">
