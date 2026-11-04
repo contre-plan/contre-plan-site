@@ -1,6 +1,6 @@
 /* Éléments interactifs Contre-Plan : test, avant/après, calcul, barre mobile */
 .cp-box{background:#fff;border:1px solid #d8dee6;border-radius:2px;padding:clamp(20px,4vw,40px);display:flex;flex-direction:column;gap:20px}
-.cp-kicker{align-self:flex-start;background:#bf4a17;color:#fff;font-weight:700;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 14px}
+.cp-kicker{align-self:flex-start;background:#bf4a17;color:#fff;font-weight:600;font-size:15px;letter-spacing:0;padding:6px 12px;border-radius:4px}
 /* Test */
 .cp-test-bar{height:8px;background:#e6e9ee;border-radius:2px;overflow:hidden}
 .cp-test-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#bf4a17,#e8733c);border-radius:2px;transition:width .45s cubic-bezier(.2,.7,.2,1)}

@@ -29,7 +29,7 @@ a{color:var(--or-d)}a:hover{color:#9a330a}
 .plain{background:var(--paper)}
 
 /* Étiquette orange des slides */
-.tag{display:inline-block;background:var(--tag);color:#fff;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:13px;letter-spacing:2.5px;text-transform:uppercase;padding:6px 12px 5px;border-radius:2px;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.tag{display:inline-block;background:var(--tag);color:#fff;font-family:'Source Sans 3',Arial,sans-serif;font-weight:600;font-size:15px;letter-spacing:0;padding:5px 12px;border-radius:4px;box-shadow:none}
 .tag.ink{background:var(--ink)}
 .hand{font-family:Caveat,'Comic Sans MS',cursive;font-weight:700}
 
@@ -118,7 +118,7 @@ a{color:var(--or-d)}a:hover{color:#9a330a}
 
 /* Test : on garde les composants de site.css, avec la carte papier */
 #test .cp-box{background:#fff;border:0;border-radius:3px;box-shadow:0 20px 44px -22px rgba(20,40,75,.5)}
-#test .cp-kicker{background:var(--tag);color:#fff;font-family:Archivo,Arial,sans-serif;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;font-size:13px;padding:6px 12px 5px;border-radius:2px;display:inline-block}
+#test .cp-kicker{background:var(--tag);color:#fff;font-family:'Source Sans 3',Arial,sans-serif;font-weight:600;letter-spacing:0;font-size:15px;padding:6px 12px 5px;border-radius:2px;display:inline-block}
 #test h2{color:var(--ink);margin:14px 0 6px}
 .cp-test-bar i{background:var(--or)!important}
 .cp-opts button[aria-pressed="true"]{background:var(--ink)!important;border-color:var(--ink)!important;color:#fff!important}
@@ -163,7 +163,7 @@ a{color:var(--or-d)}a:hover{color:#9a330a}
 
 /* Tarifs façon devis */
 .tarif{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:start;margin-top:40px}
-.devis.prices{transform:rotate(-.6deg);padding:30px 32px 26px}
+.devis.prices{transform:none;padding:30px 32px 26px}
 .devis.prices .l{grid-template-columns:1fr auto;padding:16px 0}
 .devis.prices .l b{display:block;color:var(--ink);font-size:18px}
 .devis.prices .l small{display:block;font-size:14.5px;color:var(--mute);margin-top:2px}
@@ -232,7 +232,7 @@ a{color:var(--or-d)}a:hover{color:#9a330a}
   linear-gradient(90deg,rgba(255,255,255,.3) 1px,transparent 1px) 0 100%/16px 7px repeat-x,
   linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)) 0 100%/100% 2px no-repeat}
 .cp-ph h1{letter-spacing:-.5px;text-wrap:balance}
-.cp-kick{display:inline-block!important;background:var(--tag)!important;color:#fff!important;font-family:Archivo,Arial,sans-serif;font-weight:800!important;font-size:13px!important;letter-spacing:2.5px!important;text-transform:uppercase;padding:6px 12px 5px!important;border-radius:2px;box-shadow:0 3px 0 rgba(0,0,0,.18);align-self:flex-start}
+.cp-kick{display:inline-block!important;background:var(--tag)!important;color:#fff!important;font-family:'Source Sans 3',Arial,sans-serif;font-weight:600!important;font-size:15px!important;letter-spacing:0!important;text-transform:none;padding:5px 12px!important;border-radius:4px;box-shadow:none;align-self:flex-start}
 .cp-crumbs,.cp-crumbs a{color:#b9c7e2!important}
 .cp-lead{color:#d3ddf0!important}
 .cp-wrap{background:transparent}

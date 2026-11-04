@@ -92,8 +92,7 @@ def FOOTER(root=""):
         e = f' data-goatcounter-click="{ev}"' if ev else ""
         return f'<a href="{root}{h}"{e}>{t}</a>'
     soc = "".join(f'<a href="{u}" target="_blank" rel="noopener me" data-goatcounter-click="{ev}" class="cp-soc">{t}</a>' for u, t, ev in [
-        ("https://www.tiktok.com/@contreplan_", "TikTok", "clic-tiktok"), ("https://www.instagram.com/contreplan_/", "Instagram", "clic-instagram"),
-        ("https://www.pinterest.fr/contreplan/", "Pinterest", "clic-pinterest")])
+        ("https://www.tiktok.com/@contreplan_", "TikTok", "clic-tiktok"), ("https://www.instagram.com/contreplan_/", "Instagram", "clic-instagram")])
     return f"""<footer class="cp-foot"><div class="cp-foot-in">
 <div class="cp-foot-brand"><div class="cp-foot-logo">CONTRE-PLAN</div><p>Votre devis de travaux relu par un ingénieur BTP avant que vous signiez. 100 % à distance, indépendant de tout artisan.</p><div class="cp-socs">{soc}</div></div>
 <div class="cp-foot-col"><p>Le service</p>{L("methode.html","Ma méthode")}{L("engagements.html","Mes engagements")}{L("votre-cas.html","Votre cas est-il couvert ?")}{L("achat-avec-travaux.html","Achat avec travaux")}{L("professionnels.html","Professionnels")}{L("exemple-rapport-contre-plan.pdf","Exemple de rapport","telechargement-exemple-rapport")}{L("index.html#tarifs","Tarifs")}{L("contact.html","Contact")}<a href="commander.html" data-goatcounter-click="clic-commander-pied">Commander une analyse</a></div>
@@ -1386,7 +1385,7 @@ _ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envo
 open(os.path.join(OUT, "commande-confirmee.html"), "w").write(_ok)
 
 # ---------- 404 (absolute paths: served at any URL)
-p404 = head("Page introuvable | Contre-Plan", "Cette page n'existe pas ou a été déplacée.", "https://contre-plan.com/404.html", root="/").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">') + f'''<main id="contenu" class="bp" style="min-height:60vh">
+p404 = head("Page introuvable | Contre-Plan", "Cette page n'existe pas ou a été déplacée.", "https://contre-plan.com/404.html", root="/").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">').replace('<link rel="canonical" href="https://contre-plan.com/404.html">\n','') + f'''<main id="contenu" class="bp" style="min-height:60vh">
 <div style="max-width: 760px; margin: 0 auto; padding: 120px 24px; display:flex; flex-direction:column; gap:24px; align-items:flex-start;">
 <span class="tag">Erreur 404</span>
 <h1 style="margin:0;font-family:Archivo,Arial,sans-serif;font-weight:800;line-height:1.05;color:#fff">Ce poste ne figure pas <span style="color:var(--or)">sur le plan.</span></h1>
