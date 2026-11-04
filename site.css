@@ -235,3 +235,4 @@ h1,h2,h3{text-wrap:balance}
 .cp-foot-bottom{justify-content:flex-start;column-gap:24px}
 @media (max-width:600px){.cp-foot-bottom{flex-direction:column;gap:8px}}
 #cp-test.cp-pas .cp-q:not(.cur):not(.done){display:none}
+.cp-ord-gar ul{margin:6px 0 0;padding-left:18px}.cp-ord-gar li{margin:6px 0;font-size:15px;line-height:1.45}

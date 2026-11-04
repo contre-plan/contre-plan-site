@@ -1418,6 +1418,12 @@ ORDER = f'''<main id="contenu" class="cp-order">
 </section>
 
 <div class="cp-ord-side">
+<div class="cp-ord-note cp-ord-gar"><p class="t">Ce qui vous protège</p><ul>
+<li><b>Paiement sécurisé</b> par Stripe : je ne vois jamais vos données bancaires.</li>
+<li><b>Devis privé</b> : nom et adresse masquables, jamais transmis à une entreprise.</li>
+<li><b>Aucune commission</b> d'artisan : un avis indépendant.</li>
+<li><b>Des recours</b> : <a href="cgv.html">CGV</a>, rétractation de 14 jours, médiateur CM2C.</li>
+</ul></div>
 <div class="cp-ord-note"><p class="t">Devis de plus de 30 000 € ou rénovation complète ?</p><p>Demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous annonce le prix avant toute commande.</p></div>
 <div class="cp-ord-note"><p class="t">Vous préférez passer par ComeUp ?</p><p>Compte gratuit, prix affichés sur la plateforme. La plateforme conserve le paiement jusqu'à la livraison du rapport, et vous envoyez le devis dans la messagerie de la commande. Options à cocher :</p><ul><li>1 devis : aucune ;</li><li>2 devis comparés : « Devis supplémentaire » et « Comparatif » ;</li><li>3 devis comparés : « Devis supplémentaire », « Troisième devis » et « Comparatif ».</li></ul><a href="{COMEUP}" data-goatcounter-click="clic-comeup-commander">Commander sur ComeUp</a></div>
 <p class="cp-ord-legal">Droit de rétractation de 14 jours, dans les conditions de l'<a href="cgv.html#retractation">article 6 des CGV</a>. Médiateur de la consommation : CM2C. TVA non applicable, article 293 B du CGI.</p>
