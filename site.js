@@ -9,6 +9,7 @@
   /* ---------- Mini-test ---------- */
   function test() {
     var box = document.getElementById('cp-test'); if (!box) return;
+    box.classList.add('cp-pas');
     var qs = box.querySelectorAll('.cp-q'), bar = box.querySelector('.cp-test-bar i'), res = box.querySelector('.cp-res'), cnt = box.querySelector('.cp-test-n'), done = false, last = false;
     function summary() {
       var out = [];
@@ -146,6 +147,8 @@
         if (!r.checked) return;
         pay.href = r.getAttribute('data-href');
         pay.querySelector('.pp').textContent = r.getAttribute('data-prix');
+        var pt = document.querySelector('.cp-total .pt'), pte = document.querySelector('.cp-total .pte');
+        if (pt && pte) { var v = parseFloat(r.getAttribute('data-prix').replace(',', '.')); pt.textContent = r.getAttribute('data-prix'); var e = v + 5.5; pte.textContent = (e % 1 ? e.toFixed(2).replace('.', ',') : String(e)) + '\u00a0€'; }
         pay.setAttribute('data-goatcounter-click', 'clic-stripe-' + r.value);
         gc('formule-' + r.value);
       });
@@ -206,7 +209,13 @@
       });
     });
   }
-  function start() { test(); slider(); calc(); bar(); copy(); when(); order(); depot(); }
+  /* ---------- Accueil : bouton « Une question ? » affiché seulement après le haut de page ---------- */
+  function attente() {
+    if (!document.querySelector('.hero2')) return;
+    var b = document.body; function f() { b.classList.toggle('cp-attente', scrollY < innerHeight * 0.6); }
+    f(); addEventListener('scroll', f, { passive: true });
+  }
+  function start() { test(); slider(); calc(); bar(); copy(); when(); order(); depot(); attente(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 
   (function () {

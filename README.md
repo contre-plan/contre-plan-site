@@ -32,7 +32,7 @@ Le bouton « Une question ? » propose deux chemins : une orientation en 3 quest
 
 ## Identité visuelle (brand.css)
 
-`brand.css` aligne le site sur les carrousels : fond « plan bleu » quadrillé, devis papier scotché, surligneur jaune, feutre rouge, étiquettes orange. Il est chargé après `site.css` sur toutes les pages (accueil, pages générées par `tools/build.py`, mentions légales). Polices : Archivo, Source Sans 3, Caveat (annotations manuscrites). `anim.css` et `anim.js` ne sont plus chargés.
+`brand.css` aligne le site sur les carrousels : fond « plan bleu » quadrillé, devis papier scotché, surligneur jaune, feutre rouge, étiquettes orange. Il est chargé après `site.css` sur toutes les pages (accueil, pages générées par `tools/build.py`, mentions légales). Polices : Archivo, Source Sans 3, Caveat (annotations manuscrites). (`anim.css` et `anim.js` supprimés le 04/11/2026.)
 
 ## FAQ et données structurées des pages générées
 - Guides : la FAQ de chaque guide est dans le dictionnaire `FAQS` de `tools/build.py` (section « Questions fréquentes » visible + données structurées FAQPage). La date de mise à jour affichée et `dateModified` viennent de `UPDATED` : la changer quand un guide est réellement mis à jour.

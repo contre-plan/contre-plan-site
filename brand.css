@@ -222,15 +222,8 @@ a{color:var(--or-d)}a:hover{color:#9a330a}
 .final .sec{padding:96px 0 120px}
 
 /* ===== Pages générées (guides, pages de service) ===== */
-.cp-ph{background:
-  linear-gradient(var(--grid-d) 2px,transparent 2px),linear-gradient(90deg,var(--grid-d) 2px,transparent 2px),
-  linear-gradient(var(--grid-d2) 1px,transparent 1px),linear-gradient(90deg,var(--grid-d2) 1px,transparent 1px),
-  radial-gradient(ellipse at 20% 0%,var(--bp1),var(--bp2) 50%,var(--bp3) 100%)!important;
-  background-size:160px 160px,160px 160px,32px 32px,32px 32px,100% 100%!important;position:relative;padding-bottom:70px!important}
-.cp-ph::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22px;
-  background:linear-gradient(90deg,rgba(255,255,255,.5) 2px,transparent 2px) 0 100%/80px 16px repeat-x,
-  linear-gradient(90deg,rgba(255,255,255,.3) 1px,transparent 1px) 0 100%/16px 7px repeat-x,
-  linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)) 0 100%/100% 2px no-repeat}
+.cp-ph{background:radial-gradient(ellipse at 20% 0%,var(--bp1),var(--bp2) 50%,var(--bp3) 100%)!important;position:relative;padding-bottom:56px!important}
+.cp-ph::after{content:none}
 .cp-ph h1{letter-spacing:-.5px;text-wrap:balance}
 .cp-kick{display:inline-block!important;background:var(--tag)!important;color:#fff!important;font-family:'Source Sans 3',Arial,sans-serif;font-weight:600!important;font-size:15px!important;letter-spacing:0!important;text-transform:none;padding:5px 12px!important;border-radius:4px;box-shadow:none;align-self:flex-start}
 .cp-crumbs,.cp-crumbs a{color:#b9c7e2!important}
