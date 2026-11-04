@@ -212,6 +212,7 @@ LINKS = {
     'guide-annuler-devis-signe-retractation': [(SP + "F23224", "Démarchage à domicile : règles à respecter"), (SP + "F2434", "Crédit affecté")],
     'guide-reception-travaux-reserves': [(SP + "F2958", "Garanties après la réception des travaux")],
     'guide-artisan-retard-chantier-que-faire': [(SP + "F2533", "Devis et contrat avant des travaux"), (SP + "F1736", "Conciliateur de justice"), ("https://www.inc-conso.fr/content/vous-mettez-en-demeure-un-artisan-de-terminer-les-travaux", "Mettre en demeure un artisan de terminer les travaux (INC)")],
+    'guide-artisan-injoignable-apres-acompte': [(SP + "F31187", "Acompte, arrhes, avance : quelles différences ?"), (SP + "F47157", "SignalConso : signaler un problème avec un professionnel"), (SP + "F1520", "Escroquerie : que faire, porter plainte")],
     'guide-mentions-obligatoires-devis': [(SP + "F2533", "Devis et contrat avant des travaux"), ("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements")],
     'guide-acompte-paiement-devis-travaux': [(SP + "F31187", "Acompte, arrhes, avance : quelles différences ?"), ("https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/vente-hors-etablissement-soyez-vigilant", "Vente hors établissement (DGCCRF)")],
     'guide-oublis-devis-salle-de-bain': [(SP + "F288", "Habitat contenant de l'amiante"), ("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements")],
@@ -541,7 +542,7 @@ article("guide-acompte-paiement-devis-travaux",
  "Un acompte trop élevé, c'est vous qui financez le chantier à la place de l'entreprise, et c'est votre seul levier qui disparaît en cas de problème. Voici comment caler les paiements.",
  '''<h2>Combien verser à la signature ?</h2>
 <p>Aucun texte ne fixe un plafond général d'acompte pour des travaux chez un particulier. L'usage est d'environ <strong>30 % à la signature</strong>, parfois un peu plus si l'entreprise doit commander des matériaux sur mesure (menuiseries, cuisine). Au-delà de 40 à 50 %, demandez pourquoi et proposez un échéancier.</p>
-<div class="note"><p><strong>À éviter :</strong> payer l'intégralité avant le début des travaux. Si le chantier dérape ou si l'entreprise disparaît, vous n'avez plus aucun moyen de pression.</p></div>
+<div class="note"><p><strong>À éviter :</strong> payer l'intégralité avant le début des travaux. Si le chantier dérape ou si l'entreprise disparaît, vous n'avez plus aucun moyen de pression (voir <a href="guide-artisan-injoignable-apres-acompte.html">que faire si l'artisan est injoignable après l'acompte</a>).</p></div>
 <h2>Acompte ou arrhes : ce n'est pas la même chose</h2>
 <p>Avec des <strong>arrhes</strong>, chacun peut renoncer : vous en perdant les arrhes, l'entreprise en vous rendant le double. Avec un <strong>acompte</strong>, le contrat est ferme des deux côtés. Sauf mention contraire, les sommes versées d'avance sont considérées comme des arrhes. Vérifiez le mot employé sur le devis.</p>
 <h2>Devis signé chez vous : attention au démarchage</h2>
@@ -700,6 +701,7 @@ article("guide-artisan-retard-chantier-que-faire",
 </ul>
 <div class="note"><p><strong>Avant de faire venir une autre entreprise :</strong> faites constater l'état exact du chantier (photos datées, et si possible constat), conservez le devis du remplaçant et sa facture. Vous devrez prouver ce qui restait à faire et ce que cela vous a coûté.</p></div>
 <h2>L'artisan ne répond plus : médiateur, conciliateur, tribunal</h2>
+<p>Si le silence a commencé juste après le versement de l'acompte et que le chantier n'a jamais démarré, voyez plutôt <a href="guide-artisan-injoignable-apres-acompte.html">le guide sur l'artisan injoignable après l'acompte</a>.</p>
 <p>Deux recours amiables et gratuits existent avant la justice.</p>
 <ul>
 <li><strong>Le médiateur de la consommation</strong> : l'entreprise doit vous communiquer ses coordonnées, en pratique sur le devis, dans ses conditions générales ou sur son site. Vous devez d'abord avoir adressé une réclamation écrite à l'entreprise, puis saisir le médiateur dans l'année qui suit. Il propose une solution en principe sous 90 jours, que chaque partie reste libre d'accepter ou de refuser.</li>
@@ -718,6 +720,66 @@ article("guide-artisan-retard-chantier-que-faire",
 <p>Pour la liste complète de ce qu'un devis doit contenir, voyez <a href="guide-mentions-obligatoires-devis.html">les mentions obligatoires d'un devis de travaux</a>.</p>
 <p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale, à jour au 28 octobre 2026, qui ne remplace pas un conseil juridique. Sources : articles L216-1, L216-6, L216-7, L241-4 et R212-2 du Code de la consommation, articles 1217 à 1219, 1222, 1224 à 1226, 1231 et 1231-1 du Code civil, service-public.gouv.fr (devis et contrat de travaux, conciliateur de justice, médiation des litiges de la consommation, achat à distance : livraison ou exécution du service), economie.gouv.fr (livraison : quels sont vos droits), INC (la livraison : vos droits et recours, prestation de services non exécutée malgré la mise en demeure, mise en demeure d'un artisan de terminer les travaux).</p>''',
  7, date="2026-10-28")
+
+article("guide-artisan-injoignable-apres-acompte",
+ "Artisan injoignable après l'acompte : que faire ?",
+ "Artisan injoignable après l'acompte : que faire pour être remboursé",
+ "Artisan injoignable après l'acompte : que faire ? Message écrit, mise en demeure, remboursement, médiateur, SignalConso, plainte ou liquidation, dans l'ordre.",
+ "Votre artisan est injoignable après l'acompte : la date de démarrage est passée et il ne répond ni au téléphone ni aux messages. Voici les étapes pour faire démarrer le chantier ou récupérer votre argent, dans l'ordre, en commençant par ce que dit votre devis.",
+ '''<h2>Artisan injoignable après l'acompte : que faire en premier ?</h2>
+<p>Avant la lettre recommandée, je commence toujours par trois vérifications.</p>
+<ul>
+<li><strong>Le devis signé.</strong> Relevez la date de début prévue, le mot employé pour la somme versée (acompte ou arrhes), le montant, la date et le moyen de paiement (virement, chèque, carte).</li>
+<li><strong>L'existence de l'entreprise.</strong> Tapez son SIRET sur l'<a href="https://annuaire-entreprises.data.gouv.fr/" target="_blank" rel="noopener">annuaire des entreprises de l'État</a>. Vous y voyez si elle est toujours en activité ; une procédure collective (redressement ou liquidation judiciaire) fait l'objet d'annonces officielles au BODACC.</li>
+<li><strong>Vos tentatives de contact.</strong> Un appel sans réponse ne prouve rien : écrivez un SMS ou un courriel qui rappelle le devis, et gardez les captures d'écran.</li>
+</ul>
+<p>Un artisan débordé répond parfois à un message écrit, calme et précis. Si le silence dure, passez aux étapes suivantes.</p>
+<h2>Combien de temps attendre avant d'agir ?</h2>
+<p>Cela dépend de ce que dit le devis.</p>
+<ul>
+<li><strong>Une date de début ou un délai ferme est écrit :</strong> le retard se mesure plus facilement, vous pouvez écrire dès le lendemain.</li>
+<li><strong>Aucune date n'est indiquée :</strong> en principe, le Code de la consommation impose au professionnel de fournir sa prestation sans retard injustifié et au plus tard 30 jours après la conclusion du contrat (article L216-1). Pour un chantier de plusieurs mois, ce délai se discute : faites écrire une date avant de payer. Ces règles protègent le particulier qui commande à titre privé.</li>
+</ul>
+<h2>Acompte ou arrhes : que pouvez-vous récupérer ?</h2>
+<p>Regardez le mot écrit sur le devis. Selon service-public.gouv.fr, avec un <strong>acompte</strong> le contrat est ferme des deux côtés : si l'entreprise ne fait pas les travaux, elle doit vous rembourser, et vous pouvez en principe demander réparation du préjudice. Avec des <strong>arrhes</strong>, l'entreprise qui renonce doit en principe vous rendre le double.</p>
+<p>Je ne compterais pas sur ce « double ». La fiche service-public traite la somme versée sans précision comme des arrhes, mais l'article L214-3 du Code de la consommation écarte ces règles pour les commandes spéciales sur devis : son application à un devis de travaux se discute, et les deux textes ne vont pas dans le même sens. Le chemin le plus sûr est la résolution décrite plus bas, qui vous fait réclamer ce que vous avez versé, sans dépendre de ce mot. Pour approfondir, voyez <a href="guide-acompte-paiement-devis-travaux.html">le guide sur l'acompte et l'échéancier</a>.</p>
+<div class="note"><p><strong>Conservez tout :</strong> le devis signé, le justificatif du paiement, les SMS, courriels et messages vocaux. Sans preuve de la somme versée et de ce qui a été promis, tous les recours qui suivent sont bien plus difficiles.</p></div>
+<h2>La mise en demeure en recommandé</h2>
+<p>Si le message écrit reste sans réponse, envoyez une <strong>lettre recommandée avec avis de réception</strong> à l'adresse du siège de l'entreprise, et doublez-la d'un courriel. Elle doit contenir :</p>
+<ul>
+<li>la référence et la date du devis, la nature des travaux, la date de démarrage prévue ;</li>
+<li>le montant de l'acompte, la date et le moyen de paiement ;</li>
+<li>le constat que le chantier n'a pas commencé et que vos messages sont restés sans réponse, avec les dates ;</li>
+<li>une demande claire : <strong>commencer les travaux à une date précise, ou rembourser l'acompte</strong>, dans un délai que vous fixez (de huit à quinze jours, par exemple) ;</li>
+<li>ce que vous ferez à défaut : résoudre le contrat et réclamer le remboursement.</li>
+</ul>
+<p>Des formulations prêtes à copier existent dans <a href="modeles-messages-artisan.html">les modèles de messages à l'artisan</a>. Voir aussi <a href="guide-artisan-retard-chantier-que-faire.html">le guide sur l'artisan en retard</a>.</p>
+<h2>Faut-il attendre l'issue de la mise en demeure pour récupérer l'acompte ?</h2>
+<p>Parfois. Le Code de la consommation (article L216-6) prévoit d'abord deux démarches : suspendre le paiement, ou résoudre le contrat (y mettre fin) si le professionnel, mis en demeure de s'exécuter dans un délai supplémentaire raisonnable, ne l'a pas fait. Il prévoit aussi une résolution immédiate, sans mise en demeure préalable, dans deux situations : le professionnel refuse de fournir le service ou il est manifeste qu'il ne le fournira pas, ou la date convenue était une condition essentielle du contrat pour vous.</p>
+<p>Un artisan qui ne répond plus à personne peut relever du premier cas, mais c'est à vous de le démontrer, et un silence est difficile à prouver. J'envoie donc toujours la mise en demeure : elle fixe une date et sert de preuve devant un médiateur ou un juge.</p>
+<p>La résolution se notifie par écrit (lettre recommandée, par exemple) et prend effet à la réception de ce courrier, sauf si l'artisan s'exécute entre-temps. Le professionnel doit alors en principe vous rembourser la totalité des sommes versées au plus tard dans les 14 jours suivant la date où le contrat a été dénoncé (article L216-7). Si le chantier est partiellement réalisé, le décompte est plus délicat : faites-vous conseiller. Et si vous aviez prévu d'autres paiements, vous pouvez, avant la résolution, notifier la suspension du paiement de tout ou partie du prix jusqu'à ce que l'entreprise s'exécute (article L216-6) : ne versez plus rien tant que le chantier n'a pas démarré.</p>
+<h2>Si l'artisan ne répond toujours pas : médiateur, SignalConso, justice</h2>
+<p>Plusieurs recours existent, qui ne s'excluent pas.</p>
+<ul>
+<li><strong>Le médiateur de la consommation</strong> et <strong>le conciliateur de justice</strong> : deux démarches gratuites et amiables, indiquées par service-public.gouv.fr. Pour le médiateur, adressez d'abord une réclamation écrite à l'entreprise ; ses coordonnées figurent en pratique sur le devis, les conditions générales ou le site. Chaque partie reste libre d'accepter la solution proposée. Le conciliateur de justice aide les deux parties à trouver un accord.</li>
+<li><strong>SignalConso</strong>, la plateforme de la DGCCRF, permet de signaler un problème de travaux (retard, non-respect du devis). Elle sert à alerter l'entreprise et l'administration ; elle ne garantit pas le remboursement, et ne remplace pas vos démarches personnelles.</li>
+<li><strong>Le tribunal</strong> : pour une demande en paiement d'une somme d'argent de 5 000 € ou moins, une tentative de résolution amiable (conciliation, médiation ou procédure participative) est en principe obligatoire avant de saisir le juge, sauf exceptions. Au-delà ou si l'enjeu est important, l'aide d'un juriste, d'une association de consommateurs ou de votre assurance protection juridique devient utile : votre assurance habitation en comprend peut-être une.</li>
+</ul>
+<h2>Que faire si l'entreprise a disparu ou est en liquidation ?</h2>
+<p>Deux situations très différentes.</p>
+<p><strong>L'entreprise est en procédure collective.</strong> Si l'annuaire des entreprises ou le BODACC signale une liquidation ou un redressement judiciaire, vous êtes un créancier : un liquidateur (liquidation) ou un mandataire judiciaire (redressement) intervient. Selon la fiche entreprendre.service-public.gouv.fr sur la liquidation judiciaire (des règles voisines existent pour le redressement), les créanciers déclarent leurs créances dans un délai de deux mois à compter de la publication du jugement d'ouverture au BODACC, et ce jugement arrête les poursuites individuelles : vous ne pouvez plus demander en justice le paiement d'une somme d'argent due par l'entreprise (pour une créance née avant le jugement). Déclarez donc votre créance à temps, avec votre devis et la preuve du paiement, au liquidateur (liquidation) ou au mandataire judiciaire (redressement) dont le nom figure dans l'annonce du BODACC. Je ne peux pas vous promettre que l'argent sera récupéré : il ne reste parfois rien.</p>
+<p><strong>L'entreprise a disparu sans procédure.</strong> Si l'adresse est inoccupée, si le SIRET reste introuvable après vérification sur le devis, ou si vous pensez qu'on a voulu prendre l'acompte sans jamais travailler, vous pouvez porter plainte. Selon service-public.gouv.fr, les commissariats et gendarmeries sont obligés d'enregistrer la plainte d'une victime d'infraction ; vous pouvez aussi écrire au procureur de la République ; la plainte en ligne ne concerne que certains cas, en principe quand l'auteur est inconnu, ce qui est rarement le cas quand vous avez le devis de l'entreprise. Service-public.gouv.fr indique 6 ans de prescription pour un délit comme l'escroquerie, à compter en principe des faits. Apportez le devis, les preuves de paiement et vos échanges. Seul un juge dira s'il s'agit d'une infraction ou d'un simple manquement au contrat : n'écrivez pas « escroquerie » dans vos courriers avant de le savoir.</p>
+<h2>Ce que je vérifie sur votre devis pour éviter ce scénario</h2>
+<p>Sur chaque devis, je regarde :</p>
+<ul>
+<li>le <strong>montant de l'acompte</strong> et le mot employé (acompte ou arrhes), avec un échéancier qui suit l'avancement du chantier ;</li>
+<li>le <strong>mode de paiement</strong> : un virement ou un chèque nominatif laisse une trace, des espèces n'en laissent aucune ;</li>
+<li>une <strong>date de début</strong> et un délai ferme écrits, pour pouvoir mesurer le retard ;</li>
+<li>l'existence réelle de l'entreprise (SIRET, adresse, ancienneté) et la présence de l'<a href="guide-verifier-assurance-decennale.html">attestation d'assurance décennale</a> ;</li>
+<li>les <a href="guide-mentions-obligatoires-devis.html">mentions obligatoires du devis</a>, et le médiateur de la consommation dont dépend l'entreprise, dont les coordonnées doivent vous être communiquées.</li>
+</ul>
+<p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale, à jour au 4 novembre 2026, qui ne remplace pas un conseil juridique. Sources : articles L216-1, L216-6 et L216-7 du Code de la consommation (legifrance.gouv.fr), service-public.gouv.fr (devis et contrat avant des travaux ; acompte, arrhes, avance : quelles différences ? ; porter plainte ; escroquerie), entreprendre.service-public.gouv.fr (liquidation judiciaire d'une société), annuaire des entreprises de l'État, SignalConso (DGCCRF), articles L214-1 à L214-3 du Code de la consommation.</p>''',
+ 7, date="2026-11-04")
 
 # ---------- Pages Méthode et Engagements
 # ---------- Nouveaux guides (tools/nouveaux_guides.py)
