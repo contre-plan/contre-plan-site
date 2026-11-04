@@ -236,3 +236,6 @@ h1,h2,h3{text-wrap:balance}
 @media (max-width:600px){.cp-foot-bottom{flex-direction:column;gap:8px}}
 #cp-test.cp-pas .cp-q:not(.cur):not(.done){display:none}
 .cp-ord-gar ul{margin:6px 0 0;padding-left:18px}.cp-ord-gar li{margin:6px 0;font-size:15px;line-height:1.45}
+.cp-depot input[type=file]{padding:10px;font-size:16px;cursor:pointer}
+.cp-depot input[type=file]::file-selector-button{margin-right:14px;padding:10px 16px;border:1.5px solid #14284b;border-radius:2px;background:#fff;color:#14284b;font:700 15px/1.2 "Source Sans 3",Arial,sans-serif;cursor:pointer}
+.cp-depot input[type=file]::file-selector-button:hover{background:#14284b;color:#fff}
