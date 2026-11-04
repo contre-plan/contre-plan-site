@@ -14,8 +14,8 @@ section[id]{scroll-margin-top:70px}
 .hero2-in{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:36px 24px 120px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center}
 .hero2 h1{margin:0 0 22px;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:clamp(40px,5.8vw,74px);line-height:.98;letter-spacing:-1.5px;color:#fff}
 .hero2 .h1-tag{display:table;margin:0 0 20px;line-height:1.2;letter-spacing:0}
-.hero2 h1 .or{color:var(--or);position:relative;white-space:nowrap}
-.hero2 h1 .or::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-.06em;height:.08em;background:var(--or);border-radius:3px;opacity:.9}
+
+
 .hero2 .lead{margin:0 0 30px;font-size:clamp(18px,1.9vw,21px);line-height:1.5;color:#d3ddf0;max-width:540px}
 .hero2 .ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .proof{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
@@ -271,8 +271,7 @@ section[id]{scroll-margin-top:70px}
 
 /* ===== Passe « cliquable » (audit de 1 000 web designers, 2e tour) ===== */
 /* L'orange réservé à l'achat : le titre passe au surligneur */
-.hero2 h1 .or{color:var(--hl)}
-.hero2 h1 .or::after{background:var(--hl)}
+
 .verdict i{background:var(--hl);color:var(--ink)}
 .st .q{border-left-color:var(--hl)}
 .story-doc .meter b{color:var(--hl)}

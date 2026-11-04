@@ -113,7 +113,7 @@ CTA = f'''<aside class="cp-cta-box bp">
 <p class="t">Un devis à signer ? Faites-le relire par un ingénieur BTP.</p>
 <p>Prix poste par poste, oublis, TVA, conditions de paiement : rapport PDF sous 48 h, {PRIX_TXT}.</p>
 <div class="row"><a class="btn" href="{CMD}" data-goatcounter-click="clic-commander">Faire analyser mon devis</a><a class="btn line" href="contact.html?sujet=prediagnostic" data-goatcounter-click="clic-prediagnostic">Pré-diagnostic gratuit</a></div>
-<small>Paiement par carte en 1 minute, sans compte. Rapport PDF sous 48 h, aucun engagement envers l'artisan.</small>
+<small>Paiement par carte en 1 minute, sans compte. Vous restez libre de signer ou non avec l'artisan.</small>
 </aside>'''
 
 DEC_SIDE = '<a href="comparer-deux-devis.html">Comparateur de deux devis</a><a href="decodeur-ligne-devis.html">Décodeur de ligne de devis</a><a href="verifier-mentions-devis.html">Contrôle des mentions du devis</a>' if DEC.DECODEUR_URL else ""
@@ -129,7 +129,8 @@ def slug_id(t):
 def pagehero(kicker, h1, lead, meta, crumbs):
     cr = ' <span aria-hidden="true">›</span> '.join(f'<a href="{h}">{html.escape(t)}</a>' if h else f'<span aria-current="page">{html.escape(t)}</span>' for t, h in crumbs)
     m = f'<p class="cp-meta">{meta}</p>' if meta else ''
-    return f'<section class="cp-ph"><div class="cp-ph-in"><nav class="cp-crumbs" aria-label="Fil d\'Ariane">{cr}</nav><span class="cp-kick">{kicker}</span><h1>{html.escape(h1)}</h1><p class="cp-lead">{lead}</p>{m}</div></section>'
+    k = '' if (not kicker or kicker.lower().split()[0][:6] in h1.lower()) else f'<span class="cp-kick">{kicker}</span>'
+    return f'<section class="cp-ph"><div class="cp-ph-in"><nav class="cp-crumbs" aria-label="Fil d\'Ariane">{cr}</nav>{k}<h1>{html.escape(h1)}</h1><p class="cp-lead">{lead}</p>{m}</div></section>'
 
 def crumbs_ld(crumbs, url):
     items = [{"@type":"ListItem","position":i+1,"name":t,"item":("https://contre-plan.com/" + (h if h != "index.html" else "")) if h else url} for i,(t,h) in enumerate(crumbs)]
@@ -200,7 +201,7 @@ FAQS = {
 UPDATED = {'guide-acompte-paiement-devis-travaux': "2026-10-26", 'guide-bien-demander-ses-devis': "2026-10-26", 'guide-mentions-obligatoires-devis': "2026-10-26", 'guide-oublis-devis-salle-de-bain': "2026-10-26", 'guide-reception-travaux-reserves': "2026-10-26", 'guide-tva-travaux-renovation': "2026-10-26"}
 for _s in ['guide-tva-travaux-renovation','guide-mentions-obligatoires-devis','guide-reception-travaux-reserves','guide-verifier-assurance-decennale','guide-negocier-devis-travaux','guide-depassement-devis-travaux-supplementaires','guide-annuler-devis-signe-retractation']:
     UPDATED[_s] = "2026-10-27"  # relecture et corrections du 27/10/2026
-AUTEUR = "Rédigé par l'<a href=\"methode.html\">ingénieur BTP de Contre-Plan</a> (10 ans dans le BTP avant la création de Contre-Plan, environ 1 000 devis lus)"
+AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur, ingénieur BTP</a> (10 ans de chantier, environ 1 000 devis lus)"
 
 # Liens vers les sources officielles (bloc « Pour aller plus loin », vérifiés le 27/10/2026)
 SP = "https://www.service-public.gouv.fr/particuliers/vosdroits/"
@@ -978,7 +979,7 @@ page("achat-avec-travaux",
 <li><b>Les bonnes questions</b> à poser aux entreprises avant de les retenir.</li></ul>
 <p>Le rapport n'est pas une expertise et n'a pas de valeur officielle pour la banque : il vous sert à faire corriger les devis avant de les joindre à votre dossier.</p>
 <h2>Plusieurs lots de travaux</h2>
-<p>Chaque devis transmis est analysé : jusqu'à 3 devis dans la même commande, avec les options « Devis supplémentaire » et « Troisième devis ». Pour une rénovation complète en plusieurs lots ou un devis tous corps d'état, demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous dis comment ils seront traités avant toute commande.</p>
+<p>Chaque devis transmis est analysé : formule 1 devis, puis + 11 € par devis pour des travaux différents (38,50 € pour trois devis, par exemple). Pour une rénovation complète en plusieurs lots ou un devis tous corps d'état, demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous dis comment ils seront traités avant toute commande.</p>
 <h2>Ce que l'analyse ne remplace pas</h2>
 <p>Elle se fait sur les devis, à distance. Elle ne remplace ni la visite du bien, ni les diagnostics immobiliers obligatoires, ni l'avis d'un expert en bâtiment si vous soupçonnez un désordre (fissures, humidité, charpente).</p>
 """, "Achat avec travaux", toc=True)
@@ -1002,7 +1003,7 @@ page("professionnels",
 <li><b>Il reçoit le rapport</b> par e-mail, sous 48 h.</li></ol>
 <p>Une hésitation ? Il peut d'abord demander un <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a>, sans compte ni paiement.</p>
 <h2>Plusieurs devis ou plusieurs lots</h2>
-<p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain transmet donc ses trois devis dans la même commande, avec les options « Devis supplémentaire » et « Troisième devis ». Pour plusieurs devis concurrents sur les mêmes travaux, l'option « comparatif » livre en plus un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
+<p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain les envoie dans la même commande : formule 1 devis, plus 11 € par devis supplémentaire, soit 38,50 €. Pour deux ou trois devis concurrents sur les mêmes travaux, les formules « devis comparés » (35 € ou 49 €) ajoutent un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
 <h2>Délais</h2>
 <p>Rapport sous 48 h après réception du devis, ou 24 h avec l'option express. Pratique quand un compromis ou une offre de prêt approche.</p>
 <h2>Achat d'un bien avec travaux</h2>
@@ -1012,7 +1013,7 @@ page("professionnels",
 <h2>Les limites</h2>
 <p>L'analyse est documentaire et à distance. Ce n'est ni une expertise judiciaire, ni un diagnostic technique du bâtiment, ni une mission de maîtrise d'œuvre, et elle n'intervient pas dans un litige déjà engagé.</p>
 <h2>Vous orientez régulièrement des clients ?</h2>
-<p>Écrivez-moi par le <a href="contact.html?sujet=professionnel">formulaire de contact</a> : nous convenons d'un fonctionnement adapté à votre volume (agence, courtier, syndic). Aucune commission n'est versée ni reçue.</p>
+<p>Écrivez-moi par le <a href="contact.html?sujet=professionnel">formulaire de contact</a> : je vous réponds par e-mail et je vous envoie la fiche de présentation à remettre à vos clients. Aucune commission n'est versée ni reçue.</p>
 <p>Pour un acquéreur, la page <a href="achat-avec-travaux.html">achat avec travaux</a> explique tout en une fois.</p>
 <h2>Ce que vous y gagnez</h2>
 <ul><li><b>Un client mieux préparé</b> : il connaît le vrai budget de ses travaux avant le compromis ou l'offre de prêt.</li>
@@ -1020,7 +1021,7 @@ page("professionnels",
 <li><b>Aucun conflit d'intérêts</b> : vous recommandez un avis indépendant, sans lien avec un artisan ni rémunération.</li></ul>
 <h2>Le message à transmettre à votre client</h2>
 <div class="cp-tpl"><pre id="tpl-pro">Bonjour,
-Avant de signer vos devis de travaux, vous pouvez les faire relire par un ingénieur BTP indépendant : rapport PDF sous 48 h (24 h en express), avec les oublis, les prix à vérifier et les questions à poser à l'entreprise. 16,50 € par devis, sans lien avec aucun artisan.
+Avant de signer vos devis de travaux, vous pouvez les faire relire par un ingénieur BTP indépendant : rapport PDF sous 48 h (24 h en express), avec les oublis, les prix à vérifier et les questions à poser à l'entreprise. À partir de 16,50 € pour un devis, sans lien avec aucun artisan.
 Tout est expliqué ici : contre-plan.com/achat-avec-travaux.html</pre><button type="button" class="cp-copy" data-copy="tpl-pro" data-goatcounter-click="copie-message-pro">Copier le message</button></div>
 <p>À imprimer ou à joindre à un e-mail : <a href="fiche-professionnels-contre-plan.pdf" target="_blank" rel="noopener" data-goatcounter-click="telechargement-fiche-pro">la fiche de présentation (PDF, 1 page)</a>, avec un QR code vers la page achat avec travaux.</p>
 <h2>Nous contacter</h2>
@@ -1133,7 +1134,7 @@ page("test-devis",
  "Prenez votre devis sous les yeux : six questions suffisent pour repérer ce qu'il faut faire préciser à l'artisan avant de signer.",
  r"""<div id="test">
 <div class="cp-box" id="cp-test">
-<p>Prenez votre devis sous les yeux et répondez. Rien n'est enregistré.</p>
+<p>Rien n'est enregistré.</p>
 <div class="cp-test-bar" aria-hidden="true"><i></i></div>
 <p class="cp-test-n" aria-live="polite">Question 1 sur 6</p>
 <div><div class="cp-q" data-tip="<b>Assurance décennale :</b> demandez l'attestation en cours de validité, qui couvre bien ces travaux."><p>1. Le nom de l'assureur décennal et la zone couverte figurent-ils sur le devis ?</p><div class="cp-opts"><button type="button" data-v="oui" aria-pressed="false">Oui</button><button type="button" data-v="non" aria-pressed="false">Non</button><button type="button" data-v="nsp" aria-pressed="false">Je ne sais pas</button></div></div>
@@ -1374,13 +1375,13 @@ if DEPOT_URL:
 <form class="cp-form cp-depot" id="cp-depot" data-url="{DEPOT_URL}" novalidate>
 <label>Votre devis <small class="cp-hint">PDF ou photo nette. Trois fichiers et 10 Mo au maximum. Vous pouvez masquer votre nom et votre adresse.</small><input type="file" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required></label>
 <label>Votre adresse e-mail <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required></label>
-<div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
+<div class="cp-f2"><label>Type de travaux (facultatif) <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le (facultatif) <input type="date" name="echeance"></label></div>
 <label>Ce qui vous inquiète (facultatif) <textarea name="message" rows="3" maxlength="2000"></textarea></label>
-<label class="cp-chk"><input type="checkbox" name="accord" required><span>Je veux que l'analyse commence dès réception de mon devis, sans attendre la fin du délai de rétractation de 14 jours. Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). <small class="cp-hint">Sans cet accord, la loi m'oblige à attendre 14 jours avant de commencer.</small></span></label>
+<label class="cp-chk"><input type="checkbox" name="accord" required><span>Je demande que l'analyse commence dès réception de mon devis, sans attendre la fin du délai de rétractation de 14 jours. Si j'annule avant la livraison, je paie seulement la part déjà faite ; une fois le rapport livré, je ne peux plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>).</span></label>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
 <div class="cp-depot-st" role="status" aria-live="polite"></div>
-<p class="cp-form-rgpd">Votre devis est rangé dans l'espace Google de Contre-Plan, utilisé seulement pour l'analyse, jamais transmis à une entreprise, et supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+<p class="cp-form-rgpd">Votre devis est stocké dans l'espace privé de Contre-Plan et sert uniquement à votre analyse, préparée avec des outils d'aide puis relue et validée par moi. Jamais transmis à une entreprise, il est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 {_PAY_SEC}
 <details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
@@ -1431,11 +1432,11 @@ ORDER = f'''<main id="contenu" class="cp-order">
 </div>
 </main>
 '''
-_cmd = head("Commander une analyse de devis | Contre-Plan", "Commandez l'analyse de votre devis de travaux : paiement par carte en 1 minute, devis envoyé par e-mail, rapport PDF sous 48 h.", "https://contre-plan.com/commander.html") + pagehero("Commander", "Commander votre analyse", "Paiement par carte en 1 minute, sans compte. Vous m'envoyez ensuite votre devis par e-mail, et le rapport arrive sous 48 h.", None, [("Accueil", "index.html"), ("Commander", None)]) + ORDER + footer()
+_cmd = head("Commander une analyse de devis | Contre-Plan", "Commandez l'analyse de votre devis de travaux : dépôt du devis en ligne, paiement par carte en 1 minute, rapport PDF sous 48 h.", "https://contre-plan.com/commander.html") + pagehero("Commander", "Commander votre analyse", "Déposez votre devis ci-dessous, payez par carte sans créer de compte, et recevez le rapport sous 48 h. Chaque rapport est relu et validé par Arthur, ingénieur BTP, avant envoi.", None, [("Accueil", "index.html"), ("Commander", None)]) + ORDER + footer()
 open(os.path.join(OUT, "commander.html"), "w").write(_cmd)
 PAGES.append("commander")
 
-_ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envoyez maintenant votre devis par e-mail.", "https://contre-plan.com/commande-confirmee.html").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">') + pagehero("Commande", "Paiement reçu, merci", "Dernière étape : envoyez-moi votre devis par e-mail. Le rapport arrive sous 48 h après sa réception (24 h en express).", None, [("Accueil", "index.html"), ("Paiement reçu", None)]) + f'''<main id="contenu" class="cp-order"><div class="cp-order-in">
+_ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envoyez maintenant votre devis par e-mail.", "https://contre-plan.com/commande-confirmee.html").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">') + pagehero("Commande", "Paiement reçu, merci", "Le rapport arrive sous 48 h après réception de votre devis (24 h en express). Vérifiez ci-dessous s'il vous reste quelque chose à faire.", None, [("Accueil", "index.html"), ("Paiement reçu", None)]) + f'''<main id="contenu" class="cp-order"><div class="cp-order-in">
 <section class="cp-ord-box cp-depot-ok" hidden><h2><span class="n">2</span>Votre devis est bien reçu</h2>
 <p>Vous l'avez déposé sur le site avant de payer (référence <b class="cp-depot-ref"></b>) : vous n'avez rien d'autre à faire.</p>
 </section>
@@ -1452,7 +1453,7 @@ open(os.path.join(OUT, "commande-confirmee.html"), "w").write(_ok)
 p404 = head("Page introuvable | Contre-Plan", "Cette page n'existe pas ou a été déplacée.", "https://contre-plan.com/404.html", root="/").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">').replace('<link rel="canonical" href="https://contre-plan.com/404.html">\n','') + f'''<main id="contenu" class="bp" style="min-height:60vh">
 <div style="max-width: 760px; margin: 0 auto; padding: 120px 24px; display:flex; flex-direction:column; gap:24px; align-items:flex-start;">
 <span class="tag">Erreur 404</span>
-<h1 style="margin:0;font-family:Archivo,Arial,sans-serif;font-weight:800;line-height:1.05;color:#fff">Ce poste ne figure pas <span style="color:var(--or)">sur le plan.</span></h1>
+<h1 style="margin:0;font-family:Archivo,Arial,sans-serif;font-weight:800;line-height:1.05;color:#fff">Ce poste ne figure pas sur le plan.</h1>
 <p style="margin:0;font-size:20px;line-height:1.5;color:#d3ddf0;">La page que vous cherchez n'existe pas ou a été déplacée.</p>
 <div style="display:flex;flex-wrap:wrap;gap:14px;"><a class="btn" href="/">Retour à l'accueil</a><a class="btn line" href="/guides.html">Lire les guides</a></div>
 </div>
