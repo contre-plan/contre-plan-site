@@ -33,3 +33,15 @@ Si « Tout le monde » n'apparaît pas, c'est un réglage de Google Workspace : 
 - Un dépôt sans paiement correspondant n'est pas une commande : ne lance pas l'analyse.
 - Les devis suivent la règle de la politique de confidentialité : supprimés au plus tard 12 mois après la livraison (et les dépôts sans paiement, au plus tard 30 jours après).
 - Si tu modifies `Code.gs` plus tard : **Déployer**, **Gérer les déploiements**, crayon, **Nouvelle version**. L'URL reste la même.
+
+## Mise à jour du 05/11/2026 : case facultative et confirmation de commande automatique
+
+1. **Clé Stripe en lecture seule** : Stripe > Développeurs > Clés API > **Créer une clé restreinte**. Nom : `Confirmation commandes`. Permission : **Checkout Sessions : Lecture** (tout le reste sur « Aucun »). Crée-la et copie la clé (`rk_live_…`).
+2. **Apps Script** (connecté avec contact@contre-plan.com, en fenêtre privée) : remplace tout `Code.gs` par la nouvelle version, enregistre.
+3. Roue dentée **Paramètres du projet** > **Propriétés du script** > Ajouter : nom `STRIPE_KEY`, valeur = la clé `rk_live_…`. Enregistre.
+4. Choisis la fonction **installer** > **Exécuter** et accepte les nouvelles autorisations (accès à un service externe, déclencheurs). Le journal doit afficher « Clé Stripe : présente ».
+5. **Déployer** > **Gérer les déploiements** > crayon > Version : **Nouvelle version** > Déployer. L'adresse /exec ne change pas.
+6. Test : choisis **testerConfirmation** > Exécuter. Tu reçois sur contact@ un exemple d'e-mail de confirmation avec les CGV en PDF.
+
+Ensuite, toutes les 15 minutes, chaque nouveau paiement Stripe déclenche l'e-mail de confirmation au client et un e-mail « Paiement reçu » pour toi. Les paiements antérieurs à l'installation ne sont pas concernés.
+Si les CGV changent : `python3 tools/make_cgv_pdf.py` pour régénérer `cgv-contre-plan.pdf`.

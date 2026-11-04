@@ -1377,7 +1377,7 @@ if DEPOT_URL:
 <label>Votre adresse e-mail <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required></label>
 <div class="cp-f2"><label>Type de travaux (facultatif) <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le (facultatif) <input type="date" name="echeance"></label></div>
 <label>Ce qui vous inquiète (facultatif) <textarea name="message" rows="3" maxlength="2000"></textarea></label>
-<label class="cp-chk"><input type="checkbox" name="accord" required><span>Je demande que l'analyse commence dès réception de mon devis, sans attendre la fin du délai de rétractation de 14 jours. Si j'annule avant la livraison, je paie seulement la part déjà faite ; une fois le rapport livré, je ne peux plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>).</span></label>
+<label class="cp-chk"><input type="checkbox" name="accord"><span>Je demande que l'analyse commence dès réception de mon devis, sans attendre la fin du délai de rétractation de 14 jours. Si j'annule avant la livraison, je paie seulement la part déjà faite ; une fois le rapport livré, je ne peux plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). <small class="cp-hint">Case facultative : sans elle, l'analyse commence à la fin du délai de 14 jours.</small></span></label>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
 <div class="cp-depot-st" role="status" aria-live="polite"></div>
@@ -1444,7 +1444,7 @@ _ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envo
 <p>Depuis l'adresse utilisée pour payer, ou en l'indiquant dans le message.</p>
 {_envoi("msg-devis-ok")}
 </section>
-<section class="cp-ord-box"><h2><span class="n">3</span>Recevez le rapport</h2><p>La facture vous arrive par e-mail de la part de Stripe. Le rapport PDF arrive par e-mail sous 48 h après réception du devis complet. Pensez à regarder vos courriers indésirables. Une question ? Répondez simplement à mon e-mail ou écrivez à contact@contre-plan.com.</p></section>
+<section class="cp-ord-box"><h2><span class="n">3</span>Recevez le rapport</h2><p>La facture vous arrive par e-mail de la part de Stripe, et une confirmation de commande de ma part dans l'heure (avec les conditions de vente et le formulaire de rétractation). Le rapport PDF arrive par e-mail sous 48 h après réception du devis complet. Pensez à regarder vos courriers indésirables. Une question ? Répondez simplement à mon e-mail ou écrivez à contact@contre-plan.com.</p></section>
 </div></main>
 ''' + footer()
 open(os.path.join(OUT, "commande-confirmee.html"), "w").write(_ok)

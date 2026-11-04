@@ -190,12 +190,11 @@
       for (i = 0; i < files.length; i++) tot += files[i].size;
       if (tot > 10 * 1024 * 1024) return err('Fichiers trop lourds : 10 Mo au total au maximum. Envoyez une photo moins lourde ou passez par l\'e-mail ci-dessous.');
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return err('Vérifiez votre adresse e-mail.');
-      if (!f.elements.accord.checked) return err('Cochez la demande de démarrage immédiat pour continuer.');
       btn.disabled = true; st.className = 'cp-depot-st'; st.textContent = 'Envoi de votre devis…';
       Promise.all([].map.call(files, lire)).then(function (arr) {
         return fetch(f.getAttribute('data-url'), { method: 'POST', body: JSON.stringify({
           formule: r ? r.value : '1', email: email, travaux: f.elements.travaux.value, echeance: f.elements.echeance.value,
-          message: f.elements.message.value, accord: true, site: f.elements.site.value, fichiers: arr }) });
+          message: f.elements.message.value, accord: f.elements.accord.checked, site: f.elements.site.value, fichiers: arr }) });
       }).then(function (x) { return x.json(); }).then(function (d) {
         if (!d || !d.ok) throw new Error((d && d.erreur) || '');
         try { sessionStorage.setItem('cp-depot', d.ref); } catch (x) {}
