@@ -13,12 +13,10 @@ section[id]{scroll-margin-top:70px}
 .hero2 .plan{position:absolute;right:-140px;top:60px;width:720px;opacity:.11;transform:rotate(-8deg);pointer-events:none;will-change:transform}
 .hero2-in{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:36px 24px 120px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center}
 .hero2 h1{margin:0 0 22px;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:clamp(40px,5.8vw,74px);line-height:.98;letter-spacing:-1.5px;color:#fff}
-.hero2 h1 .h1-tag{display:table;margin:0 0 20px;line-height:1.2;letter-spacing:0}
-.hero2 h1 .w{display:inline-block;opacity:0;transform:translateY(.5em) rotate(2deg);animation:wIn .7s cubic-bezier(.2,.8,.2,1) forwards}
+.hero2 .h1-tag{display:table;margin:0 0 20px;line-height:1.2;letter-spacing:0}
 .hero2 h1 .or{color:var(--or);position:relative;white-space:nowrap}
-.hero2 h1 .or::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-.06em;height:.08em;background:var(--or);border-radius:3px;transform:scaleX(0);transform-origin:left;animation:uLine .6s 1.4s cubic-bezier(.6,0,.2,1) forwards;opacity:.9}
+.hero2 h1 .or::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-.06em;height:.08em;background:var(--or);border-radius:3px;opacity:.9}
 .hero2 .lead{margin:0 0 30px;font-size:clamp(18px,1.9vw,21px);line-height:1.5;color:#d3ddf0;max-width:540px}
-.fade-in{opacity:0;transform:translateY(16px);animation:fIn .7s cubic-bezier(.2,.8,.2,1) forwards}
 .hero2 .ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .proof{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
 .proof span{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:#e4ebf7;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:8px 12px;border-radius:40px}
@@ -31,55 +29,45 @@ section[id]{scroll-margin-top:70px}
 .btn.xl{font-size:18px;padding:18px 28px}
 
 /* Devis animé */
-.live{position:relative;max-width:500px;justify-self:end;width:100%;transform:rotate(-2deg);opacity:0;animation:docIn .9s .35s cubic-bezier(.2,.8,.2,1) forwards}
+.live{position:relative;max-width:500px;justify-self:end;width:100%;transform:rotate(-2deg)}
 .live .devis{padding:26px 26px 20px}
 .live .l{position:relative}
-.scan{position:absolute;left:0;right:0;top:70px;height:70px;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(255,107,53,.18) 70%,rgba(255,107,53,.55) 96%,transparent);border-bottom:2px solid rgba(255,107,53,.8);opacity:0;animation:scan 1.6s 1.1s cubic-bezier(.5,0,.5,1) forwards}
+.scan{display:none}
 .note-m{grid-column:1/-1;display:block;font-family:Caveat,cursive;font-weight:700;font-size:23px;line-height:1;color:var(--pen);margin:8px 0 0;opacity:0;transform-origin:right;text-align:right}
 .live .hl{background-size:0 70%}
 .live .circ path{stroke-dasharray:100;stroke-dashoffset:100}
 .live .strike{position:relative}
 .live .strike::after{content:"";position:absolute;left:-4px;right:-4px;top:52%;border-top:2.5px solid var(--pen);transform:scaleX(0) rotate(-4deg);transform-origin:left}
 .go .s1 .hl{animation:hl .6s cubic-bezier(.3,.7,.3,1) forwards}
-.go .s1 .circ path{animation:pen .8s .35s ease-out forwards}
-.go .s1 .note-m{animation:noteIn .4s .9s cubic-bezier(.2,1.4,.4,1) forwards}
-.go .s2 .hl{animation:hl .6s 1.3s cubic-bezier(.3,.7,.3,1) forwards}
-.go .s2 .note-m{animation:noteIn .4s 1.8s cubic-bezier(.2,1.4,.4,1) forwards}
-.go .s3 .strike::after{animation:strike .45s 2.2s ease-out forwards}
-.go .s3 .note-m{animation:noteIn .4s 2.6s cubic-bezier(.2,1.4,.4,1) forwards}
+.go .s1 .circ path{animation:pen .6s .2s ease-out forwards}
+.go .s1 .note-m{animation:noteIn .3s .4s cubic-bezier(.2,1.4,.4,1) forwards}
+.go .s2 .hl{animation:hl .5s .5s cubic-bezier(.3,.7,.3,1) forwards}
+.go .s2 .note-m{animation:noteIn .3s .7s cubic-bezier(.2,1.4,.4,1) forwards}
+.go .s3 .strike::after{animation:strike .35s .8s ease-out forwards}
+.go .s3 .note-m{animation:noteIn .3s 1s cubic-bezier(.2,1.4,.4,1) forwards}
 .live .stamp{position:absolute;right:22px;bottom:-16px;background:#fff;font-size:16px;padding:6px 12px;opacity:0}
-.go .stamp{animation:stamp .4s 3.1s cubic-bezier(.2,1.6,.4,1) forwards}
+.go .stamp{animation:stamp .3s 1.2s cubic-bezier(.2,1.6,.4,1) forwards}
 .verdict{position:absolute;left:-28px;bottom:-84px;display:flex;align-items:center;gap:12px;background:var(--ink);color:#fff;padding:14px 18px;border-radius:6px;box-shadow:0 20px 40px -14px rgba(0,0,0,.6);transform:rotate(2deg) translateY(20px);opacity:0;font-size:15px;line-height:1.3;max-width:330px}
 .verdict b{display:block;font-family:Archivo,Arial,sans-serif;font-size:17px}
 .verdict i{flex:none;width:38px;height:38px;border-radius:50%;background:var(--or);display:grid;place-items:center;font-style:normal;font-family:Archivo,Arial,sans-serif;font-weight:800;color:var(--bp3);font-size:19px}
-.go .verdict{animation:verdict .6s 3.5s cubic-bezier(.2,1.2,.4,1) forwards}
+.go .verdict{animation:verdict .4s 1.3s cubic-bezier(.2,1.2,.4,1) forwards}
 .live .tagline{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;top:-40px;font-size:14px;color:#d3dbec;letter-spacing:.5px}
 
 /* ---------- Bandeau des pièges ---------- */
-.ticker{background:var(--paper);border-top:1px solid #e3e6ec;border-bottom:1px solid #e3e6ec;overflow:hidden;position:relative}
-.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-.ticker::before{left:0;background:linear-gradient(90deg,var(--paper),transparent)}
-.ticker::after{right:0;background:linear-gradient(-90deg,var(--paper),transparent)}
-.ticker-t{display:flex;gap:0;width:max-content;animation:tick 38s linear infinite}
-.ticker:hover .ticker-t{animation-play-state:paused}
-.ticker span{display:inline-flex;align-items:center;gap:18px;padding:22px 28px;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:clamp(18px,2.2vw,24px);color:var(--ink);white-space:nowrap}
-.ticker span s{text-decoration:none;position:relative}
-.ticker span s::after{content:"";position:absolute;left:-4px;right:-4px;top:55%;border-top:3px solid var(--pen);transform:rotate(-3deg)}
-.ticker span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--or);margin-left:28px}
 
 /* ---------- Révélations au défilement ---------- */
-.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv{transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .js .rv.in{opacity:1;transform:none}
-.js .rv-l{opacity:0;transform:translateX(-40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .rv-l{transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
 .js .rv-l.in{opacity:1;transform:none}
-.js .rv-s{opacity:0;transform:scale(.97);transition:opacity .8s,transform .8s cubic-bezier(.2,1.2,.3,1)}
+.js .rv-s{transition:opacity .8s,transform .8s cubic-bezier(.2,1.2,.3,1)}
 .js .rv-s.in{opacity:1;transform:none}
 
 /* ---------- Le devis décortiqué (défilement) ---------- */
 .story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;margin-top:48px;align-items:start}
 .story-steps{display:flex;flex-direction:column;gap:0}
-.st{min-height:40vh;display:flex;flex-direction:column;justify-content:center;padding:20px 0;opacity:.55;transition:opacity .4s}
-.st.on{opacity:1}
+.st{min-height:40vh;display:flex;flex-direction:column;justify-content:center;padding:20px 0;border-left:3px solid transparent;padding-left:20px;transition:border-color .3s}
+.st.on{border-left-color:var(--hl,#ffe14d)}
 .st .k{font-family:'Source Sans 3',Arial,sans-serif;font-weight:600;font-size:16px;color:var(--pen);margin:0 0 8px}
 .st h3{margin:0 0 10px;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:clamp(26px,3vw,36px);line-height:1.1;color:#fff}
 .st p{margin:0;font-size:18px;line-height:1.6;color:#d3ddf0;max-width:460px}
@@ -138,15 +126,9 @@ section[id]{scroll-margin-top:70px}
 .final2 .tag{align-self:auto}
 
 /* ---------- Keyframes ---------- */
-@keyframes wIn{to{opacity:1;transform:none}}
-@keyframes fIn{to{opacity:1;transform:none}}
-@keyframes uLine{to{transform:scaleX(1)}}
-@keyframes docIn{from{opacity:0;transform:rotate(4deg) translateY(40px) scale(.96)}to{opacity:1;transform:rotate(-2deg)}}
-@keyframes scan{0%{opacity:0;transform:translateY(-40px)}15%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translateY(230px)}}
 @keyframes noteIn{from{opacity:0;transform:rotate(-3deg) scale(.5)}to{opacity:1;transform:rotate(-3deg) scale(1)}}
 @keyframes strike{to{transform:scaleX(1) rotate(-4deg)}}
 @keyframes verdict{to{opacity:1;transform:rotate(2deg) translateY(0)}}
-@keyframes tick{to{transform:translateX(-50%)}}
 
 /* ---------- Mobile ---------- */
 @media (max-width:960px){
@@ -176,15 +158,13 @@ section[id]{scroll-margin-top:70px}
   .steps2.in .track i{transform:scaleY(1)}
   .steps2 li{display:grid;grid-template-columns:56px 1fr;gap:0 18px;padding:0}
   .steps2 h3{margin:6px 0 4px}.steps2 p{grid-column:2}
-  .ticker span{padding:16px 20px}
-  .final2 .sec{padding:90px 0 110px}
+    .final2 .sec{padding:90px 0 110px}
 }
 
 /* ---------- Mouvement réduit : tout s'affiche directement ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-delay:0s!important;transition-duration:.001s!important}
-  .ticker-t{animation:none!important;flex-wrap:wrap;width:auto}
-  .js .rv,.js .rv-l,.js .rv-s{opacity:1;transform:none}
+    .js .rv,.js .rv-l,.js .rv-s{opacity:1;transform:none}
   .st{opacity:1}
 }
 
@@ -387,3 +367,7 @@ section[id]{scroll-margin-top:70px}
 .bp.sec,.bp.final2{background:radial-gradient(ellipse at 25% 10%,var(--bp1),var(--bp2) 48%,var(--bp3) 100%)}
 .bp.sec .ruler,.bp.final2 .ruler{display:none}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Panel 2 (04/11/2026) : bouton « Une question ? » masqué tant qu'on est en haut de l'accueil */
+#cp-chat-btn{transition:opacity .3s,bottom .35s}
+.cp-attente #cp-chat-btn{opacity:0;pointer-events:none}

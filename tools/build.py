@@ -1128,13 +1128,11 @@ page("cas-fictifs",
 # ---------- Outils gratuits
 page("test-devis",
  "Test gratuit : votre devis de travaux est-il complet ?",
- "Votre devis de travaux passe-t-il le test ?",
+ "Votre devis de travaux passe‑t‑il le test ?",
  "Six questions pour vérifier en une minute si votre devis de travaux est complet : assurance décennale, acompte, détail des postes, gravats, TVA et délais.",
  "Prenez votre devis sous les yeux : six questions suffisent pour repérer ce qu'il faut faire préciser à l'artisan avant de signer.",
  r"""<div id="test">
 <div class="cp-box" id="cp-test">
-<span class="cp-kicker">1 minute, 6 questions</span>
-<h2>Votre devis passe-t-il le test ?</h2>
 <p>Prenez votre devis sous les yeux et répondez. Rien n'est enregistré.</p>
 <div class="cp-test-bar" aria-hidden="true"><i></i></div>
 <p class="cp-test-n" aria-live="polite">Question 1 sur 6</p>
@@ -1352,7 +1350,7 @@ E-mail utilisé pour le paiement : …
 Travaux : …
 Je dois répondre à l'artisan avant le : …
 Ce qui m'inquiète : …
-Je demande que l'analyse commence tout de suite, et je reconnais que je ne pourrai plus me rétracter une fois le rapport livré."""
+Je veux que l'analyse commence tout de suite, sans attendre la fin du délai de rétractation de 14 jours. Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter."""
 from urllib.parse import quote as _q
 MAILTO = "mailto:contact@contre-plan.com?subject=" + _q("Mon devis à analyser") + "&body=" + _q(MSG_DEVIS)
 def _envoi(id_):
@@ -1364,7 +1362,8 @@ def _f(v, titre, desc, prix, combo):
     chk = " checked" if v == "1" else ""
     return f'''<label class="cp-opt"><input type="radio" name="formule" value="{v}"{chk} data-href="{STRIPE[v]}" data-prix="{prix}"><span class="d"><b>{titre}</b><small>{desc}</small></span><span class="p">{prix}</span></label>'''
 
-_PAY_SEC = """<p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>"""
+_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">16,50 €</b>, ou <b class="pte">22 €</b> avec l'express 24 h. Aucun autre frais.</p>
+<p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>"""
 def _pay_btn(cls="btn xl"):
     return f'<a class="{cls}" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>'
 if DEPOT_URL:
@@ -1377,7 +1376,7 @@ if DEPOT_URL:
 <label>Votre adresse e-mail <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required></label>
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
 <label>Ce qui vous inquiète (facultatif) <textarea name="message" rows="3" maxlength="2000"></textarea></label>
-<label class="cp-chk"><input type="checkbox" name="accord" required><span>Je demande que l'analyse commence dès réception de mon devis, et je reconnais perdre mon droit de rétractation une fois le rapport livré (<a href="cgv.html#retractation">article 6 des CGV</a>).</span></label>
+<label class="cp-chk"><input type="checkbox" name="accord" required><span>Je veux que l'analyse commence dès réception de mon devis, sans attendre la fin du délai de rétractation de 14 jours. Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). <small class="cp-hint">Sans cet accord, la loi m'oblige à attendre 14 jours avant de commencer.</small></span></label>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
 <div class="cp-depot-st" role="status" aria-live="polite"></div>
