@@ -153,7 +153,60 @@
     var m = location.search.match(/[?&]formule=([123])/);
     if (m) { var r = document.querySelector('.cp-opt input[value="' + m[1] + '"]'); if (r) { r.checked = true; r.dispatchEvent(new Event('change')); } }
   }
-  function start() { test(); slider(); calc(); bar(); copy(); when(); order(); }
+  /* ---------- Page de commande : dépôt du devis avant paiement (programme Google, voir tools/depot-devis) ---------- */
+  function depot() {
+    var f = document.getElementById('cp-depot');
+    if (!f) {
+      var ok = document.querySelector('.cp-depot-ok'), ref = null;
+      try { ref = sessionStorage.getItem('cp-depot'); } catch (e) {}
+      if (ok && ref) {
+        ok.hidden = false; ok.querySelector('.cp-depot-ref').textContent = ref;
+        var m = document.querySelector('.cp-envoi-mail'); if (m) m.hidden = true;
+        try { sessionStorage.removeItem('cp-depot'); } catch (e) {}
+      }
+      return;
+    }
+    var st = f.querySelector('.cp-depot-st'), btn = f.querySelector('button[type="submit"]');
+    each(document.querySelectorAll('.cp-opt input'), function (r) {
+      r.addEventListener('change', function () { if (r.checked) btn.querySelector('.pp').textContent = r.getAttribute('data-prix'); });
+    });
+    function err(t) { st.className = 'cp-depot-st err'; st.textContent = t; btn.disabled = false; }
+    function type(n) { n = n.toLowerCase(); return /\.pdf$/.test(n) ? 'application/pdf' : /\.png$/.test(n) ? 'image/png' : /\.(heic|heif)$/.test(n) ? 'image/heic' : /\.webp$/.test(n) ? 'image/webp' : 'image/jpeg'; }
+    function lire(file) {
+      return new Promise(function (ok, ko) {
+        var fr = new FileReader();
+        fr.onload = function () { var s = String(fr.result); ok({ nom: file.name, type: file.type || type(file.name), data: s.slice(s.indexOf(',') + 1) }); };
+        fr.onerror = ko; fr.readAsDataURL(file);
+      });
+    }
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var files = f.elements.fichiers.files, email = f.elements.email.value.trim(), r = document.querySelector('.cp-opt input:checked'), tot = 0, i;
+      if (!files.length) return err('Ajoutez votre devis (PDF ou photo).');
+      if (files.length > 3) return err('Trois fichiers au maximum.');
+      for (i = 0; i < files.length; i++) tot += files[i].size;
+      if (tot > 10 * 1024 * 1024) return err('Fichiers trop lourds : 10 Mo au total au maximum. Envoyez une photo moins lourde ou passez par l\'e-mail ci-dessous.');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return err('Vérifiez votre adresse e-mail.');
+      if (!f.elements.accord.checked) return err('Cochez la demande de démarrage immédiat pour continuer.');
+      btn.disabled = true; st.className = 'cp-depot-st'; st.textContent = 'Envoi de votre devis…';
+      Promise.all([].map.call(files, lire)).then(function (arr) {
+        return fetch(f.getAttribute('data-url'), { method: 'POST', body: JSON.stringify({
+          formule: r ? r.value : '1', email: email, travaux: f.elements.travaux.value, echeance: f.elements.echeance.value,
+          message: f.elements.message.value, accord: true, site: f.elements.site.value, fichiers: arr }) });
+      }).then(function (x) { return x.json(); }).then(function (d) {
+        if (!d || !d.ok) throw new Error((d && d.erreur) || '');
+        try { sessionStorage.setItem('cp-depot', d.ref); } catch (x) {}
+        gc('depot-ok-' + (r ? r.value : '1'));
+        st.textContent = 'Devis reçu (référence ' + d.ref + '). Redirection vers le paiement…';
+        var u = r ? r.getAttribute('data-href') : document.getElementById('cp-pay').href;
+        location.href = u + (u.indexOf('?') < 0 ? '?' : '&') + 'client_reference_id=' + encodeURIComponent(d.ref) + '&prefilled_email=' + encodeURIComponent(email);
+      }).catch(function (x) {
+        gc('depot-erreur');
+        err(((x && x.message) || 'Le dépôt n\'a pas fonctionné.') + ' Vous pouvez aussi payer puis envoyer votre devis par e-mail (lien ci-dessous).');
+      });
+    });
+  }
+  function start() { test(); slider(); calc(); bar(); copy(); when(); order(); depot(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 
   (function () {

@@ -4,7 +4,7 @@
   var PREDIAG = ["/contact.html?sujet=prediagnostic", "Demander le pré-diagnostic gratuit"];
   var KB = [
     { c: 1, q: "Combien ça coûte ?", k: ["prix", "tarif", "coût", "cout", "combien", "€", "euro", "payer combien", "ça coute", "ca coute"],
-      a: "L'analyse d'un devis coûte 16,50 €, payés par carte sur le site ou sur ComeUp au même prix. 2 devis comparés : 44 € ; 3 devis comparés : 55 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA." },
+      a: "L'analyse d'un devis coûte 16,50 €, payés par carte sur le site ou sur ComeUp au même prix. 2 devis comparés : 35 € ; 3 devis comparés : 49 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA." },
     { c: 1, q: "Quel est le délai ?", k: ["délai", "delai", "quand", "recevoir", "sous combien", "combien de temps", "rapide", "express", "24", "48", "jours", "vite"],
       a: "Vous recevez votre rapport PDF sous 48 h après l'envoi du devis, ou 24 h avec l'option express." },
     { c: 1, q: "Comment ça marche ?", k: ["comment ça marche", "comment ca marche", "marche", "fonctionne", "étapes", "etapes", "commander", "procédure", "envoyer mon devis", "envoie mon devis", "envoyer le devis", "j'envoie"],

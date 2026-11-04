@@ -219,3 +219,15 @@ h1,h2,h3{text-wrap:balance}
 .cp-upsell{margin-top:22px}
 .cp-upsell p{color:#dde4f2!important;margin:0!important}
 .cp-upsell .t{color:#fff!important}
+
+/* Dépôt du devis sur la page de commande */
+.cp-form .cp-hint{font-weight:400;font-size:14.5px;color:#4a5b7e}
+.cp-form label.cp-chk{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;font-size:15.5px;line-height:1.45}
+.cp-form label.cp-chk input{width:20px;height:20px;flex:0 0 20px;margin-top:2px;padding:0}
+.cp-form .cp-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cp-form input[type=file]{background:#fff;padding:10px}
+.cp-depot{margin:8px 0 14px}
+.cp-depot-st{font-size:16px;color:#14284b;min-height:0}
+.cp-depot-st.err{color:#b3261e;font-weight:600}
+.cp-order .cp-fold{margin-top:18px}
+.cp-depot textarea{min-height:90px}

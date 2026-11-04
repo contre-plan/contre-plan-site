@@ -47,3 +47,9 @@ Les 4 guides (décennale, négocier, dépassement de devis, annulation) et les 5
 
 ## Décodeur de ligne de devis (outil gratuit avec l'API Claude)
 Page générée par `tools/decodeur.py` (appelé par `tools/build.py`), seulement quand `DECODEUR_URL` est rempli : tant qu'il est vide, ni la page, ni ses liens, ni le paragraphe de la politique de confidentialité ne sont publiés. Le relais Cloudflare qui détient la clé API est dans `cloudflare/decodeur/` (non publié sur le site) ; la mise en service est décrite dans `cloudflare/decodeur/README.md`. Compteurs GoatCounter : `decodeur/envoi`, `decodeur/resultat-…`, `decodeur/hors-sujet`, `decodeur/erreur`, `decodeur/copie-questions`, `decodeur/clic-commander`.
+
+## Dépôt du devis avant paiement (novembre 2026)
+La page de commande peut recevoir le devis avant le paiement : le formulaire envoie les fichiers à un programme Google Apps Script (`tools/depot-devis/Code.gs`) qui les range dans Google Drive (« Contre-Plan – Devis reçus ») et prévient contact@contre-plan.com. Le site redirige ensuite vers le lien Stripe avec `client_reference_id` = la référence du dépôt (CP-AAAAMMJJ-XXXX) et l'e-mail prérempli. Tant que `DEPOT_URL` est vide dans `tools/build.py`, la page garde l'envoi par e-mail. Mise en service : `tools/depot-devis/GUIDE.md`.
+
+## Grille de prix (04/11/2026)
+1 devis 16,50 € ; 2 devis comparés 35 € ; 3 devis comparés 49 € ; devis pour des travaux différents + 11 € ; express + 5,50 €. Liens Stripe dans la constante `STRIPE` de `tools/build.py`. La fiche PDF des professionnels se régénère depuis `tools/fiche-pro.html` (impression PDF A4 avec Playwright).

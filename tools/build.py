@@ -1339,9 +1339,12 @@ open(os.path.join(OUT, "avis.html"), "w").write(_avis)
 # Liens de paiement Stripe (Payment Links). Redirection après paiement : https://contre-plan.com/commande-confirmee.html
 STRIPE = {
     "1": "https://buy.stripe.com/28EaEZ1N22bE7b95g4cMM00",
-    "2": "https://buy.stripe.com/7sY4gBdvK2bE1QP37WcMM01",
-    "3": "https://buy.stripe.com/9B66oJ2R6cQi3YXfUIcMM02",
+    "2": "https://buy.stripe.com/9B6cN74ZeeYq7b9bEscMM03",
+    "3": "https://buy.stripe.com/14A00l1N22bE1QPdMAcMM04",
 }
+# Dépôt du devis avant paiement (programme Google Apps Script, voir tools/depot-devis/GUIDE.md).
+# Laisser vide tant que le programme n'est pas déployé : la page garde alors l'envoi par e-mail.
+DEPOT_URL = ""
 MSG_DEVIS = """Bonjour,
 Voici mon devis en pièce jointe.
 Formule payée : …
@@ -1361,25 +1364,54 @@ def _f(v, titre, desc, prix, combo):
     chk = " checked" if v == "1" else ""
     return f'''<label class="cp-opt"><input type="radio" name="formule" value="{v}"{chk} data-href="{STRIPE[v]}" data-prix="{prix}"><span class="d"><b>{titre}</b><small>{desc}</small></span><span class="p">{prix}</span></label>'''
 
-ORDER = f'''<main id="contenu" class="cp-order">
-<div class="cp-order-in">
-<section class="cp-ord-box" aria-labelledby="t-formule">
-<h2 id="t-formule"><span class="n">1</span>Choisissez votre formule</h2>
-<div class="cp-opts-f" role="radiogroup" aria-labelledby="t-formule">
-{_f("1", "1 devis", "Un devis à signer. Rapport PDF sous 48 h.", "16,50 €", "ne cochez aucune option.")}
-{_f("2", "2 devis comparés", "Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.", "44 €", "cochez « Devis supplémentaire » et « Comparatif ».")}
-{_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "55 €", "cochez « Devis supplémentaire », « Troisième devis » et « Comparatif ».")}
-</div>
-<p class="cp-ord-plus">Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
-<a class="btn xl" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>
-<p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>
+_PAY_SEC = """<p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>"""
+def _pay_btn(cls="btn xl"):
+    return f'<a class="{cls}" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>'
+if DEPOT_URL:
+    _ETAPES_1_2 = f"""</section>
+
+<section class="cp-ord-box" aria-labelledby="t-envoi">
+<h2 id="t-envoi"><span class="n">2</span>Déposez votre devis, puis payez</h2>
+<form class="cp-form cp-depot" id="cp-depot" data-url="{DEPOT_URL}" novalidate>
+<label>Votre devis <small class="cp-hint">PDF ou photo nette. Trois fichiers et 10 Mo au maximum. Vous pouvez masquer votre nom et votre adresse.</small><input type="file" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required></label>
+<label>Votre adresse e-mail <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required></label>
+<div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
+<label>Ce qui vous inquiète (facultatif) <textarea name="message" rows="3" maxlength="2000"></textarea></label>
+<label class="cp-chk"><input type="checkbox" name="accord" required><span>Je demande que l'analyse commence dès réception de mon devis, et je reconnais perdre mon droit de rétractation une fois le rapport livré (<a href="cgv.html#retractation">article 6 des CGV</a>).</span></label>
+<input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
+<div class="cp-depot-st" role="status" aria-live="polite"></div>
+<p class="cp-form-rgpd">Votre devis est rangé dans l'espace Google de Contre-Plan, utilisé seulement pour l'analyse, jamais transmis à une entreprise, et supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+</form>
+{_PAY_SEC}
+<details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
+<p>Payez, puis envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet.</p>
+{_pay_btn("btn")}
+{_envoi("msg-devis")}
+</details>
+</section>"""
+else:
+    _ETAPES_1_2 = f"""{_pay_btn()}
+{_PAY_SEC}
 </section>
 
 <section class="cp-ord-box" aria-labelledby="t-envoi">
 <h2 id="t-envoi"><span class="n">2</span>Envoyez votre devis par e-mail</h2>
 <p>Juste après le paiement, envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet.</p>
 {_envoi("msg-devis")}
-</section>
+</section>"""
+
+ORDER = f'''<main id="contenu" class="cp-order">
+<div class="cp-order-in">
+<section class="cp-ord-box" aria-labelledby="t-formule">
+<h2 id="t-formule"><span class="n">1</span>Choisissez votre formule</h2>
+<div class="cp-opts-f" role="radiogroup" aria-labelledby="t-formule">
+{_f("1", "1 devis", "Un devis à signer. Rapport PDF sous 48 h.", "16,50 €", "ne cochez aucune option.")}
+{_f("2", "2 devis comparés", "Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.", "35 €", "cochez « Devis supplémentaire » et « Comparatif ».")}
+{_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "49 €", "cochez « Devis supplémentaire », « Troisième devis » et « Comparatif ».")}
+</div>
+<p class="cp-ord-plus">Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
+{_ETAPES_1_2}
 
 <section class="cp-ord-box" aria-labelledby="t-rapport">
 <h2 id="t-rapport"><span class="n">3</span>Recevez le rapport</h2>
@@ -1399,7 +1431,10 @@ open(os.path.join(OUT, "commander.html"), "w").write(_cmd)
 PAGES.append("commander")
 
 _ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envoyez maintenant votre devis par e-mail.", "https://contre-plan.com/commande-confirmee.html").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">') + pagehero("Commande", "Paiement reçu, merci", "Dernière étape : envoyez-moi votre devis par e-mail. Le rapport arrive sous 48 h après sa réception (24 h en express).", None, [("Accueil", "index.html"), ("Paiement reçu", None)]) + f'''<main id="contenu" class="cp-order"><div class="cp-order-in">
-<section class="cp-ord-box"><h2><span class="n">2</span>Envoyez votre devis par e-mail</h2>
+<section class="cp-ord-box cp-depot-ok" hidden><h2><span class="n">2</span>Votre devis est bien reçu</h2>
+<p>Vous l'avez déposé sur le site avant de payer (référence <b class="cp-depot-ref"></b>) : vous n'avez rien d'autre à faire.</p>
+</section>
+<section class="cp-ord-box cp-envoi-mail"><h2><span class="n">2</span>Envoyez votre devis par e-mail</h2>
 <p>Depuis l'adresse utilisée pour payer, ou en l'indiquant dans le message.</p>
 {_envoi("msg-devis-ok")}
 </section>
