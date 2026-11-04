@@ -135,7 +135,7 @@
       fin(m, ok);
     };
     tsReady().then(function (jeton) {
-      if (SITEKEY && !jeton) throw 0;
+      if (SITEKEY && !jeton) throw "ts";
       return fetch(AI_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: text, historique: hist.slice(-6), jeton: jeton }) }).then(function (r) { return r.json(); });
     }).then(function (d) {
       if (d && d.hors_sujet) { gc("ia-hors-sujet"); wait.textContent = "Je réponds seulement aux questions sur les devis de travaux et sur l'analyse Contre-Plan. Pour toute autre demande, écrivez-moi par le formulaire de contact."; done(wait, false); return; }
@@ -146,7 +146,8 @@
       if (d.lien_url && /^\/(?!\/)[A-Za-z0-9._\-\/#]*$/.test(d.lien_url)) { var l = link(d.lien_url, d.lien_texte || "En savoir plus", false); wait.appendChild(document.createElement("br")); wait.appendChild(l); }
       var n0 = document.createElement("small"); n0.style.cssText = "display:block;margin-top:6px;color:#5b6784;font-size:12px"; n0.textContent = "Réponse automatique à partir des informations du site."; wait.appendChild(n0);
       done(wait, true);
-    }).catch(function () {
+    }).catch(function (e) {
+      if (e === "ts") { gc("ia-verification"); wait.textContent = "La vérification anti-robot n'a pas abouti. Renvoyez votre question et, si une case apparaît, cochez-la."; done(wait, false); return; }
       gc("ia-indisponible");
       wait.textContent = FALLBACK;
       done(wait, false);
