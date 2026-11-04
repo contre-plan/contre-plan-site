@@ -11,7 +11,6 @@ section[id]{scroll-margin-top:70px}
 /* ---------- Hero ---------- */
 .hero2{position:relative;overflow:hidden}
 .hero2 .plan{position:absolute;right:-140px;top:60px;width:720px;opacity:.11;transform:rotate(-8deg);pointer-events:none;will-change:transform}
-.hero2 .glow{display:none}
 .hero2-in{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:36px 24px 120px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center}
 .hero2 h1{margin:0 0 22px;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:clamp(40px,5.8vw,74px);line-height:.98;letter-spacing:-1.5px;color:#fff}
 .hero2 h1 .h1-tag{display:table;margin:0 0 20px;line-height:1.2;letter-spacing:0}
@@ -27,7 +26,6 @@ section[id]{scroll-margin-top:70px}
 
 /* Bouton avec reflet */
 .btn{position:relative;overflow:hidden;isolation:isolate}
-.btn.shine::before{content:none}
 .btn .arr{display:inline-block;transition:transform .2s}
 .btn:hover .arr{transform:translateX(4px)}
 .btn.xl{font-size:18px;padding:18px 28px}
@@ -74,13 +72,13 @@ section[id]{scroll-margin-top:70px}
 .js .rv.in{opacity:1;transform:none}
 .js .rv-l{opacity:0;transform:translateX(-40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
 .js .rv-l.in{opacity:1;transform:none}
-.js .rv-s{opacity:0;transform:scale(.94) rotate(-1deg);transition:opacity .8s,transform .8s cubic-bezier(.2,1.2,.3,1)}
-.js .rv-s.in{opacity:1;transform:rotate(-.6deg)}
+.js .rv-s{opacity:0;transform:scale(.97);transition:opacity .8s,transform .8s cubic-bezier(.2,1.2,.3,1)}
+.js .rv-s.in{opacity:1;transform:none}
 
 /* ---------- Le devis décortiqué (défilement) ---------- */
 .story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;margin-top:48px;align-items:start}
 .story-steps{display:flex;flex-direction:column;gap:0}
-.st{min-height:40vh;display:flex;flex-direction:column;justify-content:center;padding:20px 0;opacity:.28;transition:opacity .4s}
+.st{min-height:40vh;display:flex;flex-direction:column;justify-content:center;padding:20px 0;opacity:.55;transition:opacity .4s}
 .st.on{opacity:1}
 .st .k{font-family:'Source Sans 3',Arial,sans-serif;font-weight:600;font-size:16px;color:var(--pen);margin:0 0 8px}
 .st h3{margin:0 0 10px;font-family:Archivo,Arial,sans-serif;font-weight:800;font-size:clamp(26px,3vw,36px);line-height:1.1;color:#fff}
@@ -129,8 +127,6 @@ section[id]{scroll-margin-top:70px}
 .rep-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end}
 
 /* ---------- Hooks de section ---------- */
-.kick{display:block;font-family:'Source Sans 3',Arial,sans-serif;font-weight:600;font-size:16px;line-height:1.3;color:var(--or-d,#c2410c);margin:0 0 10px}
-.bp .kick{color:#ffb38f}
 
 /* ---------- Fin ---------- */
 .final2{text-align:center}
@@ -150,7 +146,6 @@ section[id]{scroll-margin-top:70px}
 @keyframes noteIn{from{opacity:0;transform:rotate(-3deg) scale(.5)}to{opacity:1;transform:rotate(-3deg) scale(1)}}
 @keyframes strike{to{transform:scaleX(1) rotate(-4deg)}}
 @keyframes verdict{to{opacity:1;transform:rotate(2deg) translateY(0)}}
-@keyframes shine{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
 @keyframes tick{to{transform:translateX(-50%)}}
 
 /* ---------- Mobile ---------- */
@@ -387,3 +382,8 @@ section[id]{scroll-margin-top:70px}
 .gp .cp-when button:hover,.gp .cp-when button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .gp .cp-when .r{color:var(--ink2)}
 .gp .cp-when .r a{color:var(--or-d,#c2410c)}
+
+/* Retouches panel 04/11/2026 : quadrillage réservé au haut de page, texte pour lecteurs d'écran */
+.bp.sec,.bp.final2{background:radial-gradient(ellipse at 25% 10%,var(--bp1),var(--bp2) 48%,var(--bp3) 100%)}
+.bp.sec .ruler,.bp.final2 .ruler{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
