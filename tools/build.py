@@ -1342,7 +1342,7 @@ STRIPE = {
 }
 # Dépôt du devis avant paiement (programme Google Apps Script, voir tools/depot-devis/GUIDE.md).
 # Laisser vide tant que le programme n'est pas déployé : la page garde alors l'envoi par e-mail.
-DEPOT_URL = ""
+DEPOT_URL = "https://script.google.com/macros/s/AKfycbwUD6PIch2wcRBzXcPvxwAPp-DCui7ebi5LWBVc9HNg2SG8_UJ8CmmseerUxCMAn1q0/exec"
 MSG_DEVIS = """Bonjour,
 Voici mon devis en pièce jointe.
 Formule payée : …
