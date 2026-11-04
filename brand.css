@@ -402,7 +402,7 @@ a{color:var(--or-d)}a:hover{color:#9a330a}
 @media (max-width:520px){
   .jobs{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}
   .job{padding:16px 14px!important}
-  .job span{display:none}
+  .job span{font-size:14px;line-height:1.4}
   .job b{font-size:17px}
   .job i{font-size:14px}
 }

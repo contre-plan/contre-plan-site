@@ -118,7 +118,7 @@ CTA = f'''<aside class="cp-cta-box bp">
 
 DEC_SIDE = '<a href="comparer-deux-devis.html">Comparateur de deux devis</a><a href="decodeur-ligne-devis.html">Décodeur de ligne de devis</a><a href="verifier-mentions-devis.html">Contrôle des mentions du devis</a>' if DEC.DECODEUR_URL else ""
 SIDE = f"""<div class="cp-sidecard"><p class="t">Votre devis relu par un ingénieur BTP</p><p>Rapport PDF sous 48 h, prix poste par poste, oublis et questions à poser. Dès {PRIX_TXT}.</p><a class="cp-btn" href="{CMD}" data-goatcounter-click="clic-commander-side">Faire analyser mon devis</a><a class="cp-sublink" href="exemple-rapport-contre-plan.pdf" target="_blank" rel="noopener" data-goatcounter-click="telechargement-exemple-rapport">Voir un exemple de rapport</a></div>
-<div class="cp-sidelinks"><p>Outils gratuits</p>{DEC_SIDE}<a href="index.html#test">Test : votre devis est-il complet ?</a><a href="comparer-ses-devis.html">Tableau comparatif de devis</a><a href="modeles-messages-artisan.html">Modèles de messages</a><a href="checklist-devis-travaux.pdf" download data-goatcounter-click="telechargement-checklist">Check-list à imprimer</a><a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par email</a></div>"""
+<div class="cp-sidelinks"><p>Outils gratuits</p>{DEC_SIDE}<a href="test-devis.html">Test : votre devis est-il complet ?</a><a href="comparer-ses-devis.html">Tableau comparatif de devis</a><a href="modeles-messages-artisan.html">Modèles de messages</a><a href="checklist-devis-travaux.pdf" download data-goatcounter-click="telechargement-checklist">Check-list à imprimer</a><a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par email</a></div>"""
 
 def slug_id(t):
     t = t.lower()
@@ -834,7 +834,7 @@ page("engagements",
 
 # ---------- Pages par type de travaux
 def cta_type(t):
-    return f"""<div class="note"><p><b>Vous avez un devis {t} sous les yeux ?</b> Faites d'abord <a href="index.html#test">le test en 1 minute</a>, puis envoyez-le-moi : je le relis ligne par ligne et je vous dis quoi demander à l'artisan. <a href="exemple-rapport-contre-plan.pdf" target="_blank" rel="noopener">Voir un exemple de rapport</a>.</p></div>"""
+    return f"""<div class="note"><p><b>Vous avez un devis {t} sous les yeux ?</b> Faites d'abord <a href="test-devis.html">le test en 1 minute</a>, puis envoyez-le-moi : je le relis ligne par ligne et je vous dis quoi demander à l'artisan. <a href="exemple-rapport-contre-plan.pdf" target="_blank" rel="noopener">Voir un exemple de rapport</a>.</p></div>"""
 
 page("analyse-devis-salle-de-bain",
  "Analyse de devis salle de bain par un ingénieur BTP",
@@ -1126,6 +1126,30 @@ page("cas-fictifs",
  "Cas fictifs")
 
 # ---------- Outils gratuits
+page("test-devis",
+ "Test gratuit : votre devis de travaux est-il complet ?",
+ "Votre devis de travaux passe-t-il le test ?",
+ "Six questions pour vérifier en une minute si votre devis de travaux est complet : assurance décennale, acompte, détail des postes, gravats, TVA et délais.",
+ "Prenez votre devis sous les yeux : six questions suffisent pour repérer ce qu'il faut faire préciser à l'artisan avant de signer.",
+ r"""<div id="test">
+<div class="cp-box" id="cp-test">
+<span class="cp-kicker">1 minute, 6 questions</span>
+<h2>Votre devis passe-t-il le test ?</h2>
+<p>Prenez votre devis sous les yeux et répondez. Rien n'est enregistré.</p>
+<div class="cp-test-bar" aria-hidden="true"><i></i></div>
+<p class="cp-test-n" aria-live="polite">Question 1 sur 6</p>
+<div><div class="cp-q" data-tip="<b>Assurance décennale :</b> demandez l'attestation en cours de validité, qui couvre bien ces travaux."><p>1. Le nom de l'assureur décennal et la zone couverte figurent-ils sur le devis ?</p><div class="cp-opts"><button type="button" data-v="oui" aria-pressed="false">Oui</button><button type="button" data-v="non" aria-pressed="false">Non</button><button type="button" data-v="nsp" aria-pressed="false">Je ne sais pas</button></div></div>
+<div class="cp-q" data-tip="<b>Acompte :</b> l'usage est d'environ 30 % à la signature. Au-delà, négociez un échéancier lié à l'avancement des travaux."><p>2. L'acompte demandé à la signature est-il de 30 % ou moins ?</p><div class="cp-opts"><button type="button" data-v="oui" aria-pressed="false">Oui</button><button type="button" data-v="non" aria-pressed="false">Non</button><button type="button" data-v="nsp" aria-pressed="false">Je ne sais pas</button></div></div>
+<div class="cp-q" data-tip="<b>Forfaits :</b> sans quantités ni prix unitaires, impossible de comparer. Demandez le détail des postes au forfait."><p>3. Chaque poste est-il détaillé (quantité, unité, prix unitaire) plutôt qu'au forfait ?</p><div class="cp-opts"><button type="button" data-v="oui" aria-pressed="false">Oui</button><button type="button" data-v="non" aria-pressed="false">Non</button><button type="button" data-v="nsp" aria-pressed="false">Je ne sais pas</button></div></div>
+<div class="cp-q" data-tip="<b>Dépose et gravats :</b> s'ils manquent, ils reviennent souvent en supplément une fois le chantier lancé."><p>4. La dépose de l'existant et l'évacuation des gravats sont-elles chiffrées ?</p><div class="cp-opts"><button type="button" data-v="oui" aria-pressed="false">Oui</button><button type="button" data-v="non" aria-pressed="false">Non</button><button type="button" data-v="nsp" aria-pressed="false">Je ne sais pas</button></div></div>
+<div class="cp-q" data-tip="<b>TVA :</b> le taux dépend des travaux, de l'âge du logement et du territoire (en Guyane et à Mayotte, pas de TVA). Vérifiez-le avec <a href='guide-tva-travaux-renovation.html' style='color:#e8733c'>le guide TVA</a>."><p>5. Le taux de TVA est-il indiqué et adapté à vos travaux (5,5 %, 10 % ou 20 % en métropole, 2,1 % ou 8,5 % aux Antilles et à La Réunion) ?</p><div class="cp-opts"><button type="button" data-v="oui" aria-pressed="false">Oui</button><button type="button" data-v="non" aria-pressed="false">Non</button><button type="button" data-v="nsp" aria-pressed="false">Je ne sais pas</button></div></div>
+<div class="cp-q" data-tip="<b>Délais :</b> sans délai d'exécution ferme, difficile de réclamer quoi que ce soit en cas de retard."><p>6. Une date de début et une durée (ou une date de fin) des travaux sont-elles indiquées ?</p><div class="cp-opts"><button type="button" data-v="oui" aria-pressed="false">Oui</button><button type="button" data-v="non" aria-pressed="false">Non</button><button type="button" data-v="nsp" aria-pressed="false">Je ne sais pas</button></div></div></div>
+<div class="cp-res" aria-live="polite"></div>
+</div>
+</div>
+<p style="margin-top:24px">Un doute sur une réponse ? Je relis votre devis ligne par ligne et je vous renvoie les questions exactes à poser : <a href="commander.html">faire analyser mon devis</a>.</p>""",
+ "Outil gratuit", toc=False)
+
 page("comparer-ses-devis",
  "Tableau comparatif de devis gratuit (Excel et PDF)",
  "Comparer ses devis : le tableau gratuit",
@@ -1197,7 +1221,7 @@ page("modeles-messages-artisan",
  "Messages prêts à copier pour demander l'attestation décennale, négocier l'acompte, faire détailler un forfait ou ajouter un poste oublié.",
  "Poser les bonnes questions par écrit, c'est la meilleure protection avant de signer. Voici des messages prêts à copier : remplacez simplement les passages entre crochets.",
  '<p>Gardez un ton cordial : l\'artisan n\'est pas un adversaire, et un devis précisé par écrit protège aussi l\'entreprise. Envoyez vos questions par e-mail ou par message, pour en garder une trace.</p>' + tpl_html +
- '<p style="margin-top:24px">Vous ne savez pas quelles questions poser sur votre devis ? <a href="index.html#test">Faites le test en 1 minute</a>, ou confiez-le moi : chaque rapport se termine par les questions à envoyer à l\'artisan.</p>',
+ '<p style="margin-top:24px">Vous ne savez pas quelles questions poser sur votre devis ? <a href="test-devis.html">Faites le test en 1 minute</a>, ou confiez-le moi : chaque rapport se termine par les questions à envoyer à l\'artisan.</p>',
  "Outil gratuit")
 
 # ---------- Guides index (centre de ressources)
@@ -1214,7 +1238,7 @@ o_cards = "".join([
  (rcard("comparer-deux-devis.html", "Outil gratuit", "Comparateur de deux devis", "Envoyez vos deux devis : les écarts poste par poste et les questions à poser.", "Comparer mes devis") if DEC.DECODEUR_URL else ""),
  (rcard("verifier-mentions-devis.html", "Outil gratuit", "Contrôle des mentions du devis", "Envoyez la photo de votre devis : les mentions présentes, incomplètes ou absentes.", "Contrôler mon devis") if DEC.DECODEUR_URL else ""),
  (rcard("decodeur-ligne-devis.html", "Outil gratuit", "Décodeur de ligne de devis", "Collez une ligne de votre devis : ce qu'elle veut dire et les questions à poser à l'artisan.", "Décoder une ligne") if DEC.DECODEUR_URL else ""),
- rcard("index.html#test", "Outil gratuit", "Test : votre devis est-il complet ?", "Six questions pour repérer en une minute ce qu'il faut faire préciser.", "Faire le test"),
+ rcard("test-devis.html", "Outil gratuit", "Test : votre devis est-il complet ?", "Six questions pour repérer en une minute ce qu'il faut faire préciser.", "Faire le test"),
  rcard("comparer-ses-devis.html", "Outil gratuit", "Tableau comparatif de devis", "Excel et PDF : totaux, TVA, acompte et postes manquants calculés pour vous.", "Télécharger"),
  rcard("modeles-messages-artisan.html", "Outil gratuit", "Modèles de messages à l'artisan", "Huit messages prêts à copier pour demander, négocier ou refuser poliment.", "Voir les modèles"),
  rcard("checklist-devis-travaux.pdf", "Outil gratuit", "Check-list à imprimer", "Vingt points à cocher en relisant n'importe quel devis de travaux.", "Télécharger", ' download data-goatcounter-click="telechargement-checklist"')])
@@ -1347,7 +1371,7 @@ ORDER = f'''<main id="contenu" class="cp-order">
 {_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "55 €", "cochez « Devis supplémentaire », « Troisième devis » et « Comparatif ».")}
 </div>
 <p class="cp-ord-plus">Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
-<a class="btn xl shine" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>
+<a class="btn xl" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>
 <p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>
 </section>
 
