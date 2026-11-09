@@ -239,3 +239,26 @@ h1,h2,h3{text-wrap:balance}
 .cp-depot input[type=file]{padding:10px;font-size:16px;cursor:pointer}
 .cp-depot input[type=file]::file-selector-button{margin-right:14px;padding:10px 16px;border:1.5px solid #14284b;border-radius:2px;background:#fff;color:#14284b;font:700 15px/1.2 "Source Sans 3",Arial,sans-serif;cursor:pointer}
 .cp-depot input[type=file]::file-selector-button:hover{background:#14284b;color:#fff}
+/* Dépôt du devis : zone de fichier lisible, rassurance avant le bouton */
+.cp-file{display:flex;flex-direction:column;gap:8px;position:relative}
+.cp-file-t{font-weight:700}
+.cp-file-in{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;overflow:hidden}
+.cp-file-zone{display:flex!important;flex-direction:column;align-items:center;gap:4px;padding:22px 16px;border:2px dashed #14284b;border-radius:4px;background:#f6f8fc;text-align:center;cursor:pointer;font-weight:400!important}
+.cp-file-zone b{font-family:Archivo,Arial,sans-serif;font-size:19px;color:#14284b}
+.cp-file-zone span{font-size:16px;color:#33415f}
+.cp-file-zone:hover{background:#eef2f9}
+.cp-file-in:focus-visible + .cp-file-zone{outline:3px solid #14284b;outline-offset:2px}
+.cp-file.ok .cp-file-zone{border-style:solid;border-color:#1f7a4d;background:#f1f9f4}
+.cp-file-list{margin:0;font-size:16px;font-weight:700;color:#1f7a4d}
+.cp-file-list:empty{display:none}
+.cp-form .cp-hint{font-size:16px;color:#33415f}
+.cp-form-rgpd{font-size:15px;color:#33415f}
+.cp-trust,.cp-next{margin:0;font-size:15.5px;line-height:1.45;color:#33415f}
+.cp-next{margin-top:-4px}
+.cp-ord-alt summary{cursor:pointer;list-style:revert}
+.cp-ord-alt[open] summary{margin-bottom:8px}
+.cp-opt-f{margin:0}
+.cp-opt-f summary{font-weight:700;cursor:pointer}
+.cp-opt-f[open]{display:flex;flex-direction:column;gap:14px}
+.cp-guide-cta{margin:0 0 24px;padding:14px 18px;background:#fff7ed;border-left:4px solid var(--or,#e8590c);font-size:16.5px;line-height:1.5}
+.cp-guide-cta a{font-weight:700;white-space:nowrap}

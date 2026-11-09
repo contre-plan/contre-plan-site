@@ -489,3 +489,4 @@ a{color:var(--lk)}a:hover{color:#0f2f63}
 .cp-stars label,.cp-avis .cp-check{display:flex!important;flex-direction:row!important;align-items:flex-start;gap:10px;font-weight:600}
 .cp-stars input,.cp-avis .cp-check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--ink);flex:none}
 .cp-help{display:block;font-weight:400;font-size:14px;color:#475569;margin-top:4px}
+.cp-depot button[type=submit]{background:var(--or)!important;color:var(--bp3)!important;box-shadow:0 4px 0 #b23f12!important;font-size:19px!important}
