@@ -191,7 +191,7 @@ FAQS = {
     ],
     'guide-tva-travaux-renovation': [
         ('Quel taux de TVA pour une rénovation de salle de bain ?',
-         "En général 10 %, sur la main-d'œuvre et les fournitures posées par l'entreprise, si le logement est achevé depuis plus de deux ans. La fourniture des meubles standard simplement posés et de l'électroménager reste à 20 %."),
+         "En général 10 %, sur la main-d'œuvre et les fournitures posées par l'entreprise, si le logement est achevé depuis plus de deux ans. Les meubles standard simplement posés et l'électroménager restent à 20 %, fourniture et pose."),
         ("L'attestation de TVA 1301-SD est-elle encore nécessaire ?",
          "Non. Depuis la loi de finances pour 2025, elle est remplacée par une mention sur le devis ou la facture, que vous signez pour certifier que les conditions du taux réduit sont remplies. Sans cette mention, le taux de 20 % s'applique."),
         ('Un même devis peut-il avoir plusieurs taux de TVA ?',
@@ -354,11 +354,11 @@ article("guide-mentions-obligatoires-devis",
 <h2>6. Paiement et garanties</h2>
 <ul>
 <li>Les <strong>conditions de paiement</strong> : montant de l'acompte et échéancier. La loi ne fixe pas de plafond général, mais l'usage est d'environ 30 % à la signature : au-delà de 40 à 50 %, demandez pourquoi.</li>
-<li>Si le devis a été signé chez vous à la suite d'un démarchage, vous disposez en principe d'un <strong>délai de rétractation de 14 jours</strong>, et l'artisan ne peut en principe pas encaisser de paiement avant 7 jours (des exceptions existent, notamment pour les dépannages urgents que vous avez demandés). Le détail est dans <a href="guide-annuler-devis-signe-retractation.html">le guide pour annuler un devis signé</a>.</li>
-<li>Les <strong>garanties</strong> : garanties légales de conformité et des vices cachés, et pour le bâtiment la garantie de parfait achèvement (1 an), la garantie de bon fonctionnement des équipements (2 ans) et la garantie décennale. Elles démarrent toutes à la <a href="guide-reception-travaux-reserves.html">réception des travaux</a>.</li>
+<li>Si le devis a été signé chez vous, même si c'est vous qui avez demandé à l'artisan de venir, vous disposez en principe d'un <strong>délai de rétractation de 14 jours</strong>, et l'artisan ne peut en principe pas encaisser de paiement avant 7 jours (des exceptions existent, notamment pour les dépannages urgents que vous avez demandés). Le détail est dans <a href="guide-annuler-devis-signe-retractation.html">le guide pour annuler un devis signé</a>.</li>
+<li>Les <strong>garanties</strong> : garanties légales de conformité et des vices cachés, et pour le bâtiment la garantie de parfait achèvement (1 an), la garantie de bon fonctionnement des équipements (2 ans) et la garantie décennale. La parfait achèvement, la biennale et la décennale démarrent à la <a href="guide-reception-travaux-reserves.html">réception des travaux</a> ; l'action pour vice caché se prescrit, elle, deux ans après la découverte du vice.</li>
 <li>Les <strong>conditions générales</strong>, au dos ou en annexe : lisez-les, notamment les clauses de <strong>révision de prix</strong> (hausse des matériaux) et de pénalités. Un supplément en cours de chantier doit passer par un avenant écrit : voir <a href="guide-depassement-devis-travaux-supplementaires.html">dépassement de devis et travaux supplémentaires</a>.</li>
 <li>Les coordonnées du <strong>médiateur de la consommation</strong> dont relève l'entreprise : elle doit vous les communiquer, souvent sur le devis ou dans ses conditions générales. C'est votre recours amiable gratuit en cas de litige.</li>
-<li>Si l'entreprise recueille votre numéro de téléphone, elle doit vous informer de votre droit de vous inscrire sur <strong>Bloctel</strong>, la liste d'opposition au démarchage téléphonique.</li>
+<li>Depuis le 11 août 2026, une entreprise ne peut plus vous démarcher par téléphone sans votre <strong>accord préalable</strong> (sauf pour un contrat en cours), et la liste Bloctel n'existe plus. Un contrat signé après un appel qui ne respecte pas ces règles n'est pas valable.</li>
 </ul>
 <div class="note"><p><strong>Le réflexe à avoir :</strong> une mention manque ? Demandez simplement un devis corrigé par écrit avant de signer. Un artisan sérieux le fait sans difficulté. À la signature, datez, signez et ajoutez « Bon pour accord » : vous gardez ainsi une trace claire de ce que vous avez accepté et quand.</p></div>
 <h2>Ce que les mentions ne disent pas</h2>
@@ -395,7 +395,7 @@ article("guide-tva-travaux-renovation",
 <p>Les taux de 5,5 %, 10 % et 20 % sont ceux de la métropole. <strong>En Guadeloupe, en Martinique et à La Réunion</strong>, les travaux d'amélioration, de transformation, d'aménagement et d'entretien d'un logement achevé depuis plus de 2 ans, y compris la rénovation énergétique, relèvent du taux de <strong>2,1 %</strong> ; le taux normal y est de <strong>8,5 %</strong>, et il s'applique notamment aux chaudières fonctionnant aux énergies fossiles depuis le 1<sup>er</sup> mars 2025. <strong>En Guyane et à Mayotte</strong>, la TVA ne s'applique pas pour l'instant : un devis qui y ajoute de la TVA doit être questionné.</p>
 <h2>Un devis peut mélanger plusieurs taux</h2>
 <p>C'est normal et fréquent : isolation à 5,5 %, reprise des cloisons à 10 %, climatiseur à 20 %. Ce qui ne l'est pas : un taux unique de 20 % sur une rénovation de logement ancien sans explication, ou au contraire un 5,5 % sur des travaux qui n'y ont pas droit. Dans le second cas, si l'erreur vient de ce que vous avez certifié (un logement de moins de 2 ans déclaré ancien, par exemple), vous pouvez être tenu de payer le complément de TVA avec l'entreprise.</p>
-<p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale, à jour au 27 octobre 2026. Les règles fiscales évoluent : vérifiez sur impots.gouv.fr. Sources : articles 278-0 bis A, 279-0 bis, 294 et 296 du Code général des impôts, fiche service-public.fr « Taux de TVA pour les travaux de rénovation d'un logement », loi n° 2025-127 du 14 février 2025, arrêté du 13 juillet 2026 (pompes à chaleur air/air).</p>''', 5)
+<p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale, à jour au 27 octobre 2026. Les règles fiscales évoluent : vérifiez sur impots.gouv.fr. Sources : articles 278-0 bis A, 279-0 bis, 294 et 296 ter du Code général des impôts, fiche service-public.fr « Taux de TVA pour les travaux de rénovation d'un logement », loi n° 2025-127 du 14 février 2025, arrêté du 13 juillet 2026 (pompes à chaleur air/air).</p>''', 5)
 
 # ---------- Article 3
 article("guide-oublis-devis-salle-de-bain",
@@ -407,7 +407,7 @@ article("guide-oublis-devis-salle-de-bain",
 <p>Retirer l'ancienne baignoire, la faïence et le carrelage prend du temps et génère des déchets. Si la dépose n'est pas chiffrée, ou si l'évacuation n'apparaît pas, attendez-vous à un supplément. Rappel : le devis doit d'ailleurs mentionner la gestion des déchets (voir <a href="guide-mentions-obligatoires-devis.html">les mentions obligatoires</a>).</p>
 <div class="note"><p><strong>Logement dont le permis de construire date d'avant le 1<sup>er</sup> juillet 1997 :</strong> colles, carrelages, enduits ou faux plafonds peuvent contenir de l'amiante. Un repérage amiante avant travaux est en principe requis avant de les démolir. Parlez-en avec l'artisan avant de signer : qui le commande, et à quel prix.</p></div>
 <h2>2. L'étanchéité sous carrelage</h2>
-<p>C'est l'oubli le plus coûteux, parce qu'on ne le voit qu'une fois les dégâts faits. En zone de douche, et surtout pour une douche de plain-pied, un <strong>système d'étanchéité sous carrelage</strong> au sol et sur les murs exposés est indispensable. Un simple carrelage avec des joints ne suffit pas. Exigez que le système soit nommé sur le devis : en général un <strong>SPEC</strong> (système de protection à l'eau sous carrelage) sur les murs et le sol de la douche, ou un <strong>SEL</strong> (système d'étanchéité liquide) ou une natte d'étanchéité sous avis technique selon le support.</p>
+<p>C'est l'oubli le plus coûteux, parce qu'on ne le voit qu'une fois les dégâts faits. En zone de douche, et surtout pour une douche de plain-pied, un <strong>système d'étanchéité sous carrelage</strong> au sol et sur les murs exposés est indispensable. Un simple carrelage avec des joints ne suffit pas. Exigez que le système soit nommé sur le devis : en général un <strong>SPEC</strong> (système de protection à l'eau sous carrelage) sur les murs de la douche et, au sol d'une douche de plain-pied, un <strong>SEL</strong> (système d'étanchéité liquide) ou une natte d'étanchéité sous avis technique, selon le support.</p>
 <h2>3. La préparation des supports</h2>
 <p>Après la dépose, les murs et le sol sont rarement prêts à recevoir un nouveau revêtement : ragréage, reprise de plâtre, plaques hydrofuges à poser. Un devis qui passe directement de « dépose » à « pose carrelage » cache souvent ce poste.</p>
 <p>Attention à une idée reçue : une plaque de plâtre hydrofuge (la plaque verte) résiste à l'humidité, mais <strong>elle n'est pas étanche</strong>. Dans la douche, elle doit être recouverte par l'étanchéité du point 2.</p>
@@ -1079,7 +1079,7 @@ LEX = [
  ("Réserves", "Défauts constatés à la réception et notés par écrit, que l'entreprise doit corriger."),
  ("Résistance thermique (R)", "Capacité d'un isolant à freiner la chaleur, en m².K/W. Plus R est élevé, plus l'isolation est performante."),
  ("RGE", "Reconnu garant de l'environnement : qualification obligatoire de l'entreprise pour que vous ayez droit aux aides à la rénovation énergétique."),
- ("SPEC / SEL", "Systèmes d'étanchéité liquide appliqués sous le carrelage, au mur (SPEC) ou au sol (SEL), dans les zones exposées à l'eau."),
+ ("SPEC / SEL", "Protection à l'eau (SPEC) ou étanchéité (SEL) appliquée sous le carrelage dans les zones exposées à l'eau : le SPEC protège surtout les murs, le SEL ou une natte sous avis technique assure l'étanchéité au sol d'une douche de plain-pied."),
  ("Solde", "Dernier paiement, versé à la réception des travaux."),
  ("u (unité)", "Prix à la pièce : un receveur, un radiateur, une fenêtre."),
  ("Zinguerie", "Éléments en métal d'une toiture : gouttières, descentes, noues, solins, faîtage."),
@@ -1375,22 +1375,23 @@ if DEPOT_URL:
 <section class="cp-ord-box" aria-labelledby="t-envoi">
 <h2 id="t-envoi"><span class="n">2</span>Déposez votre devis, puis payez</h2>
 <form class="cp-form cp-depot" id="cp-depot" data-url="{DEPOT_URL}" novalidate>
-<div class="cp-file"><span class="cp-file-t">Votre devis</span>
-<input type="file" id="cp-fichiers" class="cp-file-in" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
+<div class="cp-file"><span class="cp-file-t" id="cp-file-t">Votre devis (obligatoire)</span>
+<input type="file" id="cp-fichiers" class="cp-file-in" aria-labelledby="cp-file-t" aria-describedby="cp-depot-err" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
 <label for="cp-fichiers" class="cp-file-zone"><b>Ajouter mon devis</b><span>PDF, ou photo prise avec le téléphone</span></label>
 <p class="cp-file-list" aria-live="polite"></p>
-<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Trois fichiers et 10 Mo au maximum. Vous pouvez masquer votre nom et votre adresse.</small></div>
-<label>Votre adresse e-mail <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required></label>
+<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Trois fichiers au maximum : si votre devis a plus de pages, déposez les trois premières, je vous demande la suite par e-mail. Vous pouvez masquer votre nom et votre adresse.</small></div>
+<label>Votre adresse e-mail (obligatoire) <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required aria-describedby="cp-depot-err"></label>
 <details class="cp-fold cp-opt-f"><summary>Préciser votre situation (facultatif)</summary>
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
 <label>Ce qui vous inquiète <textarea name="message" rows="3" maxlength="2000"></textarea></label>
 </details>
 <label class="cp-chk"><input type="checkbox" name="accord"><span><b>Je veux mon rapport sous 48 h : commencez dès réception de mon devis</b>, sans attendre la fin du délai de rétractation de 14 jours. <small class="cp-hint">Si j'annule avant la livraison, je paie seulement la part déjà faite ; une fois le rapport livré, je ne peux plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). Sans cette case, l'analyse démarre dans 14 jours.</small></span></label>
+<p class="cp-delai" aria-live="polite"></p>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
 <p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
-<div class="cp-depot-st" role="status" aria-live="polite"></div>
-<p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation de ma part dans l'heure.</p>
+<div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
+<p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure.</p>
 <p class="cp-form-rgpd">Des outils m'aident à préparer les calculs et les vérifications ; je relis votre devis et je valide moi-même chaque avis et chaque question du rapport. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 {_PAY_SEC}
@@ -1450,8 +1451,8 @@ _ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envo
 <section class="cp-ord-box cp-depot-ok" hidden><h2><span class="n">2</span>Votre devis est bien reçu</h2>
 <p>Vous l'avez déposé sur le site avant de payer (référence <b class="cp-depot-ref"></b>) : vous n'avez rien d'autre à faire.</p>
 </section>
-<section class="cp-ord-box cp-envoi-mail"><h2><span class="n">2</span>Envoyez votre devis par e-mail</h2>
-<p>Depuis l'adresse utilisée pour payer, ou en l'indiquant dans le message.</p>
+<section class="cp-ord-box cp-envoi-mail"><h2><span class="n">2</span>Pas encore déposé votre devis ? Envoyez-le par e-mail</h2>
+<p>Si vous l'avez déposé sur la page de commande, il est bien reçu : vous n'avez rien d'autre à faire. Sinon, envoyez-le depuis l'adresse utilisée pour payer, ou en l'indiquant dans le message.</p>
 {_envoi("msg-devis-ok")}
 </section>
 <section class="cp-ord-box"><h2><span class="n">3</span>Recevez le rapport</h2><p>La facture vous arrive par e-mail de la part de Stripe, et une confirmation de commande de ma part dans l'heure (avec les conditions de vente et le formulaire de rétractation). Le rapport PDF arrive par e-mail sous 48 h après réception du devis complet. Pensez à regarder vos courriers indésirables. Une question ? Répondez simplement à mon e-mail ou écrivez à contact@contre-plan.com.</p></section>

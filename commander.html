@@ -77,22 +77,23 @@ h1{font-size:clamp(32px,5.5vw,48px)!important}
 <section class="cp-ord-box" aria-labelledby="t-envoi">
 <h2 id="t-envoi"><span class="n">2</span>Déposez votre devis, puis payez</h2>
 <form class="cp-form cp-depot" id="cp-depot" data-url="https://script.google.com/macros/s/AKfycbwUD6PIch2wcRBzXcPvxwAPp-DCui7ebi5LWBVc9HNg2SG8_UJ8CmmseerUxCMAn1q0/exec" novalidate>
-<div class="cp-file"><span class="cp-file-t">Votre devis</span>
-<input type="file" id="cp-fichiers" class="cp-file-in" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
+<div class="cp-file"><span class="cp-file-t" id="cp-file-t">Votre devis (obligatoire)</span>
+<input type="file" id="cp-fichiers" class="cp-file-in" aria-labelledby="cp-file-t" aria-describedby="cp-depot-err" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
 <label for="cp-fichiers" class="cp-file-zone"><b>Ajouter mon devis</b><span>PDF, ou photo prise avec le téléphone</span></label>
 <p class="cp-file-list" aria-live="polite"></p>
-<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Trois fichiers et 10 Mo au maximum. Vous pouvez masquer votre nom et votre adresse.</small></div>
-<label>Votre adresse e-mail <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required></label>
+<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Trois fichiers au maximum : si votre devis a plus de pages, déposez les trois premières, je vous demande la suite par e-mail. Vous pouvez masquer votre nom et votre adresse.</small></div>
+<label>Votre adresse e-mail (obligatoire) <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required aria-describedby="cp-depot-err"></label>
 <details class="cp-fold cp-opt-f"><summary>Préciser votre situation (facultatif)</summary>
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
 <label>Ce qui vous inquiète <textarea name="message" rows="3" maxlength="2000"></textarea></label>
 </details>
 <label class="cp-chk"><input type="checkbox" name="accord"><span><b>Je veux mon rapport sous 48 h : commencez dès réception de mon devis</b>, sans attendre la fin du délai de rétractation de 14 jours. <small class="cp-hint">Si j'annule avant la livraison, je paie seulement la part déjà faite ; une fois le rapport livré, je ne peux plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). Sans cette case, l'analyse démarre dans 14 jours.</small></span></label>
+<p class="cp-delai" aria-live="polite"></p>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
 <p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
-<div class="cp-depot-st" role="status" aria-live="polite"></div>
-<p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation de ma part dans l'heure.</p>
+<div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
+<p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure.</p>
 <p class="cp-form-rgpd">Des outils m'aident à préparer les calculs et les vérifications ; je relis votre devis et je valide moi-même chaque avis et chaque question du rapport. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 <p class="cp-total">Total à payer : <b class="pt">16,50 €</b>, ou <b class="pte">22 €</b> avec l'express 24 h. Aucun autre frais.</p>

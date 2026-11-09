@@ -262,3 +262,6 @@ h1,h2,h3{text-wrap:balance}
 .cp-opt-f[open]{display:flex;flex-direction:column;gap:14px}
 .cp-guide-cta{margin:0 0 24px;padding:14px 18px;background:#fff7ed;border-left:4px solid var(--or,#e8590c);font-size:16.5px;line-height:1.5}
 .cp-guide-cta a{font-weight:700;white-space:nowrap}
+.cp-delai{margin:-6px 0 0;font-size:16px;font-weight:700;color:#a33a10}
+.cp-delai.ok{color:#1f7a4d}
+.cp-fold summary,.cp-toc summary{padding:11px 0}
