@@ -24,6 +24,8 @@ var MAX_FICHIERS = 3;
 var MAX_PAR_HEURE = 30;               // protection contre les envois en masse
 var TYPES = ['application/pdf', 'image/jpeg', 'image/png', 'image/heic', 'image/heif', 'image/webp'];
 var FORMULES = { '1': '1 devis', '2': '2 devis comparés', '3': '3 devis comparés' };
+var JOURS_SANS_PAIEMENT = 30;      // dépôts sans paiement supprimés après ce délai (CGV, confidentialité)
+var JOURS_CONSERVATION = 365;      // devis payés supprimés 12 mois après (confidentialité)
 var CGV_PDF = 'https://contre-plan.com/cgv-contre-plan.pdf';
 var ADRESSE = '47 rue Vivienne, 75002 Paris';
 var PHRASE_ACCORD = "Je demande que l'analyse commence tout de suite, sans attendre la fin du délai de rétractation de 14 jours. Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter.";
@@ -80,13 +82,13 @@ function doPost(e) {
     ].join('\n');
     dossier.createFile('demande.txt', texte, MimeType.PLAIN_TEXT);
     PropertiesService.getScriptProperties().setProperty('dep_' + ref,
-      JSON.stringify({ accord: accord, formule: formule, quand: Date.now() }));
+      JSON.stringify({ accord: accord, formule: formule, quand: Date.now(), dossier: dossier.getId() }));
 
     MailApp.sendEmail({
       to: NOTIF,
       subject: 'Devis déposé ' + ref + ' – ' + FORMULES[formule],
       body: texte + '\n\nDossier : ' + dossier.getUrl() + '\n' + liens.join('\n') +
-        "\n\nLe paiement n'est pas encore confirmé : cherchez " + ref + ' dans Stripe (Paiements, champ « Référence client »).'
+        "\n\nPaiement pas encore confirmé. Tu recevras un e-mail « Paiement reçu » dès qu'il le sera, et le dossier sera renommé « PAYÉ ». Sans paiement, il est supprimé automatiquement après " + JOURS_SANS_PAIEMENT + ' jours.'
     });
 
     return reponse({ ok: true, ref: ref });
@@ -170,8 +172,99 @@ function verifierPaiements() {
       if (/^CP-\d{8}-[A-Z0-9]{4}$/.test(ref)) { try { dep = JSON.parse(props.getProperty('dep_' + ref) || 'null'); } catch (e) {} }
       envoyerConfirmation(s, email, ref, dep, cgv);
       props.setProperty(k, String(Date.now()));
+      try { marquerPaye(ref, dep); } catch (e) { console.error('marquerPaye ' + e); }
+      try { planifierRappel(s, email, ref, dep); } catch (e) { console.error('planifierRappel ' + e); }
     });
+    envoyerRappels();
+    nettoyerUneFoisParJour(cle);
   } finally { lock.releaseLock(); }
+}
+
+/* ---------- Suivi : dossier payé, rappel de livraison, nettoyage ---------- */
+
+function dossierDe(ref, dep) {
+  if (dep && dep.dossier) { try { return DriveApp.getFolderById(dep.dossier); } catch (e) {} }
+  var it = dossierRacine().getFolders();
+  while (it.hasNext()) { var f = it.next(); if (f.getName().indexOf(ref) !== -1) return f; }
+  return null;
+}
+
+function marquerPaye(ref, dep) {
+  if (!ref) return;
+  var f = dossierDe(ref, dep);
+  if (f && f.getName().indexOf('PAYÉ') !== 0) f.setName('PAYÉ – ' + f.getName());
+}
+
+function estExpress(s, cle) {
+  try {
+    var r = UrlFetchApp.fetch('https://api.stripe.com/v1/checkout/sessions/' + s.id + '/line_items?limit=20',
+      { headers: { Authorization: 'Bearer ' + cle }, muteHttpExceptions: true });
+    if (r.getResponseCode() !== 200) return false;
+    return (JSON.parse(r.getContentText()).data || []).some(function (l) { return /express|24\s?h/i.test(l.description || ''); });
+  } catch (e) { return false; }
+}
+
+function planifierRappel(s, email, ref, dep) {
+  var props = PropertiesService.getScriptProperties();
+  var express = estExpress(s, props.getProperty('STRIPE_KEY'));
+  var paye = s.created * 1000, delai = (express ? 24 : 48) * 3600000;
+  var depart = paye, note = '';
+  if (dep && !dep.accord) { depart = paye + 14 * 86400000; note = "Pas de démarrage immédiat demandé : délai compté à partir de la fin des 14 jours (sauf si le client t'a envoyé la phrase d'accord)."; }
+  if (!dep) note = "Devis attendu par e-mail : le délai court à partir de sa réception. Rappel calé sur l'heure du paiement.";
+  var limite = depart + delai;
+  props.setProperty('liv_' + s.id, JSON.stringify({
+    rappel: limite - 8 * 3600000, limite: limite, email: email, ref: ref, express: express, montant: s.amount_total, note: note }));
+}
+
+function envoyerRappels() {
+  var props = PropertiesService.getScriptProperties(), all = props.getProperties(), now = Date.now();
+  Object.keys(all).forEach(function (k) {
+    if (k.indexOf('liv_') !== 0) return;
+    var r; try { r = JSON.parse(all[k]); } catch (e) { props.deleteProperty(k); return; }
+    if (now < r.rappel) return;
+    var quand = Utilities.formatDate(new Date(r.limite), 'Europe/Paris', "EEEE dd/MM 'à' HH'h'mm");
+    MailApp.sendEmail({ to: NOTIF,
+      subject: 'Rapport à livrer avant ' + quand + (r.ref ? ' – ' + r.ref : '') + (r.express ? ' (express)' : ''),
+      body: 'Client : ' + r.email + '\nRéférence : ' + (r.ref || 'aucune (devis envoyé par e-mail)') + '\nMontant : ' + euros(r.montant) +
+        '\nDélai : ' + (r.express ? '24 h (express)' : '48 h') + ', à livrer avant ' + quand + '.' + (r.note ? '\n\n' + r.note : '') +
+        '\n\nSi le rapport est déjà parti, ignore ce message.' });
+    props.deleteProperty(k);
+  });
+}
+
+function refsPayees(cle) {
+  var refs = {}, depuis = Math.floor(Date.now() / 1000) - (JOURS_CONSERVATION + 30) * 86400, apres = '', tour = 0;
+  while (tour++ < 20) {
+    var r = UrlFetchApp.fetch('https://api.stripe.com/v1/checkout/sessions?limit=100&status=complete&created%5Bgte%5D=' + depuis + (apres ? '&starting_after=' + apres : ''),
+      { headers: { Authorization: 'Bearer ' + cle }, muteHttpExceptions: true });
+    if (r.getResponseCode() !== 200) return null; // en cas de doute, on ne supprime rien
+    var j = JSON.parse(r.getContentText());
+    (j.data || []).forEach(function (s) { if (s.payment_status === 'paid' && s.client_reference_id) refs[s.client_reference_id] = true; });
+    if (!j.has_more || !j.data.length) break;
+    apres = j.data[j.data.length - 1].id;
+  }
+  return refs;
+}
+
+function nettoyerUneFoisParJour(cle) {
+  var props = PropertiesService.getScriptProperties();
+  var jour = Utilities.formatDate(new Date(), 'Europe/Paris', 'yyyy-MM-dd');
+  if (props.getProperty('NETTOYAGE') === jour) return;
+  var payes = refsPayees(cle);
+  if (!payes) return;
+  var now = Date.now(), it = dossierRacine().getFolders(), supprimes = [];
+  while (it.hasNext()) {
+    var f = it.next(), nom = f.getName(), m = nom.match(/CP-\d{8}-[A-Z0-9]{4}/);
+    if (!m) continue;
+    var age = (now - f.getDateCreated().getTime()) / 86400000, ref = m[0];
+    var paye = payes[ref] || nom.indexOf('PAYÉ') === 0;
+    if (paye && nom.indexOf('PAYÉ') !== 0 && age < JOURS_CONSERVATION) { f.setName('PAYÉ – ' + nom); continue; }
+    if ((!paye && age > JOURS_SANS_PAIEMENT) || (paye && age > JOURS_CONSERVATION)) {
+      f.setTrashed(true); props.deleteProperty('dep_' + ref); supprimes.push(nom);
+    }
+  }
+  props.setProperty('NETTOYAGE', jour);
+  if (supprimes.length) console.log('Dossiers supprimés : ' + supprimes.join(', '));
 }
 
 function pdfCgv() {
