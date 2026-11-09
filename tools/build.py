@@ -948,7 +948,7 @@ for j in NG.JOB_PAGES:
 # ---------- Votre cas est-il couvert ?
 page("votre-cas",
  "Votre devis est-il couvert par l'analyse ? | Contre-Plan",
- "Votre cas est-il couvert ?",
+ "Votre cas est‑il couvert ?",
  "Quels devis de travaux Contre-Plan analyse, lesquels se voient au cas par cas, et vers qui aller quand ce n'est pas le bon service.",
  "Avant de commander, vérifiez que l'analyse correspond à votre situation. En cas de doute, le pré-diagnostic gratuit vous répond sous 24 h, sans compte ni paiement.",
  """<h2>Oui, j'analyse ces devis</h2>
