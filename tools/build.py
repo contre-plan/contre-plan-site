@@ -191,7 +191,7 @@ FAQS = {
     ],
     'guide-tva-travaux-renovation': [
         ('Quel taux de TVA pour une rénovation de salle de bain ?',
-         "En général 10 %, sur la main-d'œuvre et les fournitures posées par l'entreprise, si le logement est achevé depuis plus de deux ans. La fourniture des meubles standard simplement posés et de l'électroménager reste à 20 %."),
+         "En général 10 %, sur la main-d'œuvre et les fournitures posées par l'entreprise, si le logement est achevé depuis plus de deux ans. Les meubles standard simplement posés et l'électroménager restent à 20 %, fourniture et pose."),
         ("L'attestation de TVA 1301-SD est-elle encore nécessaire ?",
          "Non. Depuis la loi de finances pour 2025, elle est remplacée par une mention sur le devis ou la facture, que vous signez pour certifier que les conditions du taux réduit sont remplies. Sans cette mention, le taux de 20 % s'applique."),
         ('Un même devis peut-il avoir plusieurs taux de TVA ?',
@@ -354,11 +354,11 @@ article("guide-mentions-obligatoires-devis",
 <h2>6. Paiement et garanties</h2>
 <ul>
 <li>Les <strong>conditions de paiement</strong> : montant de l'acompte et échéancier. La loi ne fixe pas de plafond général, mais l'usage est d'environ 30 % à la signature : au-delà de 40 à 50 %, demandez pourquoi.</li>
-<li>Si le devis a été signé chez vous à la suite d'un démarchage, vous disposez en principe d'un <strong>délai de rétractation de 14 jours</strong>, et l'artisan ne peut en principe pas encaisser de paiement avant 7 jours (des exceptions existent, notamment pour les dépannages urgents que vous avez demandés). Le détail est dans <a href="guide-annuler-devis-signe-retractation.html">le guide pour annuler un devis signé</a>.</li>
-<li>Les <strong>garanties</strong> : garanties légales de conformité et des vices cachés, et pour le bâtiment la garantie de parfait achèvement (1 an), la garantie de bon fonctionnement des équipements (2 ans) et la garantie décennale. Elles démarrent toutes à la <a href="guide-reception-travaux-reserves.html">réception des travaux</a>.</li>
+<li>Si le devis a été signé chez vous, même si c'est vous qui avez demandé à l'artisan de venir, vous disposez en principe d'un <strong>délai de rétractation de 14 jours</strong>, et l'artisan ne peut en principe pas encaisser de paiement avant 7 jours (des exceptions existent, notamment pour les dépannages urgents que vous avez demandés). Le détail est dans <a href="guide-annuler-devis-signe-retractation.html">le guide pour annuler un devis signé</a>.</li>
+<li>Les <strong>garanties</strong> : garanties légales de conformité et des vices cachés, et pour le bâtiment la garantie de parfait achèvement (1 an), la garantie de bon fonctionnement des équipements (2 ans) et la garantie décennale. La parfait achèvement, la biennale et la décennale démarrent à la <a href="guide-reception-travaux-reserves.html">réception des travaux</a> ; l'action pour vice caché se prescrit, elle, deux ans après la découverte du vice.</li>
 <li>Les <strong>conditions générales</strong>, au dos ou en annexe : lisez-les, notamment les clauses de <strong>révision de prix</strong> (hausse des matériaux) et de pénalités. Un supplément en cours de chantier doit passer par un avenant écrit : voir <a href="guide-depassement-devis-travaux-supplementaires.html">dépassement de devis et travaux supplémentaires</a>.</li>
 <li>Les coordonnées du <strong>médiateur de la consommation</strong> dont relève l'entreprise : elle doit vous les communiquer, souvent sur le devis ou dans ses conditions générales. C'est votre recours amiable gratuit en cas de litige.</li>
-<li>Si l'entreprise recueille votre numéro de téléphone, elle doit vous informer de votre droit de vous inscrire sur <strong>Bloctel</strong>, la liste d'opposition au démarchage téléphonique.</li>
+<li>Depuis le 11 août 2026, une entreprise ne peut plus vous démarcher par téléphone sans votre <strong>accord préalable</strong> (sauf pour un contrat en cours), et la liste Bloctel n'existe plus. Un contrat signé après un appel qui ne respecte pas ces règles n'est pas valable.</li>
 </ul>
 <div class="note"><p><strong>Le réflexe à avoir :</strong> une mention manque ? Demandez simplement un devis corrigé par écrit avant de signer. Un artisan sérieux le fait sans difficulté. À la signature, datez, signez et ajoutez « Bon pour accord » : vous gardez ainsi une trace claire de ce que vous avez accepté et quand.</p></div>
 <h2>Ce que les mentions ne disent pas</h2>
@@ -395,11 +395,11 @@ article("guide-tva-travaux-renovation",
 <p>Les taux de 5,5 %, 10 % et 20 % sont ceux de la métropole. <strong>En Guadeloupe, en Martinique et à La Réunion</strong>, les travaux d'amélioration, de transformation, d'aménagement et d'entretien d'un logement achevé depuis plus de 2 ans, y compris la rénovation énergétique, relèvent du taux de <strong>2,1 %</strong> ; le taux normal y est de <strong>8,5 %</strong>, et il s'applique notamment aux chaudières fonctionnant aux énergies fossiles depuis le 1<sup>er</sup> mars 2025. <strong>En Guyane et à Mayotte</strong>, la TVA ne s'applique pas pour l'instant : un devis qui y ajoute de la TVA doit être questionné.</p>
 <h2>Un devis peut mélanger plusieurs taux</h2>
 <p>C'est normal et fréquent : isolation à 5,5 %, reprise des cloisons à 10 %, climatiseur à 20 %. Ce qui ne l'est pas : un taux unique de 20 % sur une rénovation de logement ancien sans explication, ou au contraire un 5,5 % sur des travaux qui n'y ont pas droit. Dans le second cas, si l'erreur vient de ce que vous avez certifié (un logement de moins de 2 ans déclaré ancien, par exemple), vous pouvez être tenu de payer le complément de TVA avec l'entreprise.</p>
-<p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale, à jour au 27 octobre 2026. Les règles fiscales évoluent : vérifiez sur impots.gouv.fr. Sources : articles 278-0 bis A, 279-0 bis, 294 et 296 du Code général des impôts, fiche service-public.fr « Taux de TVA pour les travaux de rénovation d'un logement », loi n° 2025-127 du 14 février 2025, arrêté du 13 juillet 2026 (pompes à chaleur air/air).</p>''', 5)
+<p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale, à jour au 27 octobre 2026. Les règles fiscales évoluent : vérifiez sur impots.gouv.fr. Sources : articles 278-0 bis A, 279-0 bis, 294 et 296 ter du Code général des impôts, fiche service-public.fr « Taux de TVA pour les travaux de rénovation d'un logement », loi n° 2025-127 du 14 février 2025, arrêté du 13 juillet 2026 (pompes à chaleur air/air).</p>''', 5)
 
 # ---------- Article 3
 article("guide-oublis-devis-salle-de-bain",
- "Devis salle de bain : 7 oublis qui font exploser la facture",
+ "Devis salle de bain : 7 oublis qui font grimper la facture",
  "Devis de salle de bain : les 7 oublis qui font grimper la facture",
  "Dépose, étanchéité, évacuation, électricité, ventilation : les postes souvent absents d'un devis de salle de bain, qui reviennent en supplément.",
  "Le devis le moins cher n'est pas toujours le moins cher à l'arrivée. Sur une salle de bain, les mauvaises surprises viennent presque toujours de ce qui n'est pas écrit. Voici les sept postes que je vérifie en premier.",
@@ -407,7 +407,7 @@ article("guide-oublis-devis-salle-de-bain",
 <p>Retirer l'ancienne baignoire, la faïence et le carrelage prend du temps et génère des déchets. Si la dépose n'est pas chiffrée, ou si l'évacuation n'apparaît pas, attendez-vous à un supplément. Rappel : le devis doit d'ailleurs mentionner la gestion des déchets (voir <a href="guide-mentions-obligatoires-devis.html">les mentions obligatoires</a>).</p>
 <div class="note"><p><strong>Logement dont le permis de construire date d'avant le 1<sup>er</sup> juillet 1997 :</strong> colles, carrelages, enduits ou faux plafonds peuvent contenir de l'amiante. Un repérage amiante avant travaux est en principe requis avant de les démolir. Parlez-en avec l'artisan avant de signer : qui le commande, et à quel prix.</p></div>
 <h2>2. L'étanchéité sous carrelage</h2>
-<p>C'est l'oubli le plus coûteux, parce qu'on ne le voit qu'une fois les dégâts faits. En zone de douche, et surtout pour une douche de plain-pied, un <strong>système d'étanchéité sous carrelage</strong> au sol et sur les murs exposés est indispensable. Un simple carrelage avec des joints ne suffit pas. Exigez que le système soit nommé sur le devis : en général un <strong>SPEC</strong> (système de protection à l'eau sous carrelage) sur les murs et le sol de la douche, ou un <strong>SEL</strong> (système d'étanchéité liquide) ou une natte d'étanchéité sous avis technique selon le support.</p>
+<p>C'est l'oubli le plus coûteux, parce qu'on ne le voit qu'une fois les dégâts faits. En zone de douche, et surtout pour une douche de plain-pied, un <strong>système d'étanchéité sous carrelage</strong> au sol et sur les murs exposés est indispensable. Un simple carrelage avec des joints ne suffit pas. Exigez que le système soit nommé sur le devis : en général un <strong>SPEC</strong> (système de protection à l'eau sous carrelage) sur les murs de la douche et, au sol d'une douche de plain-pied, un <strong>SEL</strong> (système d'étanchéité liquide) ou une natte d'étanchéité sous avis technique, selon le support.</p>
 <h2>3. La préparation des supports</h2>
 <p>Après la dépose, les murs et le sol sont rarement prêts à recevoir un nouveau revêtement : ragréage, reprise de plâtre, plaques hydrofuges à poser. Un devis qui passe directement de « dépose » à « pose carrelage » cache souvent ce poste.</p>
 <p>Attention à une idée reçue : une plaque de plâtre hydrofuge (la plaque verte) résiste à l'humidité, mais <strong>elle n'est pas étanche</strong>. Dans la douche, elle doit être recouverte par l'étanchéité du point 2.</p>
@@ -420,7 +420,7 @@ article("guide-oublis-devis-salle-de-bain",
 <p>Sans extraction d'air, l'humidité abîme les joints, la peinture et favorise les moisissures. Si la pièce n'a pas de bouche de VMC ou d'aérateur, ou si l'existant est déplacé, le poste doit apparaître.</p>
 <h2>7. Les finitions</h2>
 <p>Joints silicone, profilés d'angle, raccords de peinture, habillage de baignoire, plinthes, pose des accessoires : chaque poste est petit, mais leur absence cumulée peut représenter plusieurs centaines d'euros, ou une salle de bain « terminée » qui ne l'est pas.</p>
-<div class="note"><p><strong>Et les conditions de paiement ?</strong> Un acompte d'environ 30 % à la signature est l'usage. Ensuite, privilégiez des paiements liés à l'avancement réel du chantier, et gardez un solde à régler à la réception, une fois les réserves levées.</p></div>
+<div class="note"><p><strong>Et les conditions de paiement ?</strong> Un acompte d'environ 30 % à la signature est l'usage. Ensuite, privilégiez des paiements liés à l'avancement réel du chantier, et gardez un solde à régler à la réception ; seule une retenue de 5 % au plus, prévue au devis et consignée, peut attendre la levée des réserves.</p></div>
 <h2>Comment l'utiliser</h2>
 <p>Reprenez votre devis avec cette liste et cochez chaque point. Pour chaque absence, posez la question à l'artisan <strong>par écrit</strong> : soit le poste est inclus et il le précise, soit il le chiffre. Dans les deux cas, vous signez en sachant ce que vous payez. Si le total vous paraît élevé, voyez <a href="guide-negocier-devis-travaux.html">comment négocier un devis</a> sans braquer l'artisan.</p>
 <p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale. Chaque chantier est différent : en cas de doute sur un point technique, faites vérifier votre devis.</p>''', 5)
@@ -505,9 +505,13 @@ def _om(slug, body):
     m = re.search(r"<h2[^>]*>[^<]*TVA[^<]*</h2>", body)
     if m:
         n = body.find("<h2", m.end())
-        return body[:n] + OM_NOTE + body[n:] if n != -1 else body + OM_NOTE
+        note = OM_NOTE_NEUF if slug in OM_NEUF else OM_NOTE
+        return body[:n] + note + body[n:] if n != -1 else body + note
     n = body.find("<h2>Exemple de ligne")
-    return body[:n] + OM_NOTE + body[n:] if n != -1 else body + OM_NOTE
+    note = OM_NOTE_NEUF if slug in OM_NEUF else OM_NOTE
+    return body[:n] + note + body[n:] if n != -1 else body + note
+OM_NOTE_NEUF = '<p class="cp-om"><b>En outre-mer</b> : en Guadeloupe, en Martinique et à La Réunion, ces travaux qui créent de la surface suivent en principe le taux normal de 8,5 % (le taux de 2,1 % vise la rénovation d\'un logement existant) ; en Guyane et à Mayotte, la TVA ne s\'applique pas pour l\'instant. Détails dans <a href="guide-tva-travaux-renovation.html#outre-mer">le guide TVA</a>.</p>'
+OM_NEUF = {"analyse-devis-extension", "analyse-devis-veranda", "analyse-devis-piscine"}
 OM_NOTE = '<p class="cp-om"><b>En outre-mer</b> : en Guadeloupe, en Martinique et à La Réunion, les travaux de rénovation d\'un logement de plus de 2 ans relèvent en principe du taux de 2,1 %, et le taux normal y est de 8,5 % ; en Guyane et à Mayotte, la TVA ne s\'applique pas pour l\'instant. Détails dans <a href="guide-tva-travaux-renovation.html#outre-mer">le guide TVA</a>.</p>'
 
 def page(slug, title, h1, desc, lead, body, kicker, toc=True):
@@ -554,7 +558,7 @@ article("guide-acompte-paiement-devis-travaux",
 <ul><li>30 % à la signature ;</li><li>30 % à la fin de la dépose et des réseaux (plomberie, électricité) ;</li><li>30 % à la fin de la pose des revêtements ;</li><li>le solde à la réception.</li></ul>
 <p>Chaque étape doit être décrite pour être vérifiable : « fin de la plomberie », plutôt qu'une date fixe sans rapport avec l'avancement. Si le chantier prend du retard, c'est aussi ce qui vous évite de payer une étape qui n'est pas faite : voir <a href="guide-artisan-retard-chantier-que-faire.html">que faire si l'artisan est en retard</a>.</p>
 <h2>Le solde et la réception</h2>
-<p>La <strong>réception</strong> (<a href="guide-reception-travaux-reserves.html">mode d'emploi ici</a>) est le moment où vous acceptez les travaux, avec ou sans réserves. Notez par écrit chaque défaut constaté : ce sont les réserves, que l'entreprise doit corriger. La réception fait aussi démarrer les garanties (parfait achèvement, biennale, décennale). Si le contrat le prévoit, une <strong>retenue de garantie</strong> limitée à 5 % du prix peut être conservée jusqu'à la levée des réserves, dans la limite d'un an.</p>
+<p>La <strong>réception</strong> (voir <a href="guide-reception-travaux-reserves.html">le guide de la réception</a>) est le moment où vous acceptez les travaux, avec ou sans réserves. Notez par écrit chaque défaut constaté : ce sont les réserves, que l'entreprise doit corriger. La réception fait aussi démarrer les garanties (parfait achèvement, biennale, décennale). Si le contrat le prévoit, une <strong>retenue de garantie</strong> de 5 % du prix au plus peut être consignée chez un tiers (ou remplacée par une caution) ; elle est libérée au plus tard un an après la réception, sauf opposition motivée.</p>
 <h2>Les travaux supplémentaires</h2>
 <p>Tout ajout en cours de chantier doit faire l'objet d'un <strong>avenant écrit et chiffré</strong>, signé avant d'être réalisé. Un supplément annoncé oralement puis découvert sur la facture est la première source de litige. Voir <a href="guide-depassement-devis-travaux-supplementaires.html">que faire face à un dépassement de devis</a>.</p>
 <h2>Ce que je vérifie sur votre devis</h2>
@@ -795,7 +799,7 @@ page("methode",
  "Recalcul, mentions obligatoires, TVA, oublis techniques, prix : la grille de contrôle appliquée à chaque devis de travaux analysé par Contre-Plan.",
  "Chaque devis passe par la même grille de contrôle, en cinq temps. Voici ce que je regarde, et pourquoi.",
  """<h2>1. Je relis et je recalcule tout</h2>
-<p>Je reprends chaque ligne du devis dans un tableau : désignation, unité, quantité, prix unitaire, total. Je refais tous les calculs, des lignes jusqu'au total TTC.</p>
+<p>Je reprends chaque ligne du devis dans un tableau : désignation, unité, quantité, prix unitaire, total. Je refais tous les calculs, des lignes jusqu'au total TTC, avec l'aide d'outils que je contrôle.</p>
 <ul><li>Erreurs de multiplication ou d'addition, TVA mal calculée.</li><li>Quantités incohérentes entre elles ou avec la surface annoncée (par exemple plus de faïence que de murs).</li><li>Postes en double, ou main-d'œuvre facturée deux fois.</li></ul>
 <h2>2. Je vérifie la forme et les mentions obligatoires</h2>
 <p>Un devis incomplet n'est pas forcément mauvais, mais il vous laisse sans recours en cas de problème. Je contrôle notamment :</p>
@@ -824,7 +828,7 @@ page("engagements",
 <h2>Confidentialité de vos devis</h2>
 <ul><li>Vous pouvez masquer votre nom, votre adresse et vos coordonnées avant de m'envoyer le devis : ils ne sont pas nécessaires à l'analyse.</li><li>Votre devis sert uniquement à réaliser votre analyse. Il n'est jamais transmis à un artisan ni à un tiers à des fins commerciales.</li><li>Les documents sont conservés dans un espace professionnel sécurisé. Vous pouvez demander leur suppression à tout moment en écrivant à contact@contre-plan.com.</li><li>Pour certaines vérifications (recalculs, recherche de prix et de textes de référence), je m'aide d'outils logiciels, dont des outils d'intelligence artificielle. Chaque rapport est relu, corrigé et validé par moi avant de vous être envoyé.</li></ul>
 <h2>Délais</h2>
-<ul><li>Rapport sous 48 h, ou 24 h avec l'option express, à compter de la réception de votre devis complet.</li><li>Un échange de suivi est inclus : vous pouvez me poser une question après lecture du rapport.</li><li>Si un document manque ou est illisible, je vous le signale dès réception.</li></ul>
+<ul><li>Rapport sous 48 h, ou 24 h avec l'option express, à compter de la réception de votre devis complet, si vous avez demandé le démarrage immédiat en commandant ; sinon à compter de la fin du délai de rétractation de 14 jours.</li><li>Un échange de suivi est inclus : vous pouvez me poser une question après lecture du rapport.</li><li>Si un document manque ou est illisible, je vous le signale dès réception.</li></ul>
 <h2>Commande et paiement</h2>
 <p>Le paiement se fait par carte sur ce site, via Stripe, ou sur la plateforme ComeUp si vous la préférez. Vous ne payez qu'une fois, au moment de la commande.</p>
 <h2>Portée de cette analyse</h2>
@@ -930,7 +934,7 @@ page("analyse-devis-toiture",
 <p>Une réfection qui change l'aspect extérieur (matériau, couleur, fenêtres de toit) peut nécessiter une déclaration préalable en mairie. Dans un logement achevé depuis plus de 2 ans, la réfection relève en principe du taux de 10 %, et l'isolation de la toiture de 5,5 % si les conditions sont réunies. Vérifiez aussi l'attestation d'assurance décennale : après la réception, elle couvre les dommages graves, comme des infiltrations qui rendent le logement impropre à son usage ; la première année, la garantie de parfait achèvement s'applique aussi.</p>
 <h2>Deux devis toiture très différents ?</h2>
 <p>Un écart de 30 à 50 % entre deux devis de toiture est fréquent, et il s'explique presque toujours par le contenu plutôt que par la marge. Avant de comparer les totaux, vérifiez poste par poste : la même surface en m² (mesurée en rampant), l'échafaudage inclus ou non, l'écran sous-toiture remplacé ou conservé, la zinguerie refaite ou seulement reprise, et le traitement de la charpente chiffré ou laissé « selon état ». Le devis le moins cher est souvent celui qui oublie un de ces postes.</p>
-<p>Pour mettre les postes face à face, utilisez le <a href="comparer-ses-devis.html">tableau comparatif gratuit</a>, ou demandez l'option comparatif : je vous livre le tableau rempli et commenté.</p>
+<p>Pour mettre les postes face à face, utilisez le <a href="comparer-ses-devis.html">tableau comparatif gratuit</a>, ou choisissez une formule « devis comparés » : je vous livre le tableau rempli et commenté.</p>
 <h2>Exemple de ligne à faire préciser</h2>
 <p>« Remplacement des bois abîmés : selon état. » Cette ligne ouvre la porte à n'importe quel supplément. À demander : un prix unitaire par mètre de chevron ou de liteau, et un plafond au-delà duquel l'entreprise doit vous prévenir avant d'agir.</p>
 """ + cta_type("de toiture"),
@@ -944,7 +948,7 @@ for j in NG.JOB_PAGES:
 # ---------- Votre cas est-il couvert ?
 page("votre-cas",
  "Votre devis est-il couvert par l'analyse ? | Contre-Plan",
- "Votre cas est-il couvert ?",
+ "Votre cas est‑il couvert ?",
  "Quels devis de travaux Contre-Plan analyse, lesquels se voient au cas par cas, et vers qui aller quand ce n'est pas le bon service.",
  "Avant de commander, vérifiez que l'analyse correspond à votre situation. En cas de doute, le pré-diagnostic gratuit vous répond sous 24 h, sans compte ni paiement.",
  """<h2>Oui, j'analyse ces devis</h2>
@@ -977,7 +981,7 @@ page("achat-avec-travaux",
 <p>Après la signature du compromis, un acquéreur non professionnel d'un logement dispose en principe d'un délai de rétractation de 10 jours. C'est souvent aussi le moment où la banque demande les devis de travaux pour l'offre de prêt. Une analyse sous 48 h, ou 24 h en express, tient dans ce calendrier.</p>
 <h2>Ce que l'analyse vous apporte</h2>
 <ul><li><b>Un budget travaux complet</b> : les postes oubliés (dépose, évacuation, reprises, raccordements) sont repérés avant que le prêt soit dimensionné.</li>
-<li><b>Des devis comparables</b> : si vous avez plusieurs devis pour les mêmes travaux, l'option comparatif les met face à face, poste par poste.</li>
+<li><b>Des devis comparables</b> : si vous avez plusieurs devis pour les mêmes travaux, les formules « devis comparés » les mettent face à face, poste par poste.</li>
 <li><b>Les bonnes questions</b> à poser aux entreprises avant de les retenir.</li></ul>
 <p>Le rapport n'est pas une expertise et n'a pas de valeur officielle pour la banque : il vous sert à faire corriger les devis avant de les joindre à votre dossier.</p>
 <h2>Plusieurs lots de travaux</h2>
@@ -1000,14 +1004,14 @@ page("professionnels",
 <h2>Qui relit les devis</h2>
 <p>Un ingénieur BTP, dix ans sur les chantiers et environ 1 000 devis lus et négociés, côté entreprise comme côté client. Contre-Plan est une entreprise individuelle immatriculée à Paris (SIRET 132 070 426 00029), rattachée au médiateur de la consommation CM2C. La méthode de contrôle est décrite en détail sur la page <a href="methode.html">ma méthode</a>.</p>
 <h2>Comment ça se passe pour votre client</h2>
-<ol><li><b>Il commande en ligne</b> sur contre-plan.com : paiement par carte en 1 minute, sans compte (ou sur la plateforme ComeUp s'il préfère).</li>
-<li><b>Il envoie son devis</b> par e-mail, en PDF ou en photo, nom et adresse masquables.</li>
-<li><b>Il reçoit le rapport</b> par e-mail, sous 48 h.</li></ol>
+<ol><li><b>Il dépose son devis</b> sur la page de commande de contre-plan.com (PDF ou photo, nom et adresse masquables), puis paie par carte, sans compte (ou passe par la plateforme ComeUp s'il préfère).</li>
+<li><b>Il reçoit une confirmation</b> par e-mail dans le quart d'heure.</li>
+<li><b>Il reçoit le rapport</b> par e-mail, sous 48 h s'il a demandé le démarrage immédiat (24 h en express), sinon à la fin du délai de rétractation de 14 jours.</li></ol>
 <p>Une hésitation ? Il peut d'abord demander un <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a>, sans compte ni paiement.</p>
 <h2>Plusieurs devis ou plusieurs lots</h2>
 <p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain les envoie dans la même commande : formule 1 devis, plus 11 € par devis supplémentaire, soit 38,50 €. Pour deux ou trois devis concurrents sur les mêmes travaux, les formules « devis comparés » (35 € ou 49 €) ajoutent un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
 <h2>Délais</h2>
-<p>Rapport sous 48 h après réception du devis, ou 24 h avec l'option express. Pratique quand un compromis ou une offre de prêt approche.</p>
+<p>Rapport sous 48 h après réception du devis, ou 24 h avec l'option express, quand votre client demande le démarrage immédiat en commandant (sinon, à la fin du délai de rétractation de 14 jours). Pratique quand un compromis ou une offre de prêt approche.</p>
 <h2>Achat d'un bien avec travaux</h2>
 <p>Quand un acquéreur a obtenu un ou plusieurs devis avant de signer, l'analyse vérifie que le budget travaux est complet et cohérent : postes manquants, quantités, prix au m², et ce qui reste « selon état ». C'est une lecture des devis, pas une visite du bien.</p>
 <h2>Indépendance</h2>
@@ -1026,7 +1030,7 @@ page("professionnels",
 Avant de signer vos devis de travaux, vous pouvez les faire relire par un ingénieur BTP indépendant : rapport PDF sous 48 h (24 h en express), avec les oublis, les prix à vérifier et les questions à poser à l'entreprise. À partir de 16,50 € pour un devis, sans lien avec aucun artisan.
 Tout est expliqué ici : contre-plan.com/achat-avec-travaux.html</pre><button type="button" class="cp-copy" data-copy="tpl-pro" data-goatcounter-click="copie-message-pro">Copier le message</button></div>
 <p>À imprimer ou à joindre à un e-mail : <a href="fiche-professionnels-contre-plan.pdf" target="_blank" rel="noopener" data-goatcounter-click="telechargement-fiche-pro">la fiche de présentation (PDF, 1 page)</a>, avec un QR code vers la page achat avec travaux.</p>
-<h2>Nous contacter</h2>
+<h2>Me contacter</h2>
 <p>Pour poser une question : le <a href="contact.html?sujet=professionnel">formulaire de contact</a>, réponse sous 24 h.</p>
 """, "Professionnels", toc=False)
 
@@ -1039,7 +1043,7 @@ _ml = f"""<style>.cp-ml-page,.cp-ml-page p{{font-size:11px!important;line-height
 <p style="margin:0">{PL.NOM_EXPLOITANT}, entrepreneur individuel (EI), micro-entreprise exerçant sous le nom commercial Contre-Plan.</p>
 <p style="margin:0">SIRET : {PL.SIRET} · Code APE : 71.12B (ingénierie, études techniques) · immatriculation au Registre national des entreprises le 27/10/2026</p>
 <p style="margin:0">Adresse : {PL.ADRESSE}</p>
-<p style="margin:0">Email : contact@contre-plan.com · Téléphone : <a href="tel:+33675836561" style="color:inherit;text-decoration:none">{PL.TEL}</a></p>
+<p style="margin:0">E-mail : contact@contre-plan.com · Téléphone : <a href="tel:+33675836561" style="color:inherit;text-decoration:none">{PL.TEL}</a></p>
 <p style="margin:0">TVA non applicable, article 293 B du Code général des impôts.</p>
 <p style="margin:0">Directeur de la publication : {PL.NOM_EXPLOITANT}.</p>
 <h2 style="font-size:12px;margin:12px 0 2px;color:#14284b">Hébergement</h2>
@@ -1079,7 +1083,7 @@ LEX = [
  ("Réserves", "Défauts constatés à la réception et notés par écrit, que l'entreprise doit corriger."),
  ("Résistance thermique (R)", "Capacité d'un isolant à freiner la chaleur, en m².K/W. Plus R est élevé, plus l'isolation est performante."),
  ("RGE", "Reconnu garant de l'environnement : qualification obligatoire de l'entreprise pour que vous ayez droit aux aides à la rénovation énergétique."),
- ("SPEC / SEL", "Systèmes d'étanchéité liquide appliqués sous le carrelage, au mur (SPEC) ou au sol (SEL), dans les zones exposées à l'eau."),
+ ("SPEC / SEL", "Protection à l'eau (SPEC) ou étanchéité (SEL) appliquée sous le carrelage dans les zones exposées à l'eau : le SPEC protège surtout les murs, le SEL ou une natte sous avis technique assure l'étanchéité au sol d'une douche de plain-pied."),
  ("Solde", "Dernier paiement, versé à la réception des travaux."),
  ("u (unité)", "Prix à la pièce : un receveur, un radiateur, une fenêtre."),
  ("Zinguerie", "Éléments en métal d'une toiture : gouttières, descentes, noues, solins, faîtage."),
@@ -1173,7 +1177,7 @@ page("comparer-ses-devis",
 <li><b>Les quantités.</b> Si deux devis n'annoncent pas la même surface pour le même travail, demandez pourquoi avant de comparer les prix.</li>
 <li><b>Le moins cher n'est pas forcément le meilleur.</b> Un devis bas avec deux postes absents peut finir plus cher qu'un devis complet.</li></ul>
 <p>Une fois les écarts repérés, voyez <a href="guide-negocier-devis-travaux.html">comment négocier un devis de travaux</a> sur les postes qui coincent.</p>
-<div class="note"><p><b>Vous préférez un regard d'ingénieur ?</b> L'option « Comparatif multi devis » vous livre ce tableau rempli et commenté poste par poste, avec ce qui différencie vraiment les offres. Voir <a href="index.html#tarifs">les tarifs</a>.</p></div>
+<div class="note"><p><b>Vous préférez un regard d'ingénieur ?</b> Les formules « 2 devis comparés » (35 €) et « 3 devis comparés » (49 €) vous livrent ce tableau rempli et commenté poste par poste, avec ce qui différencie vraiment les offres. Voir <a href="index.html#tarifs">les tarifs</a>.</p></div>
 <p>Pour demander des devis comparables dès le départ : <a href="guide-bien-demander-ses-devis.html">comment bien demander ses devis</a>. Pour écrire aux artisans : <a href="modeles-messages-artisan.html">les modèles de messages</a>.</p>""",
  "Outil gratuit")
 
@@ -1222,7 +1226,7 @@ page("modeles-messages-artisan",
  "Messages prêts à copier pour demander l'attestation décennale, négocier l'acompte, faire détailler un forfait ou ajouter un poste oublié.",
  "Poser les bonnes questions par écrit, c'est la meilleure protection avant de signer. Voici des messages prêts à copier : remplacez simplement les passages entre crochets.",
  '<p>Gardez un ton cordial : l\'artisan n\'est pas un adversaire, et un devis précisé par écrit protège aussi l\'entreprise. Envoyez vos questions par e-mail ou par message, pour en garder une trace.</p>' + tpl_html +
- '<p style="margin-top:24px">Vous ne savez pas quelles questions poser sur votre devis ? <a href="test-devis.html">Faites le test en 1 minute</a>, ou confiez-le moi : chaque rapport se termine par les questions à envoyer à l\'artisan.</p>',
+ '<p style="margin-top:24px">Vous ne savez pas quelles questions poser sur votre devis ? <a href="test-devis.html">Faites le test en 1 minute</a>, ou confiez-le-moi : chaque rapport se termine par les questions à envoyer à l\'artisan.</p>',
  "Outil gratuit")
 
 # ---------- Guides index (centre de ressources)
@@ -1264,7 +1268,7 @@ open(os.path.join(OUT, "guides.html"), "w").write(idx)
 FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLScKwDm4HbZRdSL-ztX3gq3D7E7z_C8HTu44G3CKTzHwInyvyQ/formResponse"
 contact_body = f"""<p>Une question sur le service, sur un devis ou sur un guide ? Écrivez-moi ici, je réponds sous 24 h à l'adresse que vous indiquez.</p>
 <p><b>Pas sûr que votre devis vaille une analyse ?</b> Choisissez « Pré-diagnostic gratuit » et décrivez-le en 3 lignes (type de travaux, montant, ce qui vous inquiète) : je vous dis gratuitement si une analyse vaut le coup.</p>
-<p class="cp-form-note">Pour faire analyser un devis, <a href="{CMD}" data-goatcounter-click="clic-commander-contact">commandez en ligne</a> : vous m'envoyez ensuite le devis par e-mail. N'envoyez pas votre devis par ce formulaire.</p>
+<p class="cp-form-note">Pour faire analyser un devis, <a href="{CMD}" data-goatcounter-click="clic-commander-contact">déposez-le sur la page de commande</a>, puis payez en ligne. N'envoyez pas votre devis par ce formulaire.</p>
 <div class="cp-form-ok" id="cp-form-ok" role="status" aria-live="polite" tabindex="-1" hidden></div>
 <form class="cp-form" action="{FORM_ACTION}" method="POST" accept-charset="UTF-8">
 <input type="text" id="cp-hp" class="cp-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1286,6 +1290,8 @@ contact_body = f"""<p>Une question sur le service, sur un devis ou sur un guide 
 <option>Recherche Google</option>
 <option>TikTok</option>
 <option>Instagram</option>
+<option>Facebook</option>
+<option>YouTube</option>
 <option>Pinterest</option>
 <option>Forum (ForumConstruire ou autre)</option>
 <option>ComeUp</option>
@@ -1365,7 +1371,7 @@ def _f(v, titre, desc, prix, combo):
     chk = " checked" if v == "1" else ""
     return f'''<label class="cp-opt"><input type="radio" name="formule" value="{v}"{chk} data-href="{STRIPE[v]}" data-prix="{prix}"><span class="d"><b>{titre}</b><small>{desc}</small></span><span class="p">{prix}</span></label>'''
 
-_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">16,50 €</b>, ou <b class="pte">22 €</b> avec l'express 24 h. Aucun autre frais.</p>
+_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">16,50 €</b> TTC, ou <b class="pte">22 €</b> TTC avec l'express 24 h, plus 11 € par devis pour des travaux différents si vous en ajoutez. Aucun autre frais.</p>
 <p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>"""
 def _pay_btn(cls="btn xl"):
     return f'<a class="{cls}" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>'
@@ -1375,22 +1381,23 @@ if DEPOT_URL:
 <section class="cp-ord-box" aria-labelledby="t-envoi">
 <h2 id="t-envoi"><span class="n">2</span>Déposez votre devis, puis payez</h2>
 <form class="cp-form cp-depot" id="cp-depot" data-url="{DEPOT_URL}" novalidate>
-<div class="cp-file"><span class="cp-file-t">Votre devis</span>
-<input type="file" id="cp-fichiers" class="cp-file-in" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
+<div class="cp-file"><span class="cp-file-t" id="cp-file-t">Votre devis (obligatoire)</span>
+<input type="file" id="cp-fichiers" class="cp-file-in" aria-labelledby="cp-file-t" aria-describedby="cp-depot-err" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
 <label for="cp-fichiers" class="cp-file-zone"><b>Ajouter mon devis</b><span>PDF, ou photo prise avec le téléphone</span></label>
 <p class="cp-file-list" aria-live="polite"></p>
-<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Trois fichiers et 10 Mo au maximum. Vous pouvez masquer votre nom et votre adresse.</small></div>
-<label>Votre adresse e-mail <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required></label>
+<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Trois fichiers au maximum : si votre devis a plus de pages, déposez les trois premières, je vous demande la suite par e-mail. Vous pouvez masquer votre nom et votre adresse.</small></div>
+<label>Votre adresse e-mail (obligatoire) <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required aria-describedby="cp-depot-err"></label>
 <details class="cp-fold cp-opt-f"><summary>Préciser votre situation (facultatif)</summary>
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
 <label>Ce qui vous inquiète <textarea name="message" rows="3" maxlength="2000"></textarea></label>
 </details>
 <label class="cp-chk"><input type="checkbox" name="accord"><span><b>Je veux mon rapport sous 48 h : commencez dès réception de mon devis</b>, sans attendre la fin du délai de rétractation de 14 jours. <small class="cp-hint">Si j'annule avant la livraison, je paie seulement la part déjà faite ; une fois le rapport livré, je ne peux plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). Sans cette case, l'analyse démarre dans 14 jours.</small></span></label>
+<p class="cp-delai" aria-live="polite"></p>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
 <p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
-<div class="cp-depot-st" role="status" aria-live="polite"></div>
-<p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation de ma part dans l'heure.</p>
+<div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
+<p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure.</p>
 <p class="cp-form-rgpd">Des outils m'aident à préparer les calculs et les vérifications ; je relis votre devis et je valide moi-même chaque avis et chaque question du rapport. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 {_PAY_SEC}
@@ -1420,7 +1427,7 @@ ORDER = f'''<main id="contenu" class="cp-order">
 {_f("2", "2 devis comparés", "Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.", "35 €", "cochez « Devis supplémentaire » et « Comparatif ».")}
 {_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "49 €", "cochez « Devis supplémentaire », « Troisième devis » et « Comparatif ».")}
 </div>
-<p class="cp-ord-plus">Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
+<p class="cp-ord-plus">Prix TTC (TVA non applicable, article 293 B du CGI). Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
 {_ETAPES_1_2}
 
 <section class="cp-ord-box" aria-labelledby="t-rapport">
@@ -1450,11 +1457,11 @@ _ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envo
 <section class="cp-ord-box cp-depot-ok" hidden><h2><span class="n">2</span>Votre devis est bien reçu</h2>
 <p>Vous l'avez déposé sur le site avant de payer (référence <b class="cp-depot-ref"></b>) : vous n'avez rien d'autre à faire.</p>
 </section>
-<section class="cp-ord-box cp-envoi-mail"><h2><span class="n">2</span>Envoyez votre devis par e-mail</h2>
-<p>Depuis l'adresse utilisée pour payer, ou en l'indiquant dans le message.</p>
+<section class="cp-ord-box cp-envoi-mail"><h2><span class="n">2</span>Pas encore déposé votre devis ? Envoyez-le par e-mail</h2>
+<p>Si vous l'avez déposé sur la page de commande, il est bien reçu : vous n'avez rien d'autre à faire. Sinon, envoyez-le depuis l'adresse utilisée pour payer, ou en l'indiquant dans le message.</p>
 {_envoi("msg-devis-ok")}
 </section>
-<section class="cp-ord-box"><h2><span class="n">3</span>Recevez le rapport</h2><p>La facture vous arrive par e-mail de la part de Stripe, et une confirmation de commande de ma part dans l'heure (avec les conditions de vente et le formulaire de rétractation). Le rapport PDF arrive par e-mail sous 48 h après réception du devis complet. Pensez à regarder vos courriers indésirables. Une question ? Répondez simplement à mon e-mail ou écrivez à contact@contre-plan.com.</p></section>
+<section class="cp-ord-box"><h2><span class="n">3</span>Recevez le rapport</h2><p>La facture vous arrive par e-mail de la part de Stripe, et une confirmation de commande automatique dans le quart d'heure (avec les conditions de vente et le formulaire de rétractation). Le rapport PDF arrive par e-mail sous 48 h après réception du devis complet si vous avez demandé le démarrage immédiat, sinon 48 h après la fin du délai de rétractation de 14 jours. Pensez à regarder vos courriers indésirables. Une question ? Répondez simplement à mon e-mail ou écrivez à contact@contre-plan.com.</p></section>
 </div></main>
 ''' + footer(chat=False)
 open(os.path.join(OUT, "commande-confirmee.html"), "w").write(_ok)
