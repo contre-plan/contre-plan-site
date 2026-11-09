@@ -1,0 +1,71 @@
+1
+00:00:00,150 --> 00:00:02,040
+Exemple fictif : 1 600
+
+2
+00:00:02,040 --> 00:00:03,930
+€ pour un escalier, sans
+
+3
+00:00:03,930 --> 00:00:05,820
+dire ce qui sera fait.
+
+4
+00:00:06,370 --> 00:00:09,728
+Une seule ligne, deux chantiers
+
+5
+00:00:09,728 --> 00:00:10,400
+possibles.
+
+6
+00:00:10,950 --> 00:00:12,779
+Décaper puis vitrifier, ou repeindre
+
+7
+00:00:12,779 --> 00:00:14,608
+: ce n'est pas le
+
+8
+00:00:14,608 --> 00:00:15,340
+même chantier.
+
+9
+00:00:15,890 --> 00:00:17,684
+Vous imaginez un bois vitrifié.
+
+10
+00:00:17,684 --> 00:00:19,479
+Le devis ne dit rien.
+
+11
+00:00:19,479 --> 00:00:21,273
+Le désaccord arrive à la
+
+12
+00:00:21,273 --> 00:00:22,350
+réception des travaux.
+
+13
+00:00:22,900 --> 00:00:24,729
+Demandez le travail prévu, les
+
+14
+00:00:24,729 --> 00:00:26,558
+parties concernées, et le nombre
+
+15
+00:00:26,558 --> 00:00:27,290
+de couches.
+
+16
+00:00:27,840 --> 00:00:30,121
+Votre devis dit-il décaper ou
+
+17
+00:00:30,121 --> 00:00:32,402
+repeindre ? Répondez oui ou
+
+18
+00:00:32,402 --> 00:00:33,770
+non en commentaire.
