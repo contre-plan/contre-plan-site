@@ -52,4 +52,7 @@ Avec la vérification des paiements (toutes les 15 minutes), le programme :
 - renomme « PAYÉ – … » le dossier Drive d'un devis payé ;
 - t'envoie « Rapport à livrer avant … » 8 h avant l'échéance (48 h, ou 24 h si l'option express a été prise ; 14 jours + 48 h si le client n'a pas demandé le démarrage immédiat) ;
 - une fois par jour, met à la corbeille les dossiers non payés de plus de 30 jours et les dossiers payés de plus de 12 mois (CGV et politique de confidentialité). S'il ne peut pas joindre Stripe, il ne supprime rien.
+- 24 h après un dépôt non payé, envoie au client UN seul e-mail de rappel (lien de paiement déjà relié à son devis, possibilité de répondre « supprimer »). Jamais de deuxième relance, et rien au-delà de 72 h. Si un client répond « supprimer », mets son dossier à la corbeille dans Drive.
+
 Mise en place : remplacer Code.gs, enregistrer, puis Déployer > Gérer les déploiements > crayon > Nouvelle version > Déployer. Pas besoin de relancer installer().
+Pour voir le rappel : lancer testerRelance() depuis l'éditeur, un exemple arrive sur contact@. Les dépôts faits avant la mise à jour ne sont pas relancés (leur e-mail n'était pas enregistré à part).
