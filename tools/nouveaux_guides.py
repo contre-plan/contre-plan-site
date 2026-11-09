@@ -676,7 +676,7 @@ JOB_PAGES.append(dict(
 <h2>Logement ancien : la question du plomb</h2>
 <p>Dans un logement construit avant 1949, d'anciennes couches de peinture peuvent contenir du plomb. Si vous avez un constat de risque d'exposition au plomb (CREP), donnez-le à l'entreprise. Poncer ou décaper ces peintures sans précaution disperse des poussières toxiques : le devis doit alors prévoir une méthode adaptée.</p>
 <h2>La TVA</h2>
-<p>Dans un logement achevé depuis plus de 2 ans, la peinture relève en principe du taux de 10 %, fourniture comprise quand l'entreprise fournit la peinture. Si vous achetez vous-même la peinture, elle reste à 20 % et seule la main-d'œuvre est à 10 %. Dans un logement neuf, c'est 20 %.</p>
+<p>Dans un logement achevé depuis plus de 2 ans, la peinture relève en principe du taux de 10 %, fourniture comprise quand l'entreprise fournit la peinture. Si vous achetez vous-même la peinture, elle reste à 20 % et seule la main-d'œuvre est à 10 %. Dans un logement neuf, c'est 20 %. Détails dans <a href="guide-tva-travaux-renovation.html">le guide TVA</a>. Pour l'extérieur de la maison, voir <a href="analyse-devis-ravalement-facade.html">l'analyse d'un devis de ravalement</a>.</p>
 <h2>Exemple de ligne à faire préciser</h2>
 <p>« Peinture séjour, murs et plafond : 1 450 € TTC. » Combien de m² ? Quelle préparation, quel état de finition ? Combien de couches, de quelle peinture ? À demander : le détail par surface, l'état de finition visé et la référence de la peinture.</p>
 """,
@@ -718,6 +718,7 @@ JOB_PAGES.append(dict(
 <p>Si le SPANC a classé votre installation non conforme avec un danger pour la santé ou un risque pour l'environnement, les travaux doivent être faits dans un délai de 4 ans. Après l'achat d'une maison dont l'installation est non conforme, l'acquéreur a 1 an pour faire les travaux. Pour une installation qui ne consomme pas d'énergie, un <strong>éco-prêt à taux zéro</strong> spécifique peut financer jusqu'à 10 000 € ; votre agence de l'eau ou votre collectivité peut aussi proposer des aides, à demander avant de signer.</p>
 <h2>La TVA</h2>
 <p>Dans un logement achevé depuis plus de 2 ans, la réhabilitation d'un assainissement individuel relève en principe du taux de 10 %.</p>
+<p>Vous achetez une maison concernée ? Voir aussi <a href="achat-avec-travaux.html">l'achat avec travaux</a>.</p>
 <h2>Exemple de ligne à faire préciser</h2>
 <p>« Fourniture et pose d'une micro-station 5 EH, terrassement compris : 9 800 € TTC. » Quel modèle, quel agrément ? Terrassement jusqu'à quelle profondeur, et si on trouve de la roche ? Évacuation de l'ancienne fosse comprise ? À demander : la référence agréée, l'avis du SPANC, et ce qui est facturé en plus en cas d'imprévu de terrain.</p>
 """,
@@ -756,7 +757,7 @@ JOB_PAGES.append(dict(
 <li><b>La découpe des portes</b> si le sol monte de quelques millimètres.</li>
 <li><b>La finition du bois</b> : vitrifié, huilé, verni, et le nombre de couches s'il est posé brut.</li></ul>
 <h2>La TVA</h2>
-<p>Dans un logement achevé depuis plus de 2 ans, la pose d'un parquet par une entreprise relève en principe du taux de 10 %, fourniture comprise. Le parquet que vous achetez vous-même reste à 20 %.</p>
+<p>Dans un logement achevé depuis plus de 2 ans, la pose d'un parquet par une entreprise relève en principe du taux de 10 %, fourniture comprise. Le parquet que vous achetez vous-même reste à 20 %. Détails dans <a href="guide-tva-travaux-renovation.html">le guide TVA</a>, et pour un sol carrelé, voir <a href="analyse-devis-carrelage.html">l'analyse d'un devis de carrelage</a>.</p>
 <h2>Exemple de ligne à faire préciser</h2>
 <p>« Pose parquet chêne contrecollé 45 m², préparation du sol comprise : 3 900 € TTC. » Quel mode de pose ? Que comprend la préparation : ragréage, mesure d'humidité, dépose de l'ancien sol ? Plinthes et seuils compris ? À demander : la référence du parquet et de la sous-couche, et le détail de la préparation du support.</p>
 """,
