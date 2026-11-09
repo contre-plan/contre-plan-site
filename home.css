@@ -375,3 +375,12 @@ section[id]{scroll-margin-top:70px}
 .cp-gar a{color:var(--or-d,#c2410c);font-weight:600}
 @media (max-width:960px){.cp-gar-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.cp-gar{padding:20px 18px}.cp-gar-g{grid-template-columns:1fr;gap:16px}}
+/* Travaux : liste éditoriale plutôt que grille de cartes identiques */
+.jobs{display:block;columns:2;column-gap:56px;margin-top:32px}
+.jobs .job{break-inside:avoid;display:grid;grid-template-columns:200px 1fr;gap:4px 20px;align-items:baseline;background:none;box-shadow:none!important;border:0;border-top:0!important;border-bottom:1px solid var(--line);border-radius:0;padding:16px 0;transform:none!important}
+.jobs .job:hover{background:none;transform:none}
+.jobs .job:hover b{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.jobs .job .ico,.jobs .job i{display:none}
+.jobs .job b{font-size:19px}
+.jobs .job span{font-size:16px}
+@media (max-width:900px){.jobs{columns:1}.jobs .job{grid-template-columns:1fr}}

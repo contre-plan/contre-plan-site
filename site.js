@@ -174,6 +174,14 @@
       r.addEventListener('change', function () { if (r.checked) btn.querySelector('.pp').textContent = r.getAttribute('data-prix'); });
     });
     function err(t) { st.className = 'cp-depot-st err'; st.textContent = t; btn.disabled = false; }
+    var acc = f.elements.accord, dl = f.querySelector('.cp-delai');
+    function delai() {
+      if (!acc || !dl) return;
+      if (acc.checked) { dl.textContent = 'Rapport sous 48 h après réception de votre devis.'; dl.className = 'cp-delai ok'; return; }
+      var d = new Date(Date.now() + 16 * 86400000);
+      dl.textContent = 'Case non cochée : rapport vers le ' + d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' }) + '. Cochez-la pour l\'avoir sous 48 h.'; dl.className = 'cp-delai';
+    }
+    if (acc) { acc.addEventListener('change', delai); delai(); }
     var fin = f.elements.fichiers, fl = f.querySelector('.cp-file-list'), fz = f.querySelector('.cp-file');
     if (fin && fl) fin.addEventListener('change', function () {
       var n = [].map.call(fin.files, function (x) { return x.name; });
@@ -181,23 +189,45 @@
       if (fz) fz.classList.toggle('ok', n.length > 0);
     });
     function type(n) { n = n.toLowerCase(); return /\.pdf$/.test(n) ? 'application/pdf' : /\.png$/.test(n) ? 'image/png' : /\.(heic|heif)$/.test(n) ? 'image/heic' : /\.webp$/.test(n) ? 'image/webp' : 'image/jpeg'; }
-    function lire(file) {
+    function brut(file) {
       return new Promise(function (ok, ko) {
         var fr = new FileReader();
-        fr.onload = function () { var s = String(fr.result); ok({ nom: file.name, type: file.type || type(file.name), data: s.slice(s.indexOf(',') + 1) }); };
+        fr.onload = function () { var s = String(fr.result); ok({ nom: file.name, type: file.type || type(file.name), data: s.slice(s.indexOf(',') + 1), taille: file.size }); };
         fr.onerror = ko; fr.readAsDataURL(file);
+      });
+    }
+    /* Photos de téléphone : réduites à 2200 px (JPEG) avant l'envoi, pour passer sous 10 Mo. Si le navigateur ne sait pas lire l'image, on envoie l'original. */
+    function lire(file) {
+      var t = file.type || type(file.name);
+      if (!/^image\//.test(t) || file.size < 1.2e6) return brut(file);
+      return new Promise(function (ok) {
+        var url = URL.createObjectURL(file), img = new Image();
+        img.onload = function () {
+          var k = Math.min(1, 2200 / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement('canvas');
+          c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+          c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+          var d = c.toDataURL('image/jpeg', 0.85), data = d.slice(d.indexOf(',') + 1);
+          ok({ nom: file.name.replace(/\.[^.]+$/, '') + '.jpg', type: 'image/jpeg', data: data, taille: Math.round(data.length * 0.75) });
+        };
+        img.onerror = function () { URL.revokeObjectURL(url); brut(file).then(ok); };
+        img.src = url;
       });
     }
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var files = f.elements.fichiers.files, email = f.elements.email.value.trim(), r = document.querySelector('.cp-opt input:checked'), tot = 0, i;
-      if (!files.length) return err('Ajoutez votre devis (PDF ou photo).');
-      if (files.length > 3) return err('Trois fichiers au maximum.');
-      for (i = 0; i < files.length; i++) tot += files[i].size;
-      if (tot > 10 * 1024 * 1024) return err('Fichiers trop lourds : 10 Mo au total au maximum. Envoyez une photo moins lourde ou passez par l\'e-mail ci-dessous.');
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return err('Vérifiez votre adresse e-mail.');
+      [f.elements.fichiers, f.elements.email].forEach(function (x) { x.removeAttribute('aria-invalid'); });
+      function errChamp(x, t) { err(t); x.setAttribute('aria-invalid', 'true'); var z = x.id === 'cp-fichiers' ? f.querySelector('.cp-file') : x; if (z.scrollIntoView) z.scrollIntoView({ block: 'center' }); x.focus(); }
+      if (!files.length) return errChamp(f.elements.fichiers, 'Ajoutez votre devis (PDF ou photo).');
+      if (files.length > 3) return errChamp(f.elements.fichiers, 'Trois fichiers au maximum.');
+      for (i = 0; i < files.length; i++) if (!/^image\//.test(files[i].type || type(files[i].name))) tot += files[i].size;
+      if (tot > 10 * 1024 * 1024) return err('PDF trop lourd : 10 Mo au total au maximum. Envoyez les pages en photo ou passez par l\'e-mail ci-dessous.');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return errChamp(f.elements.email, 'Vérifiez votre adresse e-mail.');
       btn.disabled = true; st.className = 'cp-depot-st'; st.textContent = 'Envoi de votre devis…';
       Promise.all([].map.call(files, lire)).then(function (arr) {
+        var t2 = arr.reduce(function (a, x) { return a + (x.taille || 0); }, 0);
+        if (t2 > 10 * 1024 * 1024) throw new Error('Fichiers trop lourds, même réduits (10 Mo au total).');
+        arr.forEach(function (x) { delete x.taille; });
         return fetch(f.getAttribute('data-url'), { method: 'POST', body: JSON.stringify({
           formule: r ? r.value : '1', email: email, travaux: f.elements.travaux.value, echeance: f.elements.echeance.value,
           message: f.elements.message.value, accord: f.elements.accord.checked, site: f.elements.site.value, fichiers: arr }) });

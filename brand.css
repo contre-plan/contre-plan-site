@@ -490,3 +490,6 @@ a{color:var(--lk)}a:hover{color:#0f2f63}
 .cp-stars input,.cp-avis .cp-check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--ink);flex:none}
 .cp-help{display:block;font-weight:400;font-size:14px;color:#475569;margin-top:4px}
 .cp-depot button[type=submit]{background:var(--or)!important;color:var(--bp3)!important;box-shadow:0 4px 0 #b23f12!important;font-size:19px!important}
+/* Une seule ombre « papier » : le devis. Le reste en filets. */
+.cp-rcard{box-shadow:none!important;border:1px solid var(--line)!important;border-top:3px solid var(--ink)!important}
+.art .note{box-shadow:none!important;border:1px solid var(--line)!important}
