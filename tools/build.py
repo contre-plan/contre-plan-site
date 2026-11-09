@@ -116,7 +116,7 @@ CTA = f'''<aside class="cp-cta-box bp">
 <small>Paiement par carte en 1 minute, sans compte. Vous restez libre de signer ou non avec l'artisan.</small>
 </aside>'''
 
-DEC_SIDE = '<a href="comparer-deux-devis.html">Comparateur de deux devis</a><a href="decodeur-ligne-devis.html">Décodeur de ligne de devis</a><a href="verifier-mentions-devis.html">Contrôle des mentions du devis</a>' if DEC.DECODEUR_URL else ""
+DEC_SIDE = '<a href="comparer-deux-devis.html">Comparateur automatique de deux devis</a><a href="decodeur-ligne-devis.html">Décodeur de ligne de devis</a><a href="verifier-mentions-devis.html">Contrôle des mentions du devis</a>' if DEC.DECODEUR_URL else ""
 SIDE = f"""<div class="cp-sidecard"><p class="t">Votre devis relu par un ingénieur BTP</p><p>Rapport PDF sous 48 h, prix poste par poste, oublis et questions à poser. Dès {PRIX_TXT}.</p><a class="cp-btn" href="{CMD}" data-goatcounter-click="clic-commander-side">Faire analyser mon devis</a><a class="cp-sublink" href="exemple-rapport-contre-plan.pdf" target="_blank" rel="noopener" data-goatcounter-click="telechargement-exemple-rapport">Voir un exemple de rapport</a></div>
 <div class="cp-sidelinks"><p>Outils gratuits</p>{DEC_SIDE}<a href="test-devis.html">Test : votre devis est-il complet ?</a><a href="comparer-ses-devis.html">Tableau comparatif de devis</a><a href="modeles-messages-artisan.html">Modèles de messages</a><a href="checklist-devis-travaux.pdf" download data-goatcounter-click="telechargement-checklist">Check-list à imprimer</a><a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par email</a></div>"""
 
@@ -1191,8 +1191,8 @@ if DEC.DECODEUR_URL:
      "Envoyez la photo ou le PDF de votre devis : en une trentaine de secondes, vous savez quelles mentions sont présentes, à préciser ou introuvables, et quoi demander à l'artisan.",
      MEN.body().replace("__PRIX__", PRIX_TXT), "Outil gratuit", toc=False)
     page(CMP.SLUG,
-     "Comparateur gratuit de deux devis de travaux | Contre-Plan",
-     "Comparer deux devis de travaux",
+     "Comparateur automatique et gratuit de deux devis de travaux | Contre-Plan",
+     "Comparateur automatique de deux devis",
      "Envoyez vos deux devis de travaux en photo ou en PDF : comparaison gratuite poste par poste, totaux, TVA, acompte, et questions à poser à chaque entreprise.",
      "Deux devis pour les mêmes travaux, des montants différents ? Envoyez-les : en moins d'une minute, vous voyez poste par poste ce qui diffère et quoi demander à chaque entreprise pour comparer à égalité.",
      CMP.body().replace("__PRIX__", PRIX_TXT), "Outil gratuit", toc=False)
@@ -1236,7 +1236,7 @@ t_cards = "".join(rcard(h_, "Par travaux", t_, d_, "Ce que je vérifie") for h_,
  ("analyse-devis-toiture.html", "Toiture", "Surface, échafaudage, zinguerie, charpente, amiante.")] + [
  (j["slug"] + ".html", j["kicker"], j["card"]) for j in NG.JOB_PAGES])
 o_cards = "".join([
- (rcard("comparer-deux-devis.html", "Outil gratuit", "Comparateur de deux devis", "Envoyez vos deux devis : les écarts poste par poste et les questions à poser.", "Comparer mes devis") if DEC.DECODEUR_URL else ""),
+ (rcard("comparer-deux-devis.html", "Outil gratuit", "Comparateur automatique de deux devis", "Envoyez vos deux devis : les écarts poste par poste et les questions à poser.", "Comparer mes devis") if DEC.DECODEUR_URL else ""),
  (rcard("verifier-mentions-devis.html", "Outil gratuit", "Contrôle des mentions du devis", "Envoyez la photo de votre devis : les mentions présentes, incomplètes ou absentes.", "Contrôler mon devis") if DEC.DECODEUR_URL else ""),
  (rcard("decodeur-ligne-devis.html", "Outil gratuit", "Décodeur de ligne de devis", "Collez une ligne de votre devis : ce qu'elle veut dire et les questions à poser à l'artisan.", "Décoder une ligne") if DEC.DECODEUR_URL else ""),
  rcard("test-devis.html", "Outil gratuit", "Test : votre devis est-il complet ?", "Six questions pour repérer en une minute ce qu'il faut faire préciser.", "Faire le test"),
