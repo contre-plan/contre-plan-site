@@ -493,3 +493,10 @@ a{color:var(--lk)}a:hover{color:#0f2f63}
 /* Une seule ombre « papier » : le devis. Le reste en filets. */
 .cp-rcard{box-shadow:none!important;border:1px solid var(--line)!important;border-top:3px solid var(--ink)!important}
 .art .note{box-shadow:none!important;border:1px solid var(--line)!important}
+/* Tournée finale : détails d'affichage */
+a[href^="mailto:"]{white-space:nowrap}
+table.cp-fourch td.n{white-space:nowrap}
+.btn,.cp-prediag,.cp-form button{text-wrap:balance}
+.cp-form button{background:var(--or)!important;color:var(--bp3)!important;box-shadow:0 4px 0 #b23f12!important}
+@media (max-width:960px){.cp-cta-box ~ .cp-side .cp-sidecard,.cp-side .cp-sidecard{display:none}}
+@media (max-width:760px){.cp-crumbs [aria-current],.cp-crumbs span[aria-hidden]:has(+ [aria-current]){display:none}}

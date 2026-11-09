@@ -63,7 +63,7 @@ def build(ws, example=None):
     for r in (46, 47, 48): lab(r, ""); ws.cell(r, 1).fill = PatternFill("solid", fgColor=INPUT); inp(r); [setattr(ws.cell(r, c), "alignment", Alignment(wrap_text=True)) for c in (2, 3, 4)]
     ws["A50"] = "Repères : l'usage est d'environ 30 % d'acompte à la signature. Le taux de TVA dépend des travaux et de l'âge du logement (5,5 %, 10 % ou 20 %)."
     ws["A50"].font = F(italic=True, size=9, color="5B6784")
-    ws["A51"] = "Un avis d'ingénieur BTP sur vos devis : contre-plan.com (option « Comparatif multi devis »)."
+    ws["A51"] = "Un avis d'ingénieur BTP sur vos devis : contre-plan.com (formules « 2 ou 3 devis comparés »)."
     ws["A51"].font = F(bold=True, size=10, color=ORANGE); ws["A51"].hyperlink = "https://contre-plan.com/"
     dv = DataValidation(type="list", formula1='"Oui,Non,Sans objet"', allow_blank=True); ws.add_data_validation(dv)
     for r in (9, 10, 11, 39, 41, 42, 43): dv.add(f"B{r}:D{r}")
