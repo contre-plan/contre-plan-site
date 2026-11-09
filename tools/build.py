@@ -1371,7 +1371,7 @@ def _f(v, titre, desc, prix, combo):
     chk = " checked" if v == "1" else ""
     return f'''<label class="cp-opt"><input type="radio" name="formule" value="{v}"{chk} data-href="{STRIPE[v]}" data-prix="{prix}"><span class="d"><b>{titre}</b><small>{desc}</small></span><span class="p">{prix}</span></label>'''
 
-_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">16,50 €</b>, ou <b class="pte">22 €</b> avec l'express 24 h, plus 11 € par devis pour des travaux différents si vous en ajoutez. Aucun autre frais.</p>
+_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">16,50 €</b> TTC, ou <b class="pte">22 €</b> TTC avec l'express 24 h, plus 11 € par devis pour des travaux différents si vous en ajoutez. Aucun autre frais.</p>
 <p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>"""
 def _pay_btn(cls="btn xl"):
     return f'<a class="{cls}" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>'
@@ -1427,7 +1427,7 @@ ORDER = f'''<main id="contenu" class="cp-order">
 {_f("2", "2 devis comparés", "Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.", "35 €", "cochez « Devis supplémentaire » et « Comparatif ».")}
 {_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "49 €", "cochez « Devis supplémentaire », « Troisième devis » et « Comparatif ».")}
 </div>
-<p class="cp-ord-plus">Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
+<p class="cp-ord-plus">Prix TTC (TVA non applicable, article 293 B du CGI). Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
 {_ETAPES_1_2}
 
 <section class="cp-ord-box" aria-labelledby="t-rapport">
