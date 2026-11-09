@@ -1104,9 +1104,9 @@ for k in sorted(_groups):
         f'<div class="cp-term" id="{slug_id(t)}"><dt>{html.escape(t)}</dt><dd>{html.escape(d)}</dd></div>' for t, d in _groups[k]) + '</dl></section>'
 
 page("lexique-devis-travaux",
- "Lexique du devis de travaux : les termes expliqués",
+ "Lexique du devis de travaux : 27 termes expliqués simplement",
  "Lexique du devis de travaux",
- "Acompte, arrhes, forfait, ml, P.U., ragréage, SPEC, RGE, résistance thermique : les mots d'un devis de travaux expliqués simplement.",
+ "Que veulent dire ml, P.U., F+P, forfait, ragréage ou SPEC sur votre devis ? 27 termes expliqués simplement par un ingénieur BTP, sans jargon.",
  "Les termes qu'on croise sur un devis de travaux, expliqués en une ou deux phrases.",
  lex_html + '<p style="margin-top:28px">Un terme vous manque ? Posez-moi la question via le chat du site.</p>',
  "Lexique", toc=False)
@@ -1225,9 +1225,9 @@ TPL = [
 ]
 tpl_html = "".join(f'<div class="cp-tpl"><h2>{html.escape(t)}</h2><pre id="tpl{i}">{html.escape(x)}</pre><button type="button" class="cp-copy" data-copy="tpl{i}">Copier le message</button></div>' for i,(t,x) in enumerate(TPL,1))
 page("modeles-messages-artisan",
- "Modèles de messages à envoyer à un artisan | Contre-Plan",
+ "Modèles de mails à un artisan : acompte, délai, supplément, refus",
  "Modèles de messages à envoyer à l'artisan",
- "Messages prêts à copier pour demander l'attestation décennale, négocier l'acompte, faire détailler un forfait ou ajouter un poste oublié.",
+ "8 messages prêts à copier : demander la décennale, négocier l'acompte, obtenir un délai ferme, contester un supplément, refuser un devis poliment.",
  "Poser les bonnes questions par écrit, c'est la meilleure protection avant de signer. Voici des messages prêts à copier : remplacez simplement les passages entre crochets.",
  '<p>Gardez un ton cordial : l\'artisan n\'est pas un adversaire, et un devis précisé par écrit protège aussi l\'entreprise. Envoyez vos questions par e-mail ou par message, pour en garder une trace.</p>' + tpl_html +
  '<p style="margin-top:24px">Vous ne savez pas quelles questions poser sur votre devis ? <a href="test-devis.html">Faites le test en 1 minute</a>, ou confiez-le-moi : chaque rapport se termine par les questions à envoyer à l\'artisan.</p>',
