@@ -651,3 +651,123 @@ JOB_PAGES.append(dict(
    "Envoyez-le en PDF ou en photo après avoir commandé l'analyse en ligne : vous recevez sous 48 h un rapport avec les postes manquants et les questions à poser."),
  ],
 ))
+
+JOB_PAGES.append(dict(
+ slug="analyse-devis-peinture",
+ title="Analyse de devis peinture intérieure par un ingénieur BTP",
+ h1="Analyse de devis peinture intérieure",
+ desc="Surfaces, préparation des supports, état de finition A, B ou C, nombre de couches, TVA 10 % : ce qu'un ingénieur BTP vérifie sur un devis de peinture.",
+ lead="Deux devis de peinture pour le même appartement peuvent varier du simple au double. La différence se cache presque toujours dans la préparation des murs, pas dans la peinture.",
+ kicker="Peinture", cta="de peinture", service="Analyse de devis de peinture",
+ card="Surfaces, préparation, état de finition, couches, TVA.",
+ body="""<h2>La référence : le NF DTU 59.1 et ses trois états de finition</h2>
+<p>Les travaux de peinture des bâtiments suivent le NF DTU 59.1. Il définit trois états de finition, qui fixent le travail de préparation à faire avant la peinture :</p>
+<ul><li><b>État A (soigné)</b> : préparation la plus poussée (rebouchage, enduit, ponçage) pour un aspect fin, voire lisse. C'est le plus long, donc le plus cher.</li>
+<li><b>État B (courant)</b> : aspect correct à l'usage, avec de petits défauts tolérés.</li>
+<li><b>État C (élémentaire)</b> : le support est simplement couvert, les défauts restent visibles.</li></ul>
+<p>Un devis qui ne précise pas l'état de finition laisse la porte ouverte aux désaccords à la réception. Si rien n'est écrit, c'est en général l'état B qui est retenu : si vous attendez un rendu soigné, faites écrire « état A » sur le devis, pièce par pièce si besoin.</p>
+<h2>Les points à retrouver sur le devis</h2>
+<ul><li><b>Les surfaces en m², pièce par pièce</b>, en séparant murs et plafonds. Un forfait global « peinture appartement » ne se compare pas.</li>
+<li><b>La préparation</b> : lessivage, grattage, rebouchage, ratissage ou enduit, ponçage, et sur quelles surfaces.</li>
+<li><b>Le nombre de couches</b> : souvent une impression (sous-couche) puis deux couches de finition. Une seule couche de finition sur un mur repeint d'une autre couleur couvre rarement bien.</li>
+<li><b>La peinture utilisée</b> : marque, gamme, aspect (mat, velours, satin) et usage (pièce humide ou non).</li>
+<li><b>Les menuiseries, plinthes, radiateurs et tuyaux</b> : compris ou non, et comptés comment (à l'unité, au mètre).</li>
+<li><b>La protection et le nettoyage</b> : sols, meubles, évacuation des déchets.</li></ul>
+<h2>Logement ancien : la question du plomb</h2>
+<p>Dans un logement construit avant 1949, d'anciennes couches de peinture peuvent contenir du plomb. Si vous avez un constat de risque d'exposition au plomb (CREP), donnez-le à l'entreprise. Poncer ou décaper ces peintures sans précaution disperse des poussières toxiques : le devis doit alors prévoir une méthode adaptée.</p>
+<h2>La TVA</h2>
+<p>Dans un logement achevé depuis plus de 2 ans, la peinture relève en principe du taux de 10 %, fourniture comprise quand l'entreprise fournit la peinture. Si vous achetez vous-même la peinture, elle reste à 20 % et seule la main-d'œuvre est à 10 %. Dans un logement neuf, c'est 20 %.</p>
+<h2>Exemple de ligne à faire préciser</h2>
+<p>« Peinture séjour, murs et plafond : 1 450 € TTC. » Combien de m² ? Quelle préparation, quel état de finition ? Combien de couches, de quelle peinture ? À demander : le détail par surface, l'état de finition visé et la référence de la peinture.</p>
+""",
+ faq=[
+  ("Quelle est la différence entre une finition A, B et C ?",
+   "Le NF DTU 59.1 définit trois états de finition. A (soigné) demande la préparation la plus poussée et donne l'aspect le plus fin ; B (courant) tolère de petits défauts ; C (élémentaire) couvre simplement le support. Faites écrire sur le devis l'état attendu."),
+  ("Combien de couches de peinture doit prévoir un devis ?",
+   "En général une impression puis deux couches de finition. Le nombre exact dépend du support et de la peinture, mais il doit être écrit sur le devis."),
+  ("Quelle TVA pour des travaux de peinture ?",
+   "10 % dans un logement achevé depuis plus de 2 ans, quand l'entreprise fournit et applique la peinture. 20 % dans un logement neuf, et pour la peinture que vous achetez vous-même."),
+  ("Comment comparer deux devis de peinture ?",
+   "Comparez les m² par pièce, la préparation prévue, l'état de finition, le nombre de couches et la peinture utilisée. Un prix global sans ces éléments ne se compare pas."),
+ ],
+))
+
+JOB_PAGES.append(dict(
+ slug="analyse-devis-fosse-septique",
+ title="Analyse de devis fosse septique par un ingénieur BTP",
+ h1="Analyse de devis assainissement individuel (fosse septique, micro-station)",
+ desc="Étude de sol, avis du SPANC, filière choisie, terrassement, raccordements, entretien, éco-PTZ : ce qu'un ingénieur BTP vérifie sur un devis d'assainissement non collectif.",
+ lead="Un assainissement individuel coûte souvent plus de 8 000 €, et il est contrôlé par le service public d'assainissement non collectif (SPANC). Un devis signé trop tôt peut conduire à refaire les travaux.",
+ kicker="Assainissement", cta="d'assainissement", service="Analyse de devis d'assainissement non collectif",
+ card="Étude de sol, SPANC, filière, terrassement, éco-PTZ.",
+ body="""<h2>L'ordre à respecter : étude, avis du SPANC, puis devis signé</h2>
+<p>Pour créer ou refaire une installation d'assainissement non collectif, le SPANC contrôle le projet en deux temps : un <strong>contrôle de conception</strong> avant les travaux, puis un <strong>contrôle de bonne exécution</strong> sur le chantier, avant que les tranchées soient rebouchées.</p>
+<ul><li><b>L'étude de sol (ou étude de filière)</b>, faite par un bureau d'études, détermine le dispositif adapté à votre terrain. Beaucoup de SPANC l'exigent : renseignez-vous auprès du vôtre.</li>
+<li><b>L'avis favorable du SPANC</b> sur la conception vient ensuite. Ne signez pas un devis pour une filière que le SPANC n'a pas validée.</li>
+<li><b>Le devis</b> doit reprendre exactement la filière et le dimensionnement validés (nombre de pièces principales, type de dispositif, surface d'épandage).</li></ul>
+<h2>Les points à retrouver sur le devis</h2>
+<ul><li><b>La filière et sa référence</b> : fosse toutes eaux et épandage, filtre à sable, filtre compact, micro-station. Pour un dispositif agréé, la référence exacte et le numéro d'agrément, à retrouver sur le portail interministériel de l'assainissement non collectif.</li>
+<li><b>Le terrassement</b> : volumes, évacuation ou réemploi des terres, présence de roche ou de nappe, remise en état du terrain.</li>
+<li><b>La dépose ou la neutralisation de l'ancienne installation</b> : vidange, comblement ou évacuation de l'ancienne fosse.</li>
+<li><b>Les raccordements</b> : collecte des eaux usées de la maison, ventilation de la fosse (entrée d'air et extraction au-dessus du toit), regards, éventuelle pompe de relevage.</li>
+<li><b>Le rejet des eaux traitées</b> : infiltration dans le sol ou rejet vers un milieu, selon ce que l'étude a retenu.</li>
+<li><b>Les frais de contrôle du SPANC</b> : en général facturés à part par le service, à prévoir dans votre budget.</li></ul>
+<h2>Le coût d'usage, à comparer aussi</h2>
+<p>Une micro-station prend peu de place mais consomme de l'électricité et demande un entretien régulier, souvent sous contrat. Une filière sans énergie (fosse et épandage, filtre à sable) demande plus de surface mais peu d'entretien, en dehors des vidanges. Demandez la notice et le coût d'entretien annuel de chaque solution, pas seulement le prix de la pose.</p>
+<h2>Délais et aides</h2>
+<p>Si le SPANC a classé votre installation non conforme avec un danger pour la santé ou un risque pour l'environnement, les travaux doivent être faits dans un délai de 4 ans. Après l'achat d'une maison dont l'installation est non conforme, l'acquéreur a 1 an pour faire les travaux. Pour une installation qui ne consomme pas d'énergie, un <strong>éco-prêt à taux zéro</strong> spécifique peut financer jusqu'à 10 000 € ; votre agence de l'eau ou votre collectivité peut aussi proposer des aides, à demander avant de signer.</p>
+<h2>La TVA</h2>
+<p>Dans un logement achevé depuis plus de 2 ans, la réhabilitation d'un assainissement individuel relève en principe du taux de 10 %.</p>
+<h2>Exemple de ligne à faire préciser</h2>
+<p>« Fourniture et pose d'une micro-station 5 EH, terrassement compris : 9 800 € TTC. » Quel modèle, quel agrément ? Terrassement jusqu'à quelle profondeur, et si on trouve de la roche ? Évacuation de l'ancienne fosse comprise ? À demander : la référence agréée, l'avis du SPANC, et ce qui est facturé en plus en cas d'imprévu de terrain.</p>
+""",
+ faq=[
+  ("Faut-il l'accord du SPANC avant de signer un devis d'assainissement ?",
+   "Oui. Le SPANC contrôle la conception avant les travaux, puis leur bonne exécution avant le remblaiement. Signez un devis qui reprend la filière que le SPANC a validée."),
+  ("L'étude de sol est-elle obligatoire ?",
+   "Elle est exigée par de nombreux SPANC pour choisir la filière adaptée au terrain. Renseignez-vous auprès du vôtre avant de demander des devis."),
+  ("Combien de temps pour mettre aux normes un assainissement non conforme ?",
+   "4 ans au plus si le SPANC a relevé un danger pour la santé ou un risque pour l'environnement, et 1 an après l'achat en cas de vente d'une maison dont l'installation est non conforme."),
+  ("Existe-t-il un éco-PTZ pour l'assainissement ?",
+   "Oui, jusqu'à 10 000 € pour réhabiliter une installation par un dispositif qui ne consomme pas d'énergie. Il se demande avant le début des travaux, avec un formulaire rempli par l'entreprise."),
+ ],
+))
+
+JOB_PAGES.append(dict(
+ slug="analyse-devis-parquet",
+ title="Analyse de devis parquet par un ingénieur BTP",
+ h1="Analyse de devis parquet",
+ desc="Pose flottante, collée ou clouée, état du support, humidité, sous-couche, sol chauffant, plinthes, TVA : ce qu'un ingénieur BTP vérifie sur un devis de parquet.",
+ lead="Sur un devis de parquet, le prix au m² du bois attire l'œil. Mais c'est la préparation du support et le mode de pose qui décident si le parquet tiendra.",
+ kicker="Parquet", cta="de parquet", service="Analyse de devis de parquet",
+ card="Mode de pose, support, humidité, sol chauffant, finitions.",
+ body="""<h2>Le mode de pose, à écrire sur le devis</h2>
+<p>Chaque mode de pose a sa norme : NF DTU 51.11 pour la pose flottante, NF DTU 51.2 pour la pose collée, NF DTU 51.1 pour la pose clouée. Le devis doit dire lequel est prévu, avec la référence exacte du parquet (massif ou contrecollé, épaisseur, essence, finition).</p>
+<h2>Le support, source de la plupart des litiges</h2>
+<ul><li><b>La planéité</b> : un ragréage est souvent nécessaire. Est-il compris, sur quelle surface et quelle épaisseur ?</li>
+<li><b>L'humidité</b> : une chape récente ou un sol sur terre-plein doit être assez sec. Demandez si une mesure d'humidité est prévue avant la pose, et ce qui est fait si le support est trop humide.</li>
+<li><b>La dépose de l'ancien revêtement</b> : moquette, carrelage, lino, avec évacuation. Un ancien revêtement collé peut contenir de l'amiante dans les logements anciens : vérifiez le repérage avant de le faire arracher.</li>
+<li><b>La sous-couche</b> : son rôle (protection contre l'humidité, isolation phonique) et sa référence. En appartement, le règlement de copropriété impose souvent une performance acoustique minimale.</li></ul>
+<h2>Sur un sol chauffant</h2>
+<p>Le parquet doit être compatible avec le chauffage au sol, ce que le fabricant indique. Une pose flottante sur sol chauffant n'est possible qu'avec l'accord explicite du fabricant, et l'ensemble parquet et sous-couche ne doit pas trop isoler, sinon le chauffage perd en efficacité. Le devis doit citer cette compatibilité.</p>
+<h2>Les finitions</h2>
+<ul><li><b>Les plinthes</b> : fourniture et pose, en mètres linéaires.</li>
+<li><b>Les seuils et barres de transition</b> entre pièces, et le joint de dilatation en périphérie.</li>
+<li><b>La découpe des portes</b> si le sol monte de quelques millimètres.</li>
+<li><b>La finition du bois</b> : vitrifié, huilé, verni, et le nombre de couches s'il est posé brut.</li></ul>
+<h2>La TVA</h2>
+<p>Dans un logement achevé depuis plus de 2 ans, la pose d'un parquet par une entreprise relève en principe du taux de 10 %, fourniture comprise. Le parquet que vous achetez vous-même reste à 20 %.</p>
+<h2>Exemple de ligne à faire préciser</h2>
+<p>« Pose parquet chêne contrecollé 45 m², préparation du sol comprise : 3 900 € TTC. » Quel mode de pose ? Que comprend la préparation : ragréage, mesure d'humidité, dépose de l'ancien sol ? Plinthes et seuils compris ? À demander : la référence du parquet et de la sous-couche, et le détail de la préparation du support.</p>
+""",
+ faq=[
+  ("Pose flottante, collée ou clouée : quelle différence ?",
+   "En pose flottante, les lames ne sont pas fixées au sol, seulement assemblées entre elles (NF DTU 51.11). En pose collée, elles sont collées au support (NF DTU 51.2). En pose clouée, elles sont fixées sur des lambourdes ou un plancher (NF DTU 51.1). Le devis doit dire laquelle est prévue."),
+  ("Peut-on poser un parquet flottant sur un sol chauffant ?",
+   "Seulement si le fabricant du parquet l'autorise explicitement, avec une sous-couche adaptée qui n'isole pas trop. Sinon, la pose collée est en général recommandée."),
+  ("Quelle TVA pour la pose d'un parquet ?",
+   "10 % dans un logement achevé depuis plus de 2 ans, quand l'entreprise fournit et pose le parquet. 20 % pour le parquet acheté par vous-même et dans un logement neuf."),
+  ("Pourquoi deux devis de parquet ont-ils des prix si différents ?",
+   "Souvent à cause de la préparation du support (ragréage, dépose, traitement de l'humidité), du mode de pose et des finitions (plinthes, seuils). Comparez ces postes, pas seulement le prix du parquet au m²."),
+ ],
+))
