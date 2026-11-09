@@ -301,7 +301,7 @@ JOB_PAGES.append(dict(
 <h2>Les démarches et l'assurance</h2>
 <p>Une terrasse de plain-pied non couverte ne demande en principe pas d'autorisation, sous réserve des règles de votre commune (PLU, secteur protégé). Une terrasse <strong>surélevée de plus de 60 cm</strong> ou <strong>couverte</strong> crée de l'emprise au sol : déclaration préalable à partir de 5 m², permis au-delà de 20 m² (40 m² dans certaines zones couvertes par un PLU). Pour une terrasse maçonnée, demandez l'attestation d'assurance décennale couvrant cette activité. Au-delà d'environ 1 m de hauteur de chute, un garde-corps est à prévoir (norme NF P01-012).</p>
 <h2>Exemple de ligne à faire préciser</h2>
-<p>« Réalisation d'une terrasse béton 25 m² : forfait 4 500 €. » Quelle préparation, quelle épaisseur de dalle, quel ferraillage, quelle pente, qui évacue les terres ? À demander : le détail par poste (terrassement, hérisson, dalle, finition) avec les quantités.</p>
+<p>« Réalisation d'une terrasse béton 25 m², terrassement et finition compris : forfait 4 500 € TTC. » Quelle préparation, quelle épaisseur de dalle, quel ferraillage, quelle pente, qui évacue les terres ? À demander : le détail par poste (terrassement, hérisson, dalle, finition) avec les quantités.</p>
 """,
  faq=[
   ("Faut-il une autorisation pour construire une terrasse ?",
@@ -402,7 +402,7 @@ JOB_PAGES.append(dict(
 <li><b>Le support</b> : fixation murale adaptée au poids, ou trépied, et l'accès pour l'entretien.</li>
 <li><b>Pour un chauffe-eau thermodynamique</b> : l'emplacement (volume du local, gaines vers l'extérieur si nécessaire), l'évacuation des condensats et le bruit.</li></ul>
 <h2>La TVA et les aides</h2>
-<p>Dans un logement achevé depuis plus de 2 ans, un chauffe-eau électrique classique et sa pose relèvent en principe du taux de 10 %. Un chauffe-eau thermodynamique répondant aux critères de performance peut relever de 5,5 %. Depuis le 1<sup>er</sup> septembre 2026, MaPrimeRénov' « par geste » ne finance plus l'installation seule d'un système d'eau chaude : une prime CEE peut rester possible. Voir <a href="guide-tva-travaux-renovation.html">le guide TVA</a>.</p>
+<p>Dans un logement achevé depuis plus de 2 ans, un chauffe-eau électrique classique et sa pose relèvent en principe du taux de 10 %. Un chauffe-eau thermodynamique répondant aux critères de performance peut relever de 5,5 %. Depuis le 1<sup>er</sup> septembre 2026, MaPrimeRénov' « par geste » ne finance plus un chauffe-eau thermodynamique ou solaire (sauf chauffe-eau solaire en outre-mer) : une prime CEE peut rester possible. Voir <a href="guide-tva-travaux-renovation.html">le guide TVA</a>.</p>
 <h2>Exemple de ligne à faire préciser</h2>
 <p>« Remplacement chauffe-eau 200 L, fourniture et pose : 1 450 € TTC. » Quelle marque et quelle référence ? Groupe de sécurité neuf ? Dépose et évacuation de l'ancien ballon ? Mise aux normes du raccordement électrique ? À demander : le détail fourniture, pose et accessoires.</p>
 """,
@@ -466,7 +466,7 @@ JOB_PAGES.append(dict(
 <li><b>La pose</b> : intégration ou surimposition, fixations, étanchéité de la toiture, câblage et protections électriques.</li>
 <li><b>Les démarches</b> : déclaration préalable en mairie, demande de raccordement, attestation de conformité électrique, et qui s'en charge.</li></ul>
 <h2>La TVA et les aides</h2>
-<p>Depuis le 1<sup>er</sup> octobre 2025, une installation de 9 kWc ou moins sur un logement peut relever du taux de 5,5 %, à des conditions précises : empreinte carbone des panneaux, faible teneur en métaux, système de gestion de l'énergie, certification. Le devis doit justifier ces conditions s'il applique 5,5 %. La prime à l'autoconsommation et le rachat du surplus dépendent aussi de règles précises : demandez-en le détail par écrit plutôt que des montants « garantis ».</p>
+<p>Depuis le 1<sup>er</sup> octobre 2025, une installation de 9 kWc ou moins sur un logement peut relever du taux de 5,5 %, à des conditions précises : empreinte carbone des panneaux, faible teneur en métaux, système de gestion de l'énergie, certification. Le devis doit justifier ces conditions s'il applique 5,5 %. La prime à l'autoconsommation est supprimée pour les demandes de raccordement déposées depuis le 5 juin 2026, et le surplus est désormais racheté environ 1,1 c€/kWh : méfiez-vous d'un devis qui compte encore cette prime ou promet un rachat plus élevé, et demandez le détail des gains annoncés par écrit.</p>
 <h2>Exemple de ligne à faire préciser</h2>
 <p>« Centrale solaire 6 kWc clés en main : 14 900 € TTC. » Quels panneaux, quel onduleur ? Quelle production estimée et sur quelle base ? Démarches et raccordement inclus ? Taux de TVA justifié ? À demander : le détail matériel, pose, démarches, et l'étude de production.</p>
 """,
@@ -500,7 +500,7 @@ JOB_PAGES.append(dict(
 <li><b>Le rejet</b> vers l'extérieur (sortie de toiture ou de mur), jamais dans les combles.</li>
 <li><b>Le raccordement électrique</b> et la dépose de l'ancienne VMC.</li></ul>
 <h2>La TVA</h2>
-<p>Dans un logement achevé depuis plus de 2 ans, certaines VMC liées à la rénovation énergétique peuvent relever du taux de 5,5 % si elles répondent aux critères de performance, sinon le taux de 10 % s'applique en principe. Voir <a href="guide-tva-travaux-renovation.html">le guide TVA</a>.</p>
+<p>Dans un logement achevé depuis plus de 2 ans, certaines VMC liées à la rénovation énergétique peuvent relever du taux de 5,5 % si elles répondent aux critères de performance, sinon le taux de 10 % s'applique en principe. Depuis le 1<sup>er</sup> septembre 2026, MaPrimeRénov' « par geste » ne finance plus une VMC posée seule ; une prime CEE peut rester possible. Voir <a href="guide-tva-travaux-renovation.html">le guide TVA</a>.</p>
 <h2>Exemple de ligne à faire préciser</h2>
 <p>« Installation VMC hygro, fourniture et pose : 1 200 € TTC. » Hygro A ou B ? Combien de bouches, où ? Entrées d'air comprises ? Sortie de toiture ? À demander : la référence du caisson et le détail des bouches, entrées d'air, gaines et rejet.</p>
 """,
@@ -556,7 +556,7 @@ JOB_PAGES.append(dict(
  kicker="Véranda", cta="de véranda", service="Analyse de devis de véranda",
  card="Dalle, raccord au mur, vitrages, urbanisme, TVA.",
  body="""<h2>Une véranda, c'est un agrandissement</h2>
-<p>Close et couverte, une véranda crée de la surface. En principe, il faut une <strong>déclaration préalable</strong> entre 5 et 20 m² d'emprise au sol ou de surface de plancher, seuil porté à 40 m² dans les zones urbaines couvertes par un plan local d'urbanisme, et un <strong>permis de construire</strong> au-delà. Si la surface de la maison dépasse 150 m² après travaux, le permis et le recours à un architecte deviennent obligatoires. Votre mairie confirme les règles de votre terrain ; le devis doit dire qui prépare le dossier.</p>
+<p>Close et couverte, une véranda crée de la surface. En principe, il faut une <strong>déclaration préalable</strong> entre 5 et 20 m² d'emprise au sol ou de surface de plancher, seuil porté à 40 m² dans les zones urbaines couvertes par un plan local d'urbanisme, et un <strong>permis de construire</strong> au-delà. Dès qu'un permis est nécessaire et que la surface totale de la maison dépasse 150 m² après travaux, le recours à un architecte devient obligatoire. Votre mairie confirme les règles de votre terrain ; le devis doit dire qui prépare le dossier.</p>
 <h2>Les points à retrouver sur le devis</h2>
 <ul><li><b>Les fondations et la dalle</b> : nature, épaisseur, isolant sous dalle. Un devis « structure seule » laisse souvent la dalle à votre charge.</li>
 <li><b>Le raccord au mur existant</b> : solin ou bande d'étanchéité, et la reprise de la toiture ou de la gouttière si la véranda vient dessous.</li>
@@ -574,7 +574,7 @@ JOB_PAGES.append(dict(
 """,
  faq=[
   ("Faut-il un permis de construire pour une véranda ?",
-   "En principe, une déclaration préalable suffit entre 5 et 20 m², ou jusqu'à 40 m² en zone urbaine d'un PLU. Au-delà, ou si la maison dépasse 150 m² après travaux, il faut un permis de construire. La mairie confirme les règles de votre terrain."),
+   "En principe, une déclaration préalable suffit entre 5 et 20 m², ou jusqu'à 40 m² en zone urbaine d'un PLU. Au-delà, il faut un permis de construire ; en zone urbaine, c'est aussi le cas entre 20 et 40 m² si la maison dépasse 150 m² après travaux, et l'architecte devient alors obligatoire. La mairie confirme les règles de votre terrain."),
   ("Quelle TVA pour une véranda ?",
    "20 %, comme toute extension qui crée de la surface, quel que soit l'âge de la maison."),
   ("Comment faire relire mon devis de véranda ?",
