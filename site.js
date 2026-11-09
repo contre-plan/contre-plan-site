@@ -90,7 +90,7 @@
 
   /* ---------- Barre mobile ---------- */
   function bar() {
-    if (!('IntersectionObserver' in window)) return;
+    if (!('IntersectionObserver' in window) || document.getElementById('cp-depot') || document.querySelector('.cp-depot-ok')) return;
     var b = document.createElement('div'); b.id = 'cp-bar';
     b.innerHTML = '<span><b>Relu par un ingénieur</b>16,50 € · rapport 48 h</span><button type="button" class="cp-bar-q"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Question</button><a href="' + COMEUP + '" data-goatcounter-click="clic-commander-barre">Faire analyser</a>';
     b.querySelector('.cp-bar-q').addEventListener('click', function () { var c = document.getElementById('cp-chat-btn'); if (c) c.click(); });
@@ -174,6 +174,12 @@
       r.addEventListener('change', function () { if (r.checked) btn.querySelector('.pp').textContent = r.getAttribute('data-prix'); });
     });
     function err(t) { st.className = 'cp-depot-st err'; st.textContent = t; btn.disabled = false; }
+    var fin = f.elements.fichiers, fl = f.querySelector('.cp-file-list'), fz = f.querySelector('.cp-file');
+    if (fin && fl) fin.addEventListener('change', function () {
+      var n = [].map.call(fin.files, function (x) { return x.name; });
+      fl.textContent = n.length ? (n.length > 1 ? n.length + ' fichiers ajoutés : ' : 'Fichier ajouté : ') + n.join(', ') : '';
+      if (fz) fz.classList.toggle('ok', n.length > 0);
+    });
     function type(n) { n = n.toLowerCase(); return /\.pdf$/.test(n) ? 'application/pdf' : /\.png$/.test(n) ? 'image/png' : /\.(heic|heif)$/.test(n) ? 'image/heic' : /\.webp$/.test(n) ? 'image/webp' : 'image/jpeg'; }
     function lire(file) {
       return new Promise(function (ok, ko) {

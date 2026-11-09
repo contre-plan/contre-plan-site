@@ -100,10 +100,10 @@ def FOOTER(root=""):
 <div class="cp-foot-col"><p>Ressources</p>{L("guides.html","Guides")}{L("comparer-ses-devis.html","Tableau comparatif")}{L("modeles-messages-artisan.html","Modèles de messages")}{L("lexique-devis-travaux.html","Lexique")}{L("checklist-devis-travaux.pdf","Check-list PDF","telechargement-checklist")}<a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par email</a></div>
 </div><div class="cp-foot-bottom"><span>© 2026 Contre-Plan</span><a href="{root}mentions-legales.html" class="cp-ml">Mentions légales</a><a href="{root}cgv.html" class="cp-ml">CGV</a><a href="{root}confidentialite.html" class="cp-ml">Confidentialité</a></div></footer>"""
 
-def footer(root=""):
+def footer(root="", chat=True):
     return FOOTER(root) + f"""
 </div>
-<script src="{root}chat.js" defer></script>
+{'<script src="' + root + 'chat.js" defer></script>' if chat else ''}
 </body>
 </html>
 """
@@ -201,6 +201,8 @@ FAQS = {
 UPDATED = {'guide-acompte-paiement-devis-travaux': "2026-10-26", 'guide-bien-demander-ses-devis': "2026-10-26", 'guide-mentions-obligatoires-devis': "2026-10-26", 'guide-oublis-devis-salle-de-bain': "2026-10-26", 'guide-reception-travaux-reserves': "2026-10-26", 'guide-tva-travaux-renovation': "2026-10-26"}
 for _s in ['guide-tva-travaux-renovation','guide-mentions-obligatoires-devis','guide-reception-travaux-reserves','guide-verifier-assurance-decennale','guide-negocier-devis-travaux','guide-depassement-devis-travaux-supplementaires','guide-annuler-devis-signe-retractation']:
     UPDATED[_s] = "2026-10-27"  # relecture et corrections du 27/10/2026
+SANS_CTA_HAUT = {"guide-artisan-retard-chantier-que-faire", "guide-artisan-injoignable-apres-acompte", "guide-reception-travaux-reserves"}  # chantier déjà en cours : pas d'appel « devis »
+GUIDE_CTA_HAUT = '<p class="cp-guide-cta">Vous avez déjà un devis ? Je le relis ligne par ligne : 16,50 €, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-guide-haut">Faire analyser mon devis →</a></p>\n'
 AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur, ingénieur BTP</a> (10 ans de chantier, environ 1 000 devis lus)"
 
 # Liens vers les sources officielles (bloc « Pour aller plus loin », vérifiés le 27/10/2026)
@@ -315,7 +317,7 @@ def article(slug, title, h1, desc, lead, body, readtime, date=DATE):
     if qa:
         body = with_faq(body, qa)
     body = with_links(body, slug)
-    page = head(title, desc, url, extra) + pagehero("Guide", h1, lead, f"Mis à jour le {date_fr(mod)}, lecture {readtime} min · {AUTEUR}", crumbs) + layout(body, True, LITIGE_CTA if slug in LITIGE_SLUGS else None) + footer()
+    page = head(title, desc, url, extra) + pagehero("Guide", h1, lead, f"Mis à jour le {date_fr(mod)}, lecture {readtime} min · {AUTEUR}", crumbs) + layout((body if slug in LITIGE_SLUGS or slug in SANS_CTA_HAUT else GUIDE_CTA_HAUT + body), True, LITIGE_CTA if slug in LITIGE_SLUGS else None) + footer()
     open(os.path.join(OUT, slug + ".html"), "w").write(page)
     ARTICLES.append((slug, h1, desc, readtime))
     LASTMOD[slug + ".html"] = mod
@@ -1373,15 +1375,23 @@ if DEPOT_URL:
 <section class="cp-ord-box" aria-labelledby="t-envoi">
 <h2 id="t-envoi"><span class="n">2</span>Déposez votre devis, puis payez</h2>
 <form class="cp-form cp-depot" id="cp-depot" data-url="{DEPOT_URL}" novalidate>
-<label>Votre devis <small class="cp-hint">PDF ou photo nette. Trois fichiers et 10 Mo au maximum. Vous pouvez masquer votre nom et votre adresse.</small><input type="file" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required></label>
+<div class="cp-file"><span class="cp-file-t">Votre devis</span>
+<input type="file" id="cp-fichiers" class="cp-file-in" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
+<label for="cp-fichiers" class="cp-file-zone"><b>Ajouter mon devis</b><span>PDF, ou photo prise avec le téléphone</span></label>
+<p class="cp-file-list" aria-live="polite"></p>
+<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Trois fichiers et 10 Mo au maximum. Vous pouvez masquer votre nom et votre adresse.</small></div>
 <label>Votre adresse e-mail <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required></label>
-<div class="cp-f2"><label>Type de travaux (facultatif) <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le (facultatif) <input type="date" name="echeance"></label></div>
-<label>Ce qui vous inquiète (facultatif) <textarea name="message" rows="3" maxlength="2000"></textarea></label>
-<label class="cp-chk"><input type="checkbox" name="accord"><span>Je demande que l'analyse commence dès réception de mon devis, sans attendre la fin du délai de rétractation de 14 jours. Si j'annule avant la livraison, je paie seulement la part déjà faite ; une fois le rapport livré, je ne peux plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). <small class="cp-hint">Case facultative : sans elle, l'analyse commence à la fin du délai de 14 jours.</small></span></label>
+<details class="cp-fold cp-opt-f"><summary>Préciser votre situation (facultatif)</summary>
+<div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
+<label>Ce qui vous inquiète <textarea name="message" rows="3" maxlength="2000"></textarea></label>
+</details>
+<label class="cp-chk"><input type="checkbox" name="accord"><span><b>Je veux mon rapport sous 48 h : commencez dès réception de mon devis</b>, sans attendre la fin du délai de rétractation de 14 jours. <small class="cp-hint">Si j'annule avant la livraison, je paie seulement la part déjà faite ; une fois le rapport livré, je ne peux plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). Sans cette case, l'analyse démarre dans 14 jours.</small></span></label>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+<p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
 <div class="cp-depot-st" role="status" aria-live="polite"></div>
-<p class="cp-form-rgpd">Votre devis est stocké dans l'espace privé de Contre-Plan et sert uniquement à votre analyse, préparée avec des outils d'aide puis relue et validée par moi. Jamais transmis à une entreprise, il est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+<p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation de ma part dans l'heure.</p>
+<p class="cp-form-rgpd">Des outils m'aident à préparer les calculs et les vérifications ; je relis votre devis et je valide moi-même chaque avis et chaque question du rapport. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 {_PAY_SEC}
 <details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
@@ -1426,13 +1436,13 @@ ORDER = f'''<main id="contenu" class="cp-order">
 <li><b>Des recours</b> : <a href="cgv.html">CGV</a>, rétractation de 14 jours, médiateur CM2C.</li>
 </ul></div>
 <div class="cp-ord-note"><p class="t">Devis de plus de 30 000 € ou rénovation complète ?</p><p>Demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous annonce le prix avant toute commande.</p></div>
-<div class="cp-ord-note"><p class="t">Vous préférez passer par ComeUp ?</p><p>Compte gratuit, prix affichés sur la plateforme. La plateforme conserve le paiement jusqu'à la livraison du rapport, et vous envoyez le devis dans la messagerie de la commande. Options à cocher :</p><ul><li>1 devis : aucune ;</li><li>2 devis comparés : « Devis supplémentaire » et « Comparatif » ;</li><li>3 devis comparés : « Devis supplémentaire », « Troisième devis » et « Comparatif ».</li></ul><a href="{COMEUP}" data-goatcounter-click="clic-comeup-commander">Commander sur ComeUp</a></div>
+<details class="cp-ord-note cp-ord-alt"><summary class="t">Autre moyen de commander : ComeUp</summary><p>Compte gratuit, prix affichés sur la plateforme. La plateforme conserve le paiement jusqu'à la livraison du rapport, et vous envoyez le devis dans la messagerie de la commande. Options à cocher :</p><ul><li>1 devis : aucune ;</li><li>2 devis comparés : « Devis supplémentaire » et « Comparatif » ;</li><li>3 devis comparés : « Devis supplémentaire », « Troisième devis » et « Comparatif ».</li></ul><a href="{COMEUP}" data-goatcounter-click="clic-comeup-commander">Commander sur ComeUp</a></details>
 <p class="cp-ord-legal">Droit de rétractation de 14 jours, dans les conditions de l'<a href="cgv.html#retractation">article 6 des CGV</a>. Médiateur de la consommation : CM2C. TVA non applicable, article 293 B du CGI.</p>
 </div>
 </div>
 </main>
 '''
-_cmd = head("Commander une analyse de devis | Contre-Plan", "Commandez l'analyse de votre devis de travaux : dépôt du devis en ligne, paiement par carte en 1 minute, rapport PDF sous 48 h.", "https://contre-plan.com/commander.html") + pagehero("Commander", "Commander votre analyse", "Déposez votre devis ci-dessous, payez par carte sans créer de compte, et recevez le rapport sous 48 h. Chaque rapport est relu et validé par Arthur, ingénieur BTP, avant envoi.", None, [("Accueil", "index.html"), ("Commander", None)]) + ORDER + footer()
+_cmd = head("Commander une analyse de devis | Contre-Plan", "Commandez l'analyse de votre devis de travaux : dépôt du devis en ligne, paiement par carte en 1 minute, rapport PDF sous 48 h.", "https://contre-plan.com/commander.html") + pagehero("Commander", "Commander votre analyse", "Déposez votre devis ci-dessous, payez par carte sans créer de compte, et recevez le rapport sous 48 h. Chaque rapport est relu et validé par Arthur, ingénieur BTP, avant envoi.", None, [("Accueil", "index.html"), ("Commander", None)]) + ORDER + footer(chat=False)
 open(os.path.join(OUT, "commander.html"), "w").write(_cmd)
 PAGES.append("commander")
 
@@ -1446,7 +1456,7 @@ _ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envo
 </section>
 <section class="cp-ord-box"><h2><span class="n">3</span>Recevez le rapport</h2><p>La facture vous arrive par e-mail de la part de Stripe, et une confirmation de commande de ma part dans l'heure (avec les conditions de vente et le formulaire de rétractation). Le rapport PDF arrive par e-mail sous 48 h après réception du devis complet. Pensez à regarder vos courriers indésirables. Une question ? Répondez simplement à mon e-mail ou écrivez à contact@contre-plan.com.</p></section>
 </div></main>
-''' + footer()
+''' + footer(chat=False)
 open(os.path.join(OUT, "commande-confirmee.html"), "w").write(_ok)
 
 # ---------- 404 (absolute paths: served at any URL)
