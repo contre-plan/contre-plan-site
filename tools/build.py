@@ -228,6 +228,9 @@ LINKS = {
     'analyse-devis-salle-de-bain': [("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements"), (SP + "F288", "Habitat contenant de l'amiante")],
     'analyse-devis-pompe-a-chaleur': [(SP.replace("vosdroits/", "actualites/") + "A19002", "TVA à 5,5 % pour les pompes à chaleur air/air"), (SP + "F35083", "MaPrimeRénov'")],
     'analyse-devis-isolation': [(SP + "F33682", "Obligation d'isoler"), (SP + "F35083", "MaPrimeRénov'")],
+    'analyse-devis-fosse-septique': [("https://www.assainissement-non-collectif.developpement-durable.gouv.fr/", "Portail interministériel de l'assainissement non collectif (dispositifs agréés)"), ("https://www.economie.gouv.fr/particuliers/emprunter-et-sassurer/leco-pret-taux-zero-eco-ptz-pouvez-vous-en-beneficier", "Éco-prêt à taux zéro")],
+    'analyse-devis-peinture': [("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements")],
+    'analyse-devis-parquet': [("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements"), (SP + "F288", "Habitat contenant de l'amiante")],
     'analyse-devis-toiture': [(SP + "F36767", "Autorisation pour des travaux de toiture"), (SP + "F33682", "Obligation d'isoler lors d'une réfection de toiture")],
 }
 
