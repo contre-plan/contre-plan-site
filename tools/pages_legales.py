@@ -19,7 +19,7 @@ DEC_QUI = (", Cloudflare, Inc. (relais technique des outils gratuits du site et 
 
 CGV_BODY = f"""<p><em>Conditions en vigueur au {MAJ}.</em></p>
 <h2 id="vendeur">1. Qui vend</h2>
-<p>{EDITEUR}. Adresse : {ADRESSE}. SIRET : {SIRET}. Téléphone : <a href="tel:+33675836561">{TEL}</a>. E-mail : <a href="mailto:contact@contre-plan.com">contact@contre-plan.com</a>. TVA non applicable, article 293 B du Code général des impôts.</p>
+<p>{NOM_EXPLOITANT} EI, nom commercial Contre-Plan (entreprise individuelle). Adresse : {ADRESSE}. SIRET : {SIRET}. Téléphone : <a href="tel:+33675836561">{TEL}</a>. E-mail : <a href="mailto:contact@contre-plan.com">contact@contre-plan.com</a>. TVA non applicable, article 293 B du Code général des impôts.</p>
 
 <h2 id="champ">2. Champ d'application</h2>
 <p>Les présentes conditions générales de vente s'appliquent aux prestations de Contre-Plan commandées par un particulier ou par un professionnel (agent immobilier, syndic, gestionnaire de biens…). Les règles propres aux consommateurs, notamment le droit de rétractation (article 6) et la médiation de la consommation (article 9), bénéficient aux particuliers, ainsi qu'aux professionnels employant cinq salariés au plus lorsque la commande n'entre pas dans le champ de leur activité principale (article L221-3 du Code de la consommation).</p>
