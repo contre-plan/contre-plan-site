@@ -128,7 +128,7 @@
     var w = document.querySelector('.cp-when'); if (!w) return;
     var r = w.querySelector('.r');
     var T = {
-      vite: 'Prenez l\'option express (+ 5,50 €, à ajouter sur la page de paiement) : le rapport arrive en 24 h, à temps pour répondre à l\'artisan. <a href="' + COMEUP + '" data-goatcounter-click="clic-commander-quand-vite">Commander avec l\'express</a>',
+      vite: 'Prenez l\'option express (+ 5,50 €, une case à cocher en commandant) : le rapport arrive en 24 h, à temps pour répondre à l\'artisan. <a href="commander.html?express=1" data-goatcounter-click="clic-commander-quand-vite">Commander avec l\'express</a>',
       plus: 'L\'analyse standard suffit : rapport sous 48 h. Vous pouvez d\'abord faire <a href="#test">le test en 1 minute</a>.',
       signe: 'Signé chez vous ou à distance ? Vous avez en principe 14 jours pour vous rétracter, et l\'analyse vous aide à décider à temps. <a href="guide-annuler-devis-signe-retractation.html">Vos droits</a>'
     };
@@ -140,21 +140,27 @@
     });
   }
   /* ---------- Page de commande : la formule choisie règle le bouton de paiement ---------- */
+  /* Formule + case express : lien Stripe, prix du bouton et total à payer */
   function order() {
     var pay = document.getElementById('cp-pay'); if (!pay) return;
+    var ex = document.getElementById('cp-express');
+    function upd() {
+      var r = document.querySelector('.cp-opt input:checked'); if (!r) return;
+      var e = !!(ex && ex.checked), v = parseFloat(r.getAttribute('data-prix').replace(',', '.')) + (e ? 5.5 : 0);
+      var t = (v % 1 ? v.toFixed(2).replace('.', ',') : String(v)) + '\u00a0€';
+      pay.href = r.getAttribute(e ? 'data-href-e' : 'data-href');
+      pay.setAttribute('data-goatcounter-click', 'clic-stripe-' + r.value + (e ? '-express' : ''));
+      each(document.querySelectorAll('.pp, .cp-total .pt'), function (x) { x.textContent = t; });
+      var t1 = document.querySelector('.cp-total-1'); if (t1) t1.hidden = r.value !== '1';
+    }
     each(document.querySelectorAll('.cp-opt input'), function (r) {
-      r.addEventListener('change', function () {
-        if (!r.checked) return;
-        pay.href = r.getAttribute('data-href');
-        pay.querySelector('.pp').textContent = r.getAttribute('data-prix');
-        var pt = document.querySelector('.cp-total .pt'), pte = document.querySelector('.cp-total .pte');
-        if (pt && pte) { var v = parseFloat(r.getAttribute('data-prix').replace(',', '.')); pt.textContent = r.getAttribute('data-prix'); var e = v + 5.5; pte.textContent = (e % 1 ? e.toFixed(2).replace('.', ',') : String(e)) + '\u00a0€'; }
-        pay.setAttribute('data-goatcounter-click', 'clic-stripe-' + r.value);
-        gc('formule-' + r.value);
-      });
+      r.addEventListener('change', function () { if (r.checked) { upd(); gc('formule-' + r.value); } });
     });
-    var m = location.search.match(/[?&]formule=([123])/);
-    if (m) { var r = document.querySelector('.cp-opt input[value="' + m[1] + '"]'); if (r) { r.checked = true; r.dispatchEvent(new Event('change')); } }
+    if (ex) ex.addEventListener('change', function () { upd(); gc('express-' + (ex.checked ? 'oui' : 'non')); });
+    var m = location.search.match(/[?&]formule=(g1|g2|[123])/);
+    if (m) { var r = document.querySelector('.cp-opt input[value="' + m[1] + '"]'); if (r) r.checked = true; }
+    if (ex && /[?&]express=1/.test(location.search)) ex.checked = true;
+    upd();
   }
   /* ---------- Page de commande : dépôt du devis avant paiement (programme Google, voir tools/depot-devis) ---------- */
   function depot() {
@@ -170,18 +176,17 @@
       return;
     }
     var st = f.querySelector('.cp-depot-st'), btn = f.querySelector('button[type="submit"]');
-    each(document.querySelectorAll('.cp-opt input'), function (r) {
-      r.addEventListener('change', function () { if (r.checked) btn.querySelector('.pp').textContent = r.getAttribute('data-prix'); });
-    });
     function err(t) { st.className = 'cp-depot-st err'; st.textContent = t; btn.disabled = false; }
     var acc = f.elements.accord, dl = f.querySelector('.cp-delai');
     function delai() {
       if (!acc || !dl) return;
-      if (acc.checked) { dl.textContent = 'Rapport sous 48 h après réception de votre devis.'; dl.className = 'cp-delai ok'; return; }
+      var ex = document.getElementById('cp-express');
+      if (acc.checked) { dl.textContent = 'Rapport sous ' + (ex && ex.checked ? '24' : '48') + ' h après réception de votre devis.'; dl.className = 'cp-delai ok'; return; }
       var d = new Date(Date.now() + 16 * 86400000);
       dl.textContent = 'Sans la case, votre rapport arrivera vers le ' + d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' }) + '.'; dl.className = 'cp-delai';
     }
     if (acc) { acc.addEventListener('change', delai); delai(); }
+    var ex0 = document.getElementById('cp-express'); if (ex0) ex0.addEventListener('change', delai);
     var fin = f.elements.fichiers, fl = f.querySelector('.cp-file-list'), fz = f.querySelector('.cp-file');
     if (fin && fl) fin.addEventListener('change', function () {
       var n = [].map.call(fin.files, function (x) { return x.name; });
@@ -203,7 +208,7 @@
       return new Promise(function (ok) {
         var url = URL.createObjectURL(file), img = new Image();
         img.onload = function () {
-          var k = Math.min(1, 2200 / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement('canvas');
+          var k = Math.min(1, (lire.n > 4 ? 1800 : 2200) / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement('canvas');
           c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
           c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
           var d = c.toDataURL('image/jpeg', 0.85), data = d.slice(d.indexOf(',') + 1);
@@ -219,24 +224,25 @@
       [f.elements.fichiers, f.elements.email].forEach(function (x) { x.removeAttribute('aria-invalid'); });
       function errChamp(x, t) { err(t); x.setAttribute('aria-invalid', 'true'); var z = x.id === 'cp-fichiers' ? f.querySelector('.cp-file') : x; if (z.scrollIntoView) z.scrollIntoView({ block: 'center' }); x.focus(); }
       if (!files.length) return errChamp(f.elements.fichiers, 'Ajoutez votre devis (PDF ou photo).');
-      if (files.length > 3) return errChamp(f.elements.fichiers, 'Trois fichiers au maximum.');
+      if (files.length > 10) return errChamp(f.elements.fichiers, 'Dix fichiers au maximum.');
       for (i = 0; i < files.length; i++) if (!/^image\//.test(files[i].type || type(files[i].name))) tot += files[i].size;
       if (tot > 10 * 1024 * 1024) return err('PDF trop lourd : 10 Mo au total au maximum. Envoyez les pages en photo ou passez par l\'e-mail ci-dessous.');
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return errChamp(f.elements.email, 'Vérifiez votre adresse e-mail.');
       btn.disabled = true; st.className = 'cp-depot-st'; st.textContent = 'Envoi de votre devis…';
+      lire.n = files.length;
       Promise.all([].map.call(files, lire)).then(function (arr) {
         var t2 = arr.reduce(function (a, x) { return a + (x.taille || 0); }, 0);
         if (t2 > 10 * 1024 * 1024) throw new Error('Fichiers trop lourds, même réduits (10 Mo au total).');
         arr.forEach(function (x) { delete x.taille; });
         return fetch(f.getAttribute('data-url'), { method: 'POST', body: JSON.stringify({
-          formule: r ? r.value : '1', email: email, travaux: f.elements.travaux.value, echeance: f.elements.echeance.value,
+          formule: r ? r.value : '1', express: !!(document.getElementById('cp-express') || {}).checked, email: email, travaux: f.elements.travaux.value, echeance: f.elements.echeance.value,
           message: f.elements.message.value, accord: f.elements.accord.checked, site: f.elements.site.value, fichiers: arr }) });
       }).then(function (x) { return x.json(); }).then(function (d) {
         if (!d || !d.ok) throw new Error((d && d.erreur) || '');
         try { sessionStorage.setItem('cp-depot', d.ref); } catch (x) {}
         gc('depot-ok-' + (r ? r.value : '1'));
         st.textContent = 'Devis reçu (référence ' + d.ref + '). Redirection vers le paiement…';
-        var u = r ? r.getAttribute('data-href') : document.getElementById('cp-pay').href;
+        var u = document.getElementById('cp-pay').href;
         location.href = u + (u.indexOf('?') < 0 ? '?' : '&') + 'client_reference_id=' + encodeURIComponent(d.ref) + '&prefilled_email=' + encodeURIComponent(email);
       }).catch(function (x) {
         gc('depot-erreur');

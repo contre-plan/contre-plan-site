@@ -121,8 +121,8 @@ f.addEventListener('submit', function(e){
     box.appendChild(el('p', 'dec-note', "Comparaison automatique de ce qui est écrit sur les documents transmis. Elle ne dit pas quel devis choisir et ne juge pas les prix. Ce n'est pas une expertise."));
     var cta = el('div', 'cp-sidecard cp-upsell');
     cta.appendChild(el('p', 't', ty('Ce tableau est automatique')));
-    cta.appendChild(el('p', null, ty('Il ne juge ni les prix ni la technique. Pour savoir lequel est le plus juste : un ingénieur BTP relit vos deux devis ligne par ligne, prix et oublis compris, avec une recommandation. 35 €, rapport PDF sous 48 h, sans lien avec aucun artisan.')));
-    var a = el('a', 'cp-btn', 'Faire comparer par un ingénieur (35 €)'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'comparateur/clic-commander'); cta.appendChild(a);
+    cta.appendChild(el('p', null, ty('Il ne juge ni les prix ni la technique. Pour savoir lequel est le plus juste : un ingénieur BTP relit vos deux devis ligne par ligne, prix et oublis compris, avec une recommandation. 33 €, rapport PDF sous 48 h, sans lien avec aucun artisan.')));
+    var a = el('a', 'cp-btn', 'Faire comparer par un ingénieur (33 €)'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'comparateur/clic-commander'); cta.appendChild(a);
     var ex = el('a', 'cp-sublink', 'Voir un exemple de rapport'); ex.href = 'exemple-rapport-contre-plan.pdf'; ex.target = '_blank'; ex.rel = 'noopener'; ex.setAttribute('data-goatcounter-click', 'comparateur/clic-exemple'); cta.appendChild(ex);
     box.appendChild(cta);
     out.innerHTML = ''; out.appendChild(box); box.scrollIntoView({behavior: 'smooth', block: 'start'});
