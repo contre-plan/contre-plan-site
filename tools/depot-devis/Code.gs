@@ -21,17 +21,20 @@
 var DOSSIER = 'Contre-Plan – Devis reçus';
 var NOTIF = 'contact@contre-plan.com';
 var MAX_OCTETS = 10 * 1024 * 1024;   // 10 Mo au total
-var MAX_FICHIERS = 3;
+var MAX_FICHIERS = 10;
 var MAX_PAR_HEURE = 30;               // protection contre les envois en masse
 var TYPES = ['application/pdf', 'image/jpeg', 'image/png', 'image/heic', 'image/heif', 'image/webp'];
-var FORMULES = { '1': '1 devis', '2': '2 devis comparés', '3': '3 devis comparés' };
+var FORMULES = { '1': '1 devis', '2': '2 devis comparés', '3': '3 devis comparés',
+  'g1': '1 devis de 30 000 à 60 000 €', 'g2': '1 devis de 60 000 à 100 000 €' };
 var JOURS_SANS_PAIEMENT = 30;      // dépôts sans paiement supprimés après ce délai (CGV, confidentialité)
 var JOURS_CONSERVATION = 365;      // devis payés supprimés 12 mois après (confidentialité)
 var HEURES_AVANT_RELANCE = 24;     // un seul rappel si le dépôt n'est pas payé après ce délai
 var LIENS = {
-  '1': 'https://buy.stripe.com/28EaEZ1N22bE7b95g4cMM00',
-  '2': 'https://buy.stripe.com/9B6cN74ZeeYq7b9bEscMM03',
-  '3': 'https://buy.stripe.com/14A00l1N22bE1QPdMAcMM04'
+  '1': 'https://buy.stripe.com/fZu8wR4Zeg2uanldMAcMM06', '1e': 'https://buy.stripe.com/6oU9AV8bq4jMfHF7occMM05',
+  '2': 'https://buy.stripe.com/bJe8wR4Ze17AgLJ23ScMM07', '2e': 'https://buy.stripe.com/bJe4gB9fug2u0ML4c0cMM08',
+  '3': 'https://buy.stripe.com/6oU7sN2R6g2u8fd37WcMM09', '3e': 'https://buy.stripe.com/00wfZjbnC6rUeDB37WcMM0a',
+  'g1': 'https://buy.stripe.com/cNi28t1N22bE0ML5g4cMM0b', 'g1e': 'https://buy.stripe.com/cNidRbezO4jMfHFfUIcMM0c',
+  'g2': 'https://buy.stripe.com/bJe14pgHWbMe1QPaAocMM0d', 'g2e': 'https://buy.stripe.com/aFa8wR63i4jMbrp9wkcMM0e'
 };
 var CGV_PDF = 'https://contre-plan.com/cgv-contre-plan.pdf';
 var ADRESSE = '47 rue Vivienne, 75002 Paris';
@@ -50,10 +53,11 @@ function doPost(e) {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return reponse({ ok: false, erreur: 'Adresse e-mail invalide.' });
     var formule = FORMULES[String(d.formule)] ? String(d.formule) : '1';
     var accord = d.accord === true;
+    var express = d.express === true;
 
     var fichiers = Array.isArray(d.fichiers) ? d.fichiers : [];
     if (!fichiers.length) return reponse({ ok: false, erreur: 'Ajoutez au moins un devis.' });
-    if (fichiers.length > MAX_FICHIERS) return reponse({ ok: false, erreur: 'Trois fichiers au maximum.' });
+    if (fichiers.length > MAX_FICHIERS) return reponse({ ok: false, erreur: 'Dix fichiers au maximum.' });
 
     var blobs = [], total = 0;
     for (var i = 0; i < fichiers.length; i++) {
@@ -77,7 +81,7 @@ function doPost(e) {
     var texte = [
       'Référence : ' + ref,
       'Date : ' + Utilities.formatDate(new Date(), 'Europe/Paris', 'dd/MM/yyyy HH:mm'),
-      'Formule choisie : ' + FORMULES[formule] + ' (paiement Stripe à vérifier : client_reference_id = ' + ref + ')',
+      'Formule choisie : ' + FORMULES[formule] + (express ? ' + express 24 h' : '') + ' (paiement Stripe à vérifier : client_reference_id = ' + ref + ')',
       'E-mail : ' + email,
       'Travaux : ' + propre(d.travaux, 200),
       "Répondre à l'artisan avant le : " + propre(d.echeance, 40),
@@ -89,7 +93,7 @@ function doPost(e) {
     ].join('\n');
     dossier.createFile('demande.txt', texte, MimeType.PLAIN_TEXT);
     PropertiesService.getScriptProperties().setProperty('dep_' + ref,
-      JSON.stringify({ accord: accord, formule: formule, quand: Date.now(), dossier: dossier.getId(), email: email }));
+      JSON.stringify({ accord: accord, formule: formule, express: express, quand: Date.now(), dossier: dossier.getId(), email: email }));
 
     MailApp.sendEmail({
       to: NOTIF,
@@ -253,7 +257,7 @@ function relancerDepotsNonPayes(payesRecents) {
     if (!dep || !dep.email || dep.relance || payesRecents[ref]) return;
     var age = now - Number(dep.quand || 0);
     if (age < HEURES_AVANT_RELANCE * 3600000 || age > 72 * 3600000) return;
-    var lien = (LIENS[dep.formule] || LIENS['1']) + '?client_reference_id=' + encodeURIComponent(ref) +
+    var lien = (LIENS[dep.formule + (dep.express ? 'e' : '')] || LIENS[dep.formule] || LIENS['1']) + '?client_reference_id=' + encodeURIComponent(ref) +
       '&prefilled_email=' + encodeURIComponent(dep.email);
     MailApp.sendEmail({
       to: dep.email, replyTo: NOTIF, name: 'Contre-Plan',

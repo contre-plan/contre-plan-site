@@ -67,11 +67,14 @@ h1{font-size:clamp(32px,5.5vw,48px)!important}
 <section class="cp-ord-box" aria-labelledby="t-formule">
 <h2 id="t-formule"><span class="n">1</span>Choisissez votre formule</h2>
 <div class="cp-opts-f" role="radiogroup" aria-labelledby="t-formule">
-<label class="cp-opt"><input type="radio" name="formule" value="1" checked data-href="https://buy.stripe.com/28EaEZ1N22bE7b95g4cMM00" data-prix="16,50 €"><span class="d"><b>1 devis</b><small>Un devis à signer. Rapport PDF sous 48 h.</small></span><span class="p">16,50 €</span></label>
-<label class="cp-opt"><input type="radio" name="formule" value="2" data-href="https://buy.stripe.com/9B6cN74ZeeYq7b9bEscMM03" data-prix="35 €"><span class="d"><b>2 devis comparés</b><small>Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.</small></span><span class="p">35 €</span></label>
-<label class="cp-opt"><input type="radio" name="formule" value="3" data-href="https://buy.stripe.com/14A00l1N22bE1QPdMAcMM04" data-prix="49 €"><span class="d"><b>3 devis comparés</b><small>Trois entreprises pour les mêmes travaux, avec le même comparatif.</small></span><span class="p">49 €</span></label>
+<label class="cp-opt"><input type="radio" name="formule" value="1" checked data-href="https://buy.stripe.com/fZu8wR4Zeg2uanldMAcMM06" data-href-e="https://buy.stripe.com/6oU9AV8bq4jMfHF7occMM05" data-prix="16,50 €"><span class="d"><b>1 devis</b><small>Un devis à signer, jusqu'à 30 000 €. Rapport PDF sous 48 h.</small></span><span class="p">16,50 €</span></label>
+<label class="cp-opt"><input type="radio" name="formule" value="2" data-href="https://buy.stripe.com/bJe8wR4Ze17AgLJ23ScMM07" data-href-e="https://buy.stripe.com/bJe4gB9fug2u0ML4c0cMM08" data-prix="33 €"><span class="d"><b>2 devis comparés</b><small>Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.</small></span><span class="p">33 €</span></label>
+<label class="cp-opt"><input type="radio" name="formule" value="3" data-href="https://buy.stripe.com/6oU7sN2R6g2u8fd37WcMM09" data-href-e="https://buy.stripe.com/00wfZjbnC6rUeDB37WcMM0a" data-prix="49 €"><span class="d"><b>3 devis comparés</b><small>Trois entreprises pour les mêmes travaux, avec le même comparatif.</small></span><span class="p">49 €</span></label>
+<label class="cp-opt"><input type="radio" name="formule" value="g1" data-href="https://buy.stripe.com/cNi28t1N22bE0ML5g4cMM0b" data-href-e="https://buy.stripe.com/cNidRbezO4jMfHFfUIcMM0c" data-prix="39 €"><span class="d"><b>1 devis de 30 000 à 60 000 €</b><small>Gros chantier : extension, rénovation lourde, toiture complète… Rapport PDF sous 48 h.</small></span><span class="p">39 €</span></label>
+<label class="cp-opt"><input type="radio" name="formule" value="g2" data-href="https://buy.stripe.com/bJe14pgHWbMe1QPaAocMM0d" data-href-e="https://buy.stripe.com/aFa8wR63i4jMbrp9wkcMM0e" data-prix="59 €"><span class="d"><b>1 devis de 60 000 à 100 000 €</b><small>Très gros chantier, souvent en plusieurs lots. Rapport PDF sous 48 h.</small></span><span class="p">59 €</span></label>
 </div>
-<p class="cp-ord-plus">Prix TTC (TVA non applicable, article 293 B du CGI). Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
+<label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 5,50 €) <small class="cp-hint">Compté à partir de la réception du devis complet, si vous demandez le démarrage immédiat.</small></span></label>
+<p class="cp-ord-plus">Prix TTC (TVA non applicable, article 293 B du CGI). Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
 </section>
 
 <section class="cp-ord-box" aria-labelledby="t-envoi">
@@ -81,7 +84,7 @@ h1{font-size:clamp(32px,5.5vw,48px)!important}
 <input type="file" id="cp-fichiers" class="cp-file-in" aria-labelledby="cp-file-t" aria-describedby="cp-depot-err" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
 <label for="cp-fichiers" class="cp-file-zone"><b>Ajouter mon devis</b><span>PDF, ou photo prise avec le téléphone</span></label>
 <p class="cp-file-list" aria-live="polite"></p>
-<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Trois fichiers au maximum : si votre devis a plus de pages, déposez les trois premières, je vous demande la suite par e-mail. Vous pouvez masquer votre nom et votre adresse.</small></div>
+<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Dix fichiers au maximum : si votre devis a plus de pages, déposez les dix premières, je vous demande la suite par e-mail. Vous pouvez masquer votre nom et votre adresse.</small></div>
 <label>Votre adresse e-mail (obligatoire) <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required aria-describedby="cp-depot-err"></label>
 <details class="cp-fold cp-opt-f"><summary>Préciser votre situation (facultatif)</summary>
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
@@ -96,11 +99,11 @@ h1{font-size:clamp(32px,5.5vw,48px)!important}
 <p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure. Si le paiement n'est pas finalisé, vous recevez un seul e-mail de rappel le lendemain, rien de plus.</p>
 <p class="cp-form-rgpd">Des outils m'aident à recopier les lignes et à refaire les calculs ; chaque avis, chaque fourchette de prix et chaque question du rapport, je les vérifie et les valide moi-même. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
-<p class="cp-total">Total à payer : <b class="pt">16,50 €</b> TTC, ou <b class="pte">22 €</b> TTC avec l'express 24 h, plus 11 € par devis pour des travaux différents si vous en ajoutez. Aucun autre frais.</p>
+<p class="cp-total">Total à payer : <b class="pt">16,50 €</b> TTC, aucun autre frais. <span class="cp-total-1">Avec la formule 1 devis, vous pourrez ajouter sur la page de paiement des devis pour des travaux différents (+ 11 € par devis).</span></p>
 <p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>
 <details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
 <p>Payez, puis envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet.</p>
-<a class="btn" id="cp-pay" href="https://buy.stripe.com/28EaEZ1N22bE7b95g4cMM00" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>
+<a class="btn" id="cp-pay" href="https://buy.stripe.com/fZu8wR4Zeg2uanldMAcMM06" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>
 <div class="cp-tpl cp-msg"><pre id="msg-devis">Bonjour,
 Voici mon devis en pièce jointe.
 Formule payée : …
@@ -126,7 +129,7 @@ Je veux que l&#x27;analyse commence tout de suite, sans attendre la fin du déla
 <li><b>Aucune commission</b> d'artisan : un avis indépendant.</li>
 <li><b>Des recours</b> : <a href="cgv.html">CGV</a>, rétractation de 14 jours, médiateur CM2C.</li>
 </ul></div>
-<div class="cp-ord-note"><p class="t">Devis de plus de 30 000 € ou rénovation complète ?</p><p>Demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous annonce le prix avant toute commande.</p></div>
+<div class="cp-ord-note"><p class="t">Devis de plus de 100 000 € ou rénovation complète en plusieurs lots ?</p><p>Demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous annonce le prix avant toute commande.</p></div>
 <details class="cp-ord-note cp-ord-alt"><summary class="t">Autre moyen de commander : ComeUp</summary><p>Compte gratuit, prix affichés sur la plateforme. La plateforme conserve le paiement jusqu'à la livraison du rapport, et vous envoyez le devis dans la messagerie de la commande. Options à cocher :</p><ul><li>1 devis : aucune ;</li><li>2 devis comparés : « Devis supplémentaire » et « Comparatif » ;</li><li>3 devis comparés : « Devis supplémentaire », « Troisième devis » et « Comparatif ».</li></ul><a href="https://comeup.com/fr/service/549064/verifier-votre-devis-de-travaux-avant-signature-et-reperer-les-prix-abusifs-et-les-oublis" data-goatcounter-click="clic-comeup-commander">Commander sur ComeUp</a></details>
 <p class="cp-ord-legal">Droit de rétractation de 14 jours, dans les conditions de l'<a href="cgv.html#retractation">article 6 des CGV</a>. Médiateur de la consommation : CM2C. TVA non applicable, article 293 B du CGI.</p>
 </div>

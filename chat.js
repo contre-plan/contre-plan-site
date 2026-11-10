@@ -4,7 +4,7 @@
   var PREDIAG = ["/contact.html?sujet=prediagnostic", "Demander le pré-diagnostic gratuit"];
   var KB = [
     { c: 1, q: "Combien ça coûte ?", k: ["prix", "tarif", "coût", "cout", "combien", "€", "euro", "payer combien", "ça coute", "ca coute"],
-      a: "L'analyse d'un devis coûte 16,50 €, payés par carte sur le site (l'analyse est aussi disponible sur ComeUp, aux prix affichés sur la plateforme). 2 devis comparés : 35 € ; 3 devis comparés : 49 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA." },
+      a: "L'analyse d'un devis coûte 16,50 €, payés par carte sur le site (l'analyse est aussi disponible sur ComeUp, aux prix affichés sur la plateforme). 2 devis comparés : 33 € ; 3 devis comparés : 49 € ; un devis de 30 000 à 60 000 € : 39 € ; de 60 000 à 100 000 € : 59 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA." },
     { c: 1, q: "Quel est le délai ?", k: ["délai", "delai", "quand", "recevoir", "sous combien", "combien de temps", "rapide", "express", "24", "48", "jours", "vite"],
       a: "Vous recevez votre rapport PDF sous 48 h après l'envoi du devis, ou 24 h avec l'option express." },
     { c: 1, q: "Comment ça marche ?", k: ["comment ça marche", "comment ca marche", "marche", "fonctionne", "étapes", "etapes", "commander", "procédure", "envoyer mon devis", "envoie mon devis", "envoyer le devis", "j'envoie"],
@@ -248,7 +248,7 @@
       m.appendChild(document.createElement("br")); m.appendChild(link(COMEUP, "Faire analyser mon devis en express", true, "clic-commander-orientation-urgent"));
     } else if (r.m === "plus-20k") {
       gc("resultat-gros-devis");
-      m = add("Sur un devis de plus de 20 000 €, chaque ligne compte. Jusqu'à 30 000 €, vous pouvez commander l'analyse directement. Au-delà, ou pour une rénovation tous corps d'état, demandez d'abord le pré-diagnostic gratuit : le prix vous est annoncé avant toute commande.", "bot");
+      m = add("Sur un devis de plus de 20 000 €, chaque ligne compte. Vous pouvez commander l'analyse directement : 16,50 € jusqu'à 30 000 €, 39 € jusqu'à 60 000 €, 59 € jusqu'à 100 000 €. Au-delà, ou pour une rénovation tous corps d'état, demandez d'abord le pré-diagnostic gratuit : le prix vous est annoncé avant toute commande.", "bot");
       m.appendChild(document.createElement("br")); m.appendChild(link(COMEUP, "Faire analyser mon devis", true, "clic-commander-orientation-gros"));
       m.appendChild(link(PREDIAG[0], PREDIAG[1], false, "clic-prediagnostic-orientation-gros"));
     } else {

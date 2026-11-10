@@ -963,7 +963,7 @@ page("votre-cas",
 <li><b>Devis déjà signé</b>, tant que vous êtes dans le délai de rétractation : l'analyse vous aide à décider de confirmer ou non (<a href="guide-annuler-devis-signe-retractation.html">vos droits</a>).</li></ul>
 <h2>Au cas par cas : demandez d'abord le pré-diagnostic</h2>
 <p>Pour ces situations, une partie du dossier ne se lit pas comme un devis classique. Décrivez-la dans le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous dis ce que je peux vérifier avant toute commande.</p>
-<ul><li><b>Rénovation complète en plusieurs lots, ou devis de plus de 30 000 €</b> : chaque devis est analysé ; le pré-diagnostic permet de fixer le périmètre et le prix avant de commander.</li>
+<ul><li><b>Gros devis</b> : 39 € pour un devis de 30 000 à 60 000 €, 59 € de 60 000 à 100 000 €. Au-delà, ou pour une rénovation complète en plusieurs lots, le pré-diagnostic gratuit permet de fixer le périmètre et le prix avant de commander.</li>
 <li><b>Maison neuve avec un constructeur (CCMI)</b> : je peux relire la notice descriptive et les travaux laissés à votre charge. Pour le contrat lui-même, très encadré, l'ADIL de votre département vous conseille gratuitement.</li>
 <li><b>Copropriété</b> (ravalement, toiture, chauffage collectif…) : je peux analyser un devis soumis au vote de l'assemblée générale ; la décision et le choix de l'entreprise restent ceux du syndicat des copropriétaires. Le prix dépend du volume du dossier et vous est annoncé au pré-diagnostic.</li>
 <li><b>Assainissement non collectif</b> : la filière doit être validée par le SPANC de votre commune avant les travaux ; je vérifie que le devis correspond à l'étude.</li>
@@ -1013,7 +1013,7 @@ page("professionnels",
 <li><b>Il reçoit le rapport</b> par e-mail, sous 48 h s'il a demandé le démarrage immédiat (24 h en express), sinon à la fin du délai de rétractation de 14 jours.</li></ol>
 <p>Une hésitation ? Il peut d'abord demander un <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a>, sans compte ni paiement.</p>
 <h2>Plusieurs devis ou plusieurs lots</h2>
-<p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain les envoie dans la même commande : formule 1 devis, plus 11 € par devis supplémentaire, soit 38,50 €. Pour deux ou trois devis concurrents sur les mêmes travaux, les formules « devis comparés » (35 € ou 49 €) ajoutent un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
+<p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain les envoie dans la même commande : formule 1 devis, plus 11 € par devis supplémentaire, soit 38,50 €. Pour deux ou trois devis concurrents sur les mêmes travaux, les formules « devis comparés » (33 € ou 49 €) ajoutent un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
 <h2>Délais</h2>
 <p>Rapport sous 48 h après réception du devis, ou 24 h avec l'option express, quand votre client demande le démarrage immédiat en commandant (sinon, à la fin du délai de rétractation de 14 jours). Pratique quand un compromis ou une offre de prêt approche.</p>
 <h2>Achat d'un bien avec travaux</h2>
@@ -1168,7 +1168,7 @@ page("comparer-ses-devis",
 <a href="tableau-comparatif-devis.xlsx" download data-goatcounter-click="telechargement-comparatif-xlsx" class="btn">Télécharger le tableau (Excel)</a>
 <a href="tableau-comparatif-devis.pdf" download data-goatcounter-click="telechargement-comparatif-pdf" class="btn dark">Version à imprimer (PDF)</a>
 </div>
-<div class="note"><p><b>Pas le temps de remplir le tableau ?</b> Je compare vos deux devis poste par poste et je vous dis lequel retenir, avec les questions à poser : 35 € TTC, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-commander-comparatif">Faire comparer mes devis</a></p></div>
+<div class="note"><p><b>Pas le temps de remplir le tableau ?</b> Je compare vos deux devis poste par poste et je vous dis lequel retenir, avec les questions à poser : 33 € TTC, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-commander-comparatif">Faire comparer mes devis</a></p></div>
 <p>Le fichier Excel s'ouvre aussi dans Google Sheets (Fichier, Importer) et dans Numbers. Une feuille d'exemple montre un tableau rempli.</p>
 <h2>Ce que le tableau fait pour vous</h2>
 <ul><li>Il additionne les postes, calcule la TVA, le total TTC et l'acompte en euros pour chaque artisan.</li>
@@ -1182,7 +1182,7 @@ page("comparer-ses-devis",
 <li><b>Les quantités.</b> Si deux devis n'annoncent pas la même surface pour le même travail, demandez pourquoi avant de comparer les prix.</li>
 <li><b>Le moins cher n'est pas forcément le meilleur.</b> Un devis bas avec deux postes absents peut finir plus cher qu'un devis complet.</li></ul>
 <p>Une fois les écarts repérés, voyez <a href="guide-negocier-devis-travaux.html">comment négocier un devis de travaux</a> sur les postes qui coincent.</p>
-<div class="note"><p><b>Vous préférez un regard d'ingénieur ?</b> Les formules « 2 devis comparés » (35 €) et « 3 devis comparés » (49 €) vous livrent ce tableau rempli et commenté poste par poste, avec ce qui différencie vraiment les offres. Voir <a href="index.html#tarifs">les tarifs</a>.</p></div>
+<div class="note"><p><b>Vous préférez un regard d'ingénieur ?</b> Les formules « 2 devis comparés » (33 €) et « 3 devis comparés » (49 €) vous livrent ce tableau rempli et commenté poste par poste, avec ce qui différencie vraiment les offres. Voir <a href="index.html#tarifs">les tarifs</a>.</p></div>
 <p>Pour demander des devis comparables dès le départ : <a href="guide-bien-demander-ses-devis.html">comment bien demander ses devis</a>. Pour écrire aux artisans : <a href="modeles-messages-artisan.html">les modèles de messages</a>.</p>""",
  "Outil gratuit")
 
@@ -1349,10 +1349,13 @@ open(os.path.join(OUT, "avis.html"), "w").write(_avis)
 
 # ---------- Commande directe (Stripe) : page de commande et page de confirmation
 # Liens de paiement Stripe (Payment Links). Redirection après paiement : https://contre-plan.com/commande-confirmee.html
+# Clé « e » : même formule avec l'express 24 h (+ 5,50 €), cochée sur la page de commande.
 STRIPE = {
-    "1": "https://buy.stripe.com/28EaEZ1N22bE7b95g4cMM00",
-    "2": "https://buy.stripe.com/9B6cN74ZeeYq7b9bEscMM03",
-    "3": "https://buy.stripe.com/14A00l1N22bE1QPdMAcMM04",
+    "1": "https://buy.stripe.com/fZu8wR4Zeg2uanldMAcMM06", "1e": "https://buy.stripe.com/6oU9AV8bq4jMfHF7occMM05",
+    "2": "https://buy.stripe.com/bJe8wR4Ze17AgLJ23ScMM07", "2e": "https://buy.stripe.com/bJe4gB9fug2u0ML4c0cMM08",
+    "3": "https://buy.stripe.com/6oU7sN2R6g2u8fd37WcMM09", "3e": "https://buy.stripe.com/00wfZjbnC6rUeDB37WcMM0a",
+    "g1": "https://buy.stripe.com/cNi28t1N22bE0ML5g4cMM0b", "g1e": "https://buy.stripe.com/cNidRbezO4jMfHFfUIcMM0c",
+    "g2": "https://buy.stripe.com/bJe14pgHWbMe1QPaAocMM0d", "g2e": "https://buy.stripe.com/aFa8wR63i4jMbrp9wkcMM0e",
 }
 # Dépôt du devis avant paiement (programme Google Apps Script, voir tools/depot-devis/GUIDE.md).
 # Laisser vide tant que le programme n'est pas déployé : la page garde alors l'envoi par e-mail.
@@ -1374,9 +1377,9 @@ def _envoi(id_):
 
 def _f(v, titre, desc, prix, combo):
     chk = " checked" if v == "1" else ""
-    return f'''<label class="cp-opt"><input type="radio" name="formule" value="{v}"{chk} data-href="{STRIPE[v]}" data-prix="{prix}"><span class="d"><b>{titre}</b><small>{desc}</small></span><span class="p">{prix}</span></label>'''
+    return f'''<label class="cp-opt"><input type="radio" name="formule" value="{v}"{chk} data-href="{STRIPE[v]}" data-href-e="{STRIPE[v + 'e']}" data-prix="{prix}"><span class="d"><b>{titre}</b><small>{desc}</small></span><span class="p">{prix}</span></label>'''
 
-_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">16,50 €</b> TTC, ou <b class="pte">22 €</b> TTC avec l'express 24 h, plus 11 € par devis pour des travaux différents si vous en ajoutez. Aucun autre frais.</p>
+_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">16,50 €</b> TTC, aucun autre frais. <span class="cp-total-1">Avec la formule 1 devis, vous pourrez ajouter sur la page de paiement des devis pour des travaux différents (+ 11 € par devis).</span></p>
 <p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>"""
 def _pay_btn(cls="btn xl"):
     return f'<a class="{cls}" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>'
@@ -1390,7 +1393,7 @@ if DEPOT_URL:
 <input type="file" id="cp-fichiers" class="cp-file-in" aria-labelledby="cp-file-t" aria-describedby="cp-depot-err" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
 <label for="cp-fichiers" class="cp-file-zone"><b>Ajouter mon devis</b><span>PDF, ou photo prise avec le téléphone</span></label>
 <p class="cp-file-list" aria-live="polite"></p>
-<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Trois fichiers au maximum : si votre devis a plus de pages, déposez les trois premières, je vous demande la suite par e-mail. Vous pouvez masquer votre nom et votre adresse.</small></div>
+<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Dix fichiers au maximum : si votre devis a plus de pages, déposez les dix premières, je vous demande la suite par e-mail. Vous pouvez masquer votre nom et votre adresse.</small></div>
 <label>Votre adresse e-mail (obligatoire) <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required aria-describedby="cp-depot-err"></label>
 <details class="cp-fold cp-opt-f"><summary>Préciser votre situation (facultatif)</summary>
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
@@ -1428,11 +1431,14 @@ ORDER = f'''<main id="contenu" class="cp-order">
 <section class="cp-ord-box" aria-labelledby="t-formule">
 <h2 id="t-formule"><span class="n">1</span>Choisissez votre formule</h2>
 <div class="cp-opts-f" role="radiogroup" aria-labelledby="t-formule">
-{_f("1", "1 devis", "Un devis à signer. Rapport PDF sous 48 h.", "16,50 €", "ne cochez aucune option.")}
-{_f("2", "2 devis comparés", "Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.", "35 €", "cochez « Devis supplémentaire » et « Comparatif ».")}
-{_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "49 €", "cochez « Devis supplémentaire », « Troisième devis » et « Comparatif ».")}
+{_f("1", "1 devis", "Un devis à signer, jusqu'à 30 000 €. Rapport PDF sous 48 h.", "16,50 €", "")}
+{_f("2", "2 devis comparés", "Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.", "33 €", "")}
+{_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "49 €", "")}
+{_f("g1", "1 devis de 30 000 à 60 000 €", "Gros chantier : extension, rénovation lourde, toiture complète… Rapport PDF sous 48 h.", "39 €", "")}
+{_f("g2", "1 devis de 60 000 à 100 000 €", "Très gros chantier, souvent en plusieurs lots. Rapport PDF sous 48 h.", "59 €", "")}
 </div>
-<p class="cp-ord-plus">Prix TTC (TVA non applicable, article 293 B du CGI). Sur la page de paiement, vous pourrez ajouter <b>l'express 24 h</b> (+ 5,50 €) et, avec la formule 1 devis, <b>des devis pour des travaux différents</b> (+ 11 € par devis).</p>
+<label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 5,50 €) <small class="cp-hint">Compté à partir de la réception du devis complet, si vous demandez le démarrage immédiat.</small></span></label>
+<p class="cp-ord-plus">Prix TTC (TVA non applicable, article 293 B du CGI). Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
 {_ETAPES_1_2}
 
 <section class="cp-ord-box" aria-labelledby="t-rapport">
@@ -1447,7 +1453,7 @@ ORDER = f'''<main id="contenu" class="cp-order">
 <li><b>Aucune commission</b> d'artisan : un avis indépendant.</li>
 <li><b>Des recours</b> : <a href="cgv.html">CGV</a>, rétractation de 14 jours, médiateur CM2C.</li>
 </ul></div>
-<div class="cp-ord-note"><p class="t">Devis de plus de 30 000 € ou rénovation complète ?</p><p>Demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous annonce le prix avant toute commande.</p></div>
+<div class="cp-ord-note"><p class="t">Devis de plus de 100 000 € ou rénovation complète en plusieurs lots ?</p><p>Demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous annonce le prix avant toute commande.</p></div>
 <details class="cp-ord-note cp-ord-alt"><summary class="t">Autre moyen de commander : ComeUp</summary><p>Compte gratuit, prix affichés sur la plateforme. La plateforme conserve le paiement jusqu'à la livraison du rapport, et vous envoyez le devis dans la messagerie de la commande. Options à cocher :</p><ul><li>1 devis : aucune ;</li><li>2 devis comparés : « Devis supplémentaire » et « Comparatif » ;</li><li>3 devis comparés : « Devis supplémentaire », « Troisième devis » et « Comparatif ».</li></ul><a href="{COMEUP}" data-goatcounter-click="clic-comeup-commander">Commander sur ComeUp</a></details>
 <p class="cp-ord-legal">Droit de rétractation de 14 jours, dans les conditions de l'<a href="cgv.html#retractation">article 6 des CGV</a>. Médiateur de la consommation : CM2C. TVA non applicable, article 293 B du CGI.</p>
 </div>

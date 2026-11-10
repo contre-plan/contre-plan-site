@@ -5,7 +5,7 @@ Outils gratuits : décodeur de ligne de devis https://contre-plan.com/decodeur-l
 
 ## Questions fréquentes (réponses à reprendre fidèlement)
 Q : Combien ça coûte ?
-R : L'analyse d'un devis coûte 16,50 €, payés par carte sur le site (l'analyse est aussi disponible sur ComeUp, aux prix affichés sur la plateforme). 2 devis comparés : 35 € ; 3 devis comparés : 49 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA.
+R : L'analyse d'un devis coûte 16,50 €, payés par carte sur le site (l'analyse est aussi disponible sur ComeUp, aux prix affichés sur la plateforme). 2 devis comparés : 33 € ; 3 devis comparés : 49 € ; un devis de 30 000 à 60 000 € : 39 € ; de 60 000 à 100 000 € : 59 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA.
 Q : Quel est le délai ?
 R : Vous recevez votre rapport PDF sous 48 h après l'envoi du devis, ou 24 h avec l'option express.
 Q : Comment ça marche ?
