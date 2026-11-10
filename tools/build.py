@@ -1168,6 +1168,7 @@ page("comparer-ses-devis",
 <a href="tableau-comparatif-devis.xlsx" download data-goatcounter-click="telechargement-comparatif-xlsx" class="btn">Télécharger le tableau (Excel)</a>
 <a href="tableau-comparatif-devis.pdf" download data-goatcounter-click="telechargement-comparatif-pdf" class="btn dark">Version à imprimer (PDF)</a>
 </div>
+<div class="note"><p><b>Pas le temps de remplir le tableau ?</b> Je compare vos deux devis poste par poste et je vous dis lequel retenir, avec les questions à poser : 35 € TTC, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-commander-comparatif">Faire comparer mes devis</a></p></div>
 <p>Le fichier Excel s'ouvre aussi dans Google Sheets (Fichier, Importer) et dans Numbers. Une feuille d'exemple montre un tableau rempli.</p>
 <h2>Ce que le tableau fait pour vous</h2>
 <ul><li>Il additionne les postes, calcule la TVA, le total TTC et l'acompte en euros pour chaque artisan.</li>
@@ -1395,14 +1396,14 @@ if DEPOT_URL:
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
 <label>Ce qui vous inquiète <textarea name="message" rows="3" maxlength="2000"></textarea></label>
 </details>
-<label class="cp-chk"><input type="checkbox" name="accord"><span><b>Je veux mon rapport sous 48 h : commencez dès réception de mon devis</b>, sans attendre la fin du délai de rétractation de 14 jours. <small class="cp-hint">Si j'annule avant la livraison, je paie seulement la part déjà faite ; une fois le rapport livré, je ne peux plus me rétracter (<a href="cgv.html#retractation">article 6 des CGV</a>). Sans cette case, l'analyse démarre dans 14 jours.</small></span></label>
+<label class="cp-chk"><input type="checkbox" name="accord"><span><b>Commencez dès réception de mon devis : rapport sous 48 h.</b> <small class="cp-hint">Une fois le rapport livré, je ne peux plus me rétracter ; si j'annule avant, je paie seulement la part déjà faite (<a href="cgv.html#retractation">article 6 des CGV</a>). Sans cette case, l'analyse attend la fin du délai de rétractation de 14 jours.</small></span></label>
 <p class="cp-delai" aria-live="polite"></p>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
 <p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
 <div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
 <p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure. Si le paiement n'est pas finalisé, vous recevez un seul e-mail de rappel le lendemain, rien de plus.</p>
-<p class="cp-form-rgpd">Des outils m'aident à préparer les calculs et les vérifications ; je relis votre devis et je valide moi-même chaque avis et chaque question du rapport. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+<p class="cp-form-rgpd">Des outils m'aident à recopier les lignes et à refaire les calculs ; chaque avis, chaque fourchette de prix et chaque question du rapport, je les vérifie et les valide moi-même. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 {_PAY_SEC}
 <details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
@@ -1453,19 +1454,19 @@ ORDER = f'''<main id="contenu" class="cp-order">
 </div>
 </main>
 '''
-_cmd = head("Commander une analyse de devis | Contre-Plan", "Commandez l'analyse de votre devis de travaux : dépôt du devis en ligne, paiement par carte en 1 minute, rapport PDF sous 48 h.", "https://contre-plan.com/commander.html") + pagehero("Commander", "Commander votre analyse", "Déposez votre devis ci-dessous, payez par carte sans créer de compte, et recevez le rapport sous 48 h. Chaque rapport est relu et validé par Arthur, ingénieur BTP, avant envoi.", None, [("Accueil", "index.html"), ("Commander", None)]) + ORDER + footer(chat=False)
+_cmd = head("Commander une analyse de devis | Contre-Plan", "Commandez l'analyse de votre devis de travaux : dépôt du devis en ligne, paiement par carte en 1 minute, rapport PDF sous 48 h.", "https://contre-plan.com/commander.html") + pagehero("Commander", "Commander votre analyse", "Déposez votre devis ci-dessous, payez par carte sans créer de compte, et recevez le rapport sous 48 h. Je relis votre devis et j'écris moi-même chaque avis du rapport.", None, [("Accueil", "index.html"), ("Commander", None)]) + ORDER + footer(chat=False)
 open(os.path.join(OUT, "commander.html"), "w").write(_cmd)
 PAGES.append("commander")
 
 _ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envoyez maintenant votre devis par e-mail.", "https://contre-plan.com/commande-confirmee.html").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">') + pagehero("Commande", "Paiement reçu, merci", "Le rapport arrive sous 48 h après réception de votre devis (24 h en express). Vérifiez ci-dessous s'il vous reste quelque chose à faire.", None, [("Accueil", "index.html"), ("Paiement reçu", None)]) + f'''<main id="contenu" class="cp-order"><div class="cp-order-in">
-<section class="cp-ord-box cp-depot-ok" hidden><h2><span class="n">2</span>Votre devis est bien reçu</h2>
+<section class="cp-ord-box cp-depot-ok" hidden><h2><span class="n">1</span>Votre devis est bien reçu</h2>
 <p>Vous l'avez déposé sur le site avant de payer (référence <b class="cp-depot-ref"></b>) : vous n'avez rien d'autre à faire.</p>
 </section>
-<section class="cp-ord-box cp-envoi-mail"><h2><span class="n">2</span>Pas encore déposé votre devis ? Envoyez-le par e-mail</h2>
+<section class="cp-ord-box cp-envoi-mail"><h2><span class="n">1</span>Pas encore déposé votre devis ? Envoyez-le par e-mail</h2>
 <p>Si vous l'avez déposé sur la page de commande, il est bien reçu : vous n'avez rien d'autre à faire. Sinon, envoyez-le depuis l'adresse utilisée pour payer, ou en l'indiquant dans le message.</p>
 {_envoi("msg-devis-ok")}
 </section>
-<section class="cp-ord-box"><h2><span class="n">3</span>Recevez le rapport</h2><p>La facture vous arrive par e-mail de la part de Stripe, et une confirmation de commande automatique dans le quart d'heure (avec les conditions de vente et le formulaire de rétractation). Le rapport PDF arrive par e-mail sous 48 h après réception du devis complet si vous avez demandé le démarrage immédiat, sinon 48 h après la fin du délai de rétractation de 14 jours. Pensez à regarder vos courriers indésirables. Une question ? Répondez simplement à mon e-mail ou écrivez à contact@contre-plan.com.</p></section>
+<section class="cp-ord-box"><h2><span class="n">2</span>Recevez le rapport</h2><p>La facture vous arrive par e-mail de la part de Stripe, et une confirmation de commande automatique dans le quart d'heure (avec les conditions de vente et le formulaire de rétractation). Le rapport PDF arrive par e-mail sous 48 h après réception du devis complet si vous avez demandé le démarrage immédiat, sinon 48 h après la fin du délai de rétractation de 14 jours. Pensez à regarder vos courriers indésirables. Une question ? Répondez simplement à mon e-mail ou écrivez à contact@contre-plan.com.</p></section>
 </div></main>
 ''' + footer(chat=False)
 open(os.path.join(OUT, "commande-confirmee.html"), "w").write(_ok)

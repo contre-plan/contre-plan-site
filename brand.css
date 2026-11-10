@@ -500,3 +500,4 @@ table.cp-fourch td.n{white-space:nowrap}
 .cp-form button{background:var(--or)!important;color:var(--bp3)!important;box-shadow:0 4px 0 #b23f12!important}
 @media (max-width:960px){.cp-cta-box ~ .cp-side .cp-sidecard,.cp-side .cp-sidecard{display:none}}
 @media (max-width:760px){.cp-crumbs [aria-current],.cp-crumbs span[aria-hidden]:has(+ [aria-current]){display:none}}
+.cp-order-in>*{min-width:0}
