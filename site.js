@@ -179,7 +179,7 @@
       if (!acc || !dl) return;
       if (acc.checked) { dl.textContent = 'Rapport sous 48 h après réception de votre devis.'; dl.className = 'cp-delai ok'; return; }
       var d = new Date(Date.now() + 16 * 86400000);
-      dl.textContent = 'Case non cochée : rapport vers le ' + d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' }) + '. Cochez-la pour l\'avoir sous 48 h.'; dl.className = 'cp-delai';
+      dl.textContent = 'Sans la case, votre rapport arrivera vers le ' + d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' }) + '.'; dl.className = 'cp-delai';
     }
     if (acc) { acc.addEventListener('change', delai); delai(); }
     var fin = f.elements.fichiers, fl = f.querySelector('.cp-file-list'), fz = f.querySelector('.cp-file');
