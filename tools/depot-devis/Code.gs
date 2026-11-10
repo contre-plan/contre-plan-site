@@ -370,13 +370,23 @@ function texteConfirmation(s, ref, dep) {
   return L.join('\n');
 }
 
+/* Version HTML du texte : évite que les lignes soient coupées en plein milieu sur téléphone. */
+function enHtml(t) {
+  var esc = String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  esc = esc.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1">$1</a>');
+  return '<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.5;color:#1b2a41">' +
+    esc.split('\n\n').map(function (p) { return '<p style="margin:0 0 14px">' + p.replace(/\n/g, '<br>') + '</p>'; }).join('') + '</div>';
+}
+
+/* E-mail au client, envoyé par Gmail (GmailApp) depuis contact@ : même chemin que les e-mails envoyés à la main. */
+function mailClient(email, ref, corps, cgv) {
+  GmailApp.sendEmail(email, 'Confirmation de votre commande Contre-Plan' + (ref ? ' – ' + ref : ''), corps,
+    { name: 'Contre-Plan', replyTo: NOTIF, htmlBody: enHtml(corps), attachments: cgv ? [cgv] : [] });
+}
+
 function envoyerConfirmation(s, email, ref, dep, cgv) {
   var corps = texteConfirmation(s, ref, dep);
-  MailApp.sendEmail({
-    to: email, replyTo: NOTIF, name: 'Contre-Plan',
-    subject: 'Confirmation de votre commande Contre-Plan' + (ref ? ' – ' + ref : ''),
-    body: corps, attachments: [cgv]
-  });
+  mailClient(email, ref, corps, cgv);
   MailApp.sendEmail({
     to: NOTIF,
     subject: 'Paiement reçu ' + euros(s.amount_total) + (ref ? ' – ' + ref : ' – devis à recevoir par e-mail'),
@@ -384,6 +394,19 @@ function envoyerConfirmation(s, email, ref, dep, cgv) {
       '\nDémarrage immédiat : ' + (dep ? (dep.accord ? 'oui' : 'non, après 14 jours') : 'à vérifier dans le message du client') +
       '\n\nConfirmation envoyée au client :\n\n' + corps
   });
+}
+
+/** Renvoie au client la confirmation d'une commande déjà payée. Mets la référence ci-dessous, puis Exécuter. */
+var REF_A_RENVOYER = 'CP-20261110-CF23';
+function renvoyerConfirmation() {
+  var props = PropertiesService.getScriptProperties(), cle = props.getProperty('STRIPE_KEY');
+  var r = UrlFetchApp.fetch('https://api.stripe.com/v1/checkout/sessions?limit=100&status=complete&created%5Bgte%5D=' +
+    (Math.floor(Date.now() / 1000) - 30 * 86400), { headers: { Authorization: 'Bearer ' + cle }, muteHttpExceptions: true });
+  var s = (JSON.parse(r.getContentText()).data || []).filter(function (x) { return x.client_reference_id === REF_A_RENVOYER && x.payment_status === 'paid'; })[0];
+  if (!s) { console.log('Aucun paiement trouvé pour ' + REF_A_RENVOYER); return; }
+  var dep = null; try { dep = JSON.parse(props.getProperty('dep_' + REF_A_RENVOYER) || 'null'); } catch (e) {}
+  mailClient(s.customer_details.email, REF_A_RENVOYER, texteConfirmation(s, REF_A_RENVOYER, dep), pdfCgv());
+  console.log('Confirmation renvoyée à ' + s.customer_details.email);
 }
 
 /** Test : envoie à contact@ un exemple de confirmation (sans rien marquer comme envoyé). */
