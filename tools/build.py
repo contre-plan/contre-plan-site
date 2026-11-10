@@ -517,8 +517,14 @@ OM_NOTE_NEUF = '<p class="cp-om"><b>En outre-mer</b> : en Guadeloupe, en Martini
 OM_NEUF = {"analyse-devis-extension", "analyse-devis-veranda", "analyse-devis-piscine"}
 OM_NOTE = '<p class="cp-om"><b>En outre-mer</b> : en Guadeloupe, en Martinique et à La Réunion, les travaux de rénovation d\'un logement de plus de 2 ans relèvent en principe du taux de 2,1 %, et le taux normal y est de 8,5 % ; en Guyane et à Mayotte, la TVA ne s\'applique pas pour l\'instant. Détails dans <a href="guide-tva-travaux-renovation.html#outre-mer">le guide TVA</a>.</p>'
 
+# Pages de travaux où le devis dépasse souvent 30 000 € : rappel des prix fixes des gros devis.
+GROS_DEVIS = {"analyse-devis-extension", "analyse-devis-toiture", "analyse-devis-mur-porteur", "analyse-devis-piscine", "analyse-devis-veranda", "analyse-devis-ravalement-facade"}
+GROS_NOTE = '<p class="cp-gros"><b>Votre devis dépasse 30 000 € ?</b> Le prix de l\'analyse reste fixe : <a href="commander.html?formule=g1" data-goatcounter-click="clic-gros-devis-g1">39 € jusqu\'à 60 000 €</a>, <a href="commander.html?formule=g2" data-goatcounter-click="clic-gros-devis-g2">59 € jusqu\'à 100 000 €</a>. Au-delà, le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> fixe le prix avant toute commande.</p>'
 def page(slug, title, h1, desc, lead, body, kicker, toc=True):
     body = _om(slug, body)
+    if slug in GROS_DEVIS and "cp-gros" not in body:
+        _k = body.find('<div class="note"><p><b>Vous avez un devis')
+        body = body[:_k] + GROS_NOTE + body[_k:] if _k != -1 else body + GROS_NOTE
     _fh = fourch_html(slug)
     if _fh:
         body = body.replace("<h2>Exemple de ligne", _fh + "<h2>Exemple de ligne", 1) if "<h2>Exemple de ligne" in body else body + _fh
@@ -958,7 +964,7 @@ page("votre-cas",
 <ul><li><b>Rénovation intérieure</b> : salle de bain, douche, cuisine (y compris de grande enseigne), sols et <a href="analyse-devis-parquet.html">parquet</a>, <a href="analyse-devis-carrelage.html">carrelage</a>, <a href="analyse-devis-peinture.html">peinture</a>, <a href="analyse-devis-plomberie-chauffe-eau.html">plomberie, chauffe-eau</a>, électricité.</li>
 <li><b>Énergie</b> : isolation, pompe à chaleur, climatisation, <a href="analyse-devis-poele.html">poêle à bois ou à granulés</a>, chaudière, fenêtres, ventilation, <a href="analyse-devis-panneaux-solaires.html">panneaux photovoltaïques</a>, avec la vérification de la TVA, du RGE et des primes annoncées. Pour le photovoltaïque, méfiez-vous du démarchage et vérifiez la qualification de l'installateur dans l'annuaire officiel des entreprises RGE.</li>
 <li><b>Extérieur</b> : toiture, ravalement d'une maison, terrasse, clôture, portail, <a href="analyse-devis-veranda.html">véranda</a>, <a href="analyse-devis-piscine.html">piscine</a>, <a href="analyse-devis-fosse-septique.html">fosse septique et assainissement individuel</a>.</li>
-<li><b>Structure et agrandissement</b> : <a href="analyse-devis-mur-porteur.html">ouverture de mur porteur</a>, extension, surélévation, aménagement de combles. Je vérifie que le devis prévoit et chiffre l'étude d'un bureau d'études et les ouvrages nécessaires ; je ne fais pas le calcul de structure moi-même. Pour un devis de plus de 30 000 €, le prix de l'analyse est annoncé au pré-diagnostic gratuit, avant toute commande.</li>
+<li><b>Structure et agrandissement</b> : <a href="analyse-devis-mur-porteur.html">ouverture de mur porteur</a>, extension, surélévation, aménagement de combles. Je vérifie que le devis prévoit et chiffre l'étude d'un bureau d'études et les ouvrages nécessaires ; je ne fais pas le calcul de structure moi-même. Pour un devis de 30 000 à 60 000 €, l'analyse coûte 39 € ; de 60 000 à 100 000 €, 59 €. Au-delà, le prix est annoncé au pré-diagnostic gratuit, avant toute commande.</li>
 <li><b>Outre-mer</b> : les devis de Guadeloupe, de Martinique, de La Réunion, de Guyane et de Mayotte, au même prix, avec les règles de TVA propres à ces territoires (<a href="guide-tva-travaux-renovation.html#outre-mer">voir le guide TVA</a>).</li>
 <li><b>Devis déjà signé</b>, tant que vous êtes dans le délai de rétractation : l'analyse vous aide à décider de confirmer ou non (<a href="guide-annuler-devis-signe-retractation.html">vos droits</a>).</li></ul>
 <h2>Au cas par cas : demandez d'abord le pré-diagnostic</h2>
