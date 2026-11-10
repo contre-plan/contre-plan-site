@@ -96,7 +96,7 @@ def FOOTER(root=""):
     return f"""<footer class="cp-foot"><div class="cp-foot-in">
 <div class="cp-foot-brand"><div class="cp-foot-logo">CONTRE-PLAN</div><p>Votre devis de travaux relu par un ingénieur BTP avant que vous signiez. 100 % à distance, indépendant de tout artisan.</p><div class="cp-socs">{soc}</div></div>
 <div class="cp-foot-col"><p>Le service</p>{L("methode.html","Ma méthode")}{L("engagements.html","Mes engagements")}{L("votre-cas.html","Votre cas est-il couvert ?")}{L("achat-avec-travaux.html","Achat avec travaux")}{L("professionnels.html","Professionnels")}{L("exemple-rapport-contre-plan.pdf","Exemple de rapport","telechargement-exemple-rapport")}{L("index.html#tarifs","Tarifs")}{L("contact.html","Contact")}<a href="commander.html" data-goatcounter-click="clic-commander-pied">Commander une analyse</a></div>
-<div class="cp-foot-col"><p>Par travaux</p>{L("analyse-devis-salle-de-bain.html","Salle de bain")}{L("analyse-devis-pompe-a-chaleur.html","Pompe à chaleur")}{L("analyse-devis-isolation.html","Isolation")}{L("analyse-devis-toiture.html","Toiture")}{''.join(L(j['slug'] + '.html', j['kicker']) for j in NG.JOB_PAGES)}{L("cas-fictifs.html","Cas fictifs")}</div>
+<div class="cp-foot-col"><p>Par travaux</p>{L("analyse-devis-salle-de-bain.html","Salle de bain")}{L("analyse-devis-pompe-a-chaleur.html","Pompe à chaleur")}{L("analyse-devis-isolation.html","Isolation")}{L("analyse-devis-toiture.html","Toiture")}{''.join(L(j['slug'] + '.html', j['kicker']) for j in NG.JOB_PAGES)}{L("cas-fictifs.html","Exemples d'analyses")}</div>
 <div class="cp-foot-col"><p>Ressources</p>{L("guides.html","Guides")}{L("comparer-ses-devis.html","Tableau comparatif")}{L("modeles-messages-artisan.html","Modèles de messages")}{L("lexique-devis-travaux.html","Lexique")}{L("checklist-devis-travaux.pdf","Check-list PDF","telechargement-checklist")}<a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par email</a></div>
 </div><div class="cp-foot-bottom"><span>© 2026 Contre-Plan</span><a href="{root}mentions-legales.html" class="cp-ml">Mentions légales</a><a href="{root}cgv.html" class="cp-ml">CGV</a><a href="{root}confidentialite.html" class="cp-ml">Confidentialité</a></div></footer>"""
 
@@ -1111,13 +1111,13 @@ page("lexique-devis-travaux",
  lex_html + '<p style="margin-top:28px">Un terme vous manque ? Posez-moi la question via le chat du site.</p>',
  "Lexique", toc=False)
 
-# ---------- Cas fictifs
+# ---------- Exemples d'analyses (fichier cas-fictifs.html, adresse conservée)
 page("cas-fictifs",
- "Cas fictifs : trois devis de travaux analysés | Contre-Plan",
- "Trois devis analysés : cas fictifs",
- "Salle de bain, pompe à chaleur, isolation des combles : trois exemples fictifs de devis analysés pour montrer ce qu'une relecture peut révéler.",
- "Ces trois cas sont inventés pour illustrer le travail d'analyse. Les devis, les entreprises et les chiffres sont fictifs, mais les points relevés sont ceux que l'on rencontre réellement.",
- """<div class="note"><p><b>Cas fictifs.</b> Aucun de ces exemples ne correspond à un client ou à une entreprise réels.</p></div>
+ "Trois exemples de devis de travaux analysés | Contre-Plan",
+ "Trois devis analysés, ligne par ligne",
+ "Salle de bain, pompe à chaleur, isolation des combles : trois exemples de devis analysés pour montrer ce qu'une relecture peut révéler.",
+ "Trois devis d'exemple, analysés comme un vrai dossier. Les points relevés sont ceux que l'on rencontre réellement sur les devis.",
+ """
 <h2>Cas 1 : une salle de bain de 6 m² à 7 374 € TTC</h2>
 <p><b>Le devis :</b> rénovation complète avec dépose, receveur extra-plat, faïence, plomberie au forfait et électricité.</p>
 <p><b>Ce que la relecture relève :</b> étanchéité sous carrelage non chiffrée, évacuation des gravats absente, dépose jugée élevée, plomberie au forfait sans détail, acompte de 50 %.</p>
@@ -1134,7 +1134,7 @@ page("cas-fictifs",
 <h2>Ce que montrent ces trois cas</h2>
 <p>Aucun de ces devis n'était malhonnête. Ils étaient incomplets, comme beaucoup de devis : ce qui n'est pas écrit est justement ce qui finit en supplément ou en litige. Une relecture avant signature permet de le faire préciser pendant qu'il est encore temps.</p>
 <p>Pour voir ce que je contrôle à chaque fois : <a href="methode.html">ma méthode</a>.</p>""",
- "Cas fictifs")
+ "Exemples d'analyses")
 
 # ---------- Outils gratuits
 page("test-devis",
@@ -1168,7 +1168,7 @@ page("comparer-ses-devis",
 <a href="tableau-comparatif-devis.xlsx" download data-goatcounter-click="telechargement-comparatif-xlsx" class="btn">Télécharger le tableau (Excel)</a>
 <a href="tableau-comparatif-devis.pdf" download data-goatcounter-click="telechargement-comparatif-pdf" class="btn dark">Version à imprimer (PDF)</a>
 </div>
-<p>Le fichier Excel s'ouvre aussi dans Google Sheets (Fichier, Importer) et dans Numbers. Une feuille d'exemple fictif montre un tableau rempli.</p>
+<p>Le fichier Excel s'ouvre aussi dans Google Sheets (Fichier, Importer) et dans Numbers. Une feuille d'exemple montre un tableau rempli.</p>
 <h2>Ce que le tableau fait pour vous</h2>
 <ul><li>Il additionne les postes, calcule la TVA, le total TTC et l'acompte en euros pour chaque artisan.</li>
 <li>Il affiche l'écart de chaque devis avec le moins cher.</li>
@@ -1253,9 +1253,9 @@ o_cards = "".join([
  rcard("checklist-devis-travaux.pdf", "Outil gratuit", "Check-list à imprimer", "Vingt points à cocher en relisant n'importe quel devis de travaux.", "Télécharger", ' download data-goatcounter-click="telechargement-checklist"')])
 c_cards = "".join([
  rcard("methode.html", "Comprendre", "Ma méthode", "La grille de contrôle appliquée à chaque devis, en cinq temps.", "Découvrir"),
- rcard("cas-fictifs.html", "Comprendre", "Trois devis analysés", "Salle de bain, pompe à chaleur, combles : ce qu'une relecture révèle (cas fictifs).", "Lire les cas"),
+ rcard("cas-fictifs.html", "Comprendre", "Trois devis analysés", "Salle de bain, pompe à chaleur, combles : ce qu'une relecture révèle, sur trois devis d'exemple.", "Lire les cas"),
  rcard("lexique-devis-travaux.html", "Comprendre", "Lexique du devis", "Les termes d'un devis expliqués en une ou deux phrases.", "Ouvrir le lexique"),
- rcard("exemple-rapport-contre-plan.pdf", "Comprendre", "Exemple de rapport", "Un rapport complet de 4 pages, sur un devis fictif de salle de bain.", "Voir le PDF", ' target="_blank" rel="noopener" data-goatcounter-click="telechargement-exemple-rapport"')])
+ rcard("exemple-rapport-contre-plan.pdf", "Comprendre", "Exemple de rapport", "Un rapport complet de 4 pages, sur un devis d'exemple de salle de bain.", "Voir le PDF", ' target="_blank" rel="noopener" data-goatcounter-click="telechargement-exemple-rapport"')])
 def rsec(title, sub, cards):
     return f'<section class="cp-rsec"><div class="cp-rhead"><h2>{title}</h2><p>{sub}</p></div><div class="cp-rgrid">{cards}</div></section>'
 crumbs = [("Accueil", "index.html"), ("Guides et outils", None)]
