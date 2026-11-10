@@ -1117,7 +1117,7 @@ page("cas-fictifs",
  "Trois devis analysés, ligne par ligne",
  "Salle de bain, pompe à chaleur, isolation des combles : trois exemples de devis analysés pour montrer ce qu'une relecture peut révéler.",
  "Trois devis d'exemple, analysés comme un vrai dossier. Les points relevés sont ceux que l'on rencontre réellement sur les devis.",
- """<div class="note"><p><b>Devis d'exemple.</b> Ils ont été créés pour la démonstration : ils ne viennent pas d'un client et ne visent aucune entreprise réelle.</p></div>
+ """
 <h2>Cas 1 : une salle de bain de 6 m² à 7 374 € TTC</h2>
 <p><b>Le devis :</b> rénovation complète avec dépose, receveur extra-plat, faïence, plomberie au forfait et électricité.</p>
 <p><b>Ce que la relecture relève :</b> étanchéité sous carrelage non chiffrée, évacuation des gravats absente, dépose jugée élevée, plomberie au forfait sans détail, acompte de 50 %.</p>
