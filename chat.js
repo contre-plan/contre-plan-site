@@ -4,11 +4,11 @@
   var PREDIAG = ["/contact.html?sujet=prediagnostic", "Demander le pré-diagnostic gratuit"];
   var KB = [
     { c: 1, q: "Combien ça coûte ?", k: ["prix", "tarif", "coût", "cout", "combien", "€", "euro", "payer combien", "ça coute", "ca coute"],
-      a: "L'analyse d'un devis coûte 16,50 €, payés par carte sur le site (l'analyse est aussi disponible sur ComeUp, aux prix affichés sur la plateforme). 2 devis comparés : 33 € ; 3 devis comparés : 49 € ; un devis de 30 000 à 60 000 € : 39 € ; de 60 000 à 100 000 € : 59 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA." },
+      a: "L'analyse d'un devis jusqu'à 30 000 € coûte 16,50 €, payés par carte sur le site (l'analyse est aussi disponible sur ComeUp, aux prix affichés sur la plateforme). 2 devis comparés : 33 € ; 3 devis comparés : 49 € ; un devis de 30 000 à 60 000 € : 39 € ; de 60 000 à 100 000 € : 59 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA." },
     { c: 1, q: "Quel est le délai ?", k: ["délai", "delai", "quand", "recevoir", "sous combien", "combien de temps", "rapide", "express", "24", "48", "jours", "vite"],
       a: "Vous recevez votre rapport PDF sous 48 h après l'envoi du devis, ou 24 h avec l'option express." },
     { c: 1, q: "Comment ça marche ?", k: ["comment ça marche", "comment ca marche", "marche", "fonctionne", "étapes", "etapes", "commander", "procédure", "envoyer mon devis", "envoie mon devis", "envoyer le devis", "j'envoie"],
-      a: "1. Vous choisissez votre formule et payez par carte, sans créer de compte. 2. Vous envoyez votre devis par e-mail, en PDF ou en photo. 3. Vous recevez par e-mail un rapport avec un verdict, les prix poste par poste, les oublis et les questions à poser à l'artisan." },
+      a: "1. Sur la page de commande, vous choisissez votre formule et déposez votre devis (PDF ou photos), puis vous payez par carte, sans créer de compte. 2. Si vous préférez, vous pouvez aussi envoyer le devis par e-mail après le paiement. 3. Vous recevez par e-mail un rapport avec un verdict, les prix poste par poste, les oublis et les questions à poser à l'artisan." },
     { c: 1, q: "Faut-il créer un compte ?", k: ["compte", "inscri", "comeup", "come up", "chèque", "cheque", "carte bancaire", "carte bleue", "paypal", "payer en ligne", "paiement", "payer", "dollar", "$"],
       a: "Non : sur le site, vous payez par carte en 1 minute, sans créer de compte, et la facture arrive par e-mail. Si vous préférez, vous pouvez aussi commander sur la plateforme ComeUp (compte gratuit), qui conserve le paiement jusqu'à la livraison du rapport. Pas encore décidé ? Le pré-diagnostic gratuit se demande sans paiement.", l: PREDIAG },
     { c: 1, q: "Que contient le rapport ?", k: ["rapport", "contient", "reçois", "recois", "livrable", "pdf", "exemple"],
@@ -60,7 +60,7 @@
     { w: 2, q: "Véranda, piscine ou poêle ?", k: ["véranda", "veranda", "piscine", "bassin", "poêle", "poele", "granulés", "granules", "insert", "conduit de fumée", "tubage"],
       a: "Oui, j'analyse ces devis. Chaque page explique ce que je vérifie : dalle et raccord au mur pour une véranda, terrassement et sécurité pour une piscine, conduit et sortie de toit pour un poêle.", l: ["/analyse-devis-veranda.html", "Véranda", "/analyse-devis-piscine.html", "Piscine", "/analyse-devis-poele.html", "Poêle"] },
     { c: 1, q: "Comment vous contacter ?", k: ["contact", "contacter", "écrire", "ecrire", "mail", "email", "message", "formulaire"],
-      a: "Par le formulaire de contact, réponse sous 24 h. Le numéro de téléphone de l'entreprise figure aussi dans les mentions légales. Pour faire analyser un devis, commandez directement en ligne : vous m'envoyez ensuite le devis par e-mail.", l: ["/contact.html", "Formulaire de contact"] }
+      a: "Par le formulaire de contact, réponse sous 24 h. Le numéro de téléphone de l'entreprise figure aussi dans les mentions légales. Pour faire analyser un devis, commandez directement en ligne : vous déposez le devis sur la page de commande, puis vous payez.", l: ["/contact.html", "Formulaire de contact"] }
   ];
 
   var css = "#cp-chat-btn{position:fixed;right:20px;bottom:20px;z-index:9999;display:flex;align-items:center;gap:10px;background:#bf4a17;color:#fff;border:0;border-radius:2px;padding:14px 20px;font:700 16px 'Source Sans 3',Arial,sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.3);cursor:pointer}" +
