@@ -5,11 +5,11 @@ Outils gratuits : décodeur de ligne de devis https://contre-plan.com/decodeur-l
 
 ## Questions fréquentes (réponses à reprendre fidèlement)
 Q : Combien ça coûte ?
-R : L'analyse d'un devis coûte 16,50 €, payés par carte sur le site (l'analyse est aussi disponible sur ComeUp, aux prix affichés sur la plateforme). 2 devis comparés : 33 € ; 3 devis comparés : 49 € ; un devis de 30 000 à 60 000 € : 39 € ; de 60 000 à 100 000 € : 59 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA.
+R : L'analyse d'un devis jusqu'à 30 000 € coûte 16,50 €, payés par carte sur le site (l'analyse est aussi disponible sur ComeUp, aux prix affichés sur la plateforme). 2 devis comparés : 33 € ; 3 devis comparés : 49 € ; un devis de 30 000 à 60 000 € : 39 € ; de 60 000 à 100 000 € : 59 € ; devis pour des travaux différents : + 11 € par devis ; express en 24 h : + 5,50 €. Pas de TVA.
 Q : Quel est le délai ?
 R : Vous recevez votre rapport PDF sous 48 h après l'envoi du devis, ou 24 h avec l'option express.
 Q : Comment ça marche ?
-R : 1. Vous choisissez votre formule et payez par carte, sans créer de compte. 2. Vous envoyez votre devis par e-mail, en PDF ou en photo. 3. Vous recevez par e-mail un rapport avec un verdict, les prix poste par poste, les oublis et les questions à poser à l'artisan.
+R : 1. Sur la page de commande, vous choisissez votre formule et déposez votre devis (PDF ou photos), puis vous payez par carte, sans créer de compte. 2. Si vous préférez, vous pouvez aussi envoyer le devis par e-mail après le paiement. 3. Vous recevez par e-mail un rapport avec un verdict, les prix poste par poste, les oublis et les questions à poser à l'artisan.
 Q : Faut-il créer un compte ?
 R : Non : sur le site, vous payez par carte en 1 minute, sans créer de compte, et la facture arrive par e-mail. Si vous préférez, vous pouvez aussi commander sur la plateforme ComeUp (compte gratuit), qui conserve le paiement jusqu'à la livraison du rapport. Pas encore décidé ? Le pré-diagnostic gratuit se demande sans paiement.
 Liens : Demander le pré-diagnostic gratuit : /contact.html?sujet=prediagnostic
@@ -84,7 +84,7 @@ Q : Véranda, piscine ou poêle ?
 R : Oui, j'analyse ces devis. Chaque page explique ce que je vérifie : dalle et raccord au mur pour une véranda, terrassement et sécurité pour une piscine, conduit et sortie de toit pour un poêle.
 Liens : Véranda : /analyse-devis-veranda.html ; Piscine : /analyse-devis-piscine.html ; Poêle : /analyse-devis-poele.html
 Q : Comment vous contacter ?
-R : Par le formulaire de contact, réponse sous 24 h. Le numéro de téléphone de l'entreprise figure aussi dans les mentions légales. Pour faire analyser un devis, commandez directement en ligne : vous m'envoyez ensuite le devis par e-mail.
+R : Par le formulaire de contact, réponse sous 24 h. Le numéro de téléphone de l'entreprise figure aussi dans les mentions légales. Pour faire analyser un devis, commandez directement en ligne : vous déposez le devis sur la page de commande, puis vous payez.
 Liens : Formulaire de contact : /contact.html
 
 ## Pages du site (adresse, titre, description)
