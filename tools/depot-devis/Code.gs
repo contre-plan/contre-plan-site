@@ -20,6 +20,7 @@
 
 var DOSSIER = 'Contre-Plan – Devis reçus';
 var NOTIF = 'contact@contre-plan.com';
+var SUIVI_ID = '13nhV0794LDLOVBU3jiNEwOpWUPVipblOhGwaN3-JprI';   // tableur « Contre-Plan – Suivi », onglet « Commandes »
 var MAX_OCTETS = 10 * 1024 * 1024;   // 10 Mo au total
 var MAX_FICHIERS = 10;
 var MAX_PAR_HEURE = 30;               // protection contre les envois en masse
@@ -185,12 +186,55 @@ function verifierPaiements() {
       envoyerConfirmation(s, email, ref, dep, cgv);
       props.setProperty(k, String(Date.now()));
       try { marquerPaye(ref, dep); } catch (e) { console.error('marquerPaye ' + e); }
+      try { ajouterCommande(s, ref, dep, cle); } catch (e) { console.error('ajouterCommande ' + e); }
       try { planifierRappel(s, email, ref, dep); } catch (e) { console.error('planifierRappel ' + e); }
     });
     envoyerRappels();
     relancerDepotsNonPayes(payesRecents);
     nettoyerUneFoisParJour(cle);
   } finally { lock.releaseLock(); }
+}
+
+/* ---------- Suivi : ligne dans l'onglet « Commandes » du tableur ---------- */
+
+/** Ajoute la commande payée dans Commandes!A:N (sans aucune donnée personnelle), une seule fois.
+ *  Les agents de suivi complètent ensuite la ligne (type de travaux, livraison, livre des recettes). */
+function ajouterCommande(s, ref, dep, cle) {
+  var num = /^CP-\d{8}-[A-Z0-9]{4}$/.test(ref) ? ref
+    : 'ST-' + Utilities.formatDate(new Date(s.created * 1000), 'Europe/Paris', 'yyyyMMdd') + '-' + String(s.payment_intent || s.id).slice(-6);
+  var feuille = SpreadsheetApp.openById(SUIVI_ID).getSheetByName('Commandes');
+  if (!feuille) return;
+  var colA = feuille.getRange('A1:A' + Math.max(feuille.getLastRow(), 1)).getValues().map(function (r) { return String(r[0]); });
+  if (colA.indexOf(num) !== -1) return;
+  var lignes = [];
+  try {
+    var r = UrlFetchApp.fetch('https://api.stripe.com/v1/checkout/sessions/' + s.id + '/line_items?limit=20',
+      { headers: { Authorization: 'Bearer ' + cle }, muteHttpExceptions: true });
+    if (r.getResponseCode() === 200) lignes = JSON.parse(r.getContentText()).data || [];
+  } catch (e) {}
+  var desc = lignes.map(function (l) { return String(l.description || ''); });
+  var express = desc.some(function (d) { return /express|24\s?h/i.test(d); });
+  var supp = 0;
+  lignes.forEach(function (l) { if (/suppl/i.test(l.description || '')) supp += l.quantity || 1; });
+  var formule = dep && dep.formule ? dep.formule
+    : desc.some(function (d) { return /3 devis/i.test(d); }) ? '3'
+    : desc.some(function (d) { return /2 devis/i.test(d); }) ? '2'
+    : desc.some(function (d) { return /60 000 à 100 000/.test(d); }) ? 'g2'
+    : desc.some(function (d) { return /30 000 à 60 000/.test(d); }) ? 'g1' : '1';
+  var options = [];
+  if (formule === 'g1' || formule === 'g2') options.push(FORMULES[formule]);
+  if (supp) options.push('Devis supplémentaire x' + supp);
+  if (express) options.push('Express');
+  var nb = (formule === '2' ? 2 : formule === '3' ? 3 : 1) + supp;
+  var jour = Utilities.formatDate(new Date(s.created * 1000), 'Europe/Paris', 'yyyy-MM-dd');
+  var dossier = dossierDe(ref, dep);
+  var notes = 'Canal : Stripe – ' + (dep ? 'Devis déposé sur le site le ' + Utilities.formatDate(new Date(), 'Europe/Paris', 'yyyy-MM-dd HH:mm')
+    + (dep.accord ? ' – démarrage immédiat demandé' : ' – pas de démarrage immédiat : délai après les 14 jours de rétractation') : 'Devis en attente (envoi par e-mail)')
+    + ' – Confirmation et CGV envoyées automatiquement – Ligne créée par le script de dépôt';
+  var n = colA.length + 1;
+  for (var i = colA.length - 1; i >= 1; i--) { if (colA[i]) break; n = i + 1; }
+  feuille.getRange(n, 1, 1, 14).setValues([[num, jour, (formule === '2' || formule === '3') ? 'Comparatif multi devis' : 'Basique',
+    options.join(', '), nb, '', s.amount_total / 100, 'À faire', jour, '', '', dossier ? dossier.getUrl() : '', '', notes]]);
 }
 
 /* ---------- Suivi : dossier payé, rappel de livraison, nettoyage ---------- */
