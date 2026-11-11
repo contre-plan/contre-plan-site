@@ -64,7 +64,7 @@ GUIDES.append(dict(
 <h2>Les leviers qui fonctionnent</h2>
 <ul><li><strong>Ajuster le périmètre</strong> : faire vous-même la dépose ou la peinture finale, conserver un équipement en bon état, choisir une gamme de faïence plus courante.</li>
 <li><strong>Grouper les travaux</strong> : un chantier plus gros, ou deux lots confiés à la même entreprise, réduit ses frais fixes (déplacements, installation).</li>
-<li><strong>Être souple sur la date</strong> : une entreprise qui a un trou dans son planning acceptera plus facilement un effort.</li>
+<li><strong>Être souple sur la date</strong> : une entreprise qui a un trou dans son planning acceptera plus facilement un effort. Faites alors écrire la date de fin au devis : c'est elle qui vous protège en cas de <a href="guide-artisan-retard-chantier-que-faire.html">retard de travaux</a>.</li>
 <li><strong>Négocier les conditions plutôt que le prix</strong> : un acompte plus faible (l'usage est d'environ 30 % à la signature), un échéancier calé sur l'avancement, une retenue de garantie de 5 % au plus, prévue au devis et consignée chez un tiers (voir <a href="guide-reception-travaux-reserves.html">le guide sur la réception</a>). Voir <a href="guide-acompte-paiement-devis-travaux.html">le guide sur l'acompte</a>.</li></ul>
 <h2>Ce qu'il ne faut pas négocier</h2>
 <p>L'étanchéité, la ventilation, la protection électrique, l'épaisseur d'isolant : ce sont les postes qui coûtent cher à reprendre et que l'entreprise sera tentée de rogner si vous serrez trop le prix global. Une remise obtenue en supprimant un poste indispensable n'est pas une économie.</p>
@@ -326,7 +326,7 @@ JOB_PAGES.append(dict(
 <li><b>De 5 à 20 m²</b> : déclaration préalable, et jusqu'à 40 m² en zone urbaine d'un PLU.</li>
 <li><b>Au-delà</b> : permis de construire.</li>
 <li><b>Seuil des 150 m²</b> : en zone urbaine d'un PLU, une extension de 20 à 40 m² qui porte la surface totale au-delà de 150 m² demande un permis de construire. Dès que vous déposez un permis et que la surface totale dépasse 150 m², l'architecte est obligatoire.</li></ul>
-<p>Les travaux ne doivent pas commencer avant l'obtention de l'autorisation, et idéalement après le délai de recours des tiers. Vérifiez qui prépare le dossier et si ce coût est inclus.</p>
+<p>Les travaux ne doivent pas commencer avant l'obtention de l'autorisation, et idéalement après le délai de recours des tiers. Vérifiez qui prépare le dossier et si ce coût est inclus. Une date de démarrage écrite compte aussi : voir que faire en cas de <a href="guide-artisan-retard-chantier-que-faire.html">retard de travaux</a>.</p>
 <h2>La réglementation thermique</h2>
 <p>Pour une maison individuelle, une extension jusqu'à 50 m² doit respecter des exigences élément par élément (isolation, menuiseries, ventilation). De 50 à 80 m², trois indicateurs de la RE2020 s'appliquent (besoin bioclimatique, confort d'été, carbone des matériaux), et à partir de 80 m², la RE2020 complète. Ces seuils portent sur la surface de référence de l'extension. Le devis doit préciser les isolants et leurs performances, comme pour une construction neuve.</p>
 <h2>Les postes à retrouver sur le devis</h2>
@@ -367,7 +367,7 @@ JOB_PAGES.append(dict(
 <li><b>La finition</b> : peinture, revêtement semi-épais ou enduit, avec la marque, la référence et la classe du produit.</li>
 <li><b>Les points singuliers</b> : appuis de fenêtre, corniches, soubassement, descentes d'eau à démonter et reposer.</li></ul>
 <h2>L'échafaudage et le chantier</h2>
-<p>Montage, démontage, durée de location, protections des sols et des menuiseries, nettoyage final. Si l'échafaudage empiète sur la voie publique, une autorisation d'occupation de la voirie (permis de stationnement), en général délivrée par la mairie, est nécessaire : le devis doit dire qui la demande.</p>
+<p>Montage, démontage, durée de location, protections des sols et des menuiseries, nettoyage final. Si l'échafaudage empiète sur la voie publique, une autorisation d'occupation de la voirie (permis de stationnement), en général délivrée par la mairie, est nécessaire : le devis doit dire qui la demande. Demandez aussi une durée de chantier écrite : en cas de <a href="guide-artisan-retard-chantier-que-faire.html">retard de travaux</a> (pluie, échafaudage non monté), c'est elle qui sert de repère.</p>
 <h2>Obligation d'isoler et démarches</h2>
 <p>Lorsque l'enduit est refait ou le parement remplacé sur <strong>plus de 50 % d'une façade</strong> (hors ouvertures), la loi impose en principe d'en profiter pour isoler, sauf exceptions (impossibilité technique, contrainte patrimoniale, retour sur investissement de plus de 10 ans). Un simple nettoyage ou une remise en peinture ne déclenche pas cette obligation. Elle ne concerne que les murs en béton, en parpaing, en brique industrielle ou en bardage métallique, pas la pierre ni le pisé. Une déclaration préalable est nécessaire si vous changez l'aspect de la façade (couleur, matériau), si vous isolez par l'extérieur, en secteur protégé, ou si la commune l'impose. Un ravalement à l'identique en est dispensé ailleurs : renseignez-vous en mairie.</p>
 <h2>La TVA</h2>
