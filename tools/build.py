@@ -1242,9 +1242,9 @@ TPL = [
 ]
 tpl_html = "".join(f'<div class="cp-tpl"><h2>{html.escape(t)}</h2><pre id="tpl{i}">{html.escape(x)}</pre><button type="button" class="cp-copy" data-copy="tpl{i}">Copier le message</button></div>' for i,(t,x) in enumerate(TPL,1))
 page("modeles-messages-artisan",
- "Modèles de mails à un artisan : acompte, délai, supplément, refus",
- "Modèles de messages à envoyer à l'artisan",
- "8 messages prêts à copier : demander la décennale, négocier l'acompte, obtenir un délai ferme, contester un supplément, refuser un devis poliment.",
+ "Mail à un artisan : 8 modèles gratuits à copier",
+ "Modèles de mails à envoyer à l'artisan",
+ "8 modèles de mails gratuits pour écrire à un artisan : demander la décennale, négocier l\'acompte, obtenir un délai, contester un supplément, refuser un devis.",
  "Poser les bonnes questions par écrit, c'est la meilleure protection avant de signer. Voici des messages prêts à copier : remplacez simplement les passages entre crochets.",
  '<p>Gardez un ton cordial : l\'artisan n\'est pas un adversaire, et un devis précisé par écrit protège aussi l\'entreprise. Envoyez vos questions par e-mail ou par message, pour en garder une trace.</p>' + tpl_html +
  '<p style="margin-top:24px">Vous ne savez pas quelles questions poser sur votre devis ? <a href="test-devis.html">Faites le test en 1 minute</a>, ou confiez-le-moi : chaque rapport se termine par les questions à envoyer à l\'artisan.</p>',
