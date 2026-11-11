@@ -164,6 +164,8 @@ body{width:%W%px;height:%H%px;overflow:hidden;background:#000}
 .sp b{display:block;font-family:Archivo,sans-serif;font-weight:800;font-size:54px;line-height:1.06} .sp span{display:block;font-size:40px;line-height:1.28;margin-top:8px}
 .dark .sp b{text-shadow:0 3px 12px rgba(0,0,0,.35)} .dark .sp span{color:#cdd7ec} .light .sp span{color:#4a5b7e} .dark .sp.bad b{color:#ff8f9a} .light .sp.bad b{color:%PEN%}
 """
+# Appel à l'action par défaut de la dernière slide (choix d'Arthur, 11/11/2026) : un outil gratuit, jamais un prix.
+CTA_TEST = "Testez votre devis gratuitement en 1\u00a0minute : lien en bio."
 CSS+='\n.s.ig{height:1350px}\n.ig .in{top:175px;bottom:110px;right:84px} .ig .in.hk{top:165px}\n.ig .top{top:66px}\n.ig .t1{font-size:96px} .ig .t2{font-size:80px} .ig .t3{font-size:62px}\n.ig .p{font-size:44px;margin-top:26px} .ig .kick{margin-bottom:26px;font-size:28px}\n.ig .dwrap{margin-top:58px} .ig .doc{padding:34px 38px 28px} .ig .doc .r{font-size:34px;padding:14px 0}\n.ig .big{font-size:200px} .ig .bigl{margin-top:16px;font-size:40px}\n.ig .bars{margin-top:40px;gap:30px} .ig .bar .bt{height:56px}\n.ig .card{padding:42px 40px 40px 124px} .ig .it{margin-top:30px} .ig .it b{font-size:46px} .ig .it span{font-size:36px}\n.ig .st{margin-top:40px} .ig .sp{margin-top:32px} .ig .sp b{font-size:48px} .ig .sp span{font-size:36px}\n.ig .tr{margin-top:28px;padding:26px 30px}\n.ig .bm{width:90px;height:112px;margin-bottom:22px} .ig .save{margin-top:34px;padding:24px 30px;font-size:38px}\n.ig .foot{bottom:112px} .ig .postit{top:-64px;width:250px;font-size:54px;padding:24px 18px 28px} .ig .in.hk .dwrap{margin-top:96px} .ig .tape{bottom:36px;height:92px} .ig .plan{width:640px}\n.ig .swipe{margin-top:22px;padding:18px 30px;font-size:34px}\n'
 # TikTok : l'appli affiche les photos dans une fenêtre 3:4 (barre de recherche en haut, boutons à droite, légende en bas)
 CSS+='\n.s.tk{height:1440px}\n.tk .top{top:150px;right:190px}\n.tk .in{top:250px;bottom:140px;right:190px} .tk .in.hk{top:245px}\n.tk .foot{bottom:150px}\n.tk .t1{font-size:90px} .tk .t2{font-size:76px} .tk .t3{font-size:58px}\n.tk .doc .r{font-size:32px;grid-template-columns:1fr 84px 190px} .tk .doc .dh b{font-size:40px}\n.tk .postit{width:230px;font-size:50px;top:-70px}\n.tk .big{font-size:180px}\n.tk .pen{width:520px}\n'
@@ -228,7 +230,7 @@ def slide(s,i,n,ig=False):
             q=a.split('|'); ss+=f"<div class='sp{' bad' if j==len(st)-1 else ''}'><div class='dt'>{'!' if j==len(st)-1 else j+1}</div><div><b>{E(fr(q[0]))}</b>"+(f"<span>{E(fr(q[1]))}</span>" if len(q)>1 else '')+"</div></div>"
         b=f"{k}<div class='t t2'>{rich(s['title'])}</div><div class='st'>{ss}</div>"
     elif ty=='end':
-        b=f"{BIGBM}{k}<div class='t t2'>{rich(s['title'])}</div>"+P('text')+f"<div class='save'>{SAVE}<div>{E(fr(s.get('save','Enregistrez ce post pour votre prochain devis.')))}</div></div>"+(f"<div class='offer'>{E(fr(s['offer']))}</div>" if s.get('offer') else '')
+        b=f"{BIGBM}{k}<div class='t t2'>{rich(s['title'])}</div>"+P('text')+f"<div class='save'>{SAVE}<div>{E(fr(s.get('save','Enregistrez ce post pour votre prochain devis.')))}</div></div>"+f"<div class='offer'>{E(fr(s.get('offer') or CTA_TEST))}</div>"
     else:
         b=f"{k}<div class='t t2'>{rich(s['title'])}</div>"+P('text')
     foot="<div class='foot'>contre-plan.com · Analyse de devis par un ingénieur BTP</div>" if ty=='end' else ''
