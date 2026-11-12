@@ -201,7 +201,7 @@ for _s in ['guide-tva-travaux-renovation','guide-mentions-obligatoires-devis','g
     UPDATED[_s] = "2026-10-27"  # relecture et corrections du 27/10/2026
 SANS_CTA_HAUT = {"guide-artisan-retard-chantier-que-faire", "guide-artisan-injoignable-apres-acompte", "guide-reception-travaux-reserves"}  # chantier déjà en cours : pas d'appel « devis »
 GUIDE_CTA_HAUT = '<p class="cp-guide-cta">Vous avez déjà un devis ? Je le relis ligne par ligne : 16,50 €, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-guide-haut">Faire analyser mon devis →</a></p>\n'
-AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur, ingénieur BTP</a> (10 ans de chantier, environ 1 000 devis lus)"
+AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur Demange, ingénieur BTP</a> (10 ans de chantier, environ 1 000 devis lus)"
 
 # Liens vers les sources officielles (bloc « Pour aller plus loin », vérifiés le 27/10/2026)
 SP = "https://www.service-public.gouv.fr/particuliers/vosdroits/"
@@ -845,7 +845,7 @@ page("engagements",
  """<h2>Indépendance</h2>
 <ul><li>Je ne touche aucune commission, d'aucune entreprise.</li><li>Je ne vous recommande ni ne vous revends aucun artisan.</li><li>Mon seul intérêt est que vous signiez un devis juste, quel que soit l'artisan que vous choisissez.</li></ul>
 <h2>Confidentialité de vos devis</h2>
-<ul><li>Vous pouvez masquer votre nom, votre adresse et vos coordonnées avant de m'envoyer le devis : ils ne sont pas nécessaires à l'analyse.</li><li>Votre devis sert uniquement à réaliser votre analyse. Il n'est jamais transmis à un artisan ni à un tiers à des fins commerciales.</li><li>Les documents sont conservés dans un espace professionnel sécurisé. Vous pouvez demander leur suppression à tout moment en écrivant à contact@contre-plan.com.</li><li>Pour certaines vérifications (recalculs, recherche de prix et de textes de référence), je m'aide d'outils logiciels, dont des outils d'intelligence artificielle. Chaque rapport est relu, corrigé et validé par moi avant de vous être envoyé.</li></ul>
+<ul><li>Vous pouvez masquer votre nom, votre adresse et vos coordonnées avant de m'envoyer le devis : ils ne sont pas nécessaires à l'analyse.</li><li>Votre devis sert uniquement à réaliser votre analyse. Il n'est jamais transmis à un artisan ni à un tiers à des fins commerciales.</li><li>Les documents sont conservés dans un espace professionnel sécurisé. Vous pouvez demander leur suppression à tout moment en écrivant à contact@contre-plan.com.</li><li>Pour certaines vérifications (recalculs, recherche de prix et de textes de référence), je m'aide d'outils logiciels. Chaque rapport est relu, corrigé et validé par moi avant de vous être envoyé.</li></ul>
 <h2>Délais</h2>
 <ul><li>Rapport sous 48 h, ou 24 h avec l'option express, à compter de la réception de votre devis complet, si vous avez demandé le démarrage immédiat en commandant ; sinon à compter de la fin du délai de rétractation de 14 jours.</li><li>Un échange de suivi est inclus : vous pouvez me poser une question après lecture du rapport.</li><li>Si un document manque ou est illisible, je vous le signale dès réception.</li></ul>
 <h2>Commande et paiement</h2>
