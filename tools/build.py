@@ -74,15 +74,13 @@ h1{{font-size:clamp(32px,5.5vw,48px)!important}}
 <div class="cp-hd-in">
 <a class="logo" href="{root or './'}"><i aria-hidden="true"></i>CONTRE-PLAN</a>
 <nav class="cp-topnav" aria-label="Navigation principale">
-<a href="{root}methode.html">Méthode</a>
 <a href="{root}index.html#rapport">Exemple</a>
-<a href="{root}index.html#travaux">Travaux</a>
+<a href="{root}index.html#travaux">Vos travaux</a>
 <a href="{root}index.html#tarifs">Tarifs</a>
-<a href="{root}comparer-ses-devis.html">Outils</a>
-<a href="{root}guides.html">Guides</a>
+<a href="{root}guides.html">Guides et outils</a>
 <a class="btn" href="{root}{CMD}" data-goatcounter-click="clic-commander">Faire analyser<span class="lg"> mon devis</span></a>
 </nav>
-<details class="cp-mnav"><summary><span class="ham" aria-hidden="true"></span>Menu</summary><nav aria-label="Menu"><a href="{root}index.html#rapport">Exemple de rapport</a><a href="{root}methode.html">Méthode</a><a href="{root}index.html#travaux">Travaux</a><a href="{root}index.html#tarifs">Tarifs</a><a href="{root}votre-cas.html">Votre cas est-il couvert ?</a><a href="{root}comparer-ses-devis.html">Outils</a><a href="{root}guides.html">Guides</a><a href="{root}contact.html">Contact</a></nav></details>
+<details class="cp-mnav"><summary><span class="ham" aria-hidden="true"></span>Menu</summary><nav aria-label="Menu"><a href="{root}index.html#rapport">Exemple de rapport</a><a href="{root}index.html#travaux">Vos travaux</a><a href="{root}index.html#tarifs">Tarifs</a><a href="{root}guides.html">Guides et outils</a><a href="{root}contact.html">Contact</a></nav></details>
 </div>
 </header>
 '''
