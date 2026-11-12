@@ -74,15 +74,13 @@ h1{{font-size:clamp(32px,5.5vw,48px)!important}}
 <div class="cp-hd-in">
 <a class="logo" href="{root or './'}"><i aria-hidden="true"></i>CONTRE-PLAN</a>
 <nav class="cp-topnav" aria-label="Navigation principale">
-<a href="{root}methode.html">Méthode</a>
 <a href="{root}index.html#rapport">Exemple</a>
-<a href="{root}index.html#travaux">Travaux</a>
+<a href="{root}index.html#travaux">Vos travaux</a>
 <a href="{root}index.html#tarifs">Tarifs</a>
-<a href="{root}comparer-ses-devis.html">Outils</a>
-<a href="{root}guides.html">Guides</a>
+<a href="{root}guides.html">Guides et outils</a>
 <a class="btn" href="{root}{CMD}" data-goatcounter-click="clic-commander">Faire analyser<span class="lg"> mon devis</span></a>
 </nav>
-<details class="cp-mnav"><summary><span class="ham" aria-hidden="true"></span>Menu</summary><nav aria-label="Menu"><a href="{root}index.html#rapport">Exemple de rapport</a><a href="{root}methode.html">Méthode</a><a href="{root}index.html#travaux">Travaux</a><a href="{root}index.html#tarifs">Tarifs</a><a href="{root}votre-cas.html">Votre cas est-il couvert ?</a><a href="{root}comparer-ses-devis.html">Outils</a><a href="{root}guides.html">Guides</a><a href="{root}contact.html">Contact</a></nav></details>
+<details class="cp-mnav"><summary><span class="ham" aria-hidden="true"></span>Menu</summary><nav aria-label="Menu"><a href="{root}index.html#rapport">Exemple de rapport</a><a href="{root}index.html#travaux">Vos travaux</a><a href="{root}index.html#tarifs">Tarifs</a><a href="{root}guides.html">Guides et outils</a><a href="{root}contact.html">Contact</a></nav></details>
 </div>
 </header>
 '''
@@ -95,7 +93,7 @@ def FOOTER(root=""):
         ("https://www.tiktok.com/@contreplan_", "TikTok", "clic-tiktok"), ("https://www.instagram.com/contreplan_/", "Instagram", "clic-instagram")])
     return f"""<footer class="cp-foot"><div class="cp-foot-in">
 <div class="cp-foot-brand"><div class="cp-foot-logo">CONTRE-PLAN</div><p>Votre devis de travaux relu par un ingénieur BTP avant que vous signiez. 100 % à distance, indépendant de tout artisan.</p><div class="cp-socs">{soc}</div></div>
-<div class="cp-foot-col"><p>Le service</p>{L("methode.html","Ma méthode")}{L("engagements.html","Mes engagements")}{L("votre-cas.html","Votre cas est-il couvert ?")}{L("achat-avec-travaux.html","Achat avec travaux")}{L("professionnels.html","Professionnels")}{L("exemple-rapport-contre-plan.pdf","Exemple de rapport","telechargement-exemple-rapport")}{L("index.html#tarifs","Tarifs")}{L("contact.html","Contact")}<a href="commander.html" data-goatcounter-click="clic-commander-pied">Commander une analyse</a></div>
+<div class="cp-foot-col"><p>Le service</p>{L("methode.html","Ma méthode")}{L("engagements.html","Mes engagements")}{L("votre-cas.html","Votre cas est-il couvert ?")}{L("achat-avec-travaux.html","Achat avec travaux")}{L("professionnels.html","Professionnels")}{L("avis-avant-travaux.html","Avis avant travaux")}{L("exemple-rapport-contre-plan.pdf","Exemple de rapport","telechargement-exemple-rapport")}{L("index.html#tarifs","Tarifs")}{L("contact.html","Contact")}<a href="commander.html" data-goatcounter-click="clic-commander-pied">Commander une analyse</a></div>
 <div class="cp-foot-col"><p>Par travaux</p>{L("analyse-devis-salle-de-bain.html","Salle de bain")}{L("analyse-devis-pompe-a-chaleur.html","Pompe à chaleur")}{L("analyse-devis-isolation.html","Isolation")}{L("analyse-devis-toiture.html","Toiture")}{''.join(L(j['slug'] + '.html', j['kicker']) for j in NG.JOB_PAGES)}{L("cas-fictifs.html","Exemples d'analyses")}</div>
 <div class="cp-foot-col"><p>Ressources</p>{L("guides.html","Guides")}{L("comparer-ses-devis.html","Tableau comparatif")}{L("modeles-messages-artisan.html","Modèles de messages")}{L("lexique-devis-travaux.html","Lexique")}{L("checklist-devis-travaux.pdf","Check-list PDF","telechargement-checklist")}<a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par email</a></div>
 </div><div class="cp-foot-bottom"><span>© 2026 Contre-Plan</span><a href="{root}mentions-legales.html" class="cp-ml">Mentions légales</a><a href="{root}cgv.html" class="cp-ml">CGV</a><a href="{root}confidentialite.html" class="cp-ml">Confidentialité</a></div></footer>"""
@@ -1492,6 +1490,64 @@ _ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envo
 </div></main>
 ''' + footer(chat=False)
 open(os.path.join(OUT, "commande-confirmee.html"), "w").write(_ok)
+
+# ---------- Avis avant travaux (offre test, 29 €) : question + photos/plans par e-mail, réponse écrite sous 48 h
+STRIPE_AVIS = "https://buy.stripe.com/dRm00l9fu2bE0MLcIwcMM0f"
+MSG_AVIS = """Bonjour,
+Formule payée : Avis avant travaux (29 €)
+E-mail utilisé pour le paiement : …
+Mon projet : …
+Ma question : …
+Pièces jointes : photos, plan coté, devis éventuels.
+Je veux que l'avis soit rédigé tout de suite, sans attendre la fin du délai de rétractation de 14 jours. Je sais qu'une fois l'avis livré, je ne pourrai plus me rétracter."""
+MAILTO_AVIS = "mailto:contact@contre-plan.com?subject=" + _q("Avis avant travaux") + "&body=" + _q(MSG_AVIS)
+def _envoi_avis(id_):
+    return f'''<div class="cp-tpl cp-msg"><pre id="{id_}">{html.escape(MSG_AVIS)}</pre>
+<div class="cp-ord-act"><a class="btn dark" href="{MAILTO_AVIS}" data-goatcounter-click="ouvrir-mail-avis">Ouvrir mon e-mail avec ce message</a><button type="button" class="cp-copy" data-copy="{id_}" data-goatcounter-click="copie-message-avis">Copier le message</button></div>
+<p class="note-s">Envoyez-le à <b>contact@contre-plan.com</b> avec vos photos et votre plan. Vous pouvez masquer votre nom et votre adresse. La dernière phrase est l'accord prévu à l'<a href="cgv.html#retractation">article 6 des conditions de vente</a>.</p></div>'''
+
+page("avis-avant-travaux",
+ "Avis d'ingénieur avant travaux : 29 €, réponse écrite sous 48 h | Contre-Plan",
+ "Un avis d'ingénieur avant de demander vos devis",
+ "Vous préparez des travaux et vous n'avez pas encore de devis ? Envoyez photos, plan et question : un ingénieur BTP vous répond par écrit sous 48 h, pour 29 €.",
+ "Vous avez un projet, des photos, un plan, et une question avant d'appeler les artisans. Je vous réponds par écrit : ce qu'il faut prévoir, les pièges à éviter, et ce que vos devis devront contenir.",
+ f'''<h2>Pour qui ?</h2>
+<p>Pour vous si vous préparez des travaux et que vous n'avez pas encore de devis, ou pas encore les bons. Par exemple : vous refaites un sol dans une maison ancienne et vous hésitez sur la technique, vous voulez ouvrir une cuisine sur le séjour, vous ne savez pas quels corps de métier consulter ni dans quel ordre.</p>
+
+<h2>Ce que vous recevez</h2>
+<ul>
+<li><strong>Une réponse écrite à votre question</strong>, à partir de vos photos et de vos plans, sous 48 h après réception de tous les éléments.</li>
+<li><strong>Les points à vérifier</strong> avant de lancer les travaux, et les erreurs que l'on voit souvent sur ce type de chantier.</li>
+<li><strong>Ce que vos devis devront contenir</strong> pour être complets et comparables : postes, matériaux, mentions à exiger.</li>
+<li><strong>Une question de suivi</strong> incluse dans les 30 jours.</li>
+</ul>
+
+<h2>Ce que l'avis ne remplace pas</h2>
+<p>L'avis repose uniquement sur les documents envoyés, sans visite. Il ne remplace ni un diagnostic sur place (humidité, structure, amiante…), ni une étude de bureau d'études, ni les plans d'un architecte ou d'un cuisiniste. Si votre question demande l'un d'eux, je vous le dis et je vous explique quoi demander.</p>
+
+<h2>Comment ça se passe</h2>
+<ol>
+<li>Vous payez 29 € par carte, sans créer de compte.</li>
+<li>Vous envoyez votre question, vos photos et votre plan à contact@contre-plan.com avec le message ci-dessous.</li>
+<li>Vous recevez ma réponse écrite par e-mail sous 48 h.</li>
+</ol>
+<p><a class="btn" href="{STRIPE_AVIS}" data-goatcounter-click="clic-stripe-avis">Payer 29 € par carte →</a></p>
+<p class="note-s">Prix TTC, TVA non applicable (article 293 B du CGI). Paiement sécurisé par Stripe. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>. Droit de rétractation de 14 jours (<a href="cgv.html#retractation">article 6</a>).</p>
+{_envoi_avis("msg-avis")}
+
+<div class="note"><p><b>Vous avez déjà un devis ?</b> L'analyse ligne par ligne est plus adaptée : à partir de 16,50 €, rapport PDF sous 48 h. <a href="commander.html" data-goatcounter-click="clic-avis-vers-commander">Faire analyser mon devis</a></p></div>
+''',
+ "Avis avant travaux", toc=False)
+
+_okavis = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envoyez maintenant votre question, vos photos et votre plan.", "https://contre-plan.com/avis-confirme.html").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">') + pagehero("Avis avant travaux", "Paiement reçu, merci", "Envoyez maintenant votre question, vos photos et votre plan : la réponse arrive sous 48 h après leur réception.", None, [("Accueil", "index.html"), ("Paiement reçu", None)]) + f'''<main id="contenu" class="cp-order"><div class="cp-order-in">
+<section class="cp-ord-box"><h2><span class="n">1</span>Envoyez votre question par e-mail</h2>
+<p>Depuis l'adresse utilisée pour payer, ou en l'indiquant dans le message.</p>
+{_envoi_avis("msg-avis-ok")}
+</section>
+<section class="cp-ord-box"><h2><span class="n">2</span>Recevez la réponse</h2><p>La facture vous arrive par e-mail de la part de Stripe. La réponse écrite arrive sous 48 h après réception de tous les éléments si vous avez demandé le démarrage immédiat, sinon 48 h après la fin du délai de rétractation de 14 jours. Pensez à regarder vos courriers indésirables.</p></section>
+</div></main>
+''' + footer(chat=False)
+open(os.path.join(OUT, "avis-confirme.html"), "w").write(_okavis)
 
 # ---------- 404 (absolute paths: served at any URL)
 p404 = head("Page introuvable | Contre-Plan", "Cette page n'existe pas ou a été déplacée.", "https://contre-plan.com/404.html", root="/").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">').replace('<link rel="canonical" href="https://contre-plan.com/404.html">\n','') + f'''<main id="contenu" class="bp" style="min-height:60vh">
