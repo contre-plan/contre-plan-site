@@ -60,7 +60,7 @@ h1{font-size:clamp(32px,5.5vw,48px)!important}
 <details class="cp-mnav"><summary><span class="ham" aria-hidden="true"></span>Menu</summary><nav aria-label="Menu"><a href="index.html#rapport">Exemple de rapport</a><a href="index.html#travaux">Vos travaux</a><a href="index.html#tarifs">Tarifs</a><a href="guides.html">Guides et outils</a><a href="contact.html">Contact</a></nav></details>
 </div>
 </header>
-<section class="cp-ph"><div class="cp-ph-in"><nav class="cp-crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span aria-hidden="true">›</span> <span aria-current="page">Commander</span></nav><h1>Commander votre analyse</h1><p class="cp-lead">Déposez votre devis ci-dessous, payez par carte sans créer de compte, et recevez le rapport sous 48 h. Je relis votre devis et j'écris moi-même chaque avis du rapport.</p></div></section><main id="contenu" class="cp-order">
+<section class="cp-ph"><div class="cp-ph-in"><nav class="cp-crumbs" aria-label="Fil d'Ariane"><a href="index.html">Accueil</a> <span aria-hidden="true">›</span> <span aria-current="page">Commander</span></nav><h1>Commander votre analyse</h1></div></section><main id="contenu" class="cp-order">
 <div class="cp-order-in">
 <section class="cp-ord-box" aria-labelledby="t-formule">
 <h2 id="t-formule"><span class="n">1</span>Choisissez votre formule</h2>
@@ -71,8 +71,8 @@ h1{font-size:clamp(32px,5.5vw,48px)!important}
 <label class="cp-opt"><input type="radio" name="formule" value="g1" data-href="https://buy.stripe.com/cNi28t1N22bE0ML5g4cMM0b" data-href-e="https://buy.stripe.com/cNidRbezO4jMfHFfUIcMM0c" data-prix="39 €"><span class="d"><b>1 devis de 30 000 à 60 000 €</b><small>Gros chantier : extension, rénovation lourde, toiture complète… Rapport PDF sous 48 h.</small></span><span class="p">39 €</span></label>
 <label class="cp-opt"><input type="radio" name="formule" value="g2" data-href="https://buy.stripe.com/bJe14pgHWbMe1QPaAocMM0d" data-href-e="https://buy.stripe.com/aFa8wR63i4jMbrp9wkcMM0e" data-prix="59 €"><span class="d"><b>1 devis de 60 000 à 100 000 €</b><small>Très gros chantier, souvent en plusieurs lots. Rapport PDF sous 48 h.</small></span><span class="p">59 €</span></label>
 </div>
-<label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 5,50 €) <small class="cp-hint">Compté à partir de la réception du devis complet, si vous demandez le démarrage immédiat.</small></span></label>
-<p class="cp-ord-plus">Prix TTC (TVA non applicable, article 293 B du CGI). Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
+<label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 5,50 €)</span></label>
+<p class="cp-ord-plus">Prix TTC, TVA non applicable. Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
 </section>
 
 <section class="cp-ord-box" aria-labelledby="t-envoi">
@@ -82,20 +82,20 @@ h1{font-size:clamp(32px,5.5vw,48px)!important}
 <input type="file" id="cp-fichiers" class="cp-file-in" aria-labelledby="cp-file-t" aria-describedby="cp-depot-err" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
 <label for="cp-fichiers" class="cp-file-zone"><b>Ajouter mon devis</b><span>PDF, ou photo prise avec le téléphone</span></label>
 <p class="cp-file-list" aria-live="polite"></p>
-<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Dix fichiers au maximum : si votre devis a plus de pages, déposez les dix premières, je vous demande la suite par e-mail. Vous pouvez masquer votre nom et votre adresse.</small></div>
+<small class="cp-hint">Une photo par page, à plat et bien éclairée (10 fichiers maximum). Vous pouvez masquer votre nom et votre adresse.</small></div>
 <label>Votre adresse e-mail (obligatoire) <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required aria-describedby="cp-depot-err"></label>
 <details class="cp-fold cp-opt-f"><summary>Préciser votre situation (facultatif)</summary>
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
 <label>Ce qui vous inquiète <textarea name="message" rows="3" maxlength="2000"></textarea></label>
 </details>
-<label class="cp-chk"><input type="checkbox" name="accord"><span><b>Commencez dès réception de mon devis : rapport sous 48 h.</b> <small class="cp-hint">Une fois le rapport livré, je ne peux plus me rétracter ; si j'annule avant, je paie seulement la part déjà faite (<a href="cgv.html#retractation">article 6 des CGV</a>). Sans cette case, l'analyse attend la fin du délai de rétractation de 14 jours.</small></span></label>
+<label class="cp-chk"><input type="checkbox" name="accord"><span><b>Je veux mon rapport sous 48 h : commencez dès réception de mon devis.</b> <small class="cp-hint">Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter (si j'annule avant, je paie la part déjà faite, <a href="cgv.html#retractation">article 6 des CGV</a>).</small></span></label>
 <p class="cp-delai" aria-live="polite"></p>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
-<p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
 <div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
+<p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure. Si le paiement n'est pas finalisé, vous recevez un seul e-mail de rappel le lendemain, rien de plus.</p>
-<p class="cp-form-rgpd">Des outils m'aident à recopier les lignes et à refaire les calculs ; chaque avis, chaque fourchette de prix et chaque question du rapport, je les vérifie et les valide moi-même. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+<p class="cp-form-rgpd">Chaque avis du rapport est relu, vérifié et validé par moi. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 <p class="cp-total">Total à payer : <b class="pt">16,50 €</b> TTC, aucun autre frais. <span class="cp-total-1">Avec la formule 1 devis, vous pourrez ajouter sur la page de paiement des devis pour des travaux différents (+ 11 € par devis).</span></p>
 <p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>
