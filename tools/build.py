@@ -204,7 +204,7 @@ for _s in ['guide-tva-travaux-renovation','guide-mentions-obligatoires-devis','g
     UPDATED[_s] = "2026-10-27"  # relecture et corrections du 27/10/2026
 SANS_CTA_HAUT = {"guide-constat-retard-chantier", "guide-artisan-retard-chantier-que-faire", "guide-artisan-injoignable-apres-acompte", "guide-reception-travaux-reserves"}  # chantier déjà en cours : pas d'appel « devis »
 GUIDE_CTA_HAUT = '<p class="cp-guide-cta">Vous avez déjà un devis ? Je le relis ligne par ligne : 16,50 €, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-guide-haut">Faire analyser mon devis →</a></p>\n'
-AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur Demange, ingénieur BTP</a> (10 ans de chantier, environ 1 000 devis lus)"
+AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur Demange, ingénieur BTP</a> (diplômé de l'ESITC de Metz, 10 ans de chantier, environ 1 000 devis lus)"
 
 # Liens vers les sources officielles (bloc « Pour aller plus loin », vérifiés le 27/10/2026)
 SP = "https://www.service-public.gouv.fr/particuliers/vosdroits/"
@@ -1057,7 +1057,7 @@ page("professionnels",
 <li><b>Un échange de suivi</b> inclus pour éclaircir un point du rapport.</li></ul>
 <p>Voir un <a href="exemple-rapport-contre-plan.pdf" target="_blank" rel="noopener">exemple de rapport complet (PDF)</a>.</p>
 <h2>Qui relit les devis</h2>
-<p>Un ingénieur BTP, dix ans sur les chantiers et environ 1 000 devis lus et négociés, côté entreprise comme côté client. Contre-Plan est une entreprise individuelle immatriculée à Paris (SIRET 132 070 426 00029), rattachée au médiateur de la consommation CM2C. La méthode de contrôle est décrite en détail sur la page <a href="methode.html">ma méthode</a>.</p>
+<p>Un ingénieur BTP diplômé de l'ESITC de Metz, dix ans sur les chantiers et environ 1 000 devis lus et négociés, côté entreprise comme côté client. Contre-Plan est une entreprise individuelle immatriculée à Paris (SIRET 132 070 426 00029), rattachée au médiateur de la consommation CM2C. La méthode de contrôle est décrite en détail sur la page <a href="methode.html">ma méthode</a>.</p>
 <h2>Comment ça se passe pour votre client</h2>
 <ol><li><b>Il dépose son devis</b> sur la page de commande de contre-plan.com (PDF ou photo, nom et adresse masquables), puis paie par carte, sans compte (ou passe par la plateforme ComeUp s'il préfère).</li>
 <li><b>Il reçoit une confirmation</b> par e-mail dans le quart d'heure.</li>
