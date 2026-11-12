@@ -199,7 +199,7 @@ FAQS = {
 UPDATED = {'guide-artisan-retard-chantier-que-faire': "2026-11-11", 'guide-acompte-paiement-devis-travaux': "2026-10-26", 'guide-bien-demander-ses-devis': "2026-10-26", 'guide-mentions-obligatoires-devis': "2026-10-26", 'guide-oublis-devis-salle-de-bain': "2026-10-26", 'guide-reception-travaux-reserves': "2026-10-26", 'guide-tva-travaux-renovation': "2026-10-26"}
 for _s in ['guide-tva-travaux-renovation','guide-mentions-obligatoires-devis','guide-reception-travaux-reserves','guide-verifier-assurance-decennale','guide-negocier-devis-travaux','guide-depassement-devis-travaux-supplementaires','guide-annuler-devis-signe-retractation']:
     UPDATED[_s] = "2026-10-27"  # relecture et corrections du 27/10/2026
-SANS_CTA_HAUT = {"guide-artisan-retard-chantier-que-faire", "guide-artisan-injoignable-apres-acompte", "guide-reception-travaux-reserves"}  # chantier déjà en cours : pas d'appel « devis »
+SANS_CTA_HAUT = {"guide-constat-retard-chantier", "guide-artisan-retard-chantier-que-faire", "guide-artisan-injoignable-apres-acompte", "guide-reception-travaux-reserves"}  # chantier déjà en cours : pas d'appel « devis »
 GUIDE_CTA_HAUT = '<p class="cp-guide-cta">Vous avez déjà un devis ? Je le relis ligne par ligne : 16,50 €, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-guide-haut">Faire analyser mon devis →</a></p>\n'
 AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur Demange, ingénieur BTP</a> (10 ans de chantier, environ 1 000 devis lus)"
 
@@ -372,7 +372,8 @@ article("guide-tva-travaux-renovation",
  "TVA sur un devis de travaux : 5,5 %, 10 % ou 20 %, quel taux est le bon ?",
  "Rénovation énergétique, amélioration, neuf, agrandissement : quel taux de TVA sur votre devis, et la mention qui remplace l'attestation depuis 2025.",
  "Sur un devis de 15 000 € HT, passer de 10 % à 20 % de TVA, c'est 1 500 € de plus. Pourtant, je vois régulièrement des taux mal appliqués, dans les deux sens. Voici comment vérifier le vôtre.",
- '''<h2>La condition de base : un logement achevé depuis plus de 2 ans</h2>
+ '''<div class="note"><p><strong>TVA 10 ou 20 % ? La réponse rapide :</strong> dans un logement achevé depuis plus de 2 ans, la plupart des rénovations sont à <strong>10 %</strong> (salle de bain, électricité, plomberie, peinture, sols), et l'isolation et certains équipements d'énergie renouvelable à <strong>5,5 %</strong>. Restent à <strong>20 %</strong> : le neuf, les extensions et surélévations, la rénovation qui remet l'immeuble à neuf, la chaudière gaz ou fioul, l'électroménager et le matériel que vous achetez vous-même. Le détail ci-dessous.</p></div>
+<h2>La condition de base : un logement achevé depuis plus de 2 ans</h2>
 <p>Les taux réduits ne s'appliquent qu'aux travaux dans des <strong>locaux d'habitation achevés depuis plus de deux ans</strong>. Ils sont exclus si les travaux, sur deux ans, aboutissent à un <strong>immeuble neuf</strong> ou <strong>augmentent la surface de plancher de plus de 10 %</strong>.</p>
 <div class="note"><p><strong>Le piège de la rénovation lourde :</strong> même sans gagner un mètre carré, des travaux sont fiscalement considérés comme produisant un immeuble neuf s'ils remettent à neuf la majorité des fondations ou des éléments porteurs (murs, planchers, charpente), la majorité de la consistance des façades (hors ravalement), ou au moins les deux tiers de <em>chacun</em> des éléments de second œuvre : planchers non porteurs, menuiseries extérieures, cloisons intérieures, plomberie et sanitaires, électricité et, en métropole, chauffage. Dans ce cas, tout passe à 20 %.</p></div>
 <h2>5,5 % : la rénovation énergétique</h2>
@@ -692,7 +693,7 @@ article("guide-artisan-retard-chantier-que-faire",
 <p>Dès que la date de fin écrite au devis, ou le délai ferme compté depuis le démarrage, est dépassé. Si le devis ne donne aucune date, le Code de la consommation prévoit en principe que le professionnel exécute sa prestation sans retard injustifié et au plus tard 30 jours après la conclusion du contrat (article L216-1). Selon l'INC, ces règles visent les contrats de prestation de service conclus avec un consommateur, dont la pose et l'installation. Pour un chantier qui dure plusieurs mois, ce délai se discute : raison de plus pour exiger une date écrite avant de signer.</p>
 <h2>Un retard est-il toujours la faute de l'artisan ?</h2>
 <p>Non. Un retard vient parfois en partie du client (carrelage choisi trop tard, accès impossible, travaux ajoutés sans nouveau délai écrit) ou du chantier (pluie, matériau manquant). Ce qui compte, c'est ce que prévoit le devis et la façon dont l'entreprise vous a prévenu.</p>
-<div class="note"><p><strong>Dès maintenant, gardez des traces :</strong> photos datées de l'avancement, liste des jours sans personne sur le chantier, copies des SMS et des courriels. L'INC conseille aussi, en parallèle de vos démarches, de faire établir un constat par un commissaire de justice (une prestation payante) pour vous constituer des preuves.</p></div>
+<div class="note"><p><strong>Dès maintenant, gardez des traces :</strong> photos datées de l'avancement, liste des jours sans personne sur le chantier, copies des SMS et des courriels. L'INC conseille aussi, en parallèle de vos démarches, de faire établir un constat par un commissaire de justice (une prestation payante) pour vous constituer des preuves : voir <a href="guide-constat-retard-chantier.html">comment faire constater un retard de chantier</a>.</p></div>
 <h2 id="etape-1">Étape 1 : un message écrit, calme et daté</h2>
 <p>Le premier contact se fait par écrit, même après un appel : un courriel ou un SMS suffit à ce stade. Avant d'envoyer, cochez ce que vous avez sous la main :</p>
 <ul>
@@ -737,6 +738,45 @@ article("guide-artisan-retard-chantier-que-faire",
 <p>La plupart des litiges de retard se jouent avant la signature. Sur chaque devis, je vérifie la <strong>date de début et le délai ferme</strong>, les <strong>pénalités de retard</strong> et la clause d'intempéries, un <strong>échéancier qui suit l'avancement</strong> avec un solde à la <a href="guide-reception-travaux-reserves.html">réception</a>, et un avenant écrit avec nouveau délai pour tout <a href="guide-depassement-devis-travaux-supplementaires.html">travail supplémentaire</a>. Voir aussi <a href="guide-mentions-obligatoires-devis.html">les mentions obligatoires d'un devis</a>.</p>
 <p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale, à jour au 11 novembre 2026, qui ne remplace pas un conseil juridique. Sources : articles L216-1, L216-6, L216-7, L241-4 et R212-2 du Code de la consommation, articles 1217 à 1219, 1222, 1224 à 1226, 1231 et 1231-1 du Code civil, service-public.gouv.fr (devis et contrat de travaux, conciliateur de justice, médiation des litiges de la consommation, achat à distance : livraison ou exécution du service), economie.gouv.fr (livraison : quels sont vos droits), INC (la livraison : vos droits et recours, prestation de services non exécutée malgré la mise en demeure, mise en demeure d'un artisan de terminer les travaux), Que Choisir (lettre type : travaux en retard ou arrêtés).</p>''',
  7, date="2026-10-28")
+
+article("guide-constat-retard-chantier",
+ "Constat de retard de chantier : quand et comment le faire",
+ "Constat de retard de chantier : comment prouver que les travaux n'avancent pas",
+ "Photos datées, commissaire de justice, coût, bon moment : comment faire constater un retard de chantier pour que la preuve tienne face à l'entreprise.",
+ "Un retard se discute toujours : l'entreprise parlera de la météo, d'un fournisseur ou de vos choix tardifs. Pour peser, il faut prouver l'état du chantier à une date précise. Voici comment, du plus simple au plus solide.",
+ '''<div class="note"><p><strong>En bref :</strong> gardez dès le début des preuves datées (photos, messages, jours sans personne). Si le retard s'installe, envoyez une mise en demeure, puis faites dresser un constat par un commissaire de justice : c'est la preuve la plus solide, mais elle est payante.</p></div>
+<h2>Étape 1 : vos propres preuves, dès le premier jour de retard</h2>
+<p>Elles ne coûtent rien et servent à chaque étape :</p>
+<ul>
+<li><strong>Photos et vidéos datées</strong> de chaque pièce, toujours prises du même endroit, pour montrer que rien n'a bougé d'une semaine à l'autre.</li>
+<li><strong>Un carnet des jours</strong> : personne sur le chantier, horaires d'arrivée et de départ, matériel livré ou non.</li>
+<li><strong>Tous les échanges écrits</strong> : SMS, courriels, captures d'écran avec la date. Après un appel, confirmez par écrit ce qui a été dit.</li>
+<li>Le <strong>devis signé</strong>, avec la date de fin ou le délai d'exécution, et les preuves de paiement.</li>
+</ul>
+<p>Ces éléments ont une valeur réelle, mais l'entreprise peut les contester : une photo ne dit pas toujours où ni quand elle a été prise.</p>
+<h2>Étape 2 : le constat par un commissaire de justice</h2>
+<p>Le commissaire de justice est le nom de l'huissier de justice depuis le 1er juillet 2022. Il se déplace sur le chantier, décrit ce qu'il voit, prend des photos et rédige un procès-verbal de constat. En matière civile, <strong>ses constatations font foi jusqu'à preuve contraire</strong> (ordonnance n° 2016-728 du 2 juin 2016, article 1er) : c'est à l'entreprise de prouver le contraire, et non plus à vous de convaincre.</p>
+<p>Ce qu'il peut constater : l'absence d'ouvriers et de matériel, l'état d'avancement pièce par pièce, les travaux non commencés, les zones laissées ouvertes ou non protégées. Il constate des faits : il ne dit pas qui est responsable du retard ni si les travaux sont bien faits. Pour une malfaçon, c'est un expert en bâtiment qu'il faut.</p>
+<h2>Quand le faire</h2>
+<ul>
+<li><strong>Après la mise en demeure restée sans effet</strong>, une fois le délai accordé dépassé : le constat montre alors que le chantier n'a pas repris (les étapes sont détaillées dans <a href="guide-artisan-retard-chantier-que-faire.html">le guide sur le retard de travaux</a>).</li>
+<li><strong>Avant de faire venir une autre entreprise</strong> ou de reprendre vous-même : une fois le chantier modifié, l'état laissé par la première entreprise ne pourra plus être prouvé.</li>
+<li><strong>Quand l'entreprise ne répond plus</strong> et que le chantier semble abandonné.</li>
+</ul>
+<h2>Combien ça coûte</h2>
+<p>Hors procédure judiciaire, le commissaire de justice fixe librement ses honoraires pour un constat (seul l'état des lieux locatif suit un tarif réglementé). Le prix dépend de la durée, du déplacement et de l'urgence : demandez un devis à deux ou trois études. Pour vous donner un ordre d'idée, un relevé des tarifs publiés par 36 études en 2026 donne une médiane d'environ 350 € TTC pour un constat de base.</p>
+<p>Si l'affaire va devant le juge, vous pouvez demander que ce coût soit mis à la charge de l'entreprise ; c'est le juge qui décide.</p>
+<p>Pour trouver un commissaire de justice près de chez vous : l'annuaire de la Chambre nationale des commissaires de justice, sur <a href="https://commissaire-justice.fr/" target="_blank" rel="noopener">commissaire-justice.fr</a>.</p>
+<h2>Préparer la visite</h2>
+<ul>
+<li>Donnez-lui une copie du <strong>devis signé</strong> et du planning, pour qu'il sache ce qui aurait dû être fait.</li>
+<li>Listez les <strong>pièces et postes</strong> à constater, dans l'ordre du devis.</li>
+<li>Prévoyez l'<strong>accès</strong> à tout le chantier, et laissez-le en l'état jusqu'à son passage.</li>
+</ul>
+<h2>Pour ne pas en arriver là la prochaine fois</h2>
+<p>La plupart des litiges de retard viennent d'un devis sans date de fin, sans délai ferme ou sans pénalités. Avant de signer pour la suite des travaux, vérifiez que ces points sont écrits : voir <a href="guide-mentions-obligatoires-devis.html">les mentions obligatoires d'un devis</a>.</p>
+<p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale, à jour au 12 novembre 2026, qui ne remplace pas un conseil juridique. Sources : ordonnance n° 2016-728 du 2 juin 2016 relative au statut de commissaire de justice (article 1er), service-public.fr et justice.fr (tarifs et honoraires du commissaire de justice), Chambre nationale des commissaires de justice (le constat pendant les travaux), INC (mise en demeure d'un artisan), relevé ProofSnap des tarifs de 36 études (novembre 2026).</p>''',
+ 5, date="2026-11-12")
 
 article("guide-artisan-injoignable-apres-acompte",
  "Artisan injoignable après l'acompte : que faire ?",
@@ -1030,6 +1070,11 @@ page("professionnels",
 <p>Aucune commission n'est versée ni reçue : ni aux artisans, ni aux prescripteurs. Je ne revends aucune entreprise et je ne fais pas de travaux. Votre client peut masquer son nom et son adresse sur le devis.</p>
 <h2>Les limites</h2>
 <p>L'analyse est documentaire et à distance. Ce n'est ni une expertise judiciaire, ni un diagnostic technique du bâtiment, ni une mission de maîtrise d'œuvre, et elle n'intervient pas dans un litige déjà engagé.</p>
+<h2 id="pack-pro">Pack pro : 5 analyses prépayées</h2>
+<p>Pour les professionnels qui orientent régulièrement des clients : <strong>5 analyses pour 75 €</strong> (15 € l'analyse au lieu de 16,50 €), valables 12 mois. Chaque analyse couvre un devis jusqu'à 30 000 €, avec le même rapport PDF sous 48 h.</p>
+<ul><li><b>Comment l'obtenir</b> : demandez-le par le <a href="contact.html?sujet=professionnel">formulaire de contact</a> ; je vous envoie une facture à régler par carte ou par virement.</li>
+<li><b>Comment l'utiliser</b> : vous m'envoyez le devis de votre client par e-mail, ou votre client le fait en citant votre structure. Je vous tiens le décompte des analyses restantes.</li>
+<li><b>Pour qui</b> : réservé aux professionnels (agences, courtiers, notaires, syndics, diagnostiqueurs, gestionnaires). Vous pouvez l'offrir à vos clients ou le refacturer comme vous le souhaitez.</li></ul>
 <h2>Vous orientez régulièrement des clients ?</h2>
 <p>Écrivez-moi par le <a href="contact.html?sujet=professionnel">formulaire de contact</a> : je vous réponds par e-mail et je vous envoie la fiche de présentation à remettre à vos clients. Aucune commission n'est versée ni reçue.</p>
 <p>Pour un acquéreur, la page <a href="achat-avec-travaux.html">achat avec travaux</a> explique tout en une fois.</p>
@@ -1172,7 +1217,8 @@ page("comparer-ses-devis",
  "Comparer ses devis : le tableau gratuit",
  "Tableau gratuit pour comparer 2 ou 3 devis de travaux poste par poste : totaux, TVA, acompte, postes non chiffrés, garanties. Excel et PDF à imprimer.",
  "Deux devis ne se comparent pas sur le total : ils ne contiennent presque jamais les mêmes prestations. Ce tableau vous aide à les remettre à plat, poste par poste.",
- """<div style="display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 24px;">
+ """<div class="note"><p><strong>Comparer des devis de travaux en 4 étapes :</strong> 1. vérifiez que les quantités sont les mêmes (m², mètres, nombre d'équipements) ; 2. listez les postes de chaque devis et repérez ceux qui manquent d'un côté ; 3. comparez le taux de TVA et le total TTC ; 4. comparez l'acompte, les délais et les garanties. Le moins cher est souvent celui qui oublie un poste.</p></div>
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 24px;">
 <a href="tableau-comparatif-devis.xlsx" download data-goatcounter-click="telechargement-comparatif-xlsx" class="btn">Télécharger le tableau (Excel)</a>
 <a href="tableau-comparatif-devis.pdf" download data-goatcounter-click="telechargement-comparatif-pdf" class="btn dark">Version à imprimer (PDF)</a>
 </div>
@@ -1347,7 +1393,7 @@ AVIS_BODY = f'''<p>Vous avez reçu votre rapport. Votre avis m'aide à améliore
 <textarea name="entry.881289893" id="cp-avis-msg" hidden></textarea>
 <button type="submit">Envoyer mon avis</button>
 </form>
-<p class="cp-form-rgpd">Tous les avis sont lus, qu'ils soient positifs ou négatifs, et aucun n'est modifié. Aucune contrepartie n'est proposée en échange d'un avis. Votre e-mail sert uniquement à vérifier la commande ; les avis sont enregistrés via Google Forms (Google). Voir la <a href="confidentialite.html">politique de confidentialité</a>.</p>
+<p class="cp-form-rgpd">Tous les avis sont lus, qu'ils soient positifs ou négatifs, et aucun n'est modifié. Aucune contrepartie n'est proposée en échange d'un avis. Pour lancer le service, quelques analyses ont été offertes, sans condition d'avis : si vous en avez bénéficié, votre avis sera publié avec la mention « analyse offerte ». Votre e-mail sert uniquement à vérifier la commande ; les avis sont enregistrés via Google Forms (Google). Voir la <a href="confidentialite.html">politique de confidentialité</a>.</p>
 <script>
 (function(){{var f=document.querySelector('.cp-avis');if(!f)return;
 f.addEventListener('submit',function(){{var n=f.querySelector('input[name="cp-note"]:checked'),t=document.getElementById('cp-avis-txt'),p=document.getElementById('cp-avis-pub');

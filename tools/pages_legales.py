@@ -40,6 +40,7 @@ CGV_BODY = f"""<p><em>Conditions en vigueur au {MAJ}.</em></p>
 <li>de validation du devis, de garantie sur un prix, sur un montant d'économie ou sur le résultat d'une négociation ;</li>
 <li>de maîtrise d'œuvre, de suivi de chantier ni de mise en relation avec des entreprises.</li>
 </ul>
+<p><strong>Pack pro</strong> : réservé aux professionnels, il comprend 5 analyses de devis de travaux d'un montant jusqu'à 30 000 € chacun, au prix de 75 € TTC (TVA non applicable, article 293 B du CGI), payable sur facture. Les analyses sont utilisables pendant 12 mois à compter du paiement, pour les devis transmis par le professionnel ou par ses clients ; les analyses non utilisées à l'issue de ce délai ne sont pas remboursées. Chaque analyse suit les mêmes modalités, délais et exclusions que la formule 1 devis.</p>
 <p><strong>Avis avant travaux</strong> : Contre-Plan répond par écrit à la question posée par le client sur son projet, à partir des photos, plans et documents transmis : points à vérifier, erreurs fréquentes, contenu attendu des devis. Cet avis est lui aussi fondé uniquement sur les documents transmis et comporte les mêmes exclusions que ci-dessus ; il ne remplace ni un diagnostic sur place, ni une étude de bureau d'études, ni une conception de plans.</p>
 <p>Le client reste seul décisionnaire de la suite qu'il donne au devis. Les prix de comparaison cités sont des ordres de grandeur, qui varient selon la région, l'accès au chantier et l'état de l'existant.</p>
 
