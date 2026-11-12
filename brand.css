@@ -514,3 +514,11 @@ table.cp-fourch td.n{white-space:nowrap}
 
 .cp-stars label,.cp-avis .cp-check{min-height:44px;align-items:center}
 .logo{min-height:44px}.cp-toc-m>summary{padding-block:11px}
+.cp-rnav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.cp-rnav a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid #d5dae3;border-radius:22px;background:#fff;color:#14213d;font-weight:600;text-decoration:none;font-size:15px}
+.cp-rsec{scroll-margin-top:80px}
+.cp-rgrid-mini .cp-rtag,.cp-rgrid-mini .cp-rdesc,.cp-rgrid-mini .cp-rcta{display:none}
+.cp-rgrid-mini{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))!important;gap:8px!important}
+.cp-rgrid-mini .cp-rcard{padding:12px 14px!important;min-height:44px}
+h2[id]{scroll-margin-top:80px}
+.cp-rgrid-mini .cp-rcard{min-height:44px!important;height:auto!important;justify-content:center}.cp-rgrid-mini .cp-rtitle{font-size:16px!important;margin:0!important;overflow-wrap:anywhere}

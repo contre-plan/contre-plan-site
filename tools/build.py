@@ -678,22 +678,22 @@ article("guide-artisan-retard-chantier-que-faire",
  "Retard de travaux : que faire quand l'artisan est en retard sur le chantier",
  "Retard de travaux : que faire ? Relire le devis, écrire, mettre en demeure en recommandé, suspendre le paiement, le médiateur : les étapes dans l'ordre.",
  "Retard de travaux : relisez d'abord la date écrite sur votre devis, puis écrivez à l'artisan, puis envoyez une mise en demeure en recommandé s'il ne reprend pas le chantier. Voici les étapes dans l'ordre, du simple message à la médiation.",
- '''<h2>Artisan en retard sur le chantier : que faire en premier ?</h2>
+ '''<div class="note"><p><strong>En bref :</strong> 1. relisez la date écrite au devis ; 2. <a href="#etape-1">écrivez un message daté</a> ; 3. <a href="#etape-2">mise en demeure en recommandé</a> ; 4. <a href="#etape-3">annulation ou autre entreprise</a> ; 5. <a href="#recours">médiateur ou conciliateur</a>.</p></div>
+<h2>Artisan en retard sur le chantier : que faire en premier ?</h2>
 <p>Avant d'écrire la moindre lettre, reprenez votre devis signé : il devient un contrat dès qu'il est signé par les deux parties, et dit ce que vous pouvez exiger. Je regarde toujours cinq points.</p>
 <ul>
 <li><strong>Une date de début et une date de fin, ou un délai ferme</strong> (« 4 semaines à compter du démarrage ») : le retard se mesure sans discussion possible.</li>
 <li><strong>Une date « donnée à titre indicatif »</strong> ou un « dès que possible » : selon l'INC, ce type de clause est présumé abusif, et vous pouvez alors vous appuyer sur la règle des 30 jours ci-dessous.</li>
 <li><strong>Aucune date</strong> : voir la question suivante.</li>
-<li><strong>Une clause de pénalités de retard</strong> (un montant par jour de retard, par exemple) : notez-la, vous la rappellerez dans vos courriers. Sans clause, il n'y a pas de pénalité automatique, mais vous pouvez en principe réclamer des dommages et intérêts si le retard vous cause un préjudice que vous pouvez prouver (un loyer payé en plus, par exemple), à condition d'avoir d'abord mis l'entreprise en demeure, et sauf force majeure.</li>
+<li><strong>Une clause de pénalités de retard</strong> (un montant par jour, par exemple) : notez-la, vous la citerez dans vos courriers (voir <a href="#indemnite">l'indemnité</a>).</li>
 <li><strong>Une clause sur les intempéries ou les causes de prolongation</strong> : lisez-la avant que l'entreprise ne l'invoque pour justifier le retard.</li>
 </ul>
 <h2>À partir de quand parle-t-on de retard de travaux ?</h2>
 <p>Dès que la date de fin écrite au devis, ou le délai ferme compté depuis le démarrage, est dépassé. Si le devis ne donne aucune date, le Code de la consommation prévoit en principe que le professionnel exécute sa prestation sans retard injustifié et au plus tard 30 jours après la conclusion du contrat (article L216-1). Selon l'INC, ces règles visent les contrats de prestation de service conclus avec un consommateur, dont la pose et l'installation. Pour un chantier qui dure plusieurs mois, ce délai se discute : raison de plus pour exiger une date écrite avant de signer.</p>
 <h2>Un retard est-il toujours la faute de l'artisan ?</h2>
-<p>Non. Je vois souvent des retards qui viennent en partie du client : un carrelage choisi trois semaines trop tard, un accès au chantier impossible, des travaux ajoutés en cours de route sans que le nouveau délai soit écrit, un acompte versé après la date prévue.</p>
-<p>D'autres tiennent au chantier : une couverture ou un ravalement ne se font pas sous la pluie, un matériau peut manquer. Ce qui compte, c'est ce que prévoit le devis et la façon dont l'entreprise vous a prévenu.</p>
+<p>Non. Un retard vient parfois en partie du client (carrelage choisi trop tard, accès impossible, travaux ajoutés sans nouveau délai écrit) ou du chantier (pluie, matériau manquant). Ce qui compte, c'est ce que prévoit le devis et la façon dont l'entreprise vous a prévenu.</p>
 <div class="note"><p><strong>Dès maintenant, gardez des traces :</strong> photos datées de l'avancement, liste des jours sans personne sur le chantier, copies des SMS et des courriels. L'INC conseille aussi, en parallèle de vos démarches, de faire établir un constat par un commissaire de justice (une prestation payante) pour vous constituer des preuves.</p></div>
-<h2>Étape 1 : un message écrit, calme et daté</h2>
+<h2 id="etape-1">Étape 1 : un message écrit, calme et daté</h2>
 <p>Le premier contact se fait par écrit, même après un appel : un courriel ou un SMS suffit à ce stade. Avant d'envoyer, cochez ce que vous avez sous la main :</p>
 <ul>
 <li>la date de fin ou le délai écrit au devis, et le numéro du devis ;</li>
@@ -702,7 +702,7 @@ article("guide-artisan-retard-chantier-que-faire",
 </ul>
 <p>Rappelez la date prévue, constatez le retard sans accuser, et demandez deux choses précises : <strong>la date de reprise</strong> et <strong>la nouvelle date de fin</strong>. Des formulations prêtes à copier figurent dans <a href="modeles-messages-artisan.html">les modèles de messages à l'artisan</a>.</p>
 <p>Si l'artisan répond avec un planning crédible, confirmez-le par écrit. Ce nouvel engagement vous servira si le chantier dérape encore.</p>
-<h2>Étape 2 : la mise en demeure en recommandé</h2>
+<h2 id="etape-2">Étape 2 : la mise en demeure en recommandé</h2>
 <p>Si le message reste sans effet, passez à la <strong>lettre recommandée avec avis de réception</strong>. C'est une étape indispensable : sans mise en demeure, vous ne pourrez en principe ni annuler le contrat pour ce retard (sauf refus clair de l'entreprise ou date impérative, voir l'étape 3), ni faire terminer le chantier par une autre entreprise aux frais de la première, ni réclamer des dommages et intérêts pour le retard.</p>
 <p>La lettre doit contenir :</p>
 <ul>
@@ -716,16 +716,16 @@ article("guide-artisan-retard-chantier-que-faire",
 <h2>Pouvez-vous arrêter de payer l'artisan ?</h2>
 <p>En partie, et avec prudence. Si votre échéancier est lié à l'avancement (un paiement à la fin de la plomberie, un autre à la fin des revêtements), l'étape non réalisée n'est tout simplement pas due. Le Code civil permet aussi de suspendre sa propre obligation quand l'autre partie n'exécute pas la sienne, à condition que ce manquement soit <strong>suffisamment grave</strong>.</p>
 <p>En revanche, refuser de payer ce qui a été correctement réalisé vous expose à être vous-même en tort. Annoncez par écrit la suspension du solde jusqu'à l'achèvement, sans retenir plus que ce qui reste à faire. Voir aussi <a href="guide-acompte-paiement-devis-travaux.html">comment caler l'acompte et l'échéancier</a>.</p>
-<h2>Quelle indemnité pour un retard de travaux ?</h2>
+<h2 id="indemnite">Quelle indemnité pour un retard de travaux ?</h2>
 <p>Elle dépend du devis. Si une clause de pénalités de retard y figure (un montant par jour, par exemple), appliquez-la et citez-la dans votre courrier : service-public.gouv.fr cite d'ailleurs les « pénalités éventuelles » parmi les mentions d'un contrat d'entreprise. Sans clause, aucune pénalité n'est automatique : il faut en principe prouver un préjudice réel (un loyer payé en plus, par exemple) après mise en demeure, et l'entreprise peut invoquer la force majeure. Gardez les justificatifs.</p>
-<h2>Étape 3 : annuler le contrat ou faire terminer par une autre entreprise</h2>
+<h2 id="etape-3">Étape 3 : annuler le contrat ou faire terminer par une autre entreprise</h2>
 <p>Si le délai de la mise en demeure passe sans reprise sérieuse, deux voies s'ouvrent en principe.</p>
 <ul>
 <li><strong>Résoudre le contrat</strong> (y mettre fin) : vous l'indiquez à l'entreprise par lettre recommandée avec avis de réception ou par un écrit sur un autre support durable, et le contrat est résolu à la réception de ce courrier, sauf si l'entreprise s'exécute entre-temps. Vous pouvez le faire sans délai supplémentaire si l'entreprise refuse clairement d'exécuter, ou si la date était une condition essentielle du contrat : une date que vous aviez expressément demandée avant la signature, ce que vous devrez pouvoir prouver (un courriel ou un SMS antérieur, par exemple). Le professionnel doit alors rembourser les sommes versées au plus tard 14 jours après la résolution ; en cas de retard, ces sommes sont majorées de plein droit (de 10 % à 50 % selon la durée du retard). Sur un chantier bien avancé, le décompte se discute, et une résolution mal fondée peut vous exposer à des dommages et intérêts : faites-vous conseiller avant d'envoyer ce courrier.</li>
 <li><strong>Faire terminer par une autre entreprise</strong> : après mise en demeure, le Code civil permet de faire exécuter les travaux par un autre professionnel, dans un délai et à un coût raisonnables, puis d'en demander le remboursement à l'entreprise défaillante. L'autorisation préalable du juge n'est exigée que pour faire détruire ce qui a été mal fait ; si vous voulez que l'entreprise avance elle-même les sommes nécessaires, c'est au juge qu'il faut le demander. Le modèle de lettre de l'INC, plus prudent, évoque encore une autorisation des tribunaux : si le coût du remplaçant est élevé ou contesté, faites-vous conseiller avant de vous lancer.</li>
 </ul>
 <div class="note"><p><strong>Avant de faire venir une autre entreprise :</strong> faites constater l'état exact du chantier (photos datées, et si possible constat), conservez le devis du remplaçant et sa facture. Vous devrez prouver ce qui restait à faire et ce que cela vous a coûté.</p></div>
-<h2>L'artisan ne répond plus : médiateur, conciliateur, tribunal</h2>
+<h2 id="recours">L'artisan ne répond plus : médiateur, conciliateur, tribunal</h2>
 <p>Si le silence a commencé juste après le versement de l'acompte et que le chantier n'a jamais démarré, voyez plutôt <a href="guide-artisan-injoignable-apres-acompte.html">le guide sur l'artisan injoignable après l'acompte</a>.</p>
 <p>Deux recours amiables et gratuits existent avant la justice.</p>
 <ul>
@@ -734,15 +734,7 @@ article("guide-artisan-retard-chantier-que-faire",
 </ul>
 <p>Pour une demande en paiement de 5 000 € ou moins, une tentative de résolution amiable (conciliation, médiation ou procédure participative) est en principe obligatoire avant de saisir le tribunal, sauf exceptions. Au-delà, ou si l'enjeu est important, l'aide d'un juriste, d'une association de consommateurs ou de votre assurance protection juridique devient utile. Vous pouvez aussi signaler le problème à la DGCCRF sur SignalConso.</p>
 <h2>Ce que je vérifie sur un devis pour éviter ce scénario</h2>
-<p>La plupart des litiges de retard se jouent avant la signature. Sur chaque devis, je regarde :</p>
-<ul>
-<li>si une <strong>date de début</strong> et un <strong>délai d'exécution ferme</strong> sont écrits, et non une simple durée indicative ;</li>
-<li>si des <strong>pénalités de retard</strong> sont prévues, et ce que dit la clause sur les intempéries ou les délais de fourniture ;</li>
-<li>si l'<strong>échéancier suit l'avancement réel</strong> et garde un solde suffisant à la <a href="guide-reception-travaux-reserves.html">réception des travaux</a> ;</li>
-<li>si les coordonnées du <strong>médiateur de la consommation</strong> sont faciles à trouver (devis, conditions générales ou site) ;</li>
-<li>si les travaux supplémentaires passent par un avenant écrit qui fixe aussi le nouveau délai (voir <a href="guide-depassement-devis-travaux-supplementaires.html">dépassement de devis et travaux supplémentaires</a>).</li>
-</ul>
-<p>Pour la liste complète de ce qu'un devis doit contenir, voyez <a href="guide-mentions-obligatoires-devis.html">les mentions obligatoires d'un devis de travaux</a>.</p>
+<p>La plupart des litiges de retard se jouent avant la signature. Sur chaque devis, je vérifie la <strong>date de début et le délai ferme</strong>, les <strong>pénalités de retard</strong> et la clause d'intempéries, un <strong>échéancier qui suit l'avancement</strong> avec un solde à la <a href="guide-reception-travaux-reserves.html">réception</a>, et un avenant écrit avec nouveau délai pour tout <a href="guide-depassement-devis-travaux-supplementaires.html">travail supplémentaire</a>. Voir aussi <a href="guide-mentions-obligatoires-devis.html">les mentions obligatoires d'un devis</a>.</p>
 <p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale, à jour au 11 novembre 2026, qui ne remplace pas un conseil juridique. Sources : articles L216-1, L216-6, L216-7, L241-4 et R212-2 du Code de la consommation, articles 1217 à 1219, 1222, 1224 à 1226, 1231 et 1231-1 du Code civil, service-public.gouv.fr (devis et contrat de travaux, conciliateur de justice, médiation des litiges de la consommation, achat à distance : livraison ou exécution du service), economie.gouv.fr (livraison : quels sont vos droits), INC (la livraison : vos droits et recours, prestation de services non exécutée malgré la mise en demeure, mise en demeure d'un artisan de terminer les travaux), Que Choisir (lettre type : travaux en retard ou arrêtés).</p>''',
  7, date="2026-10-28")
 
@@ -1014,7 +1006,7 @@ page("achat-avec-travaux",
 page("professionnels",
  "Professionnels : faire relire les devis clients | Contre-Plan",
  "Professionnels : faire relire les devis de vos clients",
- "Agents immobiliers, courtiers, notaires, syndics : un ingénieur BTP relit les devis de travaux de vos clients. Rapport PDF sous 48 h, indépendant, sans commission.",
+ "Agents immobiliers, courtiers, notaires, syndics : un ingénieur BTP relit les devis de vos clients. Rapport PDF sous 48 h, sans commission.",
  "Vos clients achètent un bien avec des travaux, ou doivent choisir entre plusieurs devis. Une relecture indépendante les aide à décider, sans vous mettre en porte-à-faux avec un artisan.",
  """<h2>Ce que reçoit votre client</h2>
 <ul><li><b>Un rapport PDF</b> : verdict global, contrôle des prix poste par poste, postes oubliés, incohérences, taux de TVA, conditions de paiement.</li>
@@ -1273,14 +1265,15 @@ c_cards = "".join([
  rcard("cas-fictifs.html", "Comprendre", "Trois devis analysés", "Salle de bain, pompe à chaleur, combles : ce qu'une relecture révèle, sur trois devis d'exemple.", "Lire les cas"),
  rcard("lexique-devis-travaux.html", "Comprendre", "Lexique du devis", "Les termes d'un devis expliqués en une ou deux phrases.", "Ouvrir le lexique"),
  rcard("exemple-rapport-contre-plan.pdf", "Comprendre", "Exemple de rapport", "Un rapport complet de 4 pages, sur un devis d'exemple de salle de bain.", "Voir le PDF", ' target="_blank" rel="noopener" data-goatcounter-click="telechargement-exemple-rapport"')])
-def rsec(title, sub, cards):
-    return f'<section class="cp-rsec"><div class="cp-rhead"><h2>{title}</h2><p>{sub}</p></div><div class="cp-rgrid">{cards}</div></section>'
+def rsec(title, sub, cards, sid="", cls=""):
+    return f'<section class="cp-rsec"{f" id={chr(34)}{sid}{chr(34)}" if sid else ""}><div class="cp-rhead"><h2>{title}</h2><p>{sub}</p></div><div class="cp-rgrid{cls}">{cards}</div></section>'
+RNAV = '<nav class="cp-rnav" aria-label="Aller à"><a href="#outils">Outils gratuits</a><a href="#travaux">Par travaux</a><a href="#guides">Guides</a><a href="#plus">Pour aller plus loin</a></nav>'
 crumbs = [("Accueil", "index.html"), ("Guides et outils", None)]
 idx = head("Guides et outils pour lire un devis de travaux | Contre-Plan",
   "Guides, outils gratuits et pages par type de travaux pour vérifier un devis avant de signer : mentions, TVA, acompte, comparatif, modèles de messages.",
   "https://contre-plan.com/guides.html", crumbs_ld(crumbs, "https://contre-plan.com/guides.html")) + pagehero("Ressources", "Guides et outils pour lire un devis", "Tout ce que je vérifie sur un devis, expliqué simplement, et des outils gratuits pour le faire vous-même avant de signer.", None, crumbs) + \
-  '<main class="cp-res-wrap" id="contenu">' + rsec("Guides", "Les règles et les pièges, sujet par sujet.", g_cards) + rsec("Par type de travaux", "Chaque chantier a ses oublis classiques.", t_cards) + \
-  rsec("Outils gratuits", "À utiliser avec votre devis sous les yeux.", o_cards) + rsec("Pour aller plus loin", "Ce que contient une analyse, et comment je la mène.", c_cards) + \
+  '<main class="cp-res-wrap" id="contenu">' + RNAV + rsec("Outils gratuits", "À utiliser avec votre devis sous les yeux.", o_cards, "outils") + rsec("Par type de travaux", "Chaque chantier a ses oublis classiques.", t_cards, "travaux", " cp-rgrid-mini") + \
+  rsec("Guides", "Les règles et les pièges, sujet par sujet.", g_cards, "guides") + rsec("Pour aller plus loin", "Ce que contient une analyse, et comment je la mène.", c_cards, "plus") + \
   f'<div class="cp-res-cta">{CTA}</div></main>' + footer()
 open(os.path.join(OUT, "guides.html"), "w").write(idx)
 
