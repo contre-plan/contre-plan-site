@@ -13,6 +13,9 @@ PRIX_MENTION = ""
 COMEUP = "https://comeup.com/fr/service/549064/verifier-votre-devis-de-travaux-avant-signature-et-reperer-les-prix-abusifs-et-les-oublis"
 CMD = "commander.html"   # page de commande (paiement Stripe, ComeUp en second choix)
 NEWS = "https://docs.google.com/forms/d/e/1FAIpQLScS7zVctXEahK71wNv8hUGD-MjfyqH4h_l8EpJyYPLVM-ToAA/viewform"  # formulaire « Le conseil devis du mois »
+def news_box(src):
+    return f'<div class="cp-news"><p class="t">Vos travaux ne sont pas pour tout de suite ?</p><p>Recevez une fois par mois un point concret à vérifier sur un devis, et la check-list en lien. Gratuit, sans publicité, désinscription sur simple réponse « stop ».</p><a class="btn" href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="inscription-conseil-{src}">Recevoir le conseil du mois</a></div>'
+
 DATE = "2026-10-23"  # date de publication par défaut des guides existants
 MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"]
 def date_fr(d):
@@ -317,7 +320,7 @@ def article(slug, title, h1, desc, lead, body, readtime, date=DATE):
     extra += crumbs_ld(crumbs, url) + ("\n" + faq_ld(qa) if qa else "")
     if qa:
         body = with_faq(body, qa)
-    body = with_links(body, slug)
+    body = with_links(body, slug) + news_box("guide")
     page = head(title, desc, url, extra) + pagehero("Guide", h1, lead, f"Mis à jour le {date_fr(mod)}, lecture {readtime} min · {AUTEUR}", crumbs) + layout((body if slug in LITIGE_SLUGS or slug in SANS_CTA_HAUT else GUIDE_CTA_HAUT + body), True, LITIGE_CTA if slug in LITIGE_SLUGS else None) + footer()
     open(os.path.join(OUT, slug + ".html"), "w").write(page)
     ARTICLES.append((slug, h1, desc, readtime))
@@ -1209,6 +1212,7 @@ page("test-devis",
 <div class="cp-res" aria-live="polite"></div>
 </div>
 </div>
+""" + news_box("test") + r"""
 <p style="margin-top:24px">Un doute sur une réponse ? Je relis votre devis ligne par ligne et je vous renvoie les questions exactes à poser : <a href="commander.html">faire analyser mon devis</a>.</p>""",
  "Outil gratuit", toc=False)
 
@@ -1318,7 +1322,7 @@ crumbs = [("Accueil", "index.html"), ("Guides et outils", None)]
 idx = head("Guides et outils pour lire un devis de travaux | Contre-Plan",
   "Guides, outils gratuits et pages par type de travaux pour vérifier un devis avant de signer : mentions, TVA, acompte, comparatif, modèles de messages.",
   "https://contre-plan.com/guides.html", crumbs_ld(crumbs, "https://contre-plan.com/guides.html")) + pagehero("Ressources", "Guides et outils pour lire un devis", "Tout ce que je vérifie sur un devis, expliqué simplement, et des outils gratuits pour le faire vous-même avant de signer.", None, crumbs) + \
-  '<main class="cp-res-wrap" id="contenu">' + RNAV + rsec("Outils gratuits", "À utiliser avec votre devis sous les yeux.", o_cards, "outils") + rsec("Par type de travaux", "Chaque chantier a ses oublis classiques.", t_cards, "travaux", " cp-rgrid-mini") + \
+  '<main class="cp-res-wrap" id="contenu">' + RNAV + rsec("Outils gratuits", "À utiliser avec votre devis sous les yeux.", o_cards, "outils") + news_box("guides") + rsec("Par type de travaux", "Chaque chantier a ses oublis classiques.", t_cards, "travaux", " cp-rgrid-mini") + \
   rsec("Guides", "Les règles et les pièges, sujet par sujet.", g_cards, "guides") + rsec("Pour aller plus loin", "Ce que contient une analyse, et comment je la mène.", c_cards, "plus") + \
   f'<div class="cp-res-cta">{CTA}</div></main>' + footer()
 open(os.path.join(OUT, "guides.html"), "w").write(idx)
