@@ -1360,7 +1360,7 @@ contact_body = f"""<p>Une question sur le service, sur un devis ou sur un guide 
 <option>Forum (ForumConstruire ou autre)</option>
 <option>ComeUp</option>
 <option>Bouche-à-oreille</option>
-<option>ChatGPT, Gemini ou autre assistant</option>
+<option>Un assistant conversationnel</option>
 <option>Un professionnel (agence, courtier, notaire)</option>
 <option>Autre</option>
 </select></label>
