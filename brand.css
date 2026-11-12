@@ -511,3 +511,5 @@ table.cp-fourch td.n{white-space:nowrap}
 /* Page de commande : bandeau de titre réduit pour que le formulaire arrive plus vite sur mobile */
 .cp-ph:has(+ .cp-order){padding-bottom:0!important}
 .cp-ph:has(+ .cp-order) .cp-ph-in{padding-top:20px;padding-bottom:22px;gap:8px}
+
+.cp-stars label,.cp-avis .cp-check{min-height:44px;align-items:center}
