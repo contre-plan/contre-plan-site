@@ -522,3 +522,5 @@ table.cp-fourch td.n{white-space:nowrap}
 .cp-rgrid-mini .cp-rcard{padding:12px 14px!important;min-height:44px}
 h2[id]{scroll-margin-top:80px}
 .cp-rgrid-mini .cp-rcard{min-height:44px!important;height:auto!important;justify-content:center}.cp-rgrid-mini .cp-rtitle{font-size:16px!important;margin:0!important;overflow-wrap:anywhere}
+
+.cp-news{background:#f3f6fb;border:1px solid #d5dae3;border-radius:8px;padding:18px 20px;margin:28px 0}.cp-news .t{font-weight:700;font-size:18px;margin:0 0 6px;color:#14213d}.cp-news p{margin:0 0 12px}.cp-news .btn{display:inline-flex;align-items:center;min-height:44px}
