@@ -90,7 +90,7 @@ def FOOTER(root=""):
         e = f' data-goatcounter-click="{ev}"' if ev else ""
         return f'<a href="{root}{h}"{e}>{t}</a>'
     soc = "".join(f'<a href="{u}" target="_blank" rel="noopener me" data-goatcounter-click="{ev}" class="cp-soc">{t}</a>' for u, t, ev in [
-        ("https://www.tiktok.com/@contreplan_", "TikTok", "clic-tiktok"), ("https://www.instagram.com/contreplan_/", "Instagram", "clic-instagram")])
+        ("https://www.tiktok.com/@contreplan_", "TikTok", "clic-tiktok"), ("https://www.instagram.com/contreplan_/", "Instagram", "clic-instagram"), ("https://www.youtube.com/@Contre-Plan", "YouTube", "clic-youtube")])
     return f"""<footer class="cp-foot"><div class="cp-foot-in">
 <div class="cp-foot-brand"><div class="cp-foot-logo">CONTRE-PLAN</div><p>Votre devis de travaux relu par un ingénieur BTP avant que vous signiez. 100 % à distance, indépendant de tout artisan.</p><div class="cp-socs">{soc}</div></div>
 <div class="cp-foot-col"><p>Le service</p>{L("methode.html","Ma méthode")}{L("engagements.html","Mes engagements")}{L("votre-cas.html","Votre cas est-il couvert ?")}{L("achat-avec-travaux.html","Achat avec travaux")}{L("professionnels.html","Professionnels")}{L("avis-avant-travaux.html","Avis avant travaux")}{L("exemple-rapport-contre-plan.pdf","Exemple de rapport","telechargement-exemple-rapport")}{L("index.html#tarifs","Tarifs")}{L("contact.html","Contact")}<a href="commander.html" data-goatcounter-click="clic-commander-pied">Commander une analyse</a></div>
