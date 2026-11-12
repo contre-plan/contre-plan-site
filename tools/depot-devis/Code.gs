@@ -39,6 +39,10 @@ var LIENS = {
 };
 var CGV_PDF = 'https://contre-plan.com/cgv-contre-plan.pdf';
 var ADRESSE = '47 rue Vivienne, 75002 Paris';
+// Avis avant travaux (29 €) : lien de paiement Stripe dédié, sans dépôt de devis sur le site.
+var LIEN_AVIS = 'plink_1UatEvRp9E7B6vv2FXOK0vzY';
+var PHRASE_ACCORD_AVIS = "Je demande que l'avis soit rédigé tout de suite, sans attendre la fin du délai de rétractation de 14 jours. Je sais qu'une fois l'avis livré, je ne pourrai plus me rétracter.";
+function estAvis(s) { return s && s.payment_link === LIEN_AVIS; }
 var PHRASE_ACCORD = "Je demande que l'analyse commence tout de suite, sans attendre la fin du délai de rétractation de 14 jours. Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter.";
 
 function doPost(e) {
@@ -226,14 +230,16 @@ function ajouterCommande(s, ref, dep, cle) {
   if (supp) options.push('Devis supplémentaire x' + supp);
   if (express) options.push('Express');
   var nb = (formule === '2' ? 2 : formule === '3' ? 3 : 1) + supp;
+  var avis = estAvis(s);
+  if (avis) { options = []; nb = ''; }
   var jour = Utilities.formatDate(new Date(s.created * 1000), 'Europe/Paris', 'yyyy-MM-dd');
   var dossier = dossierDe(ref, dep);
-  var notes = 'Canal : Stripe – ' + (dep ? 'Devis déposé sur le site le ' + Utilities.formatDate(new Date(), 'Europe/Paris', 'yyyy-MM-dd HH:mm')
+  var notes = 'Canal : Stripe – ' + (avis ? 'Avis avant travaux – Question, photos et plan en attente (envoi par e-mail)' : dep ? 'Devis déposé sur le site le ' + Utilities.formatDate(new Date(), 'Europe/Paris', 'yyyy-MM-dd HH:mm')
     + (dep.accord ? ' – démarrage immédiat demandé' : ' – pas de démarrage immédiat : délai après les 14 jours de rétractation') : 'Devis en attente (envoi par e-mail)')
     + ' – Confirmation et CGV envoyées automatiquement – Ligne créée par le script de dépôt';
   var n = colA.length + 1;
   for (var i = colA.length - 1; i >= 1; i--) { if (colA[i]) break; n = i + 1; }
-  feuille.getRange(n, 1, 1, 14).setValues([[num, jour, (formule === '2' || formule === '3') ? 'Comparatif multi devis' : 'Basique',
+  feuille.getRange(n, 1, 1, 14).setValues([[num, jour, avis ? 'Avis avant travaux' : (formule === '2' || formule === '3') ? 'Comparatif multi devis' : 'Basique',
     options.join(', '), nb, '', s.amount_total / 100, 'À faire', jour, '', '', dossier ? dossier.getUrl() : '', '', notes]]);
 }
 
@@ -241,6 +247,7 @@ function ajouterCommande(s, ref, dep, cle) {
 
 function dossierDe(ref, dep) {
   if (dep && dep.dossier) { try { return DriveApp.getFolderById(dep.dossier); } catch (e) {} }
+  if (!ref) return null;   // paiement sans dépôt : aucun dossier (sinon indexOf('') renverrait le premier dossier venu)
   var it = dossierRacine().getFolders();
   while (it.hasNext()) { var f = it.next(); if (f.getName().indexOf(ref) !== -1) return f; }
   return null;
@@ -268,6 +275,7 @@ function planifierRappel(s, email, ref, dep) {
   var depart = paye, note = '';
   if (dep && !dep.accord) { depart = paye + 14 * 86400000; note = "Pas de démarrage immédiat demandé : délai compté à partir de la fin des 14 jours (sauf si le client t'a envoyé la phrase d'accord)."; }
   if (!dep) note = "Devis attendu par e-mail : le délai court à partir de sa réception. Rappel calé sur l'heure du paiement.";
+  if (estAvis(s)) note = "AVIS AVANT TRAVAUX : question, photos et plan attendus par e-mail ; le délai de 48 h court à partir de leur réception. Rappel calé sur l'heure du paiement.";
   var limite = depart + delai;
   props.setProperty('liv_' + s.id, JSON.stringify({
     rappel: limite - 8 * 3600000, limite: limite, email: email, ref: ref, express: express, montant: s.amount_total, note: note }));
@@ -385,11 +393,18 @@ function texteConfirmation(s, ref, dep) {
   var L = [];
   L.push('Bonjour,', '', 'Merci pour votre commande. Voici sa confirmation, à conserver.', '');
   L.push('VOTRE COMMANDE');
-  L.push("- Prestation : analyse de devis de travaux par un ingénieur BTP, rapport PDF envoyé par e-mail" +
+  var avis = estAvis(s);
+  L.push(avis ? "- Prestation : avis avant travaux, réponse écrite d'un ingénieur BTP à votre question sur votre projet, envoyée par e-mail"
+    : "- Prestation : analyse de devis de travaux par un ingénieur BTP, rapport PDF envoyé par e-mail" +
     (dep && FORMULES[dep.formule] ? ' (formule « ' + FORMULES[dep.formule] + ' »)' : ''));
   L.push('- Montant payé : ' + euros(s.amount_total) + ' TTC (TVA non applicable, article 293 B du CGI). Le détail et la facture figurent dans l\'e-mail de Stripe.');
   L.push('- Date : ' + fmt(quand, "dd/MM/yyyy 'à' HH:mm"));
   if (ref) L.push('- Référence : ' + ref);
+  if (avis) {
+    L.push('', 'VOTRE QUESTION');
+    L.push('Envoyez votre question, vos photos et votre plan (si vous en avez un) en répondant à cet e-mail. Vous pouvez masquer votre nom et votre adresse.');
+    L.push("La réponse écrite arrive sous 48 h après leur réception. Pour qu'elle soit rédigée sans attendre la fin du délai de rétractation de 14 jours, ajoutez à votre message :", '« ' + PHRASE_ACCORD_AVIS + ' »');
+  } else {
   L.push('', 'VOTRE DEVIS');
   if (dep) {
     L.push('Votre devis est bien reçu.');
@@ -403,8 +418,9 @@ function texteConfirmation(s, ref, dep) {
     L.push('Envoyez votre devis (PDF ou photo nette) en répondant à cet e-mail. Vous pouvez masquer votre nom et votre adresse.');
     L.push("Le rapport arrive sous 48 h après sa réception (24 h si vous avez choisi l'express). Pour que l'analyse commence sans attendre la fin du délai de rétractation de 14 jours, ajoutez à votre message :", '« ' + PHRASE_ACCORD + ' »');
   }
+  }
   L.push('', 'VOTRE DROIT DE RÉTRACTATION');
-  L.push("Vous pouvez vous rétracter pendant 14 jours à compter de la commande, sans avoir à vous justifier, en répondant à cet e-mail ou avec le formulaire ci-dessous. Si l'analyse a commencé à votre demande, vous payez seulement la part déjà réalisée. Une fois le rapport livré, le droit de rétractation ne peut plus être exercé (articles L221-18, L221-25 et L221-28 du Code de la consommation, article 6 des conditions de vente).");
+  L.push("Vous pouvez vous rétracter pendant 14 jours à compter de la commande, sans avoir à vous justifier, en répondant à cet e-mail ou avec le formulaire ci-dessous. Si le travail a commencé à votre demande, vous payez seulement la part déjà réalisée. Une fois le rapport ou l'avis livré, le droit de rétractation ne peut plus être exercé (articles L221-18, L221-25 et L221-28 du Code de la consommation, article 6 des conditions de vente).");
   L.push('', 'Formulaire de rétractation (à compléter et renvoyer seulement si vous souhaitez vous rétracter) :');
   L.push("À l'attention de Contre-Plan, " + ADRESSE + ', contact@contre-plan.com :');
   L.push('Je vous notifie par la présente ma rétractation du contrat portant sur la prestation de services ci-dessous :');
@@ -437,7 +453,7 @@ function envoyerConfirmation(s, email, ref, dep, cgv) {
   mailClient(email, ref, corps, cgv);
   MailApp.sendEmail({
     to: NOTIF,
-    subject: 'Paiement reçu ' + euros(s.amount_total) + (ref ? ' – ' + ref : ' – devis à recevoir par e-mail'),
+    subject: 'Paiement reçu ' + euros(s.amount_total) + (estAvis(s) ? ' – AVIS AVANT TRAVAUX, question à recevoir par e-mail' : ref ? ' – ' + ref : ' – devis à recevoir par e-mail'),
     body: 'Client : ' + email + '\nMontant : ' + euros(s.amount_total) + '\nRéférence : ' + (ref || 'aucune (paiement sans dépôt)') +
       '\nDémarrage immédiat : ' + (dep ? (dep.accord ? 'oui' : 'non, après 14 jours') : 'à vérifier dans le message du client') +
       '\n\nConfirmation envoyée au client :\n\n' + corps
