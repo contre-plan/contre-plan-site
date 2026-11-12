@@ -37,7 +37,7 @@ FORM = """<form class="dec-form" id="dec-form" novalidate>
 <label for="dec-travaux">Type de travaux <span style="font-weight:400">(facultatif)</span></label>
 <select id="dec-travaux"><option value="">Choisir…</option>{opts}</select>
 {turnstile}<div class="dec-row"><button type="submit" class="btn" id="dec-go">Décoder la ligne</button><span class="dec-count" id="dec-count">0 / 400</span></div>
-<p class="dec-note">Ne collez ni votre nom, ni votre adresse, ni le nom de l'entreprise : seule la ligne est utile. Le texte est envoyé à un outil d'intelligence artificielle pour produire l'explication ; Contre-Plan ne conserve ni le texte ni la réponse. <a href="confidentialite.html#quoi">En savoir plus</a>.</p>
+<p class="dec-note">Ne collez ni votre nom, ni votre adresse, ni le nom de l'entreprise : seule la ligne est utile. Le texte est traité automatiquement pour produire l'explication ; Contre-Plan ne conserve ni le texte ni la réponse. <a href="confidentialite.html#quoi">En savoir plus</a>.</p>
 </form>
 <div id="dec-out" aria-live="polite"></div>"""
 

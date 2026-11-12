@@ -201,7 +201,7 @@ for _s in ['guide-tva-travaux-renovation','guide-mentions-obligatoires-devis','g
     UPDATED[_s] = "2026-10-27"  # relecture et corrections du 27/10/2026
 SANS_CTA_HAUT = {"guide-artisan-retard-chantier-que-faire", "guide-artisan-injoignable-apres-acompte", "guide-reception-travaux-reserves"}  # chantier déjà en cours : pas d'appel « devis »
 GUIDE_CTA_HAUT = '<p class="cp-guide-cta">Vous avez déjà un devis ? Je le relis ligne par ligne : 16,50 €, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-guide-haut">Faire analyser mon devis →</a></p>\n'
-AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur, ingénieur BTP</a> (10 ans de chantier, environ 1 000 devis lus)"
+AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur Demange, ingénieur BTP</a> (10 ans de chantier, environ 1 000 devis lus)"
 
 # Liens vers les sources officielles (bloc « Pour aller plus loin », vérifiés le 27/10/2026)
 SP = "https://www.service-public.gouv.fr/particuliers/vosdroits/"
@@ -520,6 +520,8 @@ GROS_DEVIS = {"analyse-devis-extension", "analyse-devis-toiture", "analyse-devis
 GROS_NOTE = '<p class="cp-gros"><b>Votre devis dépasse 30 000 € ?</b> Le prix de l\'analyse reste fixe : <a href="commander.html?formule=g1" data-goatcounter-click="clic-gros-devis-g1">39 € jusqu\'à 60 000 €</a>, <a href="commander.html?formule=g2" data-goatcounter-click="clic-gros-devis-g2">59 € jusqu\'à 100 000 €</a>. Au-delà, le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> fixe le prix avant toute commande.</p>'
 def page(slug, title, h1, desc, lead, body, kicker, toc=True):
     body = _om(slug, body)
+    if slug.startswith("analyse-devis-") and "cp-guide-cta" not in body:
+        body = GUIDE_CTA_HAUT.replace("clic-guide-haut", "clic-metier-haut") + body
     if slug in GROS_DEVIS and "cp-gros" not in body:
         _k = body.find('<div class="note"><p><b>Vous avez un devis')
         body = body[:_k] + GROS_NOTE + body[_k:] if _k != -1 else body + GROS_NOTE
@@ -843,7 +845,7 @@ page("engagements",
  """<h2>Indépendance</h2>
 <ul><li>Je ne touche aucune commission, d'aucune entreprise.</li><li>Je ne vous recommande ni ne vous revends aucun artisan.</li><li>Mon seul intérêt est que vous signiez un devis juste, quel que soit l'artisan que vous choisissez.</li></ul>
 <h2>Confidentialité de vos devis</h2>
-<ul><li>Vous pouvez masquer votre nom, votre adresse et vos coordonnées avant de m'envoyer le devis : ils ne sont pas nécessaires à l'analyse.</li><li>Votre devis sert uniquement à réaliser votre analyse. Il n'est jamais transmis à un artisan ni à un tiers à des fins commerciales.</li><li>Les documents sont conservés dans un espace professionnel sécurisé. Vous pouvez demander leur suppression à tout moment en écrivant à contact@contre-plan.com.</li><li>Pour certaines vérifications (recalculs, recherche de prix et de textes de référence), je m'aide d'outils logiciels, dont des outils d'intelligence artificielle. Chaque rapport est relu, corrigé et validé par moi avant de vous être envoyé.</li></ul>
+<ul><li>Vous pouvez masquer votre nom, votre adresse et vos coordonnées avant de m'envoyer le devis : ils ne sont pas nécessaires à l'analyse.</li><li>Votre devis sert uniquement à réaliser votre analyse. Il n'est jamais transmis à un artisan ni à un tiers à des fins commerciales.</li><li>Les documents sont conservés dans un espace professionnel sécurisé. Vous pouvez demander leur suppression à tout moment en écrivant à contact@contre-plan.com.</li><li>Pour certaines vérifications (recalculs, recherche de prix et de textes de référence), je m'aide d'outils logiciels. Chaque rapport est relu, corrigé et validé par moi avant de vous être envoyé.</li></ul>
 <h2>Délais</h2>
 <ul><li>Rapport sous 48 h, ou 24 h avec l'option express, à compter de la réception de votre devis complet, si vous avez demandé le démarrage immédiat en commandant ; sinon à compter de la fin du délai de rétractation de 14 jours.</li><li>Un échange de suivi est inclus : vous pouvez me poser une question après lecture du rapport.</li><li>Si un document manque ou est illisible, je vous le signale dès réception.</li></ul>
 <h2>Commande et paiement</h2>
@@ -990,7 +992,7 @@ page("votre-cas",
 
 # ---------- Achat immobilier avec travaux
 page("achat-avec-travaux",
- "Achat immobilier avec travaux : faire relire les devis avant de s'engager | Contre-Plan",
+ "Achat avec travaux : faire relire les devis | Contre-Plan",
  "Achat avec travaux : faire relire les devis avant de s'engager",
  "Vous achetez un bien à rénover : faites relire les devis de travaux pendant le délai de rétractation, avant l'offre de prêt, pour ne pas sous-estimer le budget.",
  "Quand on achète un bien à rénover, le budget travaux se décide souvent sur des devis obtenus vite, entre deux visites. C'est le meilleur moment pour les faire relire.",
@@ -1010,7 +1012,7 @@ page("achat-avec-travaux",
 
 # ---------- Page professionnels (agents, courtiers, notaires, syndics)
 page("professionnels",
- "Professionnels de l'immobilier : faire relire les devis de vos clients | Contre-Plan",
+ "Professionnels : faire relire les devis clients | Contre-Plan",
  "Professionnels : faire relire les devis de vos clients",
  "Agents immobiliers, courtiers, notaires, syndics : un ingénieur BTP relit les devis de travaux de vos clients. Rapport PDF sous 48 h, indépendant, sans commission.",
  "Vos clients achètent un bien avec des travaux, ou doivent choisir entre plusieurs devis. Une relecture indépendante les aide à décider, sans vous mettre en porte-à-faux avec un artisan.",
@@ -1210,11 +1212,11 @@ if DEC.DECODEUR_URL:
     page("verifier-mentions-devis",
      "Contrôle gratuit des mentions d'un devis de travaux | Contre-Plan",
      "Contrôle des mentions de votre devis",
-     "Envoyez la photo ou le PDF de votre devis de travaux : vérification gratuite de ses mentions (SIRET, assurance, délai, TVA, déchets, paiement…) et des précisions utiles.",
+     "Envoyez la photo ou le PDF de votre devis : vérification gratuite de ses mentions obligatoires (SIRET, assurance, délai, TVA, paiement).",
      "Envoyez la photo ou le PDF de votre devis : en une trentaine de secondes, vous savez quelles mentions sont présentes, à préciser ou introuvables, et quoi demander à l'artisan.",
      MEN.body().replace("__PRIX__", PRIX_TXT), "Outil gratuit", toc=False)
     page(CMP.SLUG,
-     "Comparateur automatique et gratuit de deux devis de travaux | Contre-Plan",
+     "Comparateur gratuit de deux devis de travaux | Contre-Plan",
      "Comparateur automatique de deux devis",
      "Envoyez vos deux devis de travaux en photo ou en PDF : comparaison gratuite poste par poste, totaux, TVA, acompte, et questions à poser à chaque entreprise.",
      "Deux devis pour les mêmes travaux, des montants différents ? Envoyez-les : en moins d'une minute, vous voyez poste par poste ce qui diffère et quoi demander à chaque entreprise pour comparer à égalité.",
@@ -1324,8 +1326,8 @@ contact_body = f"""<p>Une question sur le service, sur un devis ou sur un guide 
 <p class="cp-form-rgpd">Vos nom, e-mail et message servent uniquement à vous répondre. Ils sont enregistrés via Google Forms (Google) et conservés au plus 12 mois. Vous pouvez demander leur suppression à tout moment : voir la <a href="confidentialite.html">politique de confidentialité</a>.</p>
 </form>
 <p>Pas encore sûr que votre devis soit concerné ? Demandez le <a href="contact.html?sujet=prediagnostic" data-goatcounter-click="clic-prediagnostic-contact">pré-diagnostic gratuit</a> : je vous dis par écrit, avant toute commande, ce que l'analyse couvrira et à quel prix.</p>"""
-page("contact", "Contact | Contre-Plan", "Me contacter",
- "Une question sur l'analyse de devis de travaux ? Écrivez à Contre-Plan via le formulaire de contact, réponse sous 24 h.",
+page("contact", "Contact : une question sur un devis de travaux | Contre-Plan", "Me contacter",
+ "Une question sur un devis de travaux ou sur l'analyse ? Écrivez à Contre-Plan via le formulaire : un ingénieur BTP vous répond sous 24 h.",
  "Une question avant de commander, ou après avoir lu un guide ? Je vous réponds personnellement.", contact_body, "Contact", toc=False)
 
 merci = head("Message envoyé | Contre-Plan", "Votre message a bien été envoyé.", "https://contre-plan.com/merci.html").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">') + pagehero("Contact", "Message envoyé", "Merci, votre message est bien parti. Je vous réponds sous 24 h à l'adresse indiquée.", None, [("Accueil", "index.html"), ("Contact", "contact.html"), ("Message envoyé", None)]) + layout(f"""<p>En attendant, vous pouvez déjà vérifier votre devis avec les <a href="guides.html">guides et outils gratuits</a>, ou le <a href="lexique-devis-travaux.html">lexique du devis</a>.</p>""", False) + footer()
@@ -1507,7 +1509,7 @@ def _envoi_avis(id_):
 <p class="note-s">Envoyez-le à <b>contact@contre-plan.com</b> avec vos photos et votre plan. Vous pouvez masquer votre nom et votre adresse. La dernière phrase est l'accord prévu à l'<a href="cgv.html#retractation">article 6 des conditions de vente</a>.</p></div>'''
 
 page("avis-avant-travaux",
- "Avis d'ingénieur avant travaux : 29 €, réponse écrite sous 48 h | Contre-Plan",
+ "Avis d'ingénieur avant travaux, sous 48 h | Contre-Plan",
  "Un avis d'ingénieur avant de demander vos devis",
  "Vous préparez des travaux et vous n'avez pas encore de devis ? Envoyez photos, plan et question : un ingénieur BTP vous répond par écrit sous 48 h, pour 29 €.",
  "Vous avez un projet, des photos, un plan, et une question avant d'appeler les artisans. Je vous réponds par écrit : ce qu'il faut prévoir, les pièges à éviter, et ce que vos devis devront contenir.",
