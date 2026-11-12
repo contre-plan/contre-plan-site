@@ -128,7 +128,7 @@ def pagehero(kicker, h1, lead, meta, crumbs):
     cr = ' <span aria-hidden="true">›</span> '.join(f'<a href="{h}">{html.escape(t)}</a>' if h else f'<span aria-current="page">{html.escape(t)}</span>' for t, h in crumbs)
     m = f'<p class="cp-meta">{meta}</p>' if meta else ''
     k = '' if (not kicker or kicker.lower().split()[0][:6] in h1.lower()) else f'<span class="cp-kick">{kicker}</span>'
-    return f'<section class="cp-ph"><div class="cp-ph-in"><nav class="cp-crumbs" aria-label="Fil d\'Ariane">{cr}</nav>{k}<h1>{html.escape(h1)}</h1><p class="cp-lead">{lead}</p>{m}</div></section>'
+    return f'<section class="cp-ph"><div class="cp-ph-in"><nav class="cp-crumbs" aria-label="Fil d\'Ariane">{cr}</nav>{k}<h1>{html.escape(h1)}</h1>{f'<p class="cp-lead">{lead}</p>' if lead else ''}{m}</div></section>'
 
 def crumbs_ld(crumbs, url):
     items = [{"@type":"ListItem","position":i+1,"name":t,"item":("https://contre-plan.com/" + (h if h != "index.html" else "")) if h else url} for i,(t,h) in enumerate(crumbs)]
@@ -1407,20 +1407,20 @@ if DEPOT_URL:
 <input type="file" id="cp-fichiers" class="cp-file-in" aria-labelledby="cp-file-t" aria-describedby="cp-depot-err" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
 <label for="cp-fichiers" class="cp-file-zone"><b>Ajouter mon devis</b><span>PDF, ou photo prise avec le téléphone</span></label>
 <p class="cp-file-list" aria-live="polite"></p>
-<small class="cp-hint">Sur téléphone : touchez le cadre, puis « Prendre une photo ». Une photo par page, à plat et bien éclairée. Dix fichiers au maximum : si votre devis a plus de pages, déposez les dix premières, je vous demande la suite par e-mail. Vous pouvez masquer votre nom et votre adresse.</small></div>
+<small class="cp-hint">Une photo par page, à plat et bien éclairée (10 fichiers maximum). Vous pouvez masquer votre nom et votre adresse.</small></div>
 <label>Votre adresse e-mail (obligatoire) <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required aria-describedby="cp-depot-err"></label>
 <details class="cp-fold cp-opt-f"><summary>Préciser votre situation (facultatif)</summary>
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
 <label>Ce qui vous inquiète <textarea name="message" rows="3" maxlength="2000"></textarea></label>
 </details>
-<label class="cp-chk"><input type="checkbox" name="accord"><span><b>Commencez dès réception de mon devis : rapport sous 48 h.</b> <small class="cp-hint">Une fois le rapport livré, je ne peux plus me rétracter ; si j'annule avant, je paie seulement la part déjà faite (<a href="cgv.html#retractation">article 6 des CGV</a>). Sans cette case, l'analyse attend la fin du délai de rétractation de 14 jours.</small></span></label>
+<label class="cp-chk"><input type="checkbox" name="accord"><span><b>Je veux mon rapport sous 48 h : commencez dès réception de mon devis.</b> <small class="cp-hint">Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter (si j'annule avant, je paie la part déjà faite, <a href="cgv.html#retractation">article 6 des CGV</a>).</small></span></label>
 <p class="cp-delai" aria-live="polite"></p>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
-<p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
 <div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
+<p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure. Si le paiement n'est pas finalisé, vous recevez un seul e-mail de rappel le lendemain, rien de plus.</p>
-<p class="cp-form-rgpd">Des outils m'aident à recopier les lignes et à refaire les calculs ; chaque avis, chaque fourchette de prix et chaque question du rapport, je les vérifie et les valide moi-même. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+<p class="cp-form-rgpd">Chaque avis du rapport est relu, vérifié et validé par moi. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 {_PAY_SEC}
 <details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
@@ -1451,8 +1451,8 @@ ORDER = f'''<main id="contenu" class="cp-order">
 {_f("g1", "1 devis de 30 000 à 60 000 €", "Gros chantier : extension, rénovation lourde, toiture complète… Rapport PDF sous 48 h.", "39 €", "")}
 {_f("g2", "1 devis de 60 000 à 100 000 €", "Très gros chantier, souvent en plusieurs lots. Rapport PDF sous 48 h.", "59 €", "")}
 </div>
-<label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 5,50 €) <small class="cp-hint">Compté à partir de la réception du devis complet, si vous demandez le démarrage immédiat.</small></span></label>
-<p class="cp-ord-plus">Prix TTC (TVA non applicable, article 293 B du CGI). Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
+<label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 5,50 €)</span></label>
+<p class="cp-ord-plus">Prix TTC, TVA non applicable. Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
 {_ETAPES_1_2}
 
 <section class="cp-ord-box" aria-labelledby="t-rapport">
@@ -1474,7 +1474,7 @@ ORDER = f'''<main id="contenu" class="cp-order">
 </div>
 </main>
 '''
-_cmd = head("Commander une analyse de devis | Contre-Plan", "Commandez l'analyse de votre devis de travaux : dépôt du devis en ligne, paiement par carte en 1 minute, rapport PDF sous 48 h.", "https://contre-plan.com/commander.html") + pagehero("Commander", "Commander votre analyse", "Déposez votre devis ci-dessous, payez par carte sans créer de compte, et recevez le rapport sous 48 h. Je relis votre devis et j'écris moi-même chaque avis du rapport.", None, [("Accueil", "index.html"), ("Commander", None)]) + ORDER + footer(chat=False)
+_cmd = head("Commander une analyse de devis | Contre-Plan", "Commandez l'analyse de votre devis de travaux : dépôt du devis en ligne, paiement par carte en 1 minute, rapport PDF sous 48 h.", "https://contre-plan.com/commander.html") + pagehero("Commander", "Commander votre analyse", "", None, [("Accueil", "index.html"), ("Commander", None)]) + ORDER + footer(chat=False)
 open(os.path.join(OUT, "commander.html"), "w").write(_cmd)
 PAGES.append("commander")
 
