@@ -98,7 +98,7 @@ def FOOTER(root=""):
 <div class="cp-foot-brand"><div class="cp-foot-logo">CONTRE-PLAN</div><p>Votre devis de travaux relu par un ingénieur BTP avant que vous signiez. 100 % à distance, indépendant de tout artisan.</p><div class="cp-socs">{soc}</div></div>
 <div class="cp-foot-col"><p>Le service</p>{L("methode.html","Ma méthode")}{L("engagements.html","Mes engagements")}{L("votre-cas.html","Votre cas est-il couvert ?")}{L("achat-avec-travaux.html","Achat avec travaux")}{L("professionnels.html","Professionnels")}{L("avis-avant-travaux.html","Avis avant travaux")}{L("exemple-rapport-contre-plan.pdf","Exemple de rapport","telechargement-exemple-rapport")}{L("index.html#tarifs","Tarifs")}{L("contact.html","Contact")}<a href="commander.html" data-goatcounter-click="clic-commander-pied">Commander une analyse</a></div>
 <div class="cp-foot-col"><p>Par travaux</p>{L("analyse-devis-salle-de-bain.html","Salle de bain")}{L("analyse-devis-pompe-a-chaleur.html","Pompe à chaleur")}{L("analyse-devis-isolation.html","Isolation")}{L("analyse-devis-toiture.html","Toiture")}{''.join(L(j['slug'] + '.html', j['kicker']) for j in NG.JOB_PAGES)}{L("cas-fictifs.html","Exemples d'analyses")}</div>
-<div class="cp-foot-col"><p>Ressources</p>{L("guides.html","Guides")}{L("comparer-ses-devis.html","Tableau comparatif")}{L("modeles-messages-artisan.html","Modèles de messages")}{L("lexique-devis-travaux.html","Lexique")}{L("checklist-devis-travaux.pdf","Check-list PDF","telechargement-checklist")}<a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par email</a></div>
+<div class="cp-foot-col"><p>Ressources</p>{L("guides.html","Guides")}{L("comparer-ses-devis.html","Tableau comparatif")}{L("modeles-messages-artisan.html","Modèles de messages")}{L("lexique-devis-travaux.html","Lexique")}{L("checklist-devis-travaux.pdf","Check-list PDF","telechargement-checklist")}<a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par e-mail</a></div>
 </div><div class="cp-foot-bottom"><span>© 2026 Contre-Plan</span><a href="{root}mentions-legales.html" class="cp-ml">Mentions légales</a><a href="{root}cgv.html" class="cp-ml">CGV</a><a href="{root}confidentialite.html" class="cp-ml">Confidentialité</a></div></footer>"""
 
 def footer(root="", chat=True):
@@ -119,7 +119,7 @@ CTA = f'''<aside class="cp-cta-box bp">
 
 DEC_SIDE = '<a href="comparer-deux-devis.html">Comparateur automatique de deux devis</a><a href="decodeur-ligne-devis.html">Décodeur de ligne de devis</a><a href="verifier-mentions-devis.html">Contrôle des mentions du devis</a>' if DEC.DECODEUR_URL else ""
 SIDE = f"""<div class="cp-sidecard"><p class="t">Votre devis relu par un ingénieur BTP</p><p>Rapport PDF sous 48 h, prix poste par poste, oublis et questions à poser. Dès {PRIX_TXT}.</p><a class="cp-btn" href="{CMD}" data-goatcounter-click="clic-commander-side">Faire analyser mon devis</a><a class="cp-sublink" href="exemple-rapport-contre-plan.pdf" target="_blank" rel="noopener" data-goatcounter-click="telechargement-exemple-rapport">Voir un exemple de rapport</a></div>
-<div class="cp-sidelinks"><p>Outils gratuits</p>{DEC_SIDE}<a href="test-devis.html">Test : votre devis est-il complet ?</a><a href="comparer-ses-devis.html">Tableau comparatif de devis</a><a href="modeles-messages-artisan.html">Modèles de messages</a><a href="checklist-devis-travaux.pdf" download data-goatcounter-click="telechargement-checklist">Check-list à imprimer</a><a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par email</a></div>"""
+<div class="cp-sidelinks"><p>Outils gratuits</p>{DEC_SIDE}<a href="test-devis.html">Test : votre devis est-il complet ?</a><a href="comparer-ses-devis.html">Tableau comparatif de devis</a><a href="modeles-messages-artisan.html">Modèles de messages</a><a href="checklist-devis-travaux.pdf" download data-goatcounter-click="telechargement-checklist">Check-list à imprimer</a><a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par e-mail</a></div>"""
 
 def slug_id(t):
     t = t.lower()
@@ -204,7 +204,7 @@ for _s in ['guide-tva-travaux-renovation','guide-mentions-obligatoires-devis','g
     UPDATED[_s] = "2026-10-27"  # relecture et corrections du 27/10/2026
 SANS_CTA_HAUT = {"guide-constat-retard-chantier", "guide-artisan-retard-chantier-que-faire", "guide-artisan-injoignable-apres-acompte", "guide-reception-travaux-reserves"}  # chantier déjà en cours : pas d'appel « devis »
 GUIDE_CTA_HAUT = '<p class="cp-guide-cta">Vous avez déjà un devis ? Je le relis ligne par ligne : 16,50 €, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-guide-haut">Faire analyser mon devis →</a></p>\n'
-AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur Demange, ingénieur BTP</a> (10 ans de chantier, environ 1 000 devis lus)"
+AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur Demange, ingénieur BTP</a> (diplômé de l'ESITC de Metz, 10 ans de chantier, environ 1 000 devis lus)"
 
 # Liens vers les sources officielles (bloc « Pour aller plus loin », vérifiés le 27/10/2026)
 SP = "https://www.service-public.gouv.fr/particuliers/vosdroits/"
@@ -1057,16 +1057,16 @@ page("professionnels",
 <li><b>Un échange de suivi</b> inclus pour éclaircir un point du rapport.</li></ul>
 <p>Voir un <a href="exemple-rapport-contre-plan.pdf" target="_blank" rel="noopener">exemple de rapport complet (PDF)</a>.</p>
 <h2>Qui relit les devis</h2>
-<p>Un ingénieur BTP, dix ans sur les chantiers et environ 1 000 devis lus et négociés, côté entreprise comme côté client. Contre-Plan est une entreprise individuelle immatriculée à Paris (SIRET 132 070 426 00029), rattachée au médiateur de la consommation CM2C. La méthode de contrôle est décrite en détail sur la page <a href="methode.html">ma méthode</a>.</p>
+<p>Un ingénieur BTP diplômé de l'ESITC de Metz, dix ans sur les chantiers et environ 1 000 devis lus et négociés, côté entreprise comme côté client. Contre-Plan est une entreprise individuelle immatriculée à Paris (SIRET 132 070 426 00029), rattachée au médiateur de la consommation CM2C. La méthode de contrôle est décrite en détail sur la page <a href="methode.html">ma méthode</a>.</p>
 <h2>Comment ça se passe pour votre client</h2>
 <ol><li><b>Il dépose son devis</b> sur la page de commande de contre-plan.com (PDF ou photo, nom et adresse masquables), puis paie par carte, sans compte (ou passe par la plateforme ComeUp s'il préfère).</li>
 <li><b>Il reçoit une confirmation</b> par e-mail dans le quart d'heure.</li>
-<li><b>Il reçoit le rapport</b> par e-mail, sous 48 h s'il a demandé le démarrage immédiat (24 h en express), sinon à la fin du délai de rétractation de 14 jours.</li></ol>
+<li><b>Il reçoit le rapport</b> par e-mail, sous 48 h s'il a demandé le démarrage immédiat (24 h en express, + 5,50 €), sinon à la fin du délai de rétractation de 14 jours.</li></ol>
 <p>Une hésitation ? Il peut d'abord demander un <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a>, sans compte ni paiement.</p>
 <h2>Plusieurs devis ou plusieurs lots</h2>
 <p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain les envoie dans la même commande : formule 1 devis, plus 11 € par devis supplémentaire, soit 38,50 €. Pour deux ou trois devis concurrents sur les mêmes travaux, les formules « devis comparés » (33 € ou 49 €) ajoutent un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
 <h2>Délais</h2>
-<p>Rapport sous 48 h après réception du devis, ou 24 h avec l'option express, quand votre client demande le démarrage immédiat en commandant (sinon, à la fin du délai de rétractation de 14 jours). Pratique quand un compromis ou une offre de prêt approche.</p>
+<p>Rapport sous 48 h après réception du devis, ou 24 h avec l'option express, quand votre client demande le démarrage immédiat en commandant (sinon, à la fin du délai de rétractation de 14 jours). Le démarrage immédiat est utile quand un compromis ou une offre de prêt approche.</p>
 <h2>Achat d'un bien avec travaux</h2>
 <p>Quand un acquéreur a obtenu un ou plusieurs devis avant de signer, l'analyse vérifie que le budget travaux est complet et cohérent : postes manquants, quantités, prix au m², et ce qui reste « selon état ». C'est une lecture des devis, pas une visite du bien.</p>
 <h2>Indépendance</h2>
@@ -1074,9 +1074,9 @@ page("professionnels",
 <h2>Les limites</h2>
 <p>L'analyse est documentaire et à distance. Ce n'est ni une expertise judiciaire, ni un diagnostic technique du bâtiment, ni une mission de maîtrise d'œuvre, et elle n'intervient pas dans un litige déjà engagé.</p>
 <h2 id="pack-pro">Pack pro : 5 analyses prépayées</h2>
-<p>Pour les professionnels qui orientent régulièrement des clients : <strong>5 analyses pour 75 €</strong> (15 € l'analyse au lieu de 16,50 €), valables 12 mois. Chaque analyse couvre un devis jusqu'à 30 000 €, avec le même rapport PDF sous 48 h.</p>
+<p>Pour les professionnels qui orientent régulièrement des clients : <strong>5 analyses pour 75 €</strong> (15 € l'analyse au lieu de 16,50 €, TVA non applicable, article 293 B du CGI), valables 12 mois. Chaque analyse couvre un devis jusqu'à 30 000 €, avec le même rapport PDF sous 48 h.</p>
 <ul><li><b>Comment l'obtenir</b> : demandez-le par le <a href="contact.html?sujet=professionnel">formulaire de contact</a> ; je vous envoie une facture à régler par carte ou par virement.</li>
-<li><b>Comment l'utiliser</b> : vous m'envoyez le devis de votre client par e-mail, ou votre client le fait en citant votre structure. Je vous tiens le décompte des analyses restantes.</li>
+<li><b>Comment l'utiliser</b> : vous m'envoyez le devis de votre client par e-mail, avec son accord ou son nom et son adresse masqués, ou votre client l'envoie lui-même en citant votre structure. Je vous tiens le décompte des analyses restantes.</li>
 <li><b>Pour qui</b> : réservé aux professionnels (agences, courtiers, notaires, syndics, diagnostiqueurs, gestionnaires). Vous pouvez l'offrir à vos clients ou le refacturer comme vous le souhaitez.</li></ul>
 <h2>Vous orientez régulièrement des clients ?</h2>
 <p>Écrivez-moi par le <a href="contact.html?sujet=professionnel">formulaire de contact</a> : je vous réponds par e-mail et je vous envoie la fiche de présentation à remettre à vos clients. Aucune commission n'est versée ni reçue.</p>
@@ -1465,7 +1465,7 @@ if DEPOT_URL:
 <div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
 <p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure. Si le paiement n'est pas finalisé, vous recevez un seul e-mail de rappel le lendemain, rien de plus.</p>
-<p class="cp-form-rgpd">Chaque avis du rapport est relu, vérifié et validé par moi. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+<p class="cp-form-rgpd">Chaque point du rapport est vérifié et validé par moi avant envoi. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 12 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 {_PAY_SEC}
 <details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
@@ -1494,7 +1494,7 @@ ORDER = f'''<main id="contenu" class="cp-order">
 {_f("2", "2 devis comparés", "Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.", "33 €", "")}
 {_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "49 €", "")}
 {_f("g1", "1 devis de 30 000 à 60 000 €", "Gros chantier : extension, rénovation lourde, toiture complète… Rapport PDF sous 48 h.", "39 €", "")}
-{_f("g2", "1 devis de 60 000 à 100 000 €", "Très gros chantier, souvent en plusieurs lots. Rapport PDF sous 48 h.", "59 €", "")}
+{_f("g2", "1 devis de 60 000 à 100 000 €", "Très gros chantier : extension, rénovation lourde. Rapport PDF sous 48 h.", "59 €", "")}
 </div>
 <label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 5,50 €)</span></label>
 <p class="cp-ord-plus">Prix TTC, TVA non applicable. Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
@@ -1557,7 +1557,7 @@ page("avis-avant-travaux",
  "Vous préparez des travaux et vous n'avez pas encore de devis ? Envoyez photos, plan et question : un ingénieur BTP vous répond par écrit sous 48 h, pour 29 €.",
  "Vous avez un projet, des photos, un plan, et une question avant d'appeler les artisans. Je vous réponds par écrit : ce qu'il faut prévoir, les pièges à éviter, et ce que vos devis devront contenir.",
  f'''<h2>Pour qui ?</h2>
-<p>Pour vous si vous préparez des travaux et que vous n'avez pas encore de devis, ou pas encore les bons. Par exemple : vous refaites un sol dans une maison ancienne et vous hésitez sur la technique, vous voulez ouvrir une cuisine sur le séjour, vous ne savez pas quels corps de métier consulter ni dans quel ordre.</p>
+<p>Pour vous si vous préparez des travaux et que vous n'avez pas encore de devis, ou pas encore les bons. Par exemple : vous refaites un sol dans une maison ancienne et vous hésitez sur la technique, vous voulez ouvrir une cuisine sur le séjour et savoir qui consulter en premier, vous ne savez pas quels corps de métier consulter ni dans quel ordre.</p>
 
 <h2>Ce que vous recevez</h2>
 <ul>
