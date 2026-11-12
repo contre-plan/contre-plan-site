@@ -513,3 +513,4 @@ table.cp-fourch td.n{white-space:nowrap}
 .cp-ph:has(+ .cp-order) .cp-ph-in{padding-top:20px;padding-bottom:22px;gap:8px}
 
 .cp-stars label,.cp-avis .cp-check{min-height:44px;align-items:center}
+.logo{min-height:44px}.cp-toc-m>summary{padding-block:11px}
