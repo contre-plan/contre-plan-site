@@ -1437,8 +1437,8 @@ def _f(v, titre, desc, prix, combo):
     chk = " checked" if v == "1" else ""
     return f'''<label class="cp-opt"><input type="radio" name="formule" value="{v}"{chk} data-href="{STRIPE[v]}" data-href-e="{STRIPE[v + 'e']}" data-prix="{prix}"><span class="d"><b>{titre}</b><small>{desc}</small></span><span class="p">{prix}</span></label>'''
 
-_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">29 €</b> TTC, aucun autre frais. <span class="cp-total-1">Avec la formule 1 devis, vous pourrez ajouter sur la page de paiement des devis pour des travaux différents (+ 19 € par devis).</span></p>
-<p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>"""
+_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">29 €</b> TTC, sans frais supplémentaires. <span class="cp-total-1">Avec la formule 1 devis, vous pourrez ajouter sur la page de paiement des devis pour des travaux différents (+ 19 € par devis).</span></p>
+<p class="cp-ord-sec">Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>"""
 def _pay_btn(cls="btn xl"):
     return f'<a class="{cls}" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">29 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>'
 if DEPOT_URL:
@@ -1464,7 +1464,7 @@ if DEPOT_URL:
 <div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
 <p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure. Si le paiement n'est pas finalisé, vous recevez un seul e-mail de rappel le lendemain, rien de plus.</p>
-<p class="cp-form-rgpd">Je relis votre devis et je rédige moi-même chaque rapport : aucun avis ne part sans ma validation. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 3 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+<p class="cp-form-rgpd">Je relis votre devis et j'écris moi-même chaque rapport, du verdict jusqu'aux questions pour l'artisan. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 3 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 {_PAY_SEC}
 <details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
