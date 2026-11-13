@@ -25,7 +25,7 @@ Jusqu'au 13/11/2026 : 1 devis 16,50 €, 2 devis 33 €, 3 devis 49 €, gros de
 - `og-image.jpg` (aperçu de partage 1200×630) est généré depuis `tools/og-image.html` par une capture Playwright.
 
 ## Conseil devis du mois (emails)
-Le lien du formulaire d'inscription (Google Forms) est la constante `NEWS` de `tools/build.py` (encadré latéral et pied de page des pages générées). Il figure aussi en dur dans le pied de page de `index.html`. Les inscriptions arrivent dans le Google Sheets associé au formulaire. Le paragraphe correspondant est dans « Données personnelles » de `mentions-legales.html`.
+Inscriptions et envois via beehiiv (plan gratuit, jusqu'à 2 500 abonnés), depuis le 13/11/2026. Le lien de la page d'inscription beehiiv est la constante `NEWS` de `tools/build.py` (encadré latéral et pied de page des pages générées). Il figure aussi en dur dans le pied de page de `index.html` et dans `site.js`. Si le sous-domaine beehiiv change, mettre à jour les trois. L'ancien formulaire Google Forms « Email Capture » n'est plus utilisé (aucune inscription reçue). Le paragraphe correspondant est dans « Données personnelles » de `mentions-legales.html`.
 
 ## Assistant du site
 Supprimé le 13/11/2026 (choix d'Arthur : aucun outil d'IA visible sur le site). Les questions passent par contact.html et le bouton « Question » de la barre mobile y renvoie. La route /question du relais Cloudflare n'est plus appelée.

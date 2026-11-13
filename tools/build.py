@@ -11,9 +11,9 @@ PRIX_TXT = "29 €"
 PRIX_MENTION = ""
 COMEUP = "https://comeup.com/fr/service/549064/verifier-votre-devis-de-travaux-avant-signature-et-reperer-les-prix-abusifs-et-les-oublis"
 CMD = "commander.html"   # page de commande (paiement Stripe, ComeUp en second choix)
-NEWS = "https://docs.google.com/forms/d/e/1FAIpQLScS7zVctXEahK71wNv8hUGD-MjfyqH4h_l8EpJyYPLVM-ToAA/viewform"  # formulaire « Le conseil devis du mois »
+NEWS = "https://contres-newsletter.beehiiv.com/subscribe"  # page d'inscription beehiiv « Le conseil devis du mois »
 def news_box(src):
-    return f'<div class="cp-news"><p class="t">Vos travaux ne sont pas pour tout de suite ?</p><p>Recevez une fois par mois un point concret à vérifier sur un devis, et la check-list en lien. Gratuit, sans publicité, désinscription sur simple réponse « stop ».</p><a class="btn" href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="inscription-conseil-{src}">Recevoir le conseil du mois</a></div>'
+    return f'<div class="cp-news"><p class="t">Vos travaux ne sont pas pour tout de suite ?</p><p>Recevez une fois par mois un point concret à vérifier sur un devis, et la check-list en lien. Gratuit, sans publicité, désinscription en un clic dans chaque e-mail.</p><a class="btn" href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="inscription-conseil-{src}">Recevoir le conseil du mois</a></div>'
 
 DATE = "2026-10-23"  # date de publication par défaut des guides existants
 MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"]
