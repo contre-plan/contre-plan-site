@@ -92,8 +92,7 @@
   function bar() {
     if (!('IntersectionObserver' in window) || document.getElementById('cp-depot') || document.querySelector('.cp-depot-ok')) return;
     var b = document.createElement('div'); b.id = 'cp-bar';
-    b.innerHTML = '<span><b>Relu par un ingénieur</b>16,50 € · rapport 48 h</span><button type="button" class="cp-bar-q"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Question</button><a href="' + COMEUP + '" data-goatcounter-click="clic-commander-barre">Faire analyser</a>';
-    b.querySelector('.cp-bar-q').addEventListener('click', function () { var c = document.getElementById('cp-chat-btn'); if (c) c.click(); });
+    b.innerHTML = '<span><b>Relu par un ingénieur</b>16,50 € · rapport 48 h</span><a class="cp-bar-q" href="contact.html"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Question</a><a href="' + COMEUP + '" data-goatcounter-click="clic-commander-barre">Faire analyser</a>';
     document.body.appendChild(b);
     var top = document.getElementById('top') || document.querySelector('header');
     var past = false, hide = 0;
