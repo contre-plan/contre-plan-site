@@ -31,11 +31,11 @@ var JOURS_SANS_PAIEMENT = 30;      // dépôts sans paiement supprimés après c
 var JOURS_CONSERVATION = 90;       // devis payés supprimés 3 mois après (confidentialité, depuis le 13/11/2026)
 var HEURES_AVANT_RELANCE = 24;     // un seul rappel si le dépôt n'est pas payé après ce délai
 var LIENS = {
-  '1': 'https://buy.stripe.com/fZu8wR4Zeg2uanldMAcMM06', '1e': 'https://buy.stripe.com/6oU9AV8bq4jMfHF7occMM05',
-  '2': 'https://buy.stripe.com/bJe8wR4Ze17AgLJ23ScMM07', '2e': 'https://buy.stripe.com/bJe4gB9fug2u0ML4c0cMM08',
-  '3': 'https://buy.stripe.com/6oU7sN2R6g2u8fd37WcMM09', '3e': 'https://buy.stripe.com/00wfZjbnC6rUeDB37WcMM0a',
-  'g1': 'https://buy.stripe.com/cNi28t1N22bE0ML5g4cMM0b', 'g1e': 'https://buy.stripe.com/cNidRbezO4jMfHFfUIcMM0c',
-  'g2': 'https://buy.stripe.com/bJe14pgHWbMe1QPaAocMM0d', 'g2e': 'https://buy.stripe.com/aFa8wR63i4jMbrp9wkcMM0e'
+  '1': 'https://buy.stripe.com/8x25kFbnCbMe53123ScMM0g', '1e': 'https://buy.stripe.com/bJebJ3fDS17A1QPfUIcMM0h',
+  '2': 'https://buy.stripe.com/cNi5kFfDSg2ucvt23ScMM0i', '2e': 'https://buy.stripe.com/00w28t1N2dUmbrpaAocMM0j',
+  '3': 'https://buy.stripe.com/00w9AV2R6aIa0ML6k8cMM0k', '3e': 'https://buy.stripe.com/4gM14pfDS4jMfHFbEscMM0l',
+  'g1': 'https://buy.stripe.com/aFa4gBezOg2uanl4c0cMM0m', 'g1e': 'https://buy.stripe.com/aFa5kF3Va03wcvt37WcMM0n',
+  'g2': 'https://buy.stripe.com/fZu4gB0IY17A1QPbEscMM0o', 'g2e': 'https://buy.stripe.com/aFaeVf1N2eYq8fdcIwcMM0p'
 };
 var CGV_PDF = 'https://contre-plan.com/cgv-contre-plan.pdf';
 var ADRESSE = '47 rue Vivienne, 75002 Paris';

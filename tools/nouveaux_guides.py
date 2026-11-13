@@ -612,7 +612,7 @@ JOB_PAGES.append(dict(
   ("Quelle sécurité est obligatoire autour d'une piscine ?",
    "Pour une piscine enterrée privative non close, au moins un dispositif normalisé : barrière, alarme, couverture ou abri. Le devis doit préciser lequel."),
   ("Comment faire relire mon devis de piscine ?",
-   "Envoyez-le en PDF ou en photo après avoir commandé l'analyse en ligne : vous recevez sous 48 h un rapport avec les postes manquants et les questions à poser. Pour un devis de plus de 30 000 €, l'analyse coûte 39 € (jusqu'à 60 000 €) ou 59 € (jusqu'à 100 000 €)."),
+   "Envoyez-le en PDF ou en photo après avoir commandé l'analyse en ligne : vous recevez sous 48 h un rapport avec les postes manquants et les questions à poser. Pour un devis de plus de 30 000 €, l'analyse coûte 49 € (jusqu'à 60 000 €) ou 69 € (jusqu'à 100 000 €)."),
  ],
 ))
 

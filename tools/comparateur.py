@@ -29,7 +29,7 @@ CSS = """<style>
 .cmp-leg span{padding:4px 8px;border-radius:3px}
 </style>"""
 
-FORM = """<p class="cmp-auto"><b>Lecture automatique</b> : l'outil repère les écarts entre les deux devis, sans juger les prix ni la technique. Pour un comparatif lu et validé par un ingénieur BTP, avec un avis sur les prix, les oublis et une recommandation : <a href="commander.html" data-goatcounter-click="comparateur/clic-commander-haut">2 devis comparés, 33 €</a>.</p>
+FORM = """<p class="cmp-auto"><b>Lecture automatique</b> : l'outil repère les écarts entre les deux devis, sans juger les prix ni la technique. Pour un comparatif lu et validé par un ingénieur BTP, avec un avis sur les prix, les oublis et une recommandation : <a href="commander.html" data-goatcounter-click="comparateur/clic-commander-haut">2 devis comparés, 49 €</a>.</p>
 <form class="dec-form" id="cmp-form" novalidate>
 <div class="cmp-files">
 <label class="cmp-drop" id="cmp-drop-a" for="cmp-file-a"><b>Devis A</b><span>Photo nette ou PDF (2 Mo maximum)</span><input id="cmp-file-a" type="file" accept="image/*,application/pdf"><span class="cmp-name" id="cmp-name-a"></span></label>
@@ -121,8 +121,8 @@ f.addEventListener('submit', function(e){
     box.appendChild(el('p', 'dec-note', "Comparaison automatique de ce qui est écrit sur les documents transmis. Elle ne dit pas quel devis choisir et ne juge pas les prix. Ce n'est pas une expertise."));
     var cta = el('div', 'cp-sidecard cp-upsell');
     cta.appendChild(el('p', 't', ty('Ce tableau est automatique')));
-    cta.appendChild(el('p', null, ty('Il ne juge ni les prix ni la technique. Pour savoir lequel est le plus juste : un ingénieur BTP relit vos deux devis ligne par ligne, prix et oublis compris, avec une recommandation. 33 €, rapport PDF sous 48 h, sans lien avec aucun artisan.')));
-    var a = el('a', 'cp-btn', 'Faire comparer par un ingénieur (33 €)'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'comparateur/clic-commander'); cta.appendChild(a);
+    cta.appendChild(el('p', null, ty('Il ne juge ni les prix ni la technique. Pour savoir lequel est le plus juste : un ingénieur BTP relit vos deux devis ligne par ligne, prix et oublis compris, avec une recommandation. 49 €, rapport PDF sous 48 h, sans lien avec aucun artisan.')));
+    var a = el('a', 'cp-btn', 'Faire comparer par un ingénieur (49 €)'); a.href = 'commander.html'; a.setAttribute('data-goatcounter-click', 'comparateur/clic-commander'); cta.appendChild(a);
     var ex = el('a', 'cp-sublink', 'Voir un exemple de rapport'); ex.href = 'exemple-rapport-contre-plan.pdf'; ex.target = '_blank'; ex.rel = 'noopener'; ex.setAttribute('data-goatcounter-click', 'comparateur/clic-exemple'); cta.appendChild(ex);
     box.appendChild(cta);
     out.innerHTML = ''; out.appendChild(box); box.scrollIntoView({behavior: 'smooth', block: 'start'});
