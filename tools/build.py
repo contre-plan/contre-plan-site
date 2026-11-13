@@ -883,7 +883,7 @@ page("engagements",
 <h2>Délais</h2>
 <ul><li>Rapport sous 48 h, ou 24 h avec l'option express, à compter de la réception de votre devis complet, si vous avez demandé le démarrage immédiat en commandant ; sinon à compter de la fin du délai de rétractation de 14 jours.</li><li>Un échange de suivi est inclus : vous pouvez me poser une question après lecture du rapport.</li><li>Si un document manque ou est illisible, je vous le signale dès réception.</li></ul>
 <h2>Commande et paiement</h2>
-<p>Le paiement se fait par carte sur ce site, via Stripe, ou sur la plateforme ComeUp si vous la préférez. Vous ne payez qu'une fois, au moment de la commande.</p>
+<p>Le paiement se fait par carte sur ce site, via Stripe. Vous ne payez qu'une fois, au moment de la commande.</p>
 <h2>Portée de cette analyse</h2>
 <p>Cette analyse est un avis technique établi à distance, uniquement à partir des documents et informations que vous avez transmis. Elle ne comprend pas de visite du chantier : les éléments non visibles ou non communiqués (état réel des supports et des réseaux, présence d'amiante, contraintes de copropriété ou d'urbanisme…) ne peuvent pas être évalués.</p>
 <p>Les prix de référence cités sont des fourchettes indicatives. Ils varient selon la région, l'accès au chantier et les matériaux choisis.</p>
@@ -1058,7 +1058,7 @@ page("professionnels",
 <h2>Qui relit les devis</h2>
 <p>Un ingénieur BTP diplômé de l'ESITC de Metz, dix ans sur les chantiers et environ 1 000 devis lus et négociés, côté entreprise comme côté client. Contre-Plan est une entreprise individuelle immatriculée à Paris (SIRET 132 070 426 00029), rattachée au médiateur de la consommation CM2C. La méthode de contrôle est décrite en détail sur la page <a href="methode.html">ma méthode</a>.</p>
 <h2>Comment ça se passe pour votre client</h2>
-<ol><li><b>Il dépose son devis</b> sur la page de commande de contre-plan.com (PDF ou photo, nom et adresse masquables), puis paie par carte, sans compte (ou passe par la plateforme ComeUp s'il préfère).</li>
+<ol><li><b>Il dépose son devis</b> sur la page de commande de contre-plan.com (PDF ou photo, nom et adresse masquables), puis paie par carte, sans compte.</li>
 <li><b>Il reçoit une confirmation</b> par e-mail dans le quart d'heure.</li>
 <li><b>Il reçoit le rapport</b> par e-mail, sous 48 h s'il a demandé le démarrage immédiat (24 h en express, + 9 €), sinon à la fin du délai de rétractation de 14 jours.</li></ol>
 <p>Une hésitation ? Il peut d'abord demander un <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a>, sans compte ni paiement.</p>
@@ -1512,7 +1512,6 @@ ORDER = f'''<main id="contenu" class="cp-order">
 <li><b>Des recours</b> : <a href="cgv.html">CGV</a>, rétractation de 14 jours, médiateur CM2C.</li>
 </ul></div>
 <div class="cp-ord-note"><p class="t">Devis de plus de 100 000 € ou rénovation complète en plusieurs lots ?</p><p>Demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous annonce le prix avant toute commande.</p></div>
-<details class="cp-ord-note cp-ord-alt"><summary class="t">Autre moyen de commander : ComeUp</summary><p>Compte gratuit, prix affichés sur la plateforme. La plateforme conserve le paiement jusqu'à la livraison du rapport, et vous envoyez le devis dans la messagerie de la commande. Options à cocher :</p><ul><li>1 devis : aucune ;</li><li>2 devis comparés : « Devis supplémentaire » et « Comparatif » ;</li><li>3 devis comparés : « Devis supplémentaire », « Troisième devis » et « Comparatif ».</li></ul><a href="{COMEUP}" data-goatcounter-click="clic-comeup-commander">Commander sur ComeUp</a></details>
 <p class="cp-ord-legal">Droit de rétractation de 14 jours, dans les conditions de l'<a href="cgv.html#retractation">article 6 des CGV</a>. Médiateur de la consommation : CM2C. TVA non applicable, article 293 B du CGI.</p>
 </div>
 </div>
