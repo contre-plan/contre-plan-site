@@ -3,11 +3,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import nouveaux_guides as NG  # guides et pages ajoutés en octobre 2026
 import mentions as MEN  # contrôle des mentions obligatoires (même relais que le décodeur)
 import comparateur as CMP  # comparateur de deux devis (même relais que le décodeur)
-import assistant_kb as AKB  # base de connaissances de l'assistant Claude (assistant-kb.txt)
 import decodeur as DEC  # outil gratuit « Décodeur de ligne de devis » (publié seulement si DEC.DECODEUR_URL est rempli)
 OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # racine du site
 GC = '<script data-goatcounter="https://contreplan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
-# Prix affiché partout : changer ici (et lancer tools/changer_prix.py pour index.html, chat.js, site.js)
+# Prix affiché partout : changer ici (et lancer tools/changer_prix.py pour index.html et site.js)
 PRIX_TXT = "16,50 €"
 PRIX_MENTION = ""
 COMEUP = "https://comeup.com/fr/service/549064/verifier-votre-devis-de-travaux-avant-signature-et-reperer-les-prix-abusifs-et-les-oublis"
@@ -101,10 +100,10 @@ def FOOTER(root=""):
 <div class="cp-foot-col"><p>Ressources</p>{L("guides.html","Guides")}{L("comparer-ses-devis.html","Tableau comparatif")}{L("modeles-messages-artisan.html","Modèles de messages")}{L("lexique-devis-travaux.html","Lexique")}{L("checklist-devis-travaux.pdf","Check-list PDF","telechargement-checklist")}<a href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="clic-conseil-du-mois">Le conseil du mois par e-mail</a></div>
 </div><div class="cp-foot-bottom"><span>© 2026 Contre-Plan</span><a href="{root}mentions-legales.html" class="cp-ml">Mentions légales</a><a href="{root}cgv.html" class="cp-ml">CGV</a><a href="{root}confidentialite.html" class="cp-ml">Confidentialité</a></div></footer>"""
 
-def footer(root="", chat=True):
+def footer(root="", chat=False):
     return FOOTER(root) + f"""
 </div>
-{'<script src="' + root + 'chat.js" defer></script>' if chat else ''}
+
 </body>
 </html>
 """
@@ -1164,7 +1163,7 @@ page("lexique-devis-travaux",
  "Lexique du devis de travaux",
  "Que veulent dire ml, P.U., F+P, forfait, ragréage ou SPEC sur votre devis ? 27 termes expliqués simplement par un ingénieur BTP, sans jargon.",
  "Les termes qu'on croise sur un devis de travaux, expliqués en une ou deux phrases.",
- lex_html + '<p style="margin-top:28px">Un terme vous manque ? Posez-moi la question via le chat du site.</p>',
+ lex_html + '<p style="margin-top:28px">Un terme vous manque ? Posez-moi la question via le <a href="contact.html">formulaire de contact</a>.</p>',
  "Lexique", toc=False)
 
 # ---------- Exemples d'analyses (fichier cas-fictifs.html, adresse conservée)
@@ -1620,7 +1619,6 @@ for _slug, _title, _h1, _desc, _lead, _body in [
 urls = [("", "1.0"), ("guides.html","0.8")] + [(s+".html","0.7") for s,_,_,_ in ARTICLES] + [(s+".html","0.7") for s in PAGES] + [("checklist-devis-travaux.pdf","0.6"),("exemple-rapport-contre-plan.pdf","0.6"),("tableau-comparatif-devis.pdf","0.5")]
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f'  <url><loc>https://contre-plan.com/{u}</loc><lastmod>{LASTMOD.get(u, max([DATE] + list(LASTMOD.values())))}</lastmod><priority>{p}</priority></url>\n' for u,p in urls) + '</urlset>\n'
 open(os.path.join(OUT, "sitemap.xml"), "w").write(sm)
-AKB.build(OUT)
 import subprocess, sys as _s
 subprocess.run([_s.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "typo.py"), OUT], check=True)
 print("ok", [a[0] for a in ARTICLES])

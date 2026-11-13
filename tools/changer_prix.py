@@ -5,13 +5,13 @@ Usage :
   python3 tools/changer_prix.py "16,50 €" "39 €" --appliquer     # modifie puis reconstruit le site
   python3 tools/changer_prix.py "au tarif de lancement" "" --appliquer
 
-Fichiers traités : index.html, chat.js, site.js (écrits à la main) et les constantes
+Fichiers traités : index.html, site.js (écrits à la main) et les constantes
 PRIX_TXT / PRIX_MENTION de tools/build.py (pages générées). Les espaces insécables sont gérés.
 Pensez aussi à : l'annonce ComeUp, les CGV si le mode de paiement change, l'exemple de calcul des commandes.
 """
 import os, re, sys, subprocess
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FICHIERS = ["index.html", "chat.js", "site.js", "tools/build.py"]
+FICHIERS = ["index.html", "site.js", "tools/build.py"]
 
 def motif(t):
     return re.escape(t).replace(r"\ ", "[   ]")
