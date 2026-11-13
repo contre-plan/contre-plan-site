@@ -1,0 +1,71 @@
+1
+00:00:00,150 --> 00:00:02,125
+Ce devis à 8 000
+
+2
+00:00:02,125 --> 00:00:04,100
+€ ne chiffre pas l'échafaudage.
+
+3
+00:00:04,650 --> 00:00:06,500
+Voici une ligne complète :
+
+4
+00:00:06,500 --> 00:00:08,350
+prix, montage, démontage et durée.
+
+5
+00:00:08,900 --> 00:00:10,729
+Si c'est en supplément, comptez
+
+6
+00:00:10,729 --> 00:00:12,558
+par exemple 2 500 €
+
+7
+00:00:12,558 --> 00:00:13,290
+de plus.
+
+8
+00:00:13,840 --> 00:00:15,669
+La benne, la nacelle ou
+
+9
+00:00:15,669 --> 00:00:17,498
+le déplacement peuvent aussi rester
+
+10
+00:00:17,498 --> 00:00:18,230
+sans prix.
+
+11
+00:00:18,780 --> 00:00:20,577
+Demandez un prix ou «
+
+12
+00:00:20,577 --> 00:00:22,374
+compris » pour chaque ligne,
+
+13
+00:00:22,374 --> 00:00:24,171
+et le nombre de semaines
+
+14
+00:00:24,171 --> 00:00:24,890
+de location.
+
+15
+00:00:25,440 --> 00:00:27,618
+Ligne sans prix : faites-la
+
+16
+00:00:27,618 --> 00:00:29,796
+chiffrer avant de signer. Enregistrez
+
+17
+00:00:29,796 --> 00:00:31,974
+ce post pour votre prochain
+
+18
+00:00:31,974 --> 00:00:32,410
+devis.
