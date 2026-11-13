@@ -31,7 +31,7 @@ Si « Tout le monde » n'apparaît pas, c'est un réglage de Google Workspace : 
 - Chaque dépôt crée un sous-dossier `CP-AAAAMMJJ-XXXX – formule` avec les fichiers et un fichier `demande.txt`, et t'envoie un e-mail.
 - La même référence apparaît dans Stripe (champ « Référence client » du paiement) : c'est ce qui relie le paiement au dépôt.
 - Un dépôt sans paiement correspondant n'est pas une commande : ne lance pas l'analyse.
-- Les devis suivent la règle de la politique de confidentialité : supprimés au plus tard 12 mois après la livraison (et les dépôts sans paiement, au plus tard 30 jours après).
+- Les devis suivent la règle de la politique de confidentialité : supprimés au plus tard 3 mois après la livraison (et les dépôts sans paiement, au plus tard 30 jours après).
 - Si tu modifies `Code.gs` plus tard : **Déployer**, **Gérer les déploiements**, crayon, **Nouvelle version**. L'URL reste la même.
 
 ## Mise à jour du 05/11/2026 : case facultative et confirmation de commande automatique
