@@ -28,7 +28,7 @@ var TYPES = ['application/pdf', 'image/jpeg', 'image/png', 'image/heic', 'image/
 var FORMULES = { '1': '1 devis', '2': '2 devis comparés', '3': '3 devis comparés',
   'g1': '1 devis de 30 000 à 60 000 €', 'g2': '1 devis de 60 000 à 100 000 €' };
 var JOURS_SANS_PAIEMENT = 30;      // dépôts sans paiement supprimés après ce délai (CGV, confidentialité)
-var JOURS_CONSERVATION = 365;      // devis payés supprimés 12 mois après (confidentialité)
+var JOURS_CONSERVATION = 90;       // devis payés supprimés 3 mois après (confidentialité, depuis le 13/11/2026)
 var HEURES_AVANT_RELANCE = 24;     // un seul rappel si le dépôt n'est pas payé après ce délai
 var LIENS = {
   '1': 'https://buy.stripe.com/fZu8wR4Zeg2uanldMAcMM06', '1e': 'https://buy.stripe.com/6oU9AV8bq4jMfHF7occMM05',
