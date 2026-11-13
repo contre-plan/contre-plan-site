@@ -2,7 +2,7 @@
 
 > Contre-Plan relit les devis de travaux des particuliers avant signature. L'analyse est faite par un ingénieur BTP (10 ans d'expérience, environ 1 000 devis lus et négociés), 100 % à distance, sans lien avec aucun artisan et sans commission. Le client reçoit un rapport PDF sous 48 h : prix poste par poste, oublis, TVA, conditions de paiement et questions à poser à l'artisan.
 
-Le service se commande sur ComeUp (https://comeup.com/fr/@contreplan), à partir de 29 € par devis. Les guides ci-dessous sont gratuits, rédigés en français et sourcés (Code de la consommation, Code civil, Code général des impôts, service-public.gouv.fr).
+Le service se commande sur https://contre-plan.com/commander.html, à partir de 29 € par devis. Les guides ci-dessous sont gratuits, rédigés en français et sourcés (Code de la consommation, Code civil, Code général des impôts, service-public.gouv.fr).
 
 ## Guides
 - [Mentions obligatoires d'un devis de travaux : la check-list](https://contre-plan.com/guide-mentions-obligatoires-devis.html): Assurance décennale, détail des postes, déchets, TVA, délais : les mentions qu'un devis de travaux doit contenir, et quoi demander si elles manquent.
