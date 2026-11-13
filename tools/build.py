@@ -7,7 +7,7 @@ import decodeur as DEC  # outil gratuit « Décodeur de ligne de devis » (publi
 OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # racine du site
 GC = '<script data-goatcounter="https://contreplan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
 # Prix affiché partout : changer ici (et lancer tools/changer_prix.py pour index.html et site.js)
-PRIX_TXT = "16,50 €"
+PRIX_TXT = "29 €"
 PRIX_MENTION = ""
 COMEUP = "https://comeup.com/fr/service/549064/verifier-votre-devis-de-travaux-avant-signature-et-reperer-les-prix-abusifs-et-les-oublis"
 CMD = "commander.html"   # page de commande (paiement Stripe, ComeUp en second choix)
@@ -202,7 +202,7 @@ UPDATED = {'guide-artisan-retard-chantier-que-faire': "2026-11-11", 'guide-acomp
 for _s in ['guide-tva-travaux-renovation','guide-mentions-obligatoires-devis','guide-reception-travaux-reserves','guide-verifier-assurance-decennale','guide-negocier-devis-travaux','guide-depassement-devis-travaux-supplementaires','guide-annuler-devis-signe-retractation']:
     UPDATED[_s] = "2026-10-27"  # relecture et corrections du 27/10/2026
 SANS_CTA_HAUT = {"guide-constat-retard-chantier", "guide-artisan-retard-chantier-que-faire", "guide-artisan-injoignable-apres-acompte", "guide-reception-travaux-reserves"}  # chantier déjà en cours : pas d'appel « devis »
-GUIDE_CTA_HAUT = '<p class="cp-guide-cta">Vous avez déjà un devis ? Je le relis ligne par ligne : 16,50 €, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-guide-haut">Faire analyser mon devis →</a></p>\n'
+GUIDE_CTA_HAUT = '<p class="cp-guide-cta">Vous avez déjà un devis ? Je le relis ligne par ligne : 29 €, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-guide-haut">Faire analyser mon devis →</a></p>\n'
 AUTEUR = "Rédigé par <a href=\"methode.html\">Arthur Demange, ingénieur BTP</a> (diplômé de l'ESITC de Metz, 10 ans de chantier, environ 1 000 devis lus)"
 
 # Liens vers les sources officielles (bloc « Pour aller plus loin », vérifiés le 27/10/2026)
@@ -430,7 +430,7 @@ article("guide-oublis-devis-salle-de-bain",
 <p style="font-size: 15px !important; color: #5b6784 !important;">Article d'information générale. Chaque chantier est différent : en cas de doute sur un point technique, faites vérifier votre devis.</p>''', 5)
 
 
-PRIX = "16.50"  # (doublon historique) prix de base de l'analyse (schéma Service des pages par type de travaux)
+PRIX = "29.00"  # (doublon historique) prix de base de l'analyse (schéma Service des pages par type de travaux)
 
 # Pages « Analyse de devis <travaux> » : nom du service (schéma Service) et FAQ visible + FAQPage
 JOBS = {
@@ -520,7 +520,7 @@ OM_NOTE = '<p class="cp-om"><b>En outre-mer</b> : en Guadeloupe, en Martinique e
 
 # Pages de travaux où le devis dépasse souvent 30 000 € : rappel des prix fixes des gros devis.
 GROS_DEVIS = {"analyse-devis-extension", "analyse-devis-toiture", "analyse-devis-mur-porteur", "analyse-devis-piscine", "analyse-devis-veranda", "analyse-devis-ravalement-facade"}
-GROS_NOTE = '<p class="cp-gros"><b>Votre devis dépasse 30 000 € ?</b> Le prix de l\'analyse reste fixe : <a href="commander.html?formule=g1" data-goatcounter-click="clic-gros-devis-g1">39 € jusqu\'à 60 000 €</a>, <a href="commander.html?formule=g2" data-goatcounter-click="clic-gros-devis-g2">59 € jusqu\'à 100 000 €</a>. Au-delà, le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> fixe le prix avant toute commande.</p>'
+GROS_NOTE = '<p class="cp-gros"><b>Votre devis dépasse 30 000 € ?</b> Le prix de l\'analyse reste fixe : <a href="commander.html?formule=g1" data-goatcounter-click="clic-gros-devis-g1">49 € jusqu\'à 60 000 €</a>, <a href="commander.html?formule=g2" data-goatcounter-click="clic-gros-devis-g2">69 € jusqu\'à 100 000 €</a>. Au-delà, le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> fixe le prix avant toute commande.</p>'
 def page(slug, title, h1, desc, lead, body, kicker, toc=True):
     body = _om(slug, body)
     if slug.startswith("analyse-devis-") and "cp-guide-cta" not in body:
@@ -1008,12 +1008,12 @@ page("votre-cas",
 <ul><li><b>Rénovation intérieure</b> : salle de bain, douche, cuisine (y compris de grande enseigne), sols et <a href="analyse-devis-parquet.html">parquet</a>, <a href="analyse-devis-carrelage.html">carrelage</a>, <a href="analyse-devis-peinture.html">peinture</a>, <a href="analyse-devis-plomberie-chauffe-eau.html">plomberie, chauffe-eau</a>, électricité.</li>
 <li><b>Énergie</b> : isolation, pompe à chaleur, climatisation, <a href="analyse-devis-poele.html">poêle à bois ou à granulés</a>, chaudière, fenêtres, ventilation, <a href="analyse-devis-panneaux-solaires.html">panneaux photovoltaïques</a>, avec la vérification de la TVA, du RGE et des primes annoncées. Pour le photovoltaïque, méfiez-vous du démarchage et vérifiez la qualification de l'installateur dans l'annuaire officiel des entreprises RGE.</li>
 <li><b>Extérieur</b> : toiture, ravalement d'une maison, terrasse, clôture, portail, <a href="analyse-devis-veranda.html">véranda</a>, <a href="analyse-devis-piscine.html">piscine</a>, <a href="analyse-devis-fosse-septique.html">fosse septique et assainissement individuel</a>.</li>
-<li><b>Structure et agrandissement</b> : <a href="analyse-devis-mur-porteur.html">ouverture de mur porteur</a>, extension, surélévation, aménagement de combles. Je vérifie que le devis prévoit et chiffre l'étude d'un bureau d'études et les ouvrages nécessaires ; je ne fais pas le calcul de structure moi-même. Pour un devis de 30 000 à 60 000 €, l'analyse coûte 39 € ; de 60 000 à 100 000 €, 59 €. Au-delà, le prix est annoncé au pré-diagnostic gratuit, avant toute commande.</li>
+<li><b>Structure et agrandissement</b> : <a href="analyse-devis-mur-porteur.html">ouverture de mur porteur</a>, extension, surélévation, aménagement de combles. Je vérifie que le devis prévoit et chiffre l'étude d'un bureau d'études et les ouvrages nécessaires ; je ne fais pas le calcul de structure moi-même. Pour un devis de 30 000 à 60 000 €, l'analyse coûte 49 € ; de 60 000 à 100 000 €, 69 €. Au-delà, le prix est annoncé au pré-diagnostic gratuit, avant toute commande.</li>
 <li><b>Outre-mer</b> : les devis de Guadeloupe, de Martinique, de La Réunion, de Guyane et de Mayotte, au même prix, avec les règles de TVA propres à ces territoires (<a href="guide-tva-travaux-renovation.html#outre-mer">voir le guide TVA</a>).</li>
 <li><b>Devis déjà signé</b>, tant que vous êtes dans le délai de rétractation : l'analyse vous aide à décider de confirmer ou non (<a href="guide-annuler-devis-signe-retractation.html">vos droits</a>).</li></ul>
 <h2>Au cas par cas : demandez d'abord le pré-diagnostic</h2>
 <p>Pour ces situations, une partie du dossier ne se lit pas comme un devis classique. Décrivez-la dans le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous dis ce que je peux vérifier avant toute commande.</p>
-<ul><li><b>Gros devis</b> : 39 € pour un devis de 30 000 à 60 000 €, 59 € de 60 000 à 100 000 €. Au-delà, ou pour une rénovation complète en plusieurs lots, le pré-diagnostic gratuit permet de fixer le périmètre et le prix avant de commander.</li>
+<ul><li><b>Gros devis</b> : 49 € pour un devis de 30 000 à 60 000 €, 69 € de 60 000 à 100 000 €. Au-delà, ou pour une rénovation complète en plusieurs lots, le pré-diagnostic gratuit permet de fixer le périmètre et le prix avant de commander.</li>
 <li><b>Maison neuve avec un constructeur (CCMI)</b> : je peux relire la notice descriptive et les travaux laissés à votre charge. Pour le contrat lui-même, très encadré, l'ADIL de votre département vous conseille gratuitement.</li>
 <li><b>Copropriété</b> (ravalement, toiture, chauffage collectif…) : je peux analyser un devis soumis au vote de l'assemblée générale ; la décision et le choix de l'entreprise restent ceux du syndicat des copropriétaires. Le prix dépend du volume du dossier et vous est annoncé au pré-diagnostic.</li>
 <li><b>Assainissement non collectif</b> : la filière doit être validée par le SPANC de votre commune avant les travaux ; je vérifie que le devis correspond à l'étude.</li>
@@ -1039,7 +1039,7 @@ page("achat-avec-travaux",
 <p>Maison non raccordée au tout-à-l'égout ? Regardez le diagnostic d'assainissement du dossier de vente : si l'installation est non conforme, vous aurez en principe un an après l'achat pour faire les travaux. Mieux vaut avoir un devis avant de signer : voir <a href="analyse-devis-fosse-septique.html">l'analyse d'un devis d'assainissement</a>.</p>
 <p>Le rapport n'est pas une expertise et n'a pas de valeur officielle pour la banque : il vous sert à faire corriger les devis avant de les joindre à votre dossier.</p>
 <h2>Plusieurs lots de travaux</h2>
-<p>Chaque devis transmis est analysé : formule 1 devis, puis + 11 € par devis pour des travaux différents (38,50 € pour trois devis, par exemple). Pour une rénovation complète en plusieurs lots ou un devis tous corps d'état, demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous dis comment ils seront traités avant toute commande.</p>
+<p>Chaque devis transmis est analysé : formule 1 devis, puis + 19 € par devis pour des travaux différents (67 € pour trois devis, par exemple). Pour une rénovation complète en plusieurs lots ou un devis tous corps d'état, demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous dis comment ils seront traités avant toute commande.</p>
 <h2>Ce que l'analyse ne remplace pas</h2>
 <p>Elle se fait sur les devis, à distance. Elle ne remplace ni la visite du bien, ni les diagnostics immobiliers obligatoires, ni l'avis d'un expert en bâtiment si vous soupçonnez un désordre (fissures, humidité, charpente).</p>
 """, "Achat avec travaux", toc=True)
@@ -1060,10 +1060,10 @@ page("professionnels",
 <h2>Comment ça se passe pour votre client</h2>
 <ol><li><b>Il dépose son devis</b> sur la page de commande de contre-plan.com (PDF ou photo, nom et adresse masquables), puis paie par carte, sans compte (ou passe par la plateforme ComeUp s'il préfère).</li>
 <li><b>Il reçoit une confirmation</b> par e-mail dans le quart d'heure.</li>
-<li><b>Il reçoit le rapport</b> par e-mail, sous 48 h s'il a demandé le démarrage immédiat (24 h en express, + 5,50 €), sinon à la fin du délai de rétractation de 14 jours.</li></ol>
+<li><b>Il reçoit le rapport</b> par e-mail, sous 48 h s'il a demandé le démarrage immédiat (24 h en express, + 9 €), sinon à la fin du délai de rétractation de 14 jours.</li></ol>
 <p>Une hésitation ? Il peut d'abord demander un <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a>, sans compte ni paiement.</p>
 <h2>Plusieurs devis ou plusieurs lots</h2>
-<p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain les envoie dans la même commande : formule 1 devis, plus 11 € par devis supplémentaire, soit 38,50 €. Pour deux ou trois devis concurrents sur les mêmes travaux, les formules « devis comparés » (33 € ou 49 €) ajoutent un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
+<p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain les envoie dans la même commande : formule 1 devis, plus 19 € par devis supplémentaire, soit 67 €. Pour deux ou trois devis concurrents sur les mêmes travaux, les formules « devis comparés » (49 € ou 69 €) ajoutent un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
 <h2>Délais</h2>
 <p>Rapport sous 48 h après réception du devis, ou 24 h avec l'option express, quand votre client demande le démarrage immédiat en commandant (sinon, à la fin du délai de rétractation de 14 jours). Le démarrage immédiat est utile quand un compromis ou une offre de prêt approche.</p>
 <h2>Achat d'un bien avec travaux</h2>
@@ -1073,7 +1073,7 @@ page("professionnels",
 <h2>Les limites</h2>
 <p>L'analyse est documentaire et à distance. Ce n'est ni une expertise judiciaire, ni un diagnostic technique du bâtiment, ni une mission de maîtrise d'œuvre, et elle n'intervient pas dans un litige déjà engagé.</p>
 <h2 id="pack-pro">Pack pro : 5 analyses prépayées</h2>
-<p>Pour les professionnels qui orientent régulièrement des clients : <strong>5 analyses pour 75 €</strong> (15 € l'analyse au lieu de 16,50 €, TVA non applicable, article 293 B du CGI), valables 12 mois. Chaque analyse couvre un devis jusqu'à 30 000 €, avec le même rapport PDF sous 48 h.</p>
+<p>Pour les professionnels qui orientent régulièrement des clients : <strong>5 analyses pour 125 €</strong> (25 € l'analyse au lieu de 29 €, TVA non applicable, article 293 B du CGI), valables 12 mois. Chaque analyse couvre un devis jusqu'à 30 000 €, avec le même rapport PDF sous 48 h.</p>
 <ul><li><b>Comment l'obtenir</b> : demandez-le par le <a href="contact.html?sujet=professionnel">formulaire de contact</a> ; je vous envoie une facture à régler par carte ou par virement.</li>
 <li><b>Comment l'utiliser</b> : vous m'envoyez le devis de votre client par e-mail, avec son accord ou son nom et son adresse masqués, ou votre client l'envoie lui-même en citant votre structure. Je vous tiens le décompte des analyses restantes.</li>
 <li><b>Pour qui</b> : réservé aux professionnels (agences, courtiers, notaires, syndics, diagnostiqueurs, gestionnaires). Vous pouvez l'offrir à vos clients ou le refacturer comme vous le souhaitez.</li></ul>
@@ -1086,7 +1086,7 @@ page("professionnels",
 <li><b>Aucun conflit d'intérêts</b> : vous recommandez un avis indépendant, sans lien avec un artisan ni rémunération.</li></ul>
 <h2>Le message à transmettre à votre client</h2>
 <div class="cp-tpl"><pre id="tpl-pro">Bonjour,
-Avant de signer vos devis de travaux, vous pouvez les faire relire par un ingénieur BTP indépendant : rapport PDF sous 48 h (24 h en express), avec les oublis, les prix à vérifier et les questions à poser à l'entreprise. À partir de 16,50 € pour un devis, sans lien avec aucun artisan.
+Avant de signer vos devis de travaux, vous pouvez les faire relire par un ingénieur BTP indépendant : rapport PDF sous 48 h (24 h en express), avec les oublis, les prix à vérifier et les questions à poser à l'entreprise. À partir de 29 € pour un devis, sans lien avec aucun artisan.
 Tout est expliqué ici : contre-plan.com/achat-avec-travaux.html</pre><button type="button" class="cp-copy" data-copy="tpl-pro" data-goatcounter-click="copie-message-pro">Copier le message</button></div>
 <p>À imprimer ou à joindre à un e-mail : <a href="fiche-professionnels-contre-plan.pdf" target="_blank" rel="noopener" data-goatcounter-click="telechargement-fiche-pro">la fiche de présentation (PDF, 1 page)</a>, avec un QR code vers la page achat avec travaux.</p>
 <h2>Me contacter</h2>
@@ -1225,7 +1225,7 @@ page("comparer-ses-devis",
 <a href="tableau-comparatif-devis.xlsx" download data-goatcounter-click="telechargement-comparatif-xlsx" class="btn">Télécharger le tableau (Excel)</a>
 <a href="tableau-comparatif-devis.pdf" download data-goatcounter-click="telechargement-comparatif-pdf" class="btn dark">Version à imprimer (PDF)</a>
 </div>
-<div class="note"><p><b>Pas le temps de remplir le tableau ?</b> Je compare vos deux devis poste par poste et je vous dis lequel retenir, avec les questions à poser : 33 € TTC, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-commander-comparatif">Faire comparer mes devis</a></p></div>
+<div class="note"><p><b>Pas le temps de remplir le tableau ?</b> Je compare vos deux devis poste par poste et je vous dis lequel retenir, avec les questions à poser : 49 € TTC, rapport sous 48 h. <a href="commander.html" data-goatcounter-click="clic-commander-comparatif">Faire comparer mes devis</a></p></div>
 <p>Le fichier Excel s'ouvre aussi dans Google Sheets (Fichier, Importer) et dans Numbers. Une feuille d'exemple montre un tableau rempli.</p>
 <h2>Ce que le tableau fait pour vous</h2>
 <ul><li>Il additionne les postes, calcule la TVA, le total TTC et l'acompte en euros pour chaque artisan.</li>
@@ -1239,7 +1239,7 @@ page("comparer-ses-devis",
 <li><b>Les quantités.</b> Si deux devis n'annoncent pas la même surface pour le même travail, demandez pourquoi avant de comparer les prix.</li>
 <li><b>Le moins cher n'est pas forcément le meilleur.</b> Un devis bas avec deux postes absents peut finir plus cher qu'un devis complet.</li></ul>
 <p>Une fois les écarts repérés, voyez <a href="guide-negocier-devis-travaux.html">comment négocier un devis de travaux</a> sur les postes qui coincent.</p>
-<div class="note"><p><b>Vous préférez un regard d'ingénieur ?</b> Les formules « 2 devis comparés » (33 €) et « 3 devis comparés » (49 €) vous livrent ce tableau rempli et commenté poste par poste, avec ce qui différencie vraiment les offres. Voir <a href="index.html#tarifs">les tarifs</a>.</p></div>
+<div class="note"><p><b>Vous préférez un regard d'ingénieur ?</b> Les formules « 2 devis comparés » (49 €) et « 3 devis comparés » (69 €) vous livrent ce tableau rempli et commenté poste par poste, avec ce qui différencie vraiment les offres. Voir <a href="index.html#tarifs">les tarifs</a>.</p></div>
 <p>Pour demander des devis comparables dès le départ : <a href="guide-bien-demander-ses-devis.html">comment bien demander ses devis</a>. Pour écrire aux artisans : <a href="modeles-messages-artisan.html">les modèles de messages</a>.</p>""",
  "Outil gratuit")
 
@@ -1407,7 +1407,7 @@ open(os.path.join(OUT, "avis.html"), "w").write(_avis)
 
 # ---------- Commande directe (Stripe) : page de commande et page de confirmation
 # Liens de paiement Stripe (Payment Links). Redirection après paiement : https://contre-plan.com/commande-confirmee.html
-# Clé « e » : même formule avec l'express 24 h (+ 5,50 €), cochée sur la page de commande.
+# Clé « e » : même formule avec l'express 24 h (+ 9 €), cochée sur la page de commande.
 STRIPE = {
     "1": "https://buy.stripe.com/fZu8wR4Zeg2uanldMAcMM06", "1e": "https://buy.stripe.com/6oU9AV8bq4jMfHF7occMM05",
     "2": "https://buy.stripe.com/bJe8wR4Ze17AgLJ23ScMM07", "2e": "https://buy.stripe.com/bJe4gB9fug2u0ML4c0cMM08",
@@ -1437,10 +1437,10 @@ def _f(v, titre, desc, prix, combo):
     chk = " checked" if v == "1" else ""
     return f'''<label class="cp-opt"><input type="radio" name="formule" value="{v}"{chk} data-href="{STRIPE[v]}" data-href-e="{STRIPE[v + 'e']}" data-prix="{prix}"><span class="d"><b>{titre}</b><small>{desc}</small></span><span class="p">{prix}</span></label>'''
 
-_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">16,50 €</b> TTC, aucun autre frais. <span class="cp-total-1">Avec la formule 1 devis, vous pourrez ajouter sur la page de paiement des devis pour des travaux différents (+ 11 € par devis).</span></p>
+_PAY_SEC = """<p class="cp-total">Total à payer : <b class="pt">29 €</b> TTC, aucun autre frais. <span class="cp-total-1">Avec la formule 1 devis, vous pourrez ajouter sur la page de paiement des devis pour des travaux différents (+ 19 € par devis).</span></p>
 <p class="cp-ord-sec">Paiement sécurisé par Stripe, sans compte à créer. Vos données de carte ne me sont jamais transmises. Facture envoyée par e-mail. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>.</p>"""
 def _pay_btn(cls="btn xl"):
-    return f'<a class="{cls}" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">16,50 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>'
+    return f'<a class="{cls}" id="cp-pay" href="{STRIPE["1"]}" data-goatcounter-click="clic-stripe"><span>Payer <span class="pp">29 €</span> par carte</span> <span class="arr" aria-hidden="true">→</span></a>'
 if DEPOT_URL:
     _ETAPES_1_2 = f"""</section>
 
@@ -1460,7 +1460,7 @@ if DEPOT_URL:
 <label class="cp-chk"><input type="checkbox" name="accord"><span><b>Je veux mon rapport sous 48 h : commencez dès réception de mon devis.</b> <small class="cp-hint">Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter (si j'annule avant, je paie la part déjà faite, <a href="cgv.html#retractation">article 6 des CGV</a>).</small></span></label>
 <p class="cp-delai" aria-live="polite"></p>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
-<button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">16,50 €</span></button>
+<button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">29 €</span></button>
 <div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
 <p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure. Si le paiement n'est pas finalisé, vous recevez un seul e-mail de rappel le lendemain, rien de plus.</p>
@@ -1489,13 +1489,13 @@ ORDER = f'''<main id="contenu" class="cp-order">
 <section class="cp-ord-box" aria-labelledby="t-formule">
 <h2 id="t-formule"><span class="n">1</span>Choisissez votre formule</h2>
 <div class="cp-opts-f" role="radiogroup" aria-labelledby="t-formule">
-{_f("1", "1 devis", "Un devis à signer, jusqu'à 30 000 €. Rapport PDF sous 48 h.", "16,50 €", "")}
-{_f("2", "2 devis comparés", "Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.", "33 €", "")}
-{_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "49 €", "")}
-{_f("g1", "1 devis de 30 000 à 60 000 €", "Gros chantier : extension, rénovation lourde, toiture complète… Rapport PDF sous 48 h.", "39 €", "")}
-{_f("g2", "1 devis de 60 000 à 100 000 €", "Très gros chantier : extension, rénovation lourde. Rapport PDF sous 48 h.", "59 €", "")}
+{_f("1", "1 devis", "Un devis à signer, jusqu'à 30 000 €. Rapport PDF sous 48 h.", "29 €", "")}
+{_f("2", "2 devis comparés", "Deux entreprises pour les mêmes travaux : les deux devis analysés, un tableau poste par poste et une recommandation.", "49 €", "")}
+{_f("3", "3 devis comparés", "Trois entreprises pour les mêmes travaux, avec le même comparatif.", "69 €", "")}
+{_f("g1", "1 devis de 30 000 à 60 000 €", "Gros chantier : extension, rénovation lourde, toiture complète… Rapport PDF sous 48 h.", "49 €", "")}
+{_f("g2", "1 devis de 60 000 à 100 000 €", "Très gros chantier : extension, rénovation lourde. Rapport PDF sous 48 h.", "69 €", "")}
 </div>
-<label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 5,50 €)</span></label>
+<label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 9 €)</span></label>
 <p class="cp-ord-plus">Prix TTC, TVA non applicable. Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
 {_ETAPES_1_2}
 
@@ -1579,7 +1579,7 @@ page("avis-avant-travaux",
 <p class="note-s">Prix TTC, TVA non applicable (article 293 B du CGI). Paiement sécurisé par Stripe. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>. Droit de rétractation de 14 jours (<a href="cgv.html#retractation">article 6</a>).</p>
 {_envoi_avis("msg-avis")}
 
-<div class="note"><p><b>Vous avez déjà un devis ?</b> L'analyse ligne par ligne est plus adaptée : à partir de 16,50 €, rapport PDF sous 48 h. <a href="commander.html" data-goatcounter-click="clic-avis-vers-commander">Faire analyser mon devis</a></p></div>
+<div class="note"><p><b>Vous avez déjà un devis ?</b> L'analyse ligne par ligne est plus adaptée : à partir de 29 €, rapport PDF sous 48 h. <a href="commander.html" data-goatcounter-click="clic-avis-vers-commander">Faire analyser mon devis</a></p></div>
 ''',
  "Avis avant travaux", toc=False)
 

@@ -92,7 +92,7 @@
   function bar() {
     if (!('IntersectionObserver' in window) || document.getElementById('cp-depot') || document.querySelector('.cp-depot-ok')) return;
     var b = document.createElement('div'); b.id = 'cp-bar';
-    b.innerHTML = '<span><b>Relu par un ingénieur</b>16,50 € · rapport 48 h</span><a class="cp-bar-q" href="contact.html"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Question</a><a href="' + COMEUP + '" data-goatcounter-click="clic-commander-barre">Faire analyser</a>';
+    b.innerHTML = '<span><b>Relu par un ingénieur</b>29 € · rapport 48 h</span><a class="cp-bar-q" href="contact.html"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Question</a><a href="' + COMEUP + '" data-goatcounter-click="clic-commander-barre">Faire analyser</a>';
     document.body.appendChild(b);
     var top = document.getElementById('top') || document.querySelector('header');
     var past = false, hide = 0;
@@ -127,7 +127,7 @@
     var w = document.querySelector('.cp-when'); if (!w) return;
     var r = w.querySelector('.r');
     var T = {
-      vite: 'Prenez l\'option express (+ 5,50 €, une case à cocher en commandant) : le rapport arrive en 24 h, à temps pour répondre à l\'artisan. <a href="commander.html?express=1" data-goatcounter-click="clic-commander-quand-vite">Commander avec l\'express</a>',
+      vite: 'Prenez l\'option express (+ 9 €, une case à cocher en commandant) : le rapport arrive en 24 h, à temps pour répondre à l\'artisan. <a href="commander.html?express=1" data-goatcounter-click="clic-commander-quand-vite">Commander avec l\'express</a>',
       plus: 'L\'analyse standard suffit : rapport sous 48 h. Vous pouvez d\'abord faire <a href="#test">le test en 1 minute</a>.',
       signe: 'Signé chez vous ou à distance ? Vous avez en principe 14 jours pour vous rétracter, et l\'analyse vous aide à décider à temps. <a href="guide-annuler-devis-signe-retractation.html">Vos droits</a>'
     };
@@ -145,7 +145,7 @@
     var ex = document.getElementById('cp-express');
     function upd() {
       var r = document.querySelector('.cp-opt input:checked'); if (!r) return;
-      var e = !!(ex && ex.checked), v = parseFloat(r.getAttribute('data-prix').replace(',', '.')) + (e ? 5.5 : 0);
+      var e = !!(ex && ex.checked), v = parseFloat(r.getAttribute('data-prix').replace(',', '.')) + (e ? 9 : 0);
       var t = (v % 1 ? v.toFixed(2).replace('.', ',') : String(v)) + '\u00a0€';
       pay.href = r.getAttribute(e ? 'data-href-e' : 'data-href');
       pay.setAttribute('data-goatcounter-click', 'clic-stripe-' + r.value + (e ? '-express' : ''));

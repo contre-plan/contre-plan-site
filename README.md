@@ -17,8 +17,8 @@ Les guides, la page Guides, la page 404 et le sitemap sont générés par `tools
 
 Mettre à jour partout en même temps : `tools/build.py` (constante `PRIX`, schéma Service des pages par type de travaux), `index.html` (cartes Tarifs, FAQ et ses données structurées, offres du JSON-LD, `data-prix` du calcul « Votre devis fait combien ? »), `site.js` (texte de la barre mobile « dès 16,50 € »), `tools/build.py` (encadré latéral SIDE et bloc CTA), l'annonce ComeUp et l'agent carrousel.
 
-## Offre de lancement
-Le « prix de lancement » (16,50 € au lieu de 33 €) figure dans index.html (badge des tarifs, FAQ et JSON-LD FAQ). Le retirer à ces endroits quand l'offre se termine, et passer le prix à 33 €.
+## Historique des prix
+Jusqu'au 13/11/2026 : 1 devis 16,50 €, 2 devis 33 €, 3 devis 49 €, gros devis 39/59 €, + 11 €, express + 5,50 €, pack pro 75 €. Grille actuelle depuis le 13/11/2026 : voir plus bas. Ne jamais afficher l'ancien prix comme prix barré.
 
 ## Typographie et image de partage
 - `tools/typo.py` ajoute les espaces insécables (avant ? : ; !, entre nombre et unité). Il est lancé automatiquement à la fin de `tools/build.py` ; après une modification manuelle de index.html, relancer `python3 tools/build.py`.
@@ -51,5 +51,5 @@ Page générée par `tools/decodeur.py` (appelé par `tools/build.py`), seulemen
 ## Dépôt du devis avant paiement (novembre 2026)
 La page de commande peut recevoir le devis avant le paiement : le formulaire envoie les fichiers à un programme Google Apps Script (`tools/depot-devis/Code.gs`) qui les range dans Google Drive (« Contre-Plan – Devis reçus ») et prévient contact@contre-plan.com. Le site redirige ensuite vers le lien Stripe avec `client_reference_id` = la référence du dépôt (CP-AAAAMMJJ-XXXX) et l'e-mail prérempli. Tant que `DEPOT_URL` est vide dans `tools/build.py`, la page garde l'envoi par e-mail. Mise en service : `tools/depot-devis/GUIDE.md`.
 
-## Grille de prix (04/11/2026)
-1 devis (jusqu'à 30 000 €) 16,50 € ; 2 devis comparés 33 € ; 3 devis comparés 49 € ; 1 devis de 30 000 à 60 000 € 39 € ; de 60 000 à 100 000 € 59 € ; devis pour des travaux différents + 11 € ; express + 5,50 €. Liens Stripe dans la constante `STRIPE` de `tools/build.py`. La fiche PDF des professionnels se régénère depuis `tools/fiche-pro.html` (impression PDF A4 avec Playwright).
+## Grille de prix (13/11/2026)
+1 devis (jusqu’à 30 000 €) 29 € ; 2 devis comparés 49 € ; 3 devis comparés 69 € ; 1 devis de 30 000 à 60 000 € 49 € ; de 60 000 à 100 000 € 69 € ; devis pour des travaux différents + 19 € ; express + 9 €. Liens Stripe dans la constante `STRIPE` de `tools/build.py`. La fiche PDF des professionnels se régénère depuis `tools/fiche-pro.html` (impression PDF A4 avec Playwright).
