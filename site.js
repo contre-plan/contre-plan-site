@@ -1,6 +1,6 @@
 /* Éléments interactifs Contre-Plan (fonctionnent avec ou sans animations) */
 (function () {
-  var NEWS = 'https://contres-newsletter.beehiiv.com/subscribe';
+  var NEWS = 'https://contre-plan.beehiiv.com/subscribe';
   var COMEUP = 'commander.html';
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   function each(l, f) { Array.prototype.forEach.call(l, f); }

@@ -11,7 +11,7 @@ PRIX_TXT = "29 €"
 PRIX_MENTION = ""
 COMEUP = "https://comeup.com/fr/service/549064/verifier-votre-devis-de-travaux-avant-signature-et-reperer-les-prix-abusifs-et-les-oublis"
 CMD = "commander.html"   # page de commande (paiement Stripe, ComeUp en second choix)
-NEWS = "https://contres-newsletter.beehiiv.com/subscribe"  # page d'inscription beehiiv « Le conseil devis du mois »
+NEWS = "https://contre-plan.beehiiv.com/subscribe"  # page d'inscription beehiiv « Le conseil devis du mois »
 def news_box(src):
     return f'<div class="cp-news"><p class="t">Vos travaux ne sont pas pour tout de suite ?</p><p>Recevez une fois par mois un point concret à vérifier sur un devis, et la check-list en lien. Gratuit, sans publicité, désinscription en un clic dans chaque e-mail.</p><a class="btn" href="{NEWS}" target="_blank" rel="noopener" data-goatcounter-click="inscription-conseil-{src}">Recevoir le conseil du mois</a></div>'
 
