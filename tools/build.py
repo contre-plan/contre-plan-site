@@ -1451,7 +1451,7 @@ if DEPOT_URL:
 <input type="file" id="cp-fichiers" class="cp-file-in" aria-labelledby="cp-file-t" aria-describedby="cp-depot-err" name="fichiers" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.webp,application/pdf,image/*" multiple required>
 <label for="cp-fichiers" class="cp-file-zone"><b>Ajouter mon devis</b><span>PDF, ou photo prise avec le téléphone</span></label>
 <p class="cp-file-list" aria-live="polite"></p>
-<small class="cp-hint">Une photo par page, à plat et bien éclairée (10 fichiers maximum). Vous pouvez masquer votre nom et votre adresse.</small></div>
+<small class="cp-hint">Une photo par page, à plat et bien éclairée (10 fichiers maximum). Vous pouvez masquer votre nom et votre adresse : un coup de feutre sur le papier ou un recadrage de la photo suffit.</small></div>
 <label>Votre adresse e-mail (obligatoire) <small class="cp-hint">Le rapport arrive à cette adresse.</small><input type="email" name="email" autocomplete="email" required aria-describedby="cp-depot-err"></label>
 <details class="cp-fold cp-opt-f"><summary>Préciser votre situation (facultatif)</summary>
 <div class="cp-f2"><label>Type de travaux <input name="travaux" maxlength="200" placeholder="ex. salle de bain"></label><label>Répondre à l'artisan avant le <input type="date" name="echeance"></label></div>
