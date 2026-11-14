@@ -1468,7 +1468,7 @@ if DEPOT_URL:
 </form>
 {_PAY_SEC}
 <details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
-<p>Payez, puis envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet.</p>
+<p>Payez, puis envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet si vous avez coché le démarrage immédiat. Sinon, il part de la fin du délai de rétractation de 14 jours.</p>
 {_pay_btn("btn")}
 {_envoi("msg-devis")}
 </details>
@@ -1480,7 +1480,7 @@ else:
 
 <section class="cp-ord-box" aria-labelledby="t-envoi">
 <h2 id="t-envoi"><span class="n">2</span>Envoyez votre devis par e-mail</h2>
-<p>Juste après le paiement, envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet.</p>
+<p>Juste après le paiement, envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet si vous avez coché le démarrage immédiat. Sinon, il part de la fin du délai de rétractation de 14 jours.</p>
 {_envoi("msg-devis")}
 </section>"""
 
@@ -1511,6 +1511,7 @@ ORDER = f'''<main id="contenu" class="cp-order">
 <li><b>Aucune commission</b> d'artisan : un avis indépendant.</li>
 <li><b>Des recours</b> : <a href="cgv.html">CGV</a>, rétractation de 14 jours, médiateur CM2C.</li>
 </ul></div>
+<div class="cp-ord-note"><p class="t">Inclus et non inclus</p><ul><li><b>Inclus</b> : lecture ligne par ligne, prix poste par poste, oublis, TVA, acompte, questions à poser à l'artisan et une question de suivi.</li><li><b>Non inclus</b> : visite du chantier, vérification sur place, conseil juridique ou fiscal. L'avis repose sur les documents que vous envoyez.</li><li><b>Formules 2 et 3</b> : devis jusqu'à 30 000 € chacun. Au-delà, prenez la formule gros devis.</li></ul><p>Le détail est à l'<a href="cgv.html">article 3 des CGV</a>.</p></div>
 <div class="cp-ord-note"><p class="t">Devis de plus de 100 000 € ou rénovation complète en plusieurs lots ?</p><p>Demandez d'abord le <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a> : je vous annonce le prix avant toute commande.</p></div>
 <p class="cp-ord-legal">Droit de rétractation de 14 jours, dans les conditions de l'<a href="cgv.html#retractation">article 6 des CGV</a>. Médiateur de la consommation : CM2C. TVA non applicable, article 293 B du CGI.</p>
 </div>
