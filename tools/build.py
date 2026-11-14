@@ -1063,7 +1063,7 @@ page("professionnels",
 <li><b>Il reçoit le rapport</b> par e-mail, sous 48 h s'il a demandé le démarrage immédiat (24 h en express, + 9 €), sinon à la fin du délai de rétractation de 14 jours.</li></ol>
 <p>Une hésitation ? Il peut d'abord demander un <a href="contact.html?sujet=prediagnostic">pré-diagnostic gratuit</a>, sans compte ni paiement.</p>
 <h2>Plusieurs devis ou plusieurs lots</h2>
-<p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain les envoie dans la même commande : formule 1 devis, plus 19 € par devis supplémentaire, soit 67 €. Pour deux ou trois devis concurrents sur les mêmes travaux, les formules « devis comparés » (49 € ou 69 €) ajoutent un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
+<p>Chaque devis transmis fait l'objet d'une analyse. Un acquéreur qui a un devis d'isolation, un d'électricité et un de salle de bain les envoie dans la même commande : formule 1 devis (29 €), plus 19 € pour chacun des deux autres devis, soit 67 €. Pour deux ou trois devis concurrents sur les mêmes travaux, les formules « devis comparés » (49 € ou 69 €) ajoutent un tableau poste par poste. Les tarifs détaillés sont sur la <a href="index.html#tarifs">page d'accueil</a>.</p>
 <h2>Délais</h2>
 <p>Rapport sous 48 h après réception du devis, ou 24 h avec l'option express, quand votre client demande le démarrage immédiat en commandant (sinon, à la fin du délai de rétractation de 14 jours). Le démarrage immédiat est utile quand un compromis ou une offre de prêt approche.</p>
 <h2>Achat d'un bien avec travaux</h2>
