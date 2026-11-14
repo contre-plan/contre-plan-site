@@ -220,13 +220,14 @@
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var files = f.elements.fichiers.files, email = f.elements.email.value.trim(), r = document.querySelector('.cp-opt input:checked'), tot = 0, i;
-      [f.elements.fichiers, f.elements.email].forEach(function (x) { x.removeAttribute('aria-invalid'); });
+      [f.elements.fichiers, f.elements.email, f.elements.cgv].filter(Boolean).forEach(function (x) { x.removeAttribute('aria-invalid'); });
       function errChamp(x, t) { err(t); x.setAttribute('aria-invalid', 'true'); var z = x.id === 'cp-fichiers' ? f.querySelector('.cp-file') : x; if (z.scrollIntoView) z.scrollIntoView({ block: 'center' }); x.focus(); }
       if (!files.length) return errChamp(f.elements.fichiers, 'Ajoutez votre devis (PDF ou photo).');
       if (files.length > 10) return errChamp(f.elements.fichiers, 'Dix fichiers au maximum.');
       for (i = 0; i < files.length; i++) if (!/^image\//.test(files[i].type || type(files[i].name))) tot += files[i].size;
       if (tot > 10 * 1024 * 1024) return err('PDF trop lourd : 10 Mo au total au maximum. Envoyez les pages en photo ou passez par l\'e-mail ci-dessous.');
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return errChamp(f.elements.email, 'Vérifiez votre adresse e-mail.');
+      if (f.elements.cgv && !f.elements.cgv.checked) return errChamp(f.elements.cgv, 'Cochez la case d\'acceptation des conditions générales de vente.');
       btn.disabled = true; st.className = 'cp-depot-st'; st.textContent = 'Envoi de votre devis…';
       lire.n = files.length;
       Promise.all([].map.call(files, lire)).then(function (arr) {

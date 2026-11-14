@@ -1459,6 +1459,7 @@ if DEPOT_URL:
 </details>
 <label class="cp-chk"><input type="checkbox" name="accord"><span><b>Je veux mon rapport sans attendre : commencez dès réception de mon devis.</b> <small class="cp-hint">Je sais qu'une fois le rapport livré, je ne pourrai plus me rétracter (si j'annule avant, je paie la part déjà faite, <a href="cgv.html#retractation">article 6 des CGV</a>).</small></span></label>
 <p class="cp-delai" aria-live="polite"></p>
+<label class="cp-chk cp-cgv"><input type="checkbox" name="cgv" required aria-describedby="cp-depot-err"><span>J'ai lu et j'accepte les <a href="cgv.html" target="_blank" rel="noopener">conditions générales de vente</a>.</span></label>
 <input class="cp-hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
 <button type="submit" data-goatcounter-click="clic-depot">Envoyer mon devis et payer <span class="pp">29 €</span></button>
 <div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
