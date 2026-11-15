@@ -231,6 +231,16 @@ LINKS = {
     'analyse-devis-fosse-septique': [("https://www.assainissement-non-collectif.developpement-durable.gouv.fr/", "Portail interministériel de l'assainissement non collectif (dispositifs agréés)"), ("https://www.economie.gouv.fr/particuliers/emprunter-et-sassurer/leco-pret-taux-zero-eco-ptz-pouvez-vous-en-beneficier", "Éco-prêt à taux zéro")],
     'analyse-devis-peinture': [("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements")],
     'analyse-devis-parquet': [("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements"), (SP + "F288", "Habitat contenant de l'amiante")],
+    'analyse-devis-carrelage': [("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements"), (SP + "F288", "Habitat contenant de l'amiante")],
+    'analyse-devis-mur-porteur': [(SP + "F2034", "Garantie décennale des constructeurs"), (SP + "F2032", "Assurance dommages-ouvrage")],
+    'analyse-devis-panneaux-solaires': [(SP + "F23224", "Démarchage à domicile : règles à respecter"), (SP + "F2434", "Crédit affecté")],
+    'analyse-devis-piscine': [("https://www.economie.gouv.fr/particuliers/taxe-amenagement", "Taxe d'aménagement"), (SP + "F2533", "Devis et contrat avant des travaux")],
+    'analyse-devis-plomberie-chauffe-eau': [("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements"), (SP + "F35083", "MaPrimeRénov'")],
+    'analyse-devis-poele': [(SP + "F35083", "MaPrimeRénov'"), ("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements")],
+    'analyse-devis-terrasse': [("https://www.economie.gouv.fr/particuliers/taxe-amenagement", "Taxe d'aménagement"), (SP + "F2533", "Devis et contrat avant des travaux")],
+    'analyse-devis-veranda': [(SP + "F36777", "Autorisation pour un agrandissement"), ("https://www.economie.gouv.fr/particuliers/taxe-amenagement", "Taxe d'aménagement")],
+    'analyse-devis-vmc': [("https://entreprendre.service-public.gouv.fr/vosdroits/F23568", "TVA des travaux dans les logements"), (SP + "F2533", "Devis et contrat avant des travaux")],
+    'guide-constat-retard-chantier': [(SP + "F2533", "Devis et contrat avant des travaux"), (SP + "F1736", "Conciliateur de justice")],
     'analyse-devis-toiture': [(SP + "F36767", "Autorisation pour des travaux de toiture"), (SP + "F33682", "Obligation d'isoler lors d'une réfection de toiture")],
 }
 
