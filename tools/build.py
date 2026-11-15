@@ -691,7 +691,7 @@ article("guide-artisan-retard-chantier-que-faire",
  "Retard de travaux : que faire quand l'artisan est en retard sur le chantier",
  "Retard de travaux : que faire ? Relire le devis, écrire, mettre en demeure en recommandé, suspendre le paiement, le médiateur : les étapes dans l'ordre.",
  "Retard de travaux : relisez d'abord la date écrite sur votre devis, puis écrivez à l'artisan, puis envoyez une mise en demeure en recommandé s'il ne reprend pas le chantier. Voici les étapes dans l'ordre, du simple message à la médiation.",
- '''<div class="note"><p><strong>En bref :</strong> 1. relisez la date écrite au devis ; 2. <a href="#etape-1">écrivez un message daté</a> ; 3. <a href="#etape-2">mise en demeure en recommandé</a> ; 4. <a href="#etape-3">annulation ou autre entreprise</a> ; 5. <a href="#recours">médiateur ou conciliateur</a>.</p></div>
+ '''<div class="note"><p><strong>En bref :</strong> 1. relisez la date écrite au devis ; 2. <a href="#etape-1">écrivez un message daté</a> ; 3. <a href="#etape-2">mise en demeure en recommandé</a> ; 4. <a href="#etape-3">annulation ou autre entreprise</a> ; 5. <a href="#recours">médiateur ou conciliateur</a>. Besoin d'une preuve solide ? Voir <a href="guide-constat-retard-chantier.html">comment faire constater un retard de chantier</a>.</p></div>
 <h2>Artisan en retard sur le chantier : que faire en premier ?</h2>
 <p>Avant d'écrire la moindre lettre, reprenez votre devis signé : il devient un contrat dès qu'il est signé par les deux parties, et dit ce que vous pouvez exiger. Je regarde toujours cinq points.</p>
 <ul>
@@ -1261,9 +1261,9 @@ if DEC.DECODEUR_URL:
      "Une ligne de votre devis vous laisse perplexe ? Collez-la ici : vous saurez ce qu'elle veut dire, ce qu'il faut vérifier et quoi demander à l'artisan avant de signer.",
      DEC.body().replace("__PRIX__", PRIX_TXT), "Outil gratuit", toc=False)
     page("verifier-mentions-devis",
-     "Contrôle gratuit des mentions d'un devis de travaux | Contre-Plan",
-     "Contrôle des mentions de votre devis",
-     "Envoyez la photo ou le PDF de votre devis : vérification gratuite de ses mentions obligatoires (SIRET, assurance, délai, TVA, paiement).",
+     "Contrôle de devis travaux gratuit : les mentions vérifiées | Contre-Plan",
+     "Contrôle de devis travaux : les mentions de votre devis",
+     "Contrôlez votre devis de travaux gratuitement : envoyez la photo ou le PDF, et voyez quelles mentions obligatoires sont présentes ou manquantes (SIRET, assurance, délai, TVA, paiement).",
      "Envoyez la photo ou le PDF de votre devis : en une trentaine de secondes, vous savez quelles mentions sont présentes, à préciser ou introuvables, et quoi demander à l'artisan.",
      MEN.body().replace("__PRIX__", PRIX_TXT), "Outil gratuit", toc=False)
     page(CMP.SLUG,
