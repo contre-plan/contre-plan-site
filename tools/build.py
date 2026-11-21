@@ -92,7 +92,7 @@ def FOOTER(root=""):
         e = f' data-goatcounter-click="{ev}"' if ev else ""
         return f'<a href="{root}{h}"{e}>{t}</a>'
     soc = "".join(f'<a href="{u}" target="_blank" rel="noopener me" data-goatcounter-click="{ev}" class="cp-soc">{t}</a>' for u, t, ev in [
-        ("https://www.tiktok.com/@contreplan_", "TikTok", "clic-tiktok"), ("https://www.instagram.com/contreplan_/", "Instagram", "clic-instagram"), ("https://www.youtube.com/@Contre-Plan", "YouTube", "clic-youtube")])
+        ("https://www.tiktok.com/@contreplan_", "TikTok", "clic-tiktok"), ("https://www.instagram.com/contreplan_/", "Instagram", "clic-instagram"), ("https://www.youtube.com/@Contre-Plan", "YouTube", "clic-youtube"), ("https://www.facebook.com/people/Contre-Plan/61595688882274/", "Facebook", "clic-facebook")])
     return f"""<footer class="cp-foot"><div class="cp-foot-in">
 <div class="cp-foot-brand"><div class="cp-foot-logo">CONTRE-PLAN</div><p>Votre devis de travaux relu par un ingénieur BTP avant que vous signiez. 100 % à distance, indépendant de tout artisan.</p><div class="cp-socs">{soc}</div></div>
 <div class="cp-foot-col"><p>Le service</p>{L("methode.html","Ma méthode")}{L("engagements.html","Mes engagements")}{L("votre-cas.html","Votre cas est-il couvert ?")}{L("achat-avec-travaux.html","Achat avec travaux")}{L("professionnels.html","Professionnels")}{L("avis-avant-travaux.html","Avis avant travaux")}{L("exemple-rapport-contre-plan.pdf","Exemple de rapport","telechargement-exemple-rapport")}{L("index.html#tarifs","Tarifs")}{L("contact.html","Contact")}<a href="commander.html" data-goatcounter-click="clic-commander-pied">Commander une analyse</a></div>
@@ -1533,12 +1533,13 @@ _cmd = head("Commander une analyse de devis | Contre-Plan", "Commandez l'analyse
 open(os.path.join(OUT, "commander.html"), "w").write(_cmd)
 PAGES.append("commander")
 
-_ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envoyez maintenant votre devis par e-mail.", "https://contre-plan.com/commande-confirmee.html").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">') + pagehero("Commande", "Paiement reçu, merci", "Le rapport arrive sous 48 h après réception de votre devis (24 h en express). Vérifiez ci-dessous s'il vous reste quelque chose à faire.", None, [("Accueil", "index.html"), ("Paiement reçu", None)]) + f'''<main id="contenu" class="cp-order"><div class="cp-order-in">
+_ok = head("Paiement reçu | Contre-Plan", "Votre paiement est bien reçu : envoyez maintenant votre devis par e-mail.", "https://contre-plan.com/commande-confirmee.html").replace('<meta property="og:type" content="article">','<meta name="robots" content="noindex">') + pagehero("Commande", "Paiement reçu, merci", "Le rapport arrive sous 48 h après réception de votre devis (24 h en express) si vous avez demandé le démarrage immédiat. Vérifiez ci-dessous s'il vous reste quelque chose à faire.", None, [("Accueil", "index.html"), ("Paiement reçu", None)]) + f'''<main id="contenu" class="cp-order"><div class="cp-order-in">
 <section class="cp-ord-box cp-depot-ok" hidden><h2><span class="n">1</span>Votre devis est bien reçu</h2>
-<p>Vous l'avez déposé sur le site avant de payer (référence <b class="cp-depot-ref"></b>) : vous n'avez rien d'autre à faire.</p>
+<p>Vous l'avez déposé sur le site avant de payer<span class="cp-depot-refl" hidden> (référence <b class="cp-depot-ref"></b>)</span> : vous n'avez rien d'autre à faire.</p>
 </section>
 <section class="cp-ord-box cp-envoi-mail"><h2><span class="n">1</span>Pas encore déposé votre devis ? Envoyez-le par e-mail</h2>
 <p>Si vous l'avez déposé sur la page de commande, il est bien reçu : vous n'avez rien d'autre à faire. Sinon, envoyez-le depuis l'adresse utilisée pour payer, ou en l'indiquant dans le message.</p>
+<p class="cp-pay-ref" hidden>Référence de votre paiement, à recopier dans votre e-mail : <b class="cp-pay-id" style="overflow-wrap:anywhere"></b></p>
 {_envoi("msg-devis-ok")}
 </section>
 <section class="cp-ord-box"><h2><span class="n">2</span>Recevez le rapport</h2><p>La facture vous arrive par e-mail de la part de Stripe, et une confirmation de commande automatique dans le quart d'heure (avec les conditions de vente et le formulaire de rétractation). Le rapport PDF arrive par e-mail sous 48 h après réception du devis complet si vous avez demandé le démarrage immédiat, sinon 48 h après la fin du délai de rétractation de 14 jours. Pensez à regarder vos courriers indésirables. Une question ? Répondez simplement à mon e-mail ou écrivez à contact@contre-plan.com.</p></section>

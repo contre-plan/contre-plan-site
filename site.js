@@ -167,10 +167,20 @@
     if (!f) {
       var ok = document.querySelector('.cp-depot-ok'), ref = null;
       try { ref = sessionStorage.getItem('cp-depot'); } catch (e) {}
+      /* Référence vide, « undefined » ou « null » : on ne l'affiche jamais. */
+      if (ref) ref = String(ref).trim();
+      if (ref === 'undefined' || ref === 'null') ref = '';
       if (ok && ref) {
-        ok.hidden = false; ok.querySelector('.cp-depot-ref').textContent = ref;
+        ok.hidden = false;
+        var b = ok.querySelector('.cp-depot-ref'), bl = ok.querySelector('.cp-depot-refl');
+        if (b) b.textContent = ref;
+        if (bl) bl.hidden = false;
         var m = document.querySelector('.cp-envoi-mail'); if (m) m.hidden = true;
         try { sessionStorage.removeItem('cp-depot'); } catch (e) {}
+      } else if (ok) {
+        /* Sans dépôt : si le lien Stripe renvoie ?session_id={CHECKOUT_SESSION_ID}, on affiche cette référence de paiement. */
+        var sid = (location.search.match(/[?&]session_id=(cs_(?:live|test)_[A-Za-z0-9]+)/) || [])[1], pr = document.querySelector('.cp-pay-ref');
+        if (sid && pr) { pr.querySelector('.cp-pay-id').textContent = sid; pr.hidden = false; }
       }
       return;
     }
