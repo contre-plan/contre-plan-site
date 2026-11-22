@@ -1507,7 +1507,7 @@ ORDER = f'''<main id="contenu" class="cp-order">
 {_f("g2", "1 devis de 60 000 à 100 000 €", "Très gros chantier : extension, rénovation lourde. Rapport PDF sous 48 h.", "69 €", "")}
 </div>
 <label class="cp-chk cp-exp"><input type="checkbox" id="cp-express" name="express"><span><b>Express : rapport sous 24 h</b> (+ 9 €)</span></label>
-<p class="cp-ord-plus">Prix TTC, TVA non applicable. Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
+<p class="cp-ord-plus">Prix nets, TVA non applicable. Formules 2 et 3 : devis jusqu'à 30 000 € chacun.</p>
 {_ETAPES_1_2}
 
 <section class="cp-ord-box" aria-labelledby="t-rapport">
@@ -1588,7 +1588,7 @@ page("avis-avant-travaux",
 <li>Vous recevez ma réponse écrite par e-mail sous 48 h.</li>
 </ol>
 <p><a class="btn" href="{STRIPE_AVIS}" data-goatcounter-click="clic-stripe-avis">Payer 29 € par carte →</a></p>
-<p class="note-s">Prix TTC, TVA non applicable (article 293 B du CGI). Paiement sécurisé par Stripe. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>. Droit de rétractation de 14 jours (<a href="cgv.html#retractation">article 6</a>).</p>
+<p class="note-s">Prix nets, TVA non applicable (article 293 B du CGI). Paiement sécurisé par Stripe. En payant, vous acceptez les <a href="cgv.html">conditions générales de vente</a>. Droit de rétractation de 14 jours (<a href="cgv.html#retractation">article 6</a>).</p>
 {_envoi_avis("msg-avis")}
 
 <div class="note"><p><b>Vous avez déjà un devis ?</b> L'analyse ligne par ligne est plus adaptée : à partir de 29 €, rapport PDF sous 48 h. <a href="commander.html" data-goatcounter-click="clic-avis-vers-commander">Faire analyser mon devis</a></p></div>
