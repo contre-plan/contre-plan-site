@@ -1475,11 +1475,11 @@ if DEPOT_URL:
 <div class="cp-depot-st" id="cp-depot-err" role="status" aria-live="polite"></div>
 <p class="cp-trust">Paiement sécurisé par Stripe · devis jamais transmis à une entreprise · <a href="cgv.html#retractation">rétractation 14 jours</a> · médiateur CM2C</p>
 <p class="cp-next">Étape suivante : la page de paiement sécurisée de Stripe, puis un e-mail de confirmation automatique dans le quart d'heure. Si le paiement n'est pas finalisé, vous recevez un seul e-mail de rappel le lendemain, rien de plus.</p>
-<p class="cp-form-rgpd">Je relis votre devis et j'écris moi-même chaque rapport, du verdict jusqu'aux questions pour l'artisan. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 3 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
+<p class="cp-form-rgpd">Je relis votre devis et j'écris moi-même chaque rapport, du verdict jusqu'aux questions pour l'artisan. Votre devis reste dans l'espace privé de Contre-Plan, n'est jamais transmis à une entreprise et est supprimé au plus tard 1 mois après la livraison. <a href="confidentialite.html">Confidentialité</a></p>
 </form>
 {_PAY_SEC}
 <details class="cp-fold"><summary>Vous préférez payer d'abord et envoyer votre devis par e-mail ?</summary>
-<p>Payez, puis envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet si vous avez coché le démarrage immédiat. Sinon, il part de la fin du délai de rétractation de 14 jours.</p>
+<p>Payez, puis envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet si vous avez coché le démarrage immédiat. Sans cette case, la loi m'oblige à attendre la fin de votre délai de rétractation de 14 jours.</p>
 {_pay_btn("btn")}
 {_envoi("msg-devis")}
 </details>
@@ -1491,7 +1491,7 @@ else:
 
 <section class="cp-ord-box" aria-labelledby="t-envoi">
 <h2 id="t-envoi"><span class="n">2</span>Envoyez votre devis par e-mail</h2>
-<p>Juste après le paiement, envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet si vous avez coché le démarrage immédiat. Sinon, il part de la fin du délai de rétractation de 14 jours.</p>
+<p>Juste après le paiement, envoyez votre devis avec ce message. Le délai de 48 h (ou 24 h en express) part de la réception du devis complet si vous avez coché le démarrage immédiat. Sans cette case, la loi m'oblige à attendre la fin de votre délai de rétractation de 14 jours.</p>
 {_envoi("msg-devis")}
 </section>"""
 
